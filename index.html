@@ -185,27 +185,31 @@
             animation-delay: -3s;
         }
         .testimonial-marquee {
-            overflow: hidden;
+            overflow-x: auto;
+            overflow-y: hidden;
+            scroll-behavior: smooth;
             mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        }
+        .testimonial-marquee::-webkit-scrollbar {
+            display: none;
         }
         .testimonial-track {
             display: flex;
             gap: 1.5rem;
             width: max-content;
-            animation: testimonial-left 20s linear infinite;
             will-change: transform;
         }
         .testimonial-group {
             display: flex;
             gap: 1.5rem;
         }
+        .testimonial-group[aria-hidden="true"] {
+            display: none;
+        }
         .testimonial-card {
             width: min(86vw, 24rem);
             flex: 0 0 auto;
-        }
-        .testimonial-marquee:hover .testimonial-track {
-            animation-play-state: paused;
         }
         .scroll-reveal-text {
             opacity: 0;
@@ -293,7 +297,7 @@
 <body class="bg-surface font-body text-on-surface" data-mode="connect">
 <div id="navbar-slot"></div>
 <!-- Hero Section -->
-<section class="relative overflow-hidden pt-36 md:pt-40 min-h-[100svh] lg:min-h-[921px]">
+<section class="relative overflow-hidden pt-32 md:pt-36 min-h-[72svh] lg:min-h-[640px]">
 <div class="absolute inset-0 z-0 bg-slate-950">
 <div class="absolute inset-0">
 <img class="hero-slide absolute inset-0 h-full w-full object-cover object-center opacity-100 transition-opacity duration-700" data-hero-slide alt="modern hospital lobby with bright natural light and premium interiors" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80">
@@ -303,7 +307,7 @@
 <div class="absolute inset-0 bg-black/45"></div>
 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30"></div>
 </div>
-<div class="relative z-10 min-h-[100svh] lg:min-h-[921px] flex flex-col justify-center items-center text-center px-4 sm:px-6 py-20">
+<div class="relative z-10 min-h-[72svh] lg:min-h-[640px] flex flex-col justify-center items-center text-center px-4 sm:px-6 py-14">
 <span class="text-primary-fixed-dim font-bold tracking-[0.2em] mb-4 uppercase text-xs sm:text-sm">World-Class Healthcare</span>
 <h1 class="text-white text-4xl sm:text-5xl md:text-7xl font-headline font-black mb-6 max-w-4xl tracking-tight leading-tight">
                 Advanced Care for a <br><span class="text-secondary-fixed">Healthier Tomorrow</span>
@@ -315,10 +319,13 @@
 <button class="px-8 py-4 bg-signature-gradient text-white rounded-xl font-bold text-lg hover:scale-105 transition-all shadow-xl shadow-purple-900/20">View Services</button>
 <a class="inline-flex items-center justify-center px-8 py-4 border-2 border-white/30 text-white backdrop-blur-md rounded-xl font-bold text-lg hover:bg-white/10 hover:scale-105 transition-all" href="#contact-us">Contact Us</a>
 </div>
-<div class="mt-8 flex items-center justify-center gap-3" data-hero-indicators>
-<button class="hero-indicator h-3 w-3 rounded-full bg-white transition-all duration-300 hover:bg-white" style="opacity:0.45;transform:scale(1);" aria-label="Show hospital slide 1" data-slide-button="0" type="button"></button>
-<button class="hero-indicator h-3 w-3 rounded-full bg-white transition-all duration-300 hover:bg-white" style="opacity:0.45;transform:scale(1);" aria-label="Show hospital slide 2" data-slide-button="1" type="button"></button>
-<button class="hero-indicator h-3 w-3 rounded-full bg-white transition-all duration-300 hover:bg-white" style="opacity:0.45;transform:scale(1);" aria-label="Show hospital slide 3" data-slide-button="2" type="button"></button>
+<div class="mt-6 flex items-center justify-center gap-3" data-hero-controls>
+<button class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/40 bg-black/35 text-white backdrop-blur-md transition-all hover:bg-black/50 hover:scale-105" aria-label="Previous hero image" data-slide-prev type="button">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-white/40 bg-black/35 text-white backdrop-blur-md transition-all hover:bg-black/50 hover:scale-105" aria-label="Next hero image" data-slide-next type="button">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
 </div>
 </div>
 </section>
@@ -626,7 +633,15 @@
 <!-- Testimonials -->
 <section class="py-24 px-8 bg-gradient-to-b from-primary-fixed/10 via-surface to-primary-fixed/20">
 <div class="max-w-7xl mx-auto">
-<h2 class="text-4xl font-headline font-black text-primary mb-16 text-center">Patient Experiences</h2>
+<div class="mb-10 flex items-center justify-center gap-4">
+<button class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white" aria-label="Previous patient experience" data-testimonial-prev type="button">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<h2 class="text-4xl font-headline font-black text-primary text-center">Patient Experiences</h2>
+<button class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white" aria-label="Next patient experience" data-testimonial-next type="button">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
 <div class="testimonial-marquee">
 <div class="testimonial-track">
 <div class="testimonial-group">
@@ -941,26 +956,15 @@
 </div>
 </div>
 <div class="bg-surface-container-low rounded-2xl border border-purple-100/70 p-6 sm:p-8">
-<h3 class="text-2xl font-headline font-black text-primary mb-2">Book an Appointment</h3>
+<h3 class="text-2xl font-headline font-black text-primary mb-2">Contact Us</h3>
 <p class="text-sm text-on-surface-variant mb-6">Fill in your details and our team will contact you shortly.</p>
 <form class="space-y-4" action="#" method="post">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <input class="rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary" type="text" name="fullName" placeholder="Full Name">
 <input class="rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary" type="tel" name="phone" placeholder="Phone Number">
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div>
 <input class="rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary" type="email" name="email" placeholder="Email Address">
-<select class="rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary" name="department">
-<option value="">Select Department</option>
-<option value="cardiology">Cardiology</option>
-<option value="orthopedics">Orthopedics</option>
-<option value="neurology">Neurology</option>
-<option value="oncology">Oncology</option>
-</select>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-<input class="rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary" type="date" name="preferredDate">
-<input class="rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary" type="time" name="preferredTime">
 </div>
 <textarea class="w-full rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm min-h-[120px] focus:ring-2 focus:ring-primary" name="message" placeholder="Describe your concern"></textarea>
 <button class="w-full py-3 bg-signature-gradient text-white rounded-xl font-bold hover:opacity-95 transition-opacity" type="submit">Submit Request</button>
@@ -983,7 +987,11 @@
     var timelineProgressLine = document.querySelector('[data-timeline-progress-line]');
     var timelineProgressLineMobile = document.querySelector('[data-timeline-progress-line-mobile]');
     var slides = Array.prototype.slice.call(document.querySelectorAll('[data-hero-slide]'));
-    var indicators = Array.prototype.slice.call(document.querySelectorAll('[data-slide-button]'));
+    var testimonialMarquee = document.querySelector('.testimonial-marquee');
+    var testimonialPrevButton = document.querySelector('[data-testimonial-prev]');
+    var testimonialNextButton = document.querySelector('[data-testimonial-next]');
+    var prevSlideButton = document.querySelector('[data-slide-prev]');
+    var nextSlideButton = document.querySelector('[data-slide-next]');
 
     var currentSlide = 0;
     var timerId = null;
@@ -1003,11 +1011,22 @@
             slide.classList.toggle('opacity-100', index === currentSlide);
             slide.classList.toggle('opacity-0', index !== currentSlide);
         });
+    }
 
-        indicators.forEach(function (button, index) {
-            button.style.opacity = index === currentSlide ? '1' : '0.45';
-            button.style.transform = index === currentSlide ? 'scale(1.35)' : 'scale(1)';
-        });
+    function goToNextSlide() {
+        if (!slides.length) {
+            return;
+        }
+
+        renderSlide((currentSlide + 1) % slides.length);
+    }
+
+    function goToPreviousSlide() {
+        if (!slides.length) {
+            return;
+        }
+
+        renderSlide((currentSlide - 1 + slides.length) % slides.length);
     }
 
     function openMenu() {
@@ -1058,17 +1077,49 @@
         }
 
         timerId = setInterval(function () {
-            renderSlide((currentSlide + 1) % slides.length);
+            goToNextSlide();
         }, 4000);
     }
 
-    indicators.forEach(function (button) {
-        button.addEventListener('click', function () {
-            var nextSlide = Number(button.getAttribute('data-slide-button'));
-            renderSlide(nextSlide);
+    if (prevSlideButton) {
+        prevSlideButton.addEventListener('click', function () {
+            goToPreviousSlide();
             startRotation();
         });
-    });
+    }
+
+    if (nextSlideButton) {
+        nextSlideButton.addEventListener('click', function () {
+            goToNextSlide();
+            startRotation();
+        });
+    }
+
+    function scrollTestimonials(direction) {
+        if (!testimonialMarquee) {
+            return;
+        }
+
+        var firstCard = testimonialMarquee.querySelector('.testimonial-card');
+        var step = firstCard ? firstCard.getBoundingClientRect().width + 24 : 360;
+
+        testimonialMarquee.scrollBy({
+            left: direction * step,
+            behavior: 'smooth'
+        });
+    }
+
+    if (testimonialPrevButton) {
+        testimonialPrevButton.addEventListener('click', function () {
+            scrollTestimonials(-1);
+        });
+    }
+
+    if (testimonialNextButton) {
+        testimonialNextButton.addEventListener('click', function () {
+            scrollTestimonials(1);
+        });
+    }
 
     function setTimelineStepState() {
         if (!timelineSteps.length) {
@@ -1197,7 +1248,7 @@
         var revealTargets = Array.prototype.slice.call(document.querySelectorAll(
             'section h2, section h3, section h4, section p, section li, section article, section .speciality-card, section button, section a'
         )).filter(function (element) {
-            return !element.closest('.timeline-step') && !element.closest('[data-hero-indicators]') && !element.closest('.insurance-marquee');
+            return !element.closest('.timeline-step') && !element.closest('[data-hero-controls]') && !element.closest('.insurance-marquee');
         });
 
         if (!revealTargets.length) {
@@ -1261,7 +1312,7 @@
         });
     }
 
-    if (slides.length && indicators.length) {
+    if (slides.length) {
         renderSlide(0);
         startRotation();
     }
