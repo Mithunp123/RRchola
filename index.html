@@ -209,22 +209,22 @@
 </div>
 </section>
 <!-- Key Statistics -->
-<section class="py-24 px-8 bg-surface">
+<section class="py-24 px-8 bg-surface" data-counter-section>
 <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
 <div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm text-center border-b-4 border-primary transition-transform hover:-translate-y-2">
-<h3 class="text-5xl font-black text-primary font-headline mb-2">50+</h3>
+<h3 class="text-5xl font-black text-primary font-headline mb-2" data-counter data-target="50" data-suffix="+">0</h3>
 <p class="text-on-surface-variant font-semibold">Specialized Doctors</p>
 </div>
 <div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm text-center border-b-4 border-secondary transition-transform hover:-translate-y-2">
-<h3 class="text-5xl font-black text-secondary font-headline mb-2">100+</h3>
+<h3 class="text-5xl font-black text-secondary font-headline mb-2" data-counter data-target="100" data-suffix="+">0</h3>
 <p class="text-on-surface-variant font-semibold">Smart Beds</p>
 </div>
 <div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm text-center border-b-4 border-primary transition-transform hover:-translate-y-2">
-<h3 class="text-5xl font-black text-primary font-headline mb-2">10k+</h3>
+<h3 class="text-5xl font-black text-primary font-headline mb-2" data-counter data-target="10" data-suffix="k+">0</h3>
 <p class="text-on-surface-variant font-semibold">Happy Patients</p>
 </div>
 <div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm text-center border-b-4 border-secondary transition-transform hover:-translate-y-2">
-<h3 class="text-5xl font-black text-secondary font-headline mb-2">15+</h3>
+<h3 class="text-5xl font-black text-secondary font-headline mb-2" data-counter data-target="15" data-suffix="+">0</h3>
 <p class="text-on-surface-variant font-semibold">Specialities</p>
 </div>
 </div>
@@ -644,6 +644,8 @@
     var menuButton = document.querySelector('[data-mobile-menu-button]');
     var menuIcon = document.querySelector('[data-menu-icon]');
     var mobileMenu = document.getElementById('mobile-menu');
+    var counterSection = document.querySelector('[data-counter-section]');
+    var counters = Array.prototype.slice.call(document.querySelectorAll('[data-counter]'));
     var slides = Array.prototype.slice.call(document.querySelectorAll('[data-hero-slide]'));
     var indicators = Array.prototype.slice.call(document.querySelectorAll('[data-slide-button]'));
     if (!slides.length || !indicators.length) {
@@ -722,6 +724,53 @@
         });
     });
 
+    function animateCounter(counter) {
+        var target = Number(counter.getAttribute('data-target'));
+        var suffix = counter.getAttribute('data-suffix') || '';
+        var duration = 1600;
+        var start = 0;
+        var startedAt = null;
+
+        function tick(timestamp) {
+            if (!startedAt) {
+                startedAt = timestamp;
+            }
+
+            var progress = Math.min((timestamp - startedAt) / duration, 1);
+            var currentValue = Math.floor(start + (target - start) * progress);
+            counter.textContent = currentValue + suffix;
+
+            if (progress < 1) {
+                window.requestAnimationFrame(tick);
+            }
+        }
+
+        window.requestAnimationFrame(tick);
+    }
+
+    function initCountersOnScroll() {
+        if (!counterSection || !counters.length) {
+            return;
+        }
+
+        var hasAnimated = false;
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!hasAnimated && entry.isIntersecting) {
+                    hasAnimated = true;
+                    counters.forEach(function (counter) {
+                        animateCounter(counter);
+                    });
+                    observer.disconnect();
+                }
+            });
+        }, {
+            threshold: 0.35
+        });
+
+        observer.observe(counterSection);
+    }
+
     if (menuButton && mobileMenu && menuIcon) {
         menuButton.addEventListener('click', function (event) {
             event.stopPropagation();
@@ -752,6 +801,7 @@
 
     renderSlide(0);
     startRotation();
+    initCountersOnScroll();
 })();
 </script>
 </body></html>
