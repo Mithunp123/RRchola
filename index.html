@@ -103,6 +103,118 @@
         .speciality-card:hover {
             background: linear-gradient(135deg, #4e0078 0%, #9a25ae 100%);
         }
+        .timeline-step {
+            opacity: 0.35;
+            transform: translateY(28px) scale(0.98);
+            transition: opacity 520ms ease, transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .timeline-step.is-visible {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+        .timeline-step-node {
+            transition: transform 380ms ease, box-shadow 380ms ease;
+            box-shadow: 0 10px 26px rgba(78, 0, 120, 0.12);
+        }
+        .timeline-step.is-visible .timeline-step-node {
+            transform: scale(1.06);
+            box-shadow: 0 18px 36px rgba(78, 0, 120, 0.2);
+        }
+        .timeline-step.is-active .timeline-step-node {
+            animation: pulse-node 1.8s ease-in-out infinite;
+            box-shadow: 0 0 0 8px rgba(154, 37, 174, 0.09), 0 20px 44px rgba(78, 0, 120, 0.24);
+        }
+        .timeline-step.is-active h4 {
+            color: #4e0078;
+        }
+        .timeline-step.is-active p {
+            color: #3d3450;
+        }
+        .timeline-progress-fill,
+        .timeline-progress-fill-mobile {
+            transition: width 260ms ease-out, height 260ms ease-out;
+            background-size: 200% 100%;
+            animation: flow-line 2.4s linear infinite;
+        }
+        .timeline-orb {
+            animation: float-orb 7s ease-in-out infinite;
+        }
+        .timeline-orb-delay {
+            animation-delay: -3s;
+        }
+        .testimonial-marquee {
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        }
+        .testimonial-track {
+            display: flex;
+            gap: 1.5rem;
+            width: max-content;
+            animation: testimonial-left 20s linear infinite;
+            will-change: transform;
+        }
+        .testimonial-group {
+            display: flex;
+            gap: 1.5rem;
+        }
+        .testimonial-card {
+            width: min(86vw, 24rem);
+            flex: 0 0 auto;
+        }
+        .testimonial-marquee:hover .testimonial-track {
+            animation-play-state: paused;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .timeline-step,
+            .timeline-step-node,
+            .timeline-progress-fill,
+            .timeline-progress-fill-mobile {
+                transition: none;
+                animation: none;
+            }
+            .testimonial-track {
+                animation: none;
+            }
+        }
+        @keyframes flow-line {
+            from {
+                background-position: 0% 50%;
+            }
+            to {
+                background-position: 200% 50%;
+            }
+        }
+        @keyframes pulse-node {
+            0% {
+                transform: scale(1.04);
+            }
+            50% {
+                transform: scale(1.12);
+            }
+            100% {
+                transform: scale(1.04);
+            }
+        }
+        @keyframes float-orb {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-18px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        @keyframes testimonial-left {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(calc(-50% - 0.75rem));
+            }
+        }
         @keyframes run-left {
             from {
                 transform: translateX(0);
@@ -428,40 +540,64 @@
 </div>
 </section>
 <!-- Hospital Experience Timeline -->
-<section class="py-24 bg-surface-container-low px-8 overflow-hidden">
+<section class="py-24 px-8 overflow-hidden bg-gradient-to-b from-surface-container-low via-white to-surface" data-timeline-section>
+<div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+<div class="timeline-orb absolute -top-8 left-[10%] h-36 w-36 rounded-full bg-primary/10 blur-3xl"></div>
+<div class="timeline-orb timeline-orb-delay absolute bottom-6 right-[8%] h-44 w-44 rounded-full bg-secondary/20 blur-3xl"></div>
+</div>
 <div class="max-w-7xl mx-auto">
-<h2 class="text-4xl font-headline font-black text-primary mb-20 text-center">Your Path to Recovery</h2>
+<div class="text-center mb-16">
+<p class="text-xs sm:text-sm uppercase tracking-[0.3em] font-bold text-primary/70 mb-4">Care Journey</p>
+<h2 class="text-4xl font-headline font-black text-primary mb-4">Your Path to Recovery</h2>
+<p class="max-w-3xl mx-auto text-on-surface-variant">A connected healing flow built for speed, precision, and compassionate continuity from first consult to full rehabilitation.</p>
+</div>
 <div class="relative">
-<div class="absolute top-1/2 left-0 w-full h-0.5 bg-purple-200 -translate-y-1/2 hidden lg:block"></div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
-<div class="relative z-10 flex flex-col items-center text-center">
-<div class="w-20 h-20 bg-white shadow-xl rounded-full flex items-center justify-center mb-6 border-4 border-surface-container-low">
-<span class="material-symbols-outlined text-4xl text-primary" data-icon="forum">forum</span>
+<div class="absolute hidden lg:block left-0 right-0 top-10 h-1 rounded-full bg-purple-100/80 overflow-hidden" aria-hidden="true">
+<div class="timeline-progress-fill h-full" data-timeline-progress-line style="width: 0%; background-image: linear-gradient(90deg, #4e0078 0%, #9a25ae 45%, #d34cf5 100%);"></div>
 </div>
-<h4 class="text-xl font-bold text-on-surface mb-2">Consultation</h4>
-<p class="text-on-surface-variant text-sm px-4">Expert diagnosis and initial assessment with our specialists.</p>
+<div class="absolute lg:hidden w-1 rounded-full bg-purple-100/90 top-0 bottom-0" style="left: 2.1rem;" aria-hidden="true"></div>
+<div class="absolute lg:hidden w-1 rounded-full top-0" style="left: 2.1rem; height: 0%; background-image: linear-gradient(180deg, #4e0078 0%, #9a25ae 45%, #d34cf5 100%);" data-timeline-progress-line-mobile aria-hidden="true"></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
+<article class="timeline-step relative z-10 pl-20 lg:pl-0" data-timeline-step>
+<div class="timeline-step-node absolute lg:relative left-0 top-0 w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-[2rem] flex items-center justify-center border border-purple-100 shadow-xl">
+<span class="material-symbols-outlined text-3xl lg:text-4xl text-primary" data-icon="forum">forum</span>
 </div>
-<div class="relative z-10 flex flex-col items-center text-center">
-<div class="w-20 h-20 bg-white shadow-xl rounded-full flex items-center justify-center mb-6 border-4 border-surface-container-low">
-<span class="material-symbols-outlined text-4xl text-primary" data-icon="biotech">biotech</span>
+<div class="lg:text-center lg:mt-20">
+<p class="text-xs font-bold tracking-[0.2em] uppercase text-primary/60 mb-2">Step 01</p>
+<h4 class="text-2xl lg:text-xl font-black text-on-surface mb-2">Consultation</h4>
+<p class="text-on-surface-variant text-sm">Expert diagnosis and initial assessment with our specialists.</p>
 </div>
-<h4 class="text-xl font-bold text-on-surface mb-2">Diagnosis</h4>
-<p class="text-on-surface-variant text-sm px-4">Precise identification using advanced medical imaging and labs.</p>
+</article>
+<article class="timeline-step relative z-10 pl-20 lg:pl-0" data-timeline-step>
+<div class="timeline-step-node absolute lg:relative left-0 top-0 w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-[2rem] flex items-center justify-center border border-purple-100 shadow-xl">
+<span class="material-symbols-outlined text-3xl lg:text-4xl text-primary" data-icon="biotech">biotech</span>
 </div>
-<div class="relative z-10 flex flex-col items-center text-center">
-<div class="w-20 h-20 bg-white shadow-xl rounded-full flex items-center justify-center mb-6 border-4 border-surface-container-low">
-<span class="material-symbols-outlined text-4xl text-primary" data-icon="vaccines">vaccines</span>
+<div class="lg:text-center lg:mt-20">
+<p class="text-xs font-bold tracking-[0.2em] uppercase text-primary/60 mb-2">Step 02</p>
+<h4 class="text-2xl lg:text-xl font-black text-on-surface mb-2">Diagnosis</h4>
+<p class="text-on-surface-variant text-sm">Precise identification using advanced imaging and smart labs.</p>
 </div>
-<h4 class="text-xl font-bold text-on-surface mb-2">Treatment</h4>
-<p class="text-on-surface-variant text-sm px-4">Personalized therapeutic or surgical care protocols.</p>
+</article>
+<article class="timeline-step relative z-10 pl-20 lg:pl-0" data-timeline-step>
+<div class="timeline-step-node absolute lg:relative left-0 top-0 w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-[2rem] flex items-center justify-center border border-purple-100 shadow-xl">
+<span class="material-symbols-outlined text-3xl lg:text-4xl text-primary" data-icon="vaccines">vaccines</span>
 </div>
-<div class="relative z-10 flex flex-col items-center text-center">
-<div class="w-20 h-20 bg-white shadow-xl rounded-full flex items-center justify-center mb-6 border-4 border-surface-container-low">
-<span class="material-symbols-outlined text-4xl text-primary" data-icon="healing">healing</span>
+<div class="lg:text-center lg:mt-20">
+<p class="text-xs font-bold tracking-[0.2em] uppercase text-primary/60 mb-2">Step 03</p>
+<h4 class="text-2xl lg:text-xl font-black text-on-surface mb-2">Treatment</h4>
+<p class="text-on-surface-variant text-sm">Personalized therapeutic or surgical care protocols.</p>
 </div>
-<h4 class="text-xl font-bold text-on-surface mb-2">Recovery</h4>
-<p class="text-on-surface-variant text-sm px-4">Post-treatment support and comprehensive rehabilitation.</p>
+</article>
+<article class="timeline-step relative z-10 pl-20 lg:pl-0" data-timeline-step>
+<div class="timeline-step-node absolute lg:relative left-0 top-0 w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-[2rem] flex items-center justify-center border border-purple-100 shadow-xl">
+<span class="material-symbols-outlined text-3xl lg:text-4xl text-primary" data-icon="healing">healing</span>
 </div>
+<div class="lg:text-center lg:mt-20">
+<p class="text-xs font-bold tracking-[0.2em] uppercase text-primary/60 mb-2">Step 04</p>
+<h4 class="text-2xl lg:text-xl font-black text-on-surface mb-2">Recovery</h4>
+<p class="text-on-surface-variant text-sm">Post-treatment support and comprehensive rehabilitation.</p>
+</div>
+</article>
 </div>
 </div>
 </div>
@@ -470,8 +606,10 @@
 <section class="py-24 px-8 bg-surface">
 <div class="max-w-7xl mx-auto">
 <h2 class="text-4xl font-headline font-black text-primary mb-16 text-center">Patient Experiences</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<div class="glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
+<div class="testimonial-marquee">
+<div class="testimonial-track">
+<div class="testimonial-group">
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
 <div class="flex text-amber-400 mb-6">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -487,8 +625,8 @@
 <p class="text-xs text-on-surface-variant">Cardiac Patient</p>
 </div>
 </div>
-</div>
-<div class="glass-panel p-10 rounded-[2rem] shadow-sm relative bg-primary-fixed/30 transition-all hover:scale-105">
+</article>
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative bg-primary-fixed/30 transition-all hover:scale-105">
 <div class="flex text-amber-400 mb-6">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -504,8 +642,8 @@
 <p class="text-xs text-on-surface-variant">Neuro Surgery</p>
 </div>
 </div>
-</div>
-<div class="glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
+</article>
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
 <div class="flex text-amber-400 mb-6">
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
@@ -520,6 +658,163 @@
 <h5 class="font-bold">Robert King</h5>
 <p class="text-xs text-on-surface-variant">Joint Replacement</p>
 </div>
+</div>
+</article>
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
+<div class="flex text-amber-400 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"From admission to discharge, everything was seamless. Nurses kept me informed and calm at every stage."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">AK</div>
+<div>
+<h5 class="font-bold">Anita Krishnan</h5>
+<p class="text-xs text-on-surface-variant">Maternity Care</p>
+</div>
+</div>
+</article>
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative bg-primary-fixed/30 transition-all hover:scale-105">
+<div class="flex text-amber-400 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"The rehab team pushed me with care and patience. I returned to normal activity much faster than expected."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">VP</div>
+<div>
+<h5 class="font-bold">Vikram Patel</h5>
+<p class="text-xs text-on-surface-variant">Sports Injury</p>
+</div>
+</div>
+</article>
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
+<div class="flex text-amber-400 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"Consultants explained every option clearly. I felt respected, heard, and genuinely supported throughout treatment."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">SN</div>
+<div>
+<h5 class="font-bold">Sofia Nair</h5>
+<p class="text-xs text-on-surface-variant">Oncology Care</p>
+</div>
+</div>
+</article>
+</div>
+<div class="testimonial-group" aria-hidden="true">
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
+<div class="flex text-amber-400 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"The level of care I received at RR CHOLA was unlike any other. The technology is futuristic, but the staff treats you with genuine human warmth."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">JD</div>
+<div>
+<h5 class="font-bold">Jonathan Doe</h5>
+<p class="text-xs text-on-surface-variant">Cardiac Patient</p>
+</div>
+</div>
+</article>
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative bg-primary-fixed/30 transition-all hover:scale-105">
+<div class="flex text-amber-400 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"They literally saved my life. The emergency response was incredibly fast and the neurosurgeons are clearly the best in the country."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">MS</div>
+<div>
+<h5 class="font-bold">Mary Smith</h5>
+<p class="text-xs text-on-surface-variant">Neuro Surgery</p>
+</div>
+</div>
+</article>
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
+<div class="flex text-amber-400 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"The facility is more like a 5-star hotel than a hospital. My recovery was so much faster because of the peaceful environment."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">RK</div>
+<div>
+<h5 class="font-bold">Robert King</h5>
+<p class="text-xs text-on-surface-variant">Joint Replacement</p>
+</div>
+</div>
+</article>
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
+<div class="flex text-amber-400 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"From admission to discharge, everything was seamless. Nurses kept me informed and calm at every stage."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">AK</div>
+<div>
+<h5 class="font-bold">Anita Krishnan</h5>
+<p class="text-xs text-on-surface-variant">Maternity Care</p>
+</div>
+</div>
+</article>
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative bg-primary-fixed/30 transition-all hover:scale-105">
+<div class="flex text-amber-400 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"The rehab team pushed me with care and patience. I returned to normal activity much faster than expected."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">VP</div>
+<div>
+<h5 class="font-bold">Vikram Patel</h5>
+<p class="text-xs text-on-surface-variant">Sports Injury</p>
+</div>
+</div>
+</article>
+<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
+<div class="flex text-amber-400 mb-6">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"Consultants explained every option clearly. I felt respected, heard, and genuinely supported throughout treatment."</p>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">SN</div>
+<div>
+<h5 class="font-bold">Sofia Nair</h5>
+<p class="text-xs text-on-surface-variant">Oncology Care</p>
+</div>
+</div>
+</article>
 </div>
 </div>
 </div>
@@ -620,16 +915,26 @@
     var mobileMenu = document.getElementById('mobile-menu');
     var counterSection = document.querySelector('[data-counter-section]');
     var counters = Array.prototype.slice.call(document.querySelectorAll('[data-counter]'));
+    var timelineSection = document.querySelector('[data-timeline-section]');
+    var timelineSteps = Array.prototype.slice.call(document.querySelectorAll('[data-timeline-step]'));
+    var timelineProgressLine = document.querySelector('[data-timeline-progress-line]');
+    var timelineProgressLineMobile = document.querySelector('[data-timeline-progress-line-mobile]');
     var slides = Array.prototype.slice.call(document.querySelectorAll('[data-hero-slide]'));
     var indicators = Array.prototype.slice.call(document.querySelectorAll('[data-slide-button]'));
-    if (!slides.length || !indicators.length) {
-        return;
-    }
 
     var currentSlide = 0;
     var timerId = null;
+    var timelineTicking = false;
+
+    function clamp(value, min, max) {
+        return Math.min(Math.max(value, min), max);
+    }
 
     function renderSlide(nextSlide) {
+        if (!slides.length) {
+            return;
+        }
+
         currentSlide = nextSlide;
         slides.forEach(function (slide, index) {
             slide.classList.toggle('opacity-100', index === currentSlide);
@@ -681,6 +986,10 @@
     }
 
     function startRotation() {
+        if (!slides.length || slides.length < 2) {
+            return;
+        }
+
         if (timerId) {
             clearInterval(timerId);
         }
@@ -697,6 +1006,82 @@
             startRotation();
         });
     });
+
+    function setTimelineStepState() {
+        if (!timelineSteps.length) {
+            return;
+        }
+
+        var activeIndex = -1;
+        var shortestDistance = Number.POSITIVE_INFINITY;
+        var viewportAnchor = window.innerHeight * 0.5;
+
+        timelineSteps.forEach(function (step, index) {
+            var rect = step.getBoundingClientRect();
+            var triggerPoint = window.innerHeight * 0.76;
+            var center = rect.top + (rect.height / 2);
+            var distance = Math.abs(center - viewportAnchor);
+
+            if (rect.top <= triggerPoint) {
+                step.classList.add('is-visible');
+                step.style.transitionDelay = (index * 70) + 'ms';
+            }
+
+            if (rect.bottom > 0 && rect.top < window.innerHeight && distance < shortestDistance) {
+                shortestDistance = distance;
+                activeIndex = index;
+            }
+        });
+
+        timelineSteps.forEach(function (step, index) {
+            step.classList.toggle('is-active', index === activeIndex);
+        });
+    }
+
+    function updateTimelineProgress() {
+        if (!timelineSection) {
+            return;
+        }
+
+        var rect = timelineSection.getBoundingClientRect();
+        var windowHeight = window.innerHeight;
+        var totalDistance = rect.height + windowHeight * 0.45;
+        var traveled = windowHeight - rect.top;
+        var progress = clamp((traveled / totalDistance) * 100, 0, 100);
+
+        if (timelineProgressLine) {
+            timelineProgressLine.style.width = progress + '%';
+        }
+
+        if (timelineProgressLineMobile) {
+            timelineProgressLineMobile.style.height = progress + '%';
+        }
+
+        setTimelineStepState();
+    }
+
+    function requestTimelineFrame() {
+        if (timelineTicking) {
+            return;
+        }
+
+        timelineTicking = true;
+        window.requestAnimationFrame(function () {
+            updateTimelineProgress();
+            timelineTicking = false;
+        });
+    }
+
+    function initTimelineAnimation() {
+        if (!timelineSection) {
+            return;
+        }
+
+        updateTimelineProgress();
+        window.addEventListener('scroll', requestTimelineFrame, { passive: true });
+        window.addEventListener('resize', requestTimelineFrame);
+    }
+
 
     function animateCounter(counter) {
         var target = Number(counter.getAttribute('data-target'));
@@ -773,9 +1158,13 @@
         });
     }
 
-    renderSlide(0);
-    startRotation();
+    if (slides.length && indicators.length) {
+        renderSlide(0);
+        startRotation();
+    }
+
     initCountersOnScroll();
+    initTimelineAnimation();
 })();
 </script>
 </body></html>
