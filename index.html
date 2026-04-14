@@ -97,6 +97,12 @@
             min-width: max-content;
             animation: run-left 18s linear infinite;
         }
+        .speciality-card {
+            transition: transform 200ms ease, box-shadow 200ms ease, background 220ms ease;
+        }
+        .speciality-card:hover {
+            background: linear-gradient(135deg, #4e0078 0%, #9a25ae 100%);
+        }
         @keyframes run-left {
             from {
                 transform: translateX(0);
@@ -230,41 +236,41 @@
 </div>
 </section>
 <!-- Specialities (Bento Grid Style) -->
-<section class="py-24 bg-surface-container-low px-8">
+<section class="py-24 px-8" style="background: linear-gradient(180deg, rgba(244, 217, 255, 0.55) 0%, rgba(255, 214, 254, 0.32) 48%, rgba(243, 243, 245, 0.9) 100%);">
 <div class="max-w-7xl mx-auto">
 <div class="text-center mb-16">
 <h2 class="text-4xl font-headline font-black text-primary mb-4">Our Specialities</h2>
 <p class="text-on-surface-variant max-w-xl mx-auto">Comprehensive medical solutions across diverse fields of medicine, powered by advanced diagnostic equipment.</p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-<div class="group relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm transition-all hover:bg-signature-gradient hover:text-white">
+<div class="group speciality-card relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1">
 <span class="material-symbols-outlined text-5xl text-primary group-hover:text-white mb-6" data-icon="cardiology">cardiology</span>
-<h3 class="text-2xl font-bold mb-4">Cardiology</h3>
+<h3 class="text-2xl font-bold text-on-surface group-hover:text-white mb-4 transition-colors">Cardiology</h3>
 <p class="text-on-surface-variant group-hover:text-white/80 text-sm leading-relaxed">Advanced heart care including non-invasive diagnostics and complex cardiac interventions.</p>
 </div>
-<div class="group relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm transition-all hover:bg-signature-gradient hover:text-white">
+<div class="group speciality-card relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1">
 <span class="material-symbols-outlined text-5xl text-primary group-hover:text-white mb-6" data-icon="neurology">neurology</span>
-<h3 class="text-2xl font-bold mb-4">Neurology</h3>
+<h3 class="text-2xl font-bold text-on-surface group-hover:text-white mb-4 transition-colors">Neurology</h3>
 <p class="text-on-surface-variant group-hover:text-white/80 text-sm leading-relaxed">Expert diagnosis and management of complex brain, spine, and nervous system disorders.</p>
 </div>
-<div class="group relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm transition-all hover:bg-signature-gradient hover:text-white">
+<div class="group speciality-card relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1">
 <span class="material-symbols-outlined text-5xl text-primary group-hover:text-white mb-6" data-icon="orthopedics">orthopedics</span>
-<h3 class="text-2xl font-bold mb-4">Orthopedics</h3>
+<h3 class="text-2xl font-bold text-on-surface group-hover:text-white mb-4 transition-colors">Orthopedics</h3>
 <p class="text-on-surface-variant group-hover:text-white/80 text-sm leading-relaxed">Specialized bone and joint care ranging from sports medicine to total joint replacements.</p>
 </div>
-<div class="group relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm transition-all hover:bg-signature-gradient hover:text-white">
+<div class="group speciality-card relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1">
 <span class="material-symbols-outlined text-5xl text-primary group-hover:text-white mb-6" data-icon="oncology">oncology</span>
-<h3 class="text-2xl font-bold mb-4">Oncology</h3>
+<h3 class="text-2xl font-bold text-on-surface group-hover:text-white mb-4 transition-colors">Oncology</h3>
 <p class="text-on-surface-variant group-hover:text-white/80 text-sm leading-relaxed">Comprehensive cancer care with personalized treatment plans and modern radiation therapy.</p>
 </div>
-<div class="group relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm transition-all hover:bg-signature-gradient hover:text-white">
+<div class="group speciality-card relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1">
 <span class="material-symbols-outlined text-5xl text-primary group-hover:text-white mb-6" data-icon="gastroenterology">gastroenterology</span>
-<h3 class="text-2xl font-bold mb-4">Gastroenterology</h3>
+<h3 class="text-2xl font-bold text-on-surface group-hover:text-white mb-4 transition-colors">Gastroenterology</h3>
 <p class="text-on-surface-variant group-hover:text-white/80 text-sm leading-relaxed">Dedicated to preventing, diagnosing and treating digestive system and liver disorders.</p>
 </div>
-<div class="group relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm transition-all hover:bg-signature-gradient hover:text-white">
+<div class="group speciality-card relative bg-surface-container-lowest p-8 rounded-3xl overflow-hidden shadow-sm hover:-translate-y-1">
 <span class="material-symbols-outlined text-5xl text-primary group-hover:text-white mb-6" data-icon="pediatrics">pediatrics</span>
-<h3 class="text-2xl font-bold mb-4">Pediatrics</h3>
+<h3 class="text-2xl font-bold text-on-surface group-hover:text-white mb-4 transition-colors">Pediatrics</h3>
 <p class="text-on-surface-variant group-hover:text-white/80 text-sm leading-relaxed">Providing high-quality care for infants, children, and adolescents with a gentle touch.</p>
 </div>
 </div>
