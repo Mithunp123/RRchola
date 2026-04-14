@@ -111,18 +111,24 @@
         .insurance-group {
             display: flex;
             gap: 2.25rem;
+            align-items: center;
         }
         .insurance-brand {
             display: inline-flex;
             align-items: center;
-            gap: 0.65rem;
+            gap: 0.8rem;
             white-space: nowrap;
+            flex-shrink: 0;
         }
         .insurance-logo {
-            width: 1.2rem;
-            height: 1.2rem;
-            object-fit: contain;
+            width: auto;
+            height: 1.35rem;
+            display: block;
             flex-shrink: 0;
+            object-fit: contain;
+            background: transparent;
+            box-shadow: none;
+            padding: 0;
         }
         .insurance-name {
             font-size: 0.8rem;
@@ -200,16 +206,31 @@
         .testimonial-marquee:hover .testimonial-track {
             animation-play-state: paused;
         }
+        .scroll-reveal-text {
+            opacity: 0;
+            transform: translate3d(0, 28px, 0);
+            transition: opacity 680ms ease, transform 680ms cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: opacity, transform;
+        }
+        .scroll-reveal-text.is-revealed {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
         @media (prefers-reduced-motion: reduce) {
             .timeline-step,
             .timeline-step-node,
             .timeline-progress-fill,
-            .timeline-progress-fill-mobile {
+            .timeline-progress-fill-mobile,
+            .scroll-reveal-text {
                 transition: none;
                 animation: none;
             }
             .testimonial-track {
                 animation: none;
+            }
+            .scroll-reveal-text {
+                opacity: 1;
+                transform: none;
             }
         }
         @keyframes flow-line {
@@ -370,7 +391,7 @@
 </div>
 </section>
 <!-- Key Statistics -->
-<section class="py-24 px-8 bg-surface" data-counter-section>
+<section class="py-24 px-8 bg-gradient-to-b from-primary-fixed/25 via-surface to-surface" data-counter-section>
 <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8">
 <div class="bg-surface-container-lowest p-10 rounded-2xl shadow-sm text-center border-b-4 border-primary transition-transform hover:-translate-y-2">
 <h3 class="text-5xl font-black text-primary font-headline mb-2" data-counter data-target="50" data-suffix="+">0</h3>
@@ -391,7 +412,7 @@
 </div>
 </section>
 <!-- Specialities (Bento Grid Style) -->
-<section class="py-24 px-8" style="background: linear-gradient(180deg, rgba(244, 217, 255, 0.55) 0%, rgba(255, 214, 254, 0.32) 48%, rgba(243, 243, 245, 0.9) 100%);">
+<section class="py-24 px-8" style="background: linear-gradient(180deg, rgba(244, 217, 255, 0.72) 0%, rgba(255, 236, 255, 0.9) 52%, rgba(249, 249, 251, 1) 100%);">
 <div class="max-w-7xl mx-auto">
 <div class="text-center mb-16">
 <h2 class="text-4xl font-headline font-black text-primary mb-4">Our Specialities</h2>
@@ -432,7 +453,7 @@
 </div>
 </section>
 <!-- Why Choose Us -->
-<section class="py-24 px-8" style="background: linear-gradient(180deg, rgba(220, 242, 255, 0.45) 0%, rgba(230, 255, 246, 0.35) 55%, rgba(243, 247, 252, 0.88) 100%);">
+<section class="py-24 px-8" style="background: linear-gradient(180deg, rgba(255, 224, 254, 0.62) 0%, rgba(244, 217, 255, 0.45) 56%, rgba(249, 249, 251, 0.96) 100%);">
 <div class="max-w-7xl mx-auto">
 <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
 <div class="relative">
@@ -495,7 +516,7 @@
 </div>
 </section>
 <!-- Doctors Section -->
-<section class="py-24 bg-surface-container-low px-8">
+<section class="py-24 bg-gradient-to-b from-surface-container-low via-white to-primary-fixed/15 px-8">
 <div class="max-w-7xl mx-auto">
 <div class="flex justify-between items-end mb-16">
 <div>
@@ -583,7 +604,7 @@
 </div>
 </section>
 <!-- Hospital Experience Timeline -->
-<section class="py-24 px-8 overflow-hidden bg-gradient-to-b from-surface-container-low via-white to-surface" data-timeline-section>
+<section class="py-24 px-8 overflow-hidden bg-gradient-to-b from-primary-fixed/20 via-white to-secondary-fixed/20" data-timeline-section>
 <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
 <div class="timeline-orb absolute -top-8 left-[10%] h-36 w-36 rounded-full bg-primary/10 blur-3xl"></div>
 <div class="timeline-orb timeline-orb-delay absolute bottom-6 right-[8%] h-44 w-44 rounded-full bg-secondary/20 blur-3xl"></div>
@@ -646,7 +667,7 @@
 </div>
 </section>
 <!-- Testimonials -->
-<section class="py-24 px-8 bg-surface">
+<section class="py-24 px-8 bg-gradient-to-b from-primary-fixed/10 via-surface to-primary-fixed/20">
 <div class="max-w-7xl mx-auto">
 <h2 class="text-4xl font-headline font-black text-primary mb-16 text-center">Patient Experiences</h2>
 <div class="testimonial-marquee">
@@ -883,37 +904,37 @@
 </div>
 </section>
 <!-- Insurance & Partners -->
-<section class="py-20 px-8 bg-surface-container-high/30">
+<section class="py-20 px-8 bg-gradient-to-b from-primary-fixed/20 via-surface-container-low to-primary-fixed/10">
 <div class="max-w-7xl mx-auto text-center">
 <h3 class="text-sm font-bold text-on-surface-variant/60 uppercase tracking-[0.3em] mb-12">Our Trusted Insurance Partners</h3>
 <div class="insurance-marquee">
 <div class="insurance-track">
 <div class="insurance-group">
-<span class="insurance-brand"><img class="insurance-logo" alt="Star Health logo" src="https://www.google.com/s2/favicons?domain=starhealth.in&sz=64"><span class="insurance-name">Star Health</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="Niva Bupa logo" src="https://www.google.com/s2/favicons?domain=nivabupa.com&sz=64"><span class="insurance-name">Niva Bupa</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="HDFC ERGO logo" src="https://www.google.com/s2/favicons?domain=hdfcergo.com&sz=64"><span class="insurance-name">HDFC ERGO</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="ICICI Lombard logo" src="https://www.google.com/s2/favicons?domain=icicilombard.com&sz=64"><span class="insurance-name">ICICI Lombard</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="Care Health logo" src="https://www.google.com/s2/favicons?domain=careinsurance.com&sz=64"><span class="insurance-name">Care Health</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="Aditya Birla Health logo" src="https://www.google.com/s2/favicons?domain=adityabirlacapital.com&sz=64"><span class="insurance-name">Aditya Birla Health</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="Bajaj Allianz logo" src="https://www.google.com/s2/favicons?domain=bajajallianz.com&sz=64"><span class="insurance-name">Bajaj Allianz</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="Tata AIG logo" src="https://www.google.com/s2/favicons?domain=tataaig.com&sz=64"><span class="insurance-name">Tata AIG</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Star Health logo" src="https://www.google.com/s2/favicons?domain_url=https://starhealth.in&sz=128"><span class="insurance-name">Star Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Niva Bupa logo" src="https://www.google.com/s2/favicons?domain_url=https://www.nivabupa.com&sz=128"><span class="insurance-name">Niva Bupa</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="HDFC ERGO logo" src="https://www.google.com/s2/favicons?domain_url=https://www.hdfcergo.com&sz=128"><span class="insurance-name">HDFC ERGO</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="ICICI Lombard logo" src="https://www.google.com/s2/favicons?domain_url=https://www.icicilombard.com&sz=128"><span class="insurance-name">ICICI Lombard</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Care Health logo" src="https://www.google.com/s2/favicons?domain_url=https://www.careinsurance.com&sz=128"><span class="insurance-name">Care Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Aditya Birla Health logo" src="https://www.google.com/s2/favicons?domain_url=https://www.adityabirlacapital.com&sz=128"><span class="insurance-name">Aditya Birla Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Bajaj Allianz logo" src="https://www.google.com/s2/favicons?domain_url=https://www.bajajallianz.com&sz=128"><span class="insurance-name">Bajaj Allianz</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Tata AIG logo" src="https://www.google.com/s2/favicons?domain_url=https://www.tataaig.com&sz=128"><span class="insurance-name">Tata AIG</span></span>
 </div>
 <div class="insurance-group" aria-hidden="true">
-<span class="insurance-brand"><img class="insurance-logo" alt="Star Health logo" src="https://www.google.com/s2/favicons?domain=starhealth.in&sz=64"><span class="insurance-name">Star Health</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="Niva Bupa logo" src="https://www.google.com/s2/favicons?domain=nivabupa.com&sz=64"><span class="insurance-name">Niva Bupa</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="HDFC ERGO logo" src="https://www.google.com/s2/favicons?domain=hdfcergo.com&sz=64"><span class="insurance-name">HDFC ERGO</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="ICICI Lombard logo" src="https://www.google.com/s2/favicons?domain=icicilombard.com&sz=64"><span class="insurance-name">ICICI Lombard</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="Care Health logo" src="https://www.google.com/s2/favicons?domain=careinsurance.com&sz=64"><span class="insurance-name">Care Health</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="Aditya Birla Health logo" src="https://www.google.com/s2/favicons?domain=adityabirlacapital.com&sz=64"><span class="insurance-name">Aditya Birla Health</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="Bajaj Allianz logo" src="https://www.google.com/s2/favicons?domain=bajajallianz.com&sz=64"><span class="insurance-name">Bajaj Allianz</span></span>
-<span class="insurance-brand"><img class="insurance-logo" alt="Tata AIG logo" src="https://www.google.com/s2/favicons?domain=tataaig.com&sz=64"><span class="insurance-name">Tata AIG</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Star Health logo" src="https://www.google.com/s2/favicons?domain_url=https://starhealth.in&sz=128"><span class="insurance-name">Star Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Niva Bupa logo" src="https://www.google.com/s2/favicons?domain_url=https://www.nivabupa.com&sz=128"><span class="insurance-name">Niva Bupa</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="HDFC ERGO logo" src="https://www.google.com/s2/favicons?domain_url=https://www.hdfcergo.com&sz=128"><span class="insurance-name">HDFC ERGO</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="ICICI Lombard logo" src="https://www.google.com/s2/favicons?domain_url=https://www.icicilombard.com&sz=128"><span class="insurance-name">ICICI Lombard</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Care Health logo" src="https://www.google.com/s2/favicons?domain_url=https://www.careinsurance.com&sz=128"><span class="insurance-name">Care Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Aditya Birla Health logo" src="https://www.google.com/s2/favicons?domain_url=https://www.adityabirlacapital.com&sz=128"><span class="insurance-name">Aditya Birla Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Bajaj Allianz logo" src="https://www.google.com/s2/favicons?domain_url=https://www.bajajallianz.com&sz=128"><span class="insurance-name">Bajaj Allianz</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Tata AIG logo" src="https://www.google.com/s2/favicons?domain_url=https://www.tataaig.com&sz=128"><span class="insurance-name">Tata AIG</span></span>
 </div>
 </div>
 </div>
 </div>
 </section>
 <!-- Contact Us -->
-<section id="contact-us" class="py-24 px-8 bg-white scroll-mt-40">
+<section id="contact-us" class="py-24 px-8 bg-gradient-to-b from-white to-primary-fixed/10 scroll-mt-40">
 <div class="max-w-7xl mx-auto">
 <div class="text-center mb-14">
 <p class="text-xs font-bold text-primary/70 uppercase tracking-[0.3em] mb-4">Reach Our Team</p>
@@ -1269,6 +1290,46 @@
         observer.observe(counterSection);
     }
 
+    function initScrollReveal() {
+        var revealTargets = Array.prototype.slice.call(document.querySelectorAll(
+            'section h2, section h3, section h4, section p, section li, section article, section .speciality-card, section .insurance-brand, section button, section a'
+        )).filter(function (element) {
+            return !element.closest('.timeline-step') && !element.closest('[data-hero-indicators]');
+        });
+
+        if (!revealTargets.length) {
+            return;
+        }
+
+        revealTargets.forEach(function (target, index) {
+            target.classList.add('scroll-reveal-text');
+            target.style.transitionDelay = ((index % 6) * 70) + 'ms';
+        });
+
+        if (!('IntersectionObserver' in window)) {
+            revealTargets.forEach(function (target) {
+                target.classList.add('is-revealed');
+            });
+            return;
+        }
+
+        var observer = new IntersectionObserver(function (entries, obs) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-revealed');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.14,
+            rootMargin: '0px 0px -10% 0px'
+        });
+
+        revealTargets.forEach(function (target) {
+            observer.observe(target);
+        });
+    }
+
     if (menuButton && mobileMenu && menuIcon) {
         menuButton.addEventListener('click', function (event) {
             event.stopPropagation();
@@ -1304,6 +1365,7 @@
 
     initCountersOnScroll();
     initTimelineAnimation();
+    initScrollReveal();
 })();
 </script>
 </body></html>
