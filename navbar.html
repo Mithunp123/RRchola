@@ -13,6 +13,27 @@
             background: linear-gradient(135deg, #6A1B9A 0%, #9C27B0 56%, #C770DC 100%);
         }
 
+        .running-strip {
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .running-strip-track {
+            display: inline-flex;
+            gap: 2rem;
+            min-width: max-content;
+            animation: run-left 18s linear infinite;
+        }
+
+        @keyframes run-left {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(-50%);
+            }
+        }
+
         .dark .nav-gradient-bg {
             background: linear-gradient(135deg, #5A189A 0%, #7B2CBF 56%, #9D4EDD 100%);
         }
