@@ -1,4 +1,4 @@
-<div class="fixed top-0 left-0 right-0 z-[60] bg-primary text-white shadow-sm">
+<div class="fixed top-0 left-0 right-0 z-[60] nav-gradient-bg text-white shadow-sm">
     <div class="running-strip max-w-[1440px] mx-auto px-4 sm:px-8 py-2 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase">
         <div class="running-strip-track">
             <span>Precision care. 24/7 emergency response. Advanced diagnostics. Specialist consultations. Patient-first service.</span>
@@ -8,42 +8,113 @@
 </div>
 
 <header class="fixed top-[36px] w-full z-50 bg-white/85 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm shadow-purple-900/5">
+    <style>
+        .nav-gradient-bg {
+            background: linear-gradient(135deg, #6A1B9A 0%, #9C27B0 56%, #C770DC 100%);
+        }
+
+        .dark .nav-gradient-bg {
+            background: linear-gradient(135deg, #5A189A 0%, #7B2CBF 56%, #9D4EDD 100%);
+        }
+
+        .nav-dropdown:hover .nav-dropdown-menu,
+        .nav-dropdown:focus-within .nav-dropdown-menu {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto;
+        }
+
+        .mobile-drawer-backdrop {
+            transition: opacity 240ms ease;
+        }
+
+        .mobile-drawer-panel {
+            transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .nav-link {
+            color: #475569;
+            transition: color 180ms ease, transform 180ms ease;
+        }
+
+        .nav-link:hover {
+            color: #6A1B9A;
+        }
+
+        .awards-trigger {
+            border-radius: 0.6rem;
+            border: none;
+            background: transparent;
+            padding: 0.3rem 0.2rem;
+        }
+
+        .nav-dropdown-menu {
+            border-radius: 0.55rem;
+            overflow: hidden;
+            box-shadow: 0 8px 16px rgba(106, 27, 154, 0.12);
+        }
+    </style>
     <nav class="relative flex justify-between items-center max-w-[1440px] mx-auto px-4 sm:px-8 py-4">
         <div class="text-2xl font-black tracking-tighter text-purple-900 dark:text-purple-100 font-headline">RR CHOLA HOSPITAL</div>
 
         <div class="hidden md:flex flex-wrap items-center justify-center gap-x-5 gap-y-2 max-w-4xl text-center">
-            <a class="font-headline font-semibold tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-purple-800 hover:scale-105 transition-transform duration-300" href="index.html">Home</a>
-            <a class="font-headline font-semibold tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-purple-800 hover:scale-105 transition-transform duration-300" href="#">About Us</a>
-            <a class="font-headline font-semibold tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-purple-800 hover:scale-105 transition-transform duration-300" href="specialities.html">Specialities</a>
-            <a class="font-headline font-semibold tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-purple-800 hover:scale-105 transition-transform duration-300" href="#">Services</a>
-            <a class="font-headline font-semibold tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-purple-800 hover:scale-105 transition-transform duration-300" href="find-doctors.html">Find Doctors</a>
-            <a class="font-headline font-semibold tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-purple-800 hover:scale-105 transition-transform duration-300" href="#">Infrastructure</a>
-            <a class="font-headline font-semibold tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-purple-800 hover:scale-105 transition-transform duration-300" href="#">Emergency</a>
-            <a class="font-headline font-semibold tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-purple-800 hover:scale-105 transition-transform duration-300" href="#">Appointments</a>
-            <a class="font-headline font-semibold tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-purple-800 hover:scale-105 transition-transform duration-300" href="#contact-us">Contact Us</a>
-            <a class="font-headline font-semibold tracking-tight text-sm text-slate-600 dark:text-slate-400 hover:text-purple-800 hover:scale-105 transition-transform duration-300" href="#">Locations</a>
+            <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="index.html">Home</a>
+            <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="#">About Us</a>
+            <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="specialities.html">Specialities</a>
+            <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="find-doctors.html">Doctors</a>
+            <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="#">Infrastructure</a>
+            <div class="nav-dropdown relative">
+                <button class="awards-trigger inline-flex items-center gap-1 font-headline font-semibold tracking-tight text-sm text-slate-700 hover:text-primary transition-colors" type="button" aria-label="Awards menu">
+                    Awards
+                    <span class="material-symbols-outlined text-base">expand_more</span>
+                </button>
+                <div class="nav-dropdown-menu absolute left-0 top-full mt-1 w-max min-w-0 bg-white opacity-0 translate-y-1 pointer-events-none transition-all duration-200 p-0">
+                    <ul class="m-0 p-0 list-none">
+                        <li>
+                            <a class="block text-left px-4 py-2.5 text-base font-semibold text-slate-700 hover:bg-primary-fixed/30 hover:text-primary" href="#">Gallery</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="#">News &amp; Events</a>
+            <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="#">Careers</a>
+            <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="#contact-us">Contact Us</a>
         </div>
 
-        <button class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-purple-100 bg-white text-purple-900 shadow-sm transition-transform duration-200 active:scale-95" type="button" aria-controls="mobile-menu" aria-expanded="false" data-mobile-menu-button>
+        <button class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/20 bg-white text-primary shadow-sm transition-transform duration-200 active:scale-95" type="button" aria-controls="mobile-menu" aria-expanded="false" data-mobile-menu-button>
             <span class="material-symbols-outlined text-2xl" data-menu-icon>menu</span>
         </button>
     </nav>
 
-    <div class="md:hidden absolute left-0 right-0 top-full px-4 sm:px-8 pointer-events-none">
-        <div id="mobile-menu" class="mobile-menu mt-2 overflow-hidden rounded-3xl border border-purple-100 bg-white/95 shadow-2xl shadow-purple-900/10 backdrop-blur-xl opacity-0 translate-y-[-0.5rem] max-h-0 transition-all duration-300 ease-out">
-            <div class="flex flex-col p-4">
-                <a class="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-900" href="index.html">Home</a>
-                <a class="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-900" href="#">About Us</a>
-                <a class="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-900" href="specialities.html">Specialities</a>
-                <a class="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-900" href="#">Services</a>
-                <a class="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-900" href="find-doctors.html">Find Doctors</a>
-                <a class="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-900" href="#">Infrastructure</a>
-                <a class="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-900" href="#">Emergency</a>
-                <a class="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-900" href="#">Appointments</a>
-                <a class="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-900" href="#contact-us">Contact Us</a>
-                <a class="rounded-2xl px-4 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-purple-50 hover:text-purple-900" href="#">Locations</a>
+    <div id="mobile-menu" class="md:hidden fixed inset-0 z-[70] pointer-events-none" aria-hidden="true">
+        <div data-mobile-menu-backdrop class="mobile-drawer-backdrop absolute inset-0 bg-black/35 opacity-0"></div>
+        <aside data-mobile-menu-panel class="mobile-drawer-panel absolute left-0 top-0 h-full w-[84%] max-w-[320px] -translate-x-full bg-white shadow-2xl border-r border-primary/15">
+            <div class="h-1.5 w-full nav-gradient-bg"></div>
+            <div class="flex items-center justify-between px-4 py-4 border-b border-primary/15">
+                <p class="font-headline font-black text-primary tracking-tight">Navigation</p>
+                <button type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary/20 text-primary" data-mobile-menu-close aria-label="Close menu">
+                    <span class="material-symbols-outlined text-xl">close</span>
+                </button>
             </div>
-        </div>
+            <div class="flex flex-col p-3">
+                <a class="rounded-xl px-3 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="index.html">Home</a>
+                <a class="rounded-xl px-3 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="#">About Us</a>
+                <a class="rounded-xl px-3 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="specialities.html">Specialities</a>
+                <a class="rounded-xl px-3 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="find-doctors.html">Doctors</a>
+                <a class="rounded-xl px-3 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="#">Infrastructure</a>
+                <details class="rounded-xl">
+                    <summary class="cursor-pointer list-none rounded-xl px-3 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary">Awards</summary>
+                    <ul class="mx-2 my-1 list-none rounded-lg bg-primary-fixed/15 p-1">
+                        <li>
+                            <a class="block rounded-md px-3 py-2 text-sm font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="#">Gallery</a>
+                        </li>
+                    </ul>
+                </details>
+                <a class="rounded-xl px-3 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="#">News &amp; Events</a>
+                <a class="rounded-xl px-3 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="#">Careers</a>
+                <a class="rounded-xl px-3 py-3 text-sm font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="#contact-us">Contact Us</a>
+            </div>
+        </aside>
     </div>
 </header>
 

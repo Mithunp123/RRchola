@@ -184,32 +184,28 @@
         .timeline-orb-delay {
             animation-delay: -3s;
         }
-        .testimonial-marquee {
-            overflow-x: auto;
-            overflow-y: hidden;
-            scroll-behavior: smooth;
-            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
-            -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        .patient-carousel-viewport {
+            overflow: hidden;
         }
-        .testimonial-marquee::-webkit-scrollbar {
-            display: none;
-        }
-        .testimonial-track {
+        .patient-carousel-track {
             display: flex;
-            gap: 1.5rem;
+            gap: 1.25rem;
             width: max-content;
             will-change: transform;
+            transform: translate3d(0, 0, 0);
+            transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
         }
-        .testimonial-group {
-            display: flex;
-            gap: 1.5rem;
-        }
-        .testimonial-group[aria-hidden="true"] {
-            display: none;
-        }
-        .testimonial-card {
+        .patient-card {
             width: min(86vw, 24rem);
             flex: 0 0 auto;
+            border-radius: 1.8rem;
+            border: 1px solid rgba(106, 27, 154, 0.1);
+            background: rgba(255, 255, 255, 0.86);
+            padding: 2rem;
+            box-shadow: 0 14px 34px rgba(50, 32, 70, 0.08);
+        }
+        .patient-card--accent {
+            background: rgba(238, 224, 248, 0.92);
         }
         .scroll-reveal-text {
             opacity: 0;
@@ -230,7 +226,7 @@
                 transition: none;
                 animation: none;
             }
-            .testimonial-track {
+            .patient-carousel-track {
                 animation: none;
             }
             .scroll-reveal-text {
@@ -487,11 +483,11 @@
 <h2 class="text-4xl font-headline font-black text-primary mb-4">Our Medical Board</h2>
 <p class="text-on-surface-variant">Consult with our leading specialists in various departments.</p>
 </div>
-<button class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all">View All Doctors <span class="material-symbols-outlined">arrow_forward</span></button>
+<a class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all" href="find-doctors.html">View All Doctors <span class="material-symbols-outlined">arrow_forward</span></a>
 </div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center">
 <!-- Doctor Card -->
-<div class="bg-white rounded-3xl overflow-hidden shadow-sm group">
+<div class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
 <div class="relative overflow-hidden aspect-[4/5]">
 <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="portrait of a confident professional male doctor in a white lab coat with a stethoscope" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBPQE6N5vdu24R9p2gtxpbH6s1X8jb6C1i3Loi3C4ooRguRI54ZPZgVqL-wRSIKzoQIQIQN-Fg-HhYanKDQAHYYQKdY3cq5NKDXHFnn5Wil6bmShKPS_fDIZj963K3-pSKW-Bo_uDoW4vT9TJmO7F9IGR73t59oe9u-LVAT-bleM6LYufM4jpXgsrdoiDGhoyClRVhU3hrO-ezeiQftvGExRoqkMfh5Ml4ICLk1Xm_nw1J76PBudoxkOCAqwN73bDPiNqdWbNwi0Dg">
 <div class="absolute bottom-4 left-4 right-4 flex justify-center gap-2 translate-y-20 group-hover:translate-y-0 transition-transform duration-300">
@@ -503,14 +499,14 @@
 </div>
 </div>
 </div>
-<div class="p-6 text-center">
+<div class="p-5 text-center">
 <h4 class="text-xl font-bold text-on-surface">Dr. Alexander Ray</h4>
 <p class="text-primary text-sm font-semibold mb-4">Senior Cardiologist</p>
-<a class="block w-full py-3 text-center bg-surface-container-low rounded-xl font-bold text-primary group-hover:bg-primary group-hover:text-white transition-colors" href="doctor-profile.html">View Profile</a>
+<a class="block w-full py-2.5 text-center bg-surface-container-low rounded-xl font-bold text-primary group-hover:bg-primary group-hover:text-white transition-colors" href="doctor-profile.html">View Profile</a>
 </div>
 </div>
 <!-- Repeat Doctor Card -->
-<div class="bg-white rounded-3xl overflow-hidden shadow-sm group">
+<div class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
 <div class="relative overflow-hidden aspect-[4/5]">
 <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="portrait of a professional female medical specialist in a clinic setting, friendly and authoritative" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPVRcVtxBJfVMKlOeWWG78B0ode1Wi3ouVFcDNOVUt6A9xM-hPEtzs8tMx6DcL-SWOux3tfqOh4MxR6qKvmb4iG0IxH08C9lSKFUSHq5wTGKPQFlkU2TI59u1jNQRPq8hzcjTH2ZQHSIi7QkuZUnAqTLbH8G7vF0oAbdRp5f9uQVX2AiuHq4ClN89VTtocsKv2pPHXGNyxcKEzas-3c-Ww5w80SnuZ2rcOpDfNeLBpHoJfNDI14lLzv2oqbf1uBsrtpuYIa4WZiTXC">
 <div class="absolute bottom-4 left-4 right-4 flex justify-center gap-2 translate-y-20 group-hover:translate-y-0 transition-transform duration-300">
@@ -522,13 +518,13 @@
 </div>
 </div>
 </div>
-<div class="p-6 text-center">
+<div class="p-5 text-center">
 <h4 class="text-xl font-bold text-on-surface">Dr. Sarah Miller</h4>
 <p class="text-primary text-sm font-semibold mb-4">Neurosurgeon</p>
-<a class="block w-full py-3 text-center bg-surface-container-low rounded-xl font-bold text-primary group-hover:bg-primary group-hover:text-white transition-colors" href="doctor-profile.html">View Profile</a>
+<a class="block w-full py-2.5 text-center bg-surface-container-low rounded-xl font-bold text-primary group-hover:bg-primary group-hover:text-white transition-colors" href="doctor-profile.html">View Profile</a>
 </div>
 </div>
-<div class="bg-white rounded-3xl overflow-hidden shadow-sm group">
+<div class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
 <div class="relative overflow-hidden aspect-[4/5]">
 <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="male surgeon in scrubs looking professional and experienced, medical office background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF7i_jQH_OxlApIzo5253Cp87t8sE3Fcc5_BzPvWNYNX50_ALRX1iibCk-uUfoAuJGd45zPzesEUdoln_wE7met9Q4fbGqaYkPHYqiBBqnYnDpfPhuMJeN3qPEN1jLm8opNIZQQtkyXrQUfQXQsal5dER0oDasT2Z3P3pq9dSRXOGVPmnGPWyTrofdb1o66SX-WiAdVpva9hRMtxigKRQYoXAdBoL08fHiofVS843fyuowQzK3kEmm-bLJUbuUf-qvTL5OopnKh_Yl">
 <div class="absolute bottom-4 left-4 right-4 flex justify-center gap-2 translate-y-20 group-hover:translate-y-0 transition-transform duration-300">
@@ -540,13 +536,13 @@
 </div>
 </div>
 </div>
-<div class="p-6 text-center">
+<div class="p-5 text-center">
 <h4 class="text-xl font-bold text-on-surface">Dr. James Wilson</h4>
 <p class="text-primary text-sm font-semibold mb-4">Orthopedic Head</p>
-<a class="block w-full py-3 text-center bg-surface-container-low rounded-xl font-bold text-primary group-hover:bg-primary group-hover:text-white transition-colors" href="doctor-profile.html">View Profile</a>
+<a class="block w-full py-2.5 text-center bg-surface-container-low rounded-xl font-bold text-primary group-hover:bg-primary group-hover:text-white transition-colors" href="doctor-profile.html">View Profile</a>
 </div>
 </div>
-<div class="bg-white rounded-3xl overflow-hidden shadow-sm group">
+<div class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
 <div class="relative overflow-hidden aspect-[4/5]">
 <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" data-alt="senior female physician in a modern medical setting, looking empathetic and knowledgeable" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4FaUDkKwPaAc5TAVMYKGYYc45vl7QOgigqVp1WXgkGAxglzRJ7laeYn4LDIg4iPuUwM2pz3CZQDyvxVgfb8Pfs1wSk8C_XHNmOEz3JSr44D98fipVRmY4vbJnNvydQjUIiLmI0icGQYdN48z1qjVoEBCbFYKVZTO6FxyqVvT9Vc8WgNsY1uGlyhsLLIdp6AUmWLMxnKVxIqSNYmLx1GLMF6GburhYyVMZe5RWz0tpJarTtrFgdQR4sOzvL59L7KXrYbMe04IDqVe4">
 <div class="absolute bottom-4 left-4 right-4 flex justify-center gap-2 translate-y-20 group-hover:translate-y-0 transition-transform duration-300">
@@ -558,10 +554,10 @@
 </div>
 </div>
 </div>
-<div class="p-6 text-center">
+<div class="p-5 text-center">
 <h4 class="text-xl font-bold text-on-surface">Dr. Elena Kostic</h4>
 <p class="text-primary text-sm font-semibold mb-4">Oncology Lead</p>
-<a class="block w-full py-3 text-center bg-surface-container-low rounded-xl font-bold text-primary group-hover:bg-primary group-hover:text-white transition-colors" href="doctor-profile.html">View Profile</a>
+<a class="block w-full py-2.5 text-center bg-surface-container-low rounded-xl font-bold text-primary group-hover:bg-primary group-hover:text-white transition-colors" href="doctor-profile.html">View Profile</a>
 </div>
 </div>
 </div>
@@ -665,227 +661,89 @@
 </div>
 </section>
 <!-- Testimonials -->
-<section class="py-24 px-8 bg-gradient-to-b from-primary-fixed/10 via-surface to-primary-fixed/20">
+<section class="py-24 px-6 sm:px-8 bg-gradient-to-b from-primary-fixed/10 via-surface to-primary-fixed/20">
 <div class="max-w-7xl mx-auto">
-<div class="mb-10 flex items-center justify-center gap-4">
-<button class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white" aria-label="Previous patient experience" data-testimonial-prev type="button">
+<div class="mb-10 flex items-center justify-center gap-3 sm:gap-5">
+<button class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white" aria-label="Move patient cards left" data-patient-prev type="button">
 <span class="material-symbols-outlined">chevron_left</span>
 </button>
 <h2 class="text-4xl font-headline font-black text-primary text-center">Patient Experiences</h2>
-<button class="inline-flex h-11 w-11 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white" aria-label="Next patient experience" data-testimonial-next type="button">
+<button class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white" aria-label="Move patient cards right" data-patient-next type="button">
 <span class="material-symbols-outlined">chevron_right</span>
 </button>
 </div>
-<div class="testimonial-marquee">
-<div class="testimonial-track">
-<div class="testimonial-group">
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<div class="patient-carousel-viewport" data-patient-viewport>
+<div class="patient-carousel-track" data-patient-track>
+<article class="patient-card">
+<div class="flex text-amber-400 mb-5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The level of care I received at RR CHOLA was unlike any other. The technology is futuristic, but the staff treats you with genuine human warmth."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">JD</div>
-<div>
-<h5 class="font-bold">Jonathan Doe</h5>
-<p class="text-xs text-on-surface-variant">Cardiac Patient</p>
-</div>
-</div>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">JD</div><div><h5 class="font-bold">Jonathan Doe</h5><p class="text-xs text-on-surface-variant">Cardiac Patient</p></div></div>
 </article>
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative bg-primary-fixed/30 transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<article class="patient-card patient-card--accent">
+<div class="flex text-amber-400 mb-5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <p class="text-on-surface-variant italic mb-8 leading-relaxed">"They literally saved my life. The emergency response was incredibly fast and the neurosurgeons are clearly the best in the country."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">MS</div>
-<div>
-<h5 class="font-bold">Mary Smith</h5>
-<p class="text-xs text-on-surface-variant">Neuro Surgery</p>
-</div>
-</div>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">MS</div><div><h5 class="font-bold">Mary Smith</h5><p class="text-xs text-on-surface-variant">Neuro Surgery</p></div></div>
 </article>
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<article class="patient-card">
+<div class="flex text-amber-400 mb-5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The facility is more like a 5-star hotel than a hospital. My recovery was so much faster because of the peaceful environment."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">RK</div>
-<div>
-<h5 class="font-bold">Robert King</h5>
-<p class="text-xs text-on-surface-variant">Joint Replacement</p>
-</div>
-</div>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">RK</div><div><h5 class="font-bold">Robert King</h5><p class="text-xs text-on-surface-variant">Joint Replacement</p></div></div>
 </article>
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<article class="patient-card patient-card--accent">
+<div class="flex text-amber-400 mb-5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <p class="text-on-surface-variant italic mb-8 leading-relaxed">"From admission to discharge, everything was seamless. Nurses kept me informed and calm at every stage."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">AK</div>
-<div>
-<h5 class="font-bold">Anita Krishnan</h5>
-<p class="text-xs text-on-surface-variant">Maternity Care</p>
-</div>
-</div>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">AK</div><div><h5 class="font-bold">Anita Krishnan</h5><p class="text-xs text-on-surface-variant">Maternity Care</p></div></div>
 </article>
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative bg-primary-fixed/30 transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<article class="patient-card">
+<div class="flex text-amber-400 mb-5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The rehab team pushed me with care and patience. I returned to normal activity much faster than expected."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">VP</div>
-<div>
-<h5 class="font-bold">Vikram Patel</h5>
-<p class="text-xs text-on-surface-variant">Sports Injury</p>
-</div>
-</div>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">VP</div><div><h5 class="font-bold">Vikram Patel</h5><p class="text-xs text-on-surface-variant">Sports Injury</p></div></div>
 </article>
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<article class="patient-card patient-card--accent">
+<div class="flex text-amber-400 mb-5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <p class="text-on-surface-variant italic mb-8 leading-relaxed">"Consultants explained every option clearly. I felt respected, heard, and genuinely supported throughout treatment."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">SN</div>
-<div>
-<h5 class="font-bold">Sofia Nair</h5>
-<p class="text-xs text-on-surface-variant">Oncology Care</p>
-</div>
-</div>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">SN</div><div><h5 class="font-bold">Sofia Nair</h5><p class="text-xs text-on-surface-variant">Oncology Care</p></div></div>
 </article>
+<article class="patient-card">
+<div class="flex text-amber-400 mb-5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<div class="testimonial-group" aria-hidden="true">
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="text-on-surface-variant italic mb-8 leading-relaxed">"The level of care I received at RR CHOLA was unlike any other. The technology is futuristic, but the staff treats you with genuine human warmth."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">JD</div>
-<div>
-<h5 class="font-bold">Jonathan Doe</h5>
-<p class="text-xs text-on-surface-variant">Cardiac Patient</p>
-</div>
-</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"My discharge planning was clear and organized. Follow-up calls made recovery at home very easy."</p>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">RG</div><div><h5 class="font-bold">Rhea George</h5><p class="text-xs text-on-surface-variant">Post-Operative Care</p></div></div>
 </article>
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative bg-primary-fixed/30 transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<article class="patient-card patient-card--accent">
+<div class="flex text-amber-400 mb-5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="text-on-surface-variant italic mb-8 leading-relaxed">"They literally saved my life. The emergency response was incredibly fast and the neurosurgeons are clearly the best in the country."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">MS</div>
-<div>
-<h5 class="font-bold">Mary Smith</h5>
-<p class="text-xs text-on-surface-variant">Neuro Surgery</p>
-</div>
-</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"From diagnostics to physiotherapy, every team coordinated perfectly. I never felt lost during treatment."</p>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">AM</div><div><h5 class="font-bold">Arun Menon</h5><p class="text-xs text-on-surface-variant">Spine Care</p></div></div>
 </article>
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<article class="patient-card">
+<div class="flex text-amber-400 mb-5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="text-on-surface-variant italic mb-8 leading-relaxed">"The facility is more like a 5-star hotel than a hospital. My recovery was so much faster because of the peaceful environment."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">RK</div>
-<div>
-<h5 class="font-bold">Robert King</h5>
-<p class="text-xs text-on-surface-variant">Joint Replacement</p>
-</div>
-</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"The pediatric team handled our child with immense patience. We felt safe, informed, and reassured every day."</p>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">LP</div><div><h5 class="font-bold">Lina Prasad</h5><p class="text-xs text-on-surface-variant">Pediatric Parent</p></div></div>
 </article>
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<article class="patient-card patient-card--accent">
+<div class="flex text-amber-400 mb-5">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
-<p class="text-on-surface-variant italic mb-8 leading-relaxed">"From admission to discharge, everything was seamless. Nurses kept me informed and calm at every stage."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">AK</div>
-<div>
-<h5 class="font-bold">Anita Krishnan</h5>
-<p class="text-xs text-on-surface-variant">Maternity Care</p>
-</div>
-</div>
+<p class="text-on-surface-variant italic mb-8 leading-relaxed">"The nurses were always one step ahead, and pain management was exceptional. I could focus only on healing."</p>
+<div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">DK</div><div><h5 class="font-bold">Deepak Kumar</h5><p class="text-xs text-on-surface-variant">General Surgery</p></div></div>
 </article>
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative bg-primary-fixed/30 transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="text-on-surface-variant italic mb-8 leading-relaxed">"The rehab team pushed me with care and patience. I returned to normal activity much faster than expected."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">VP</div>
-<div>
-<h5 class="font-bold">Vikram Patel</h5>
-<p class="text-xs text-on-surface-variant">Sports Injury</p>
-</div>
-</div>
-</article>
-<article class="testimonial-card glass-panel p-10 rounded-[2rem] shadow-sm relative transition-all hover:scale-105">
-<div class="flex text-amber-400 mb-6">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-</div>
-<p class="text-on-surface-variant italic mb-8 leading-relaxed">"Consultants explained every option clearly. I felt respected, heard, and genuinely supported throughout treatment."</p>
-<div class="flex items-center gap-4">
-<div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">SN</div>
-<div>
-<h5 class="font-bold">Sofia Nair</h5>
-<p class="text-xs text-on-surface-variant">Oncology Care</p>
-</div>
-</div>
-</article>
-</div>
 </div>
 </div>
 </div>
@@ -1021,11 +879,17 @@
     var timelineProgressLine = document.querySelector('[data-timeline-progress-line]');
     var timelineProgressLineMobile = document.querySelector('[data-timeline-progress-line-mobile]');
     var slides = Array.prototype.slice.call(document.querySelectorAll('[data-hero-slide]'));
-    var testimonialMarquee = document.querySelector('.testimonial-marquee');
-    var testimonialPrevButton = document.querySelector('[data-testimonial-prev]');
-    var testimonialNextButton = document.querySelector('[data-testimonial-next]');
+    var patientViewport = document.querySelector('[data-patient-viewport]');
+    var patientTrack = document.querySelector('[data-patient-track]');
+    var patientPrevButton = document.querySelector('[data-patient-prev]');
+    var patientNextButton = document.querySelector('[data-patient-next]');
     var prevSlideButton = document.querySelector('[data-slide-prev]');
     var nextSlideButton = document.querySelector('[data-slide-next]');
+    var patientAutoTimer = null;
+    var patientTransitionMs = 520;
+    var patientCurrentIndex = 1;
+    var patientAnimating = false;
+    var patientLoopCount = 0;
 
     var currentSlide = 0;
     var timerId = null;
@@ -1129,31 +993,149 @@
         });
     }
 
-    function scrollTestimonials(direction) {
-        if (!testimonialMarquee) {
+    function stopPatientAutoplay() {
+        if (patientAutoTimer) {
+            clearInterval(patientAutoTimer);
+            patientAutoTimer = null;
+        }
+    }
+
+    function getPatientStep() {
+        if (!patientTrack || !patientTrack.children.length) {
+            return 0;
+        }
+
+        var firstCard = patientTrack.children[0];
+        var cardWidth = firstCard.getBoundingClientRect().width;
+        var trackStyles = window.getComputedStyle(patientTrack);
+        var gap = parseFloat(trackStyles.columnGap || trackStyles.gap || '20') || 20;
+        return cardWidth + gap;
+    }
+
+    function renderPatientIndex(animated) {
+        if (!patientTrack || !patientLoopCount) {
             return;
         }
 
-        var firstCard = testimonialMarquee.querySelector('.testimonial-card');
-        var step = firstCard ? firstCard.getBoundingClientRect().width + 24 : 360;
+        var step = getPatientStep();
+        if (!step) {
+            return;
+        }
 
-        testimonialMarquee.scrollBy({
-            left: direction * step,
-            behavior: 'smooth'
-        });
+        patientTrack.style.transition = animated ? 'transform ' + patientTransitionMs + 'ms cubic-bezier(0.22, 1, 0.36, 1)' : 'none';
+        patientTrack.style.transform = 'translate3d(' + (-patientCurrentIndex * step) + 'px, 0, 0)';
     }
 
-    if (testimonialPrevButton) {
-        testimonialPrevButton.addEventListener('click', function () {
-            scrollTestimonials(-1);
-        });
+    function movePatientCarousel(direction) {
+        if (!patientTrack || !patientLoopCount || patientAnimating) {
+            return;
+        }
+
+        patientAnimating = true;
+        patientCurrentIndex += direction;
+        renderPatientIndex(true);
+
+        window.setTimeout(function () {
+            if (patientAnimating) {
+                patientAnimating = false;
+            }
+        }, patientTransitionMs + 80);
     }
 
-    if (testimonialNextButton) {
-        testimonialNextButton.addEventListener('click', function () {
-            scrollTestimonials(1);
-        });
+    function handlePatientWrap() {
+        if (!patientLoopCount || !patientTrack) {
+            patientAnimating = false;
+            return;
+        }
+
+        if (patientCurrentIndex === 0) {
+            patientCurrentIndex = patientLoopCount;
+            renderPatientIndex(false);
+        } else if (patientCurrentIndex === patientLoopCount + 1) {
+            patientCurrentIndex = 1;
+            renderPatientIndex(false);
+        }
+
+        patientAnimating = false;
     }
+
+    function startPatientAutoplay() {
+        if (!patientTrack || patientLoopCount < 2) {
+            return;
+        }
+
+        stopPatientAutoplay();
+        patientAutoTimer = setInterval(function () {
+            movePatientCarousel(1);
+        }, 2900);
+    }
+
+    function initPatientCarousel() {
+        if (!patientTrack) {
+            return;
+        }
+
+        var sourceCards = Array.prototype.slice.call(patientTrack.children);
+        patientLoopCount = sourceCards.length;
+
+        if (patientLoopCount < 2) {
+            return;
+        }
+
+        var firstClone = sourceCards[0].cloneNode(true);
+        var lastClone = sourceCards[patientLoopCount - 1].cloneNode(true);
+        firstClone.setAttribute('aria-hidden', 'true');
+        lastClone.setAttribute('aria-hidden', 'true');
+
+        patientTrack.insertBefore(lastClone, sourceCards[0]);
+        patientTrack.appendChild(firstClone);
+
+        patientCurrentIndex = 1;
+        renderPatientIndex(false);
+
+        patientTrack.addEventListener('transitionend', function (event) {
+            if (event.propertyName === 'transform') {
+                handlePatientWrap();
+            }
+        });
+
+        if (patientPrevButton) {
+            patientPrevButton.addEventListener('click', function () {
+                stopPatientAutoplay();
+                movePatientCarousel(-1);
+                startPatientAutoplay();
+            });
+        }
+
+        if (patientNextButton) {
+            patientNextButton.addEventListener('click', function () {
+                stopPatientAutoplay();
+                movePatientCarousel(1);
+                startPatientAutoplay();
+            });
+        }
+
+        if (patientViewport) {
+            patientViewport.addEventListener('mouseenter', stopPatientAutoplay);
+            patientViewport.addEventListener('mouseleave', startPatientAutoplay);
+        }
+
+        window.addEventListener('resize', function () {
+            renderPatientIndex(false);
+        });
+
+        document.addEventListener('visibilitychange', function () {
+            if (document.hidden) {
+                stopPatientAutoplay();
+            } else {
+                startPatientAutoplay();
+            }
+        });
+
+        startPatientAutoplay();
+    }
+
+    initPatientCarousel();
 
     function setTimelineStepState() {
         if (!timelineSteps.length) {

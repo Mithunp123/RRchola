@@ -57,25 +57,28 @@
         var menuButton = document.querySelector('[data-mobile-menu-button]');
         var menuIcon = document.querySelector('[data-menu-icon]');
         var mobileMenu = document.getElementById('mobile-menu');
+        var mobileBackdrop = document.querySelector('[data-mobile-menu-backdrop]');
+        var mobilePanel = document.querySelector('[data-mobile-menu-panel]');
+        var closeButton = document.querySelector('[data-mobile-menu-close]');
 
-        if (!menuButton || !menuIcon || !mobileMenu) {
+        if (!menuButton || !menuIcon || !mobileMenu || !mobileBackdrop || !mobilePanel) {
             return;
         }
 
         function openMenu() {
             mobileMenu.classList.remove('pointer-events-none');
-            mobileMenu.style.maxHeight = mobileMenu.scrollHeight + 'px';
-            mobileMenu.style.opacity = '1';
-            mobileMenu.style.transform = 'translateY(0)';
+            mobileMenu.setAttribute('aria-hidden', 'false');
+            mobileBackdrop.style.opacity = '1';
+            mobilePanel.style.transform = 'translateX(0)';
             menuButton.setAttribute('aria-expanded', 'true');
             menuIcon.textContent = 'close';
         }
 
         function closeMenu() {
-            mobileMenu.style.maxHeight = '0px';
-            mobileMenu.style.opacity = '0';
-            mobileMenu.style.transform = 'translateY(-0.5rem)';
+            mobileBackdrop.style.opacity = '0';
+            mobilePanel.style.transform = 'translateX(-100%)';
             mobileMenu.classList.add('pointer-events-none');
+            mobileMenu.setAttribute('aria-hidden', 'true');
             menuButton.setAttribute('aria-expanded', 'false');
             menuIcon.textContent = 'menu';
         }
@@ -93,10 +96,20 @@
             toggleMenu();
         });
 
+        if (closeButton) {
+            closeButton.addEventListener('click', function () {
+                closeMenu();
+            });
+        }
+
         mobileMenu.addEventListener('click', function (event) {
             if (event.target && event.target.tagName === 'A') {
                 closeMenu();
             }
+        });
+
+        mobileBackdrop.addEventListener('click', function () {
+            closeMenu();
         });
 
         document.addEventListener('click', function (event) {
@@ -108,11 +121,12 @@
         window.addEventListener('resize', function () {
             if (window.innerWidth >= 768) {
                 closeMenu();
-                mobileMenu.style.maxHeight = '';
-                mobileMenu.style.opacity = '';
-                mobileMenu.style.transform = '';
+                mobileBackdrop.style.opacity = '';
+                mobilePanel.style.transform = '';
             }
         });
+
+        closeMenu();
     }
 
     Promise.all([

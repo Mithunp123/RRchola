@@ -7,7 +7,7 @@
 
 .bg-signature-gradient,
 .signature-gradient {
-    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 62%, var(--brand-tertiary) 100%) !important;
+    background: linear-gradient(135deg, #6A1B9A 0%, #9C27B0 58%, #C770DC 100%) !important;
 }
 
 .speciality-card:hover {
@@ -21,7 +21,7 @@
 
 .hover\:bg-primary:hover,
 .group:hover .group-hover\:bg-primary {
-    background-image: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 55%, var(--brand-tertiary) 100%) !important;
+    background-image: linear-gradient(135deg, #6A1B9A 0%, #9C27B0 58%, #C770DC 100%) !important;
     background-color: transparent !important;
 }
 
