@@ -97,6 +97,41 @@
             min-width: max-content;
             animation: run-left 18s linear infinite;
         }
+        .insurance-marquee {
+            overflow: hidden;
+            mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+        }
+        .insurance-track {
+            display: flex;
+            gap: 1rem;
+            width: max-content;
+            animation: insurance-scroll 24s linear infinite;
+        }
+        .insurance-group {
+            display: flex;
+            gap: 2.25rem;
+        }
+        .insurance-brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.65rem;
+            white-space: nowrap;
+        }
+        .insurance-logo {
+            width: 1.2rem;
+            height: 1.2rem;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+        .insurance-name {
+            font-size: 0.8rem;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: #3d3450;
+            font-weight: 700;
+            white-space: nowrap;
+        }
         .speciality-card {
             transition: transform 200ms ease, box-shadow 200ms ease, background 220ms ease;
         }
@@ -213,6 +248,14 @@
             }
             to {
                 transform: translateX(calc(-50% - 0.75rem));
+            }
+        }
+        @keyframes insurance-scroll {
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(calc(-50% - 0.5rem));
             }
         }
         @keyframes run-left {
@@ -843,12 +886,29 @@
 <section class="py-20 px-8 bg-surface-container-high/30">
 <div class="max-w-7xl mx-auto text-center">
 <h3 class="text-sm font-bold text-on-surface-variant/60 uppercase tracking-[0.3em] mb-12">Our Trusted Insurance Partners</h3>
-<div class="flex flex-wrap justify-center items-center gap-16 opacity-50 grayscale hover:grayscale-0 transition-all">
-<img class="h-8" data-alt="logo of a major health insurance company" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQV28VIbbzPa8HuWCSx7ZGmM0AWWzSY4nM1BbsDHhHojGk9-LsgTxKjSp1g24JZs7BrEyZeQBNLA9r6V839Ye-U1_okcxKirDYToahQVW4H5v8OaqaVDIXHjpnhbzGuiiBdWqMSaE5AjWSFxW3B4Wo11KjqG1CygnWnv8L-GRqFalduV4I8phzgxW3dqGAf8YY4LA6kUixOAc8q1axuSZB-sBqft-IDXVaJmcqjaaZVGA3aFQPDIlpls9B-spDdYh-jfhW_iqhU2ea">
-<img class="h-8" data-alt="logo of a global healthcare partner" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBHQIys4cImy4s2SIwysTZ2c_kV-MQU4nyKifuARU9RksR9jslGbTCQJY81zNgSSjE7sv2F24eyLj-CwUB2WwmHsVQESK5jOZzZb8gzx1bBPqzREg9VgG2NB2_8iaXvwytMdZmsTy2UCERCARByTaact6UH6IDcJtj7UcqiGVv1tFA0H7QbmG8-zsxaRq6xRAF3evUCNQUSFfVhDTHGFj1DgK_PMfQTR7cIbj7y6taCSUGgx9oJnBPG5MBOHmWkwh0gqB7sv0ibLgzA">
-<img class="h-8" data-alt="logo of a medical accreditation body" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAleqNyd0xtU-wOJLWPiVj8QvixNPW8pJoomnkzgUUKwbEMslLzKF_GjFm5Wpe6Jau2qKNIZritKIk63x-Ck2TUDpeIu-QytQajnZyOG_2WuAestDb0DQxZvaIitFsQpv4hRBbxHPij4LJV9Ou0Z-nD3Lpb9nqxDYsAVGEw3eEXOUA4aWVebuPKpr0UAHY64RgW4zd0W5BATkYI07H1VEfrVqYBBTxJOjmVS_xvLrabv1reBk1dR6Udkn8bMrW4-FwdmtpQtqXtolV-">
-<img class="h-8" data-alt="logo of a corporate health service" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDda5AZ2jHwBF8mBP3294SzH2JDLmbFiVx8LsMbC7FbRTUwvbBXOAC9VwDuQCMilJcQSC2BNp4givPQF2EvhPVyP91MZvtpXvFnt8m5hskWDaW-4ccaIc-C0G_3GmvnrlkxpNFwgN3ftNJbAOQXqyYc29eCxRbzgqQPTuoRkbpJyUQd3v4g7yB1eDnGU88x1WCOLaZ_kYkHE9x8MgLhyPDxwbWWKHNxFEfrZOUXYVi-5_iPg0izjar9vHa9_gfS9DFRSwgTa9R2kR-8">
-<img class="h-8" data-alt="logo of a life insurance provider" src="https://lh3.googleusercontent.com/aida-public/AB6AXuArlDb2dJ6RDCPRPjW2xdAAx_GnRfOXo3yqw5Gcm5QiFBvavtfI8aERlEqLKLLsis7IsCvooslGf2QHPVjJL5vMDFOYDTxECozc8Uzu7xD7V_hS3yYwKL3rqiFKwesfJap84ruDFjgeaCCyFaDNEfaMG-j03H34Qzw8eF8hmXIJHKnH5bxCYfn20raxEPJd9EaqSXSjTdrSEG6-IASukX4QM9f65Ql6Mb94XTsHHW85TcAnQMCrTZ63sWxGD68LeEo4Ju5bu_eRru2U">
+<div class="insurance-marquee">
+<div class="insurance-track">
+<div class="insurance-group">
+<span class="insurance-brand"><img class="insurance-logo" alt="Star Health logo" src="https://www.google.com/s2/favicons?domain=starhealth.in&sz=64"><span class="insurance-name">Star Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Niva Bupa logo" src="https://www.google.com/s2/favicons?domain=nivabupa.com&sz=64"><span class="insurance-name">Niva Bupa</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="HDFC ERGO logo" src="https://www.google.com/s2/favicons?domain=hdfcergo.com&sz=64"><span class="insurance-name">HDFC ERGO</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="ICICI Lombard logo" src="https://www.google.com/s2/favicons?domain=icicilombard.com&sz=64"><span class="insurance-name">ICICI Lombard</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Care Health logo" src="https://www.google.com/s2/favicons?domain=careinsurance.com&sz=64"><span class="insurance-name">Care Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Aditya Birla Health logo" src="https://www.google.com/s2/favicons?domain=adityabirlacapital.com&sz=64"><span class="insurance-name">Aditya Birla Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Bajaj Allianz logo" src="https://www.google.com/s2/favicons?domain=bajajallianz.com&sz=64"><span class="insurance-name">Bajaj Allianz</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Tata AIG logo" src="https://www.google.com/s2/favicons?domain=tataaig.com&sz=64"><span class="insurance-name">Tata AIG</span></span>
+</div>
+<div class="insurance-group" aria-hidden="true">
+<span class="insurance-brand"><img class="insurance-logo" alt="Star Health logo" src="https://www.google.com/s2/favicons?domain=starhealth.in&sz=64"><span class="insurance-name">Star Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Niva Bupa logo" src="https://www.google.com/s2/favicons?domain=nivabupa.com&sz=64"><span class="insurance-name">Niva Bupa</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="HDFC ERGO logo" src="https://www.google.com/s2/favicons?domain=hdfcergo.com&sz=64"><span class="insurance-name">HDFC ERGO</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="ICICI Lombard logo" src="https://www.google.com/s2/favicons?domain=icicilombard.com&sz=64"><span class="insurance-name">ICICI Lombard</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Care Health logo" src="https://www.google.com/s2/favicons?domain=careinsurance.com&sz=64"><span class="insurance-name">Care Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Aditya Birla Health logo" src="https://www.google.com/s2/favicons?domain=adityabirlacapital.com&sz=64"><span class="insurance-name">Aditya Birla Health</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Bajaj Allianz logo" src="https://www.google.com/s2/favicons?domain=bajajallianz.com&sz=64"><span class="insurance-name">Bajaj Allianz</span></span>
+<span class="insurance-brand"><img class="insurance-logo" alt="Tata AIG logo" src="https://www.google.com/s2/favicons?domain=tataaig.com&sz=64"><span class="insurance-name">Tata AIG</span></span>
+</div>
+</div>
 </div>
 </div>
 </section>
