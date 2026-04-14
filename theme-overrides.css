@@ -25,6 +25,23 @@
     background-color: transparent !important;
 }
 
+button.hover\:bg-primary:hover,
+a.hover\:bg-primary:hover,
+.group:hover button.group-hover\:bg-primary,
+.group:hover a.group-hover\:bg-primary {
+    background-image: none !important;
+    background-color: color-mix(in srgb, var(--brand-primary) 18%, white) !important;
+    color: var(--brand-primary) !important;
+    border-color: color-mix(in srgb, var(--brand-primary) 28%, white) !important;
+}
+
+.group:hover button.group-hover\:text-white,
+.group:hover a.group-hover\:text-white,
+button.hover\:text-white:hover,
+a.hover\:text-white:hover {
+    color: var(--brand-primary) !important;
+}
+
 .text-primary,
 .text-purple-900,
 .text-purple-800,
