@@ -1,0 +1,82 @@
+:root {
+    --brand-primary: #6A1B9A;
+    --brand-secondary: #8C27B0;
+    --brand-tertiary: #4A148C;
+    --brand-soft: #F1E3F8;
+}
+
+.bg-signature-gradient,
+.signature-gradient {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 62%, var(--brand-tertiary) 100%) !important;
+}
+
+.speciality-card:hover {
+    background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%) !important;
+}
+
+.bg-primary,
+.group:hover .group-hover\:bg-primary {
+    background-color: var(--brand-primary) !important;
+}
+
+.text-primary,
+.text-purple-900,
+.text-purple-800,
+.text-purple-600,
+.hover\:text-purple-800:hover,
+.hover\:text-purple-600:hover {
+    color: var(--brand-primary) !important;
+}
+
+.text-secondary,
+.text-purple-300,
+.hover\:text-purple-300:hover {
+    color: var(--brand-secondary) !important;
+}
+
+.border-primary,
+.border-purple-600 {
+    border-color: var(--brand-primary) !important;
+}
+
+.border-purple-100,
+.border-purple-100\/50,
+.divide-purple-100\/30 > :not([hidden]) ~ :not([hidden]) {
+    border-color: color-mix(in srgb, var(--brand-primary) 22%, white) !important;
+}
+
+.bg-purple-200,
+.bg-purple-200\/50,
+.bg-primary-fixed\/30,
+.bg-primary-fixed\/20,
+.hover\:bg-purple-50:hover {
+    background-color: color-mix(in srgb, var(--brand-primary) 14%, white) !important;
+}
+
+.from-primary {
+    --tw-gradient-from: var(--brand-primary) var(--tw-gradient-from-position) !important;
+    --tw-gradient-to: color-mix(in srgb, var(--brand-primary) 0%, transparent) var(--tw-gradient-to-position) !important;
+    --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+
+.to-secondary {
+    --tw-gradient-to: var(--brand-secondary) var(--tw-gradient-to-position) !important;
+}
+
+.shadow-purple-900\/20,
+.shadow-purple-900\/15,
+.shadow-purple-900\/12,
+.shadow-purple-900\/10,
+.shadow-purple-900\/5 {
+    --tw-shadow-color: color-mix(in srgb, var(--brand-primary) 20%, black) !important;
+}
+
+.timeline-step.is-active h4,
+.timeline-step.is-active p {
+    color: var(--brand-primary) !important;
+}
+
+.dark .text-purple-100,
+.dark .text-purple-200 {
+    color: #efe2f7 !important;
+}
