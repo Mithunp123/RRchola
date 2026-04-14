@@ -1292,9 +1292,9 @@
 
     function initScrollReveal() {
         var revealTargets = Array.prototype.slice.call(document.querySelectorAll(
-            'section h2, section h3, section h4, section p, section li, section article, section .speciality-card, section .insurance-brand, section button, section a'
+            'section h2, section h3, section h4, section p, section li, section article, section .speciality-card, section button, section a'
         )).filter(function (element) {
-            return !element.closest('.timeline-step') && !element.closest('[data-hero-indicators]');
+            return !element.closest('.timeline-step') && !element.closest('[data-hero-indicators]') && !element.closest('.insurance-marquee');
         });
 
         if (!revealTargets.length) {
