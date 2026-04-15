@@ -72,6 +72,7 @@
             mobilePanel.style.transform = 'translateX(0)';
             menuButton.setAttribute('aria-expanded', 'true');
             menuIcon.textContent = 'close';
+            document.body.style.overflow = 'hidden';
         }
 
         function closeMenu() {
@@ -81,6 +82,7 @@
             mobileMenu.setAttribute('aria-hidden', 'true');
             menuButton.setAttribute('aria-expanded', 'false');
             menuIcon.textContent = 'menu';
+            document.body.style.overflow = '';
         }
 
         function toggleMenu() {
