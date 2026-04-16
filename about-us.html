@@ -33,11 +33,31 @@
       .material-symbols-outlined {
         font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
       }
+      .glass-panel {
+        background: rgba(255, 255, 255, 0.72);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .text-gradient {
+        background: linear-gradient(135deg, #4e0078 0%, #9a25ae 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .signature-font {
+        font-family: "Brush Script MT", cursive;
+      }
       .hero-overlay {
         background: linear-gradient(135deg, rgba(78, 0, 120, 0.4) 0%, rgba(154, 37, 174, 0.2) 100%);
       }
       .text-shadow-sm {
         text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+      .value-card-icon {
+        color: #6a1b9a;
+        transition: color 220ms ease;
+      }
+      .group:hover .value-card-icon {
+        color: #ffffff !important;
       }
     </style>
 </head>
@@ -57,6 +77,161 @@
 <p class="text-lg sm:text-2xl text-white/95 font-medium max-w-2xl leading-relaxed text-shadow-sm">
             Delivering trusted healthcare with excellence, compassion, and innovation.
 </p>
+</div>
+</div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-8 py-20 sm:py-24">
+<div class="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
+<div class="w-full lg:w-[60%] relative group">
+<div class="overflow-hidden rounded-3xl shadow-2xl">
+<img class="w-full h-[460px] sm:h-[560px] object-cover transition-transform duration-700 group-hover:scale-105" alt="Modern architectural view of a luxury hospital exterior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqbxNvgm4RiqiwMF9v8SqzW11ES_F5k6f7nYMaiKLO9JUC_UARVdCehTz36zWcN36NgAYaPN6O3jwGVjZJ0ZnLpqxbVfRyJgiXorB8d1ILjGeGWehbm4piqb8l5UNGkE-SR5M-OlW3HNb_Dnv3ICIUNOZXUQbBV6fBqITyywM0l8pKbHtOl2TAZO47shl3m6GNJbTwEFozZmMc8RheiToAwgjZVwh3cEW4d3yPXJhgXeKENDbHpzf-sMx5lJFg4Shiq3SWewimyYKP"/>
+</div>
+<div class="absolute -bottom-5 -right-5 bg-primary text-white p-6 sm:p-7 rounded-3xl shadow-xl flex flex-col items-center justify-center border-4 border-surface">
+<span class="text-4xl sm:text-5xl font-black font-headline tracking-tighter">10+</span>
+<span class="text-[11px] uppercase tracking-widest font-bold opacity-85 text-center">Years of Excellence</span>
+</div>
+</div>
+<div class="w-full lg:w-[40%] space-y-8">
+<div class="space-y-4">
+<h6 class="text-primary font-bold tracking-widest uppercase text-sm">Our Legacy</h6>
+<h2 class="text-4xl sm:text-5xl font-headline font-extrabold leading-tight text-on-surface">Redefining the Healing Experience.</h2>
+<p class="text-on-surface-variant text-lg leading-relaxed">Established with a vision to transcend traditional healthcare, RR Chola Hospital combines clinical precision with a sanctuary of wellness. We don't just treat; we care.</p>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<div class="space-y-1 border-l-4 border-secondary pl-4">
+<span class="text-3xl font-black text-primary font-headline">10k+</span>
+<p class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Patients Served</p>
+</div>
+<div class="space-y-1 border-l-4 border-primary pl-4">
+<span class="text-3xl font-black text-primary font-headline">50+</span>
+<p class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Expert Specialists</p>
+</div>
+</div>
+<div class="pt-6 border-t border-slate-200 italic text-on-surface-variant relative">
+<span class="material-symbols-outlined absolute -top-4 -left-2 text-primary/10 text-6xl select-none">format_quote</span>
+        "Our foundation is built on the belief that every patient deserves a clinical sanctuary where technology meets empathy."
+      </div>
+</div>
+</div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-20 sm:pb-24 space-y-10">
+<div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-secondary p-8 sm:p-12 text-white shadow-2xl transition-all duration-500 hover:scale-[1.01]">
+<div class="flex flex-col md:flex-row gap-8 items-center relative z-10">
+<div class="p-5 bg-white/10 rounded-2xl backdrop-blur-md">
+<span class="material-symbols-outlined text-6xl">rocket_launch</span>
+</div>
+<div class="space-y-4">
+<h3 class="text-3xl sm:text-4xl font-headline font-extrabold">Our Mission</h3>
+<p class="text-lg sm:text-xl text-white/90 max-w-3xl">To provide accessible, world-class medical services through innovative technology and compassionate care, ensuring the highest standards of safety and clinical outcomes for our community.</p>
+</div>
+</div>
+<div class="absolute -right-20 -top-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+</div>
+
+<div class="group border-2 border-primary/20 bg-white rounded-3xl p-8 sm:p-12 shadow-sm transition-all duration-500 hover:shadow-xl hover:border-primary/40">
+<div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+<div class="p-5 bg-primary/5 rounded-2xl text-primary">
+<span class="material-symbols-outlined text-6xl">visibility</span>
+</div>
+<div class="space-y-4 md:text-right flex-1">
+<h3 class="text-3xl sm:text-4xl font-headline font-extrabold text-primary">Our Vision</h3>
+<p class="text-lg sm:text-xl text-on-surface-variant max-w-3xl md:ml-auto">To be recognized globally as a leader in clinical innovation and the first choice for patients seeking a holistic, tech-forward healing sanctuary.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-20 sm:pb-24">
+<div class="text-center mb-14">
+<h6 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Values that Drive Us</h6>
+<h2 class="text-4xl sm:text-5xl font-headline font-extrabold">The Core of Our Care</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+<article class="group bg-white rounded-3xl p-9 text-center shadow-sm border border-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
+<span class="material-symbols-outlined value-card-icon text-5xl mb-5">favorite</span>
+<h4 class="text-4xl text-xl font-bold text-on-surface mb-3 font-headline transition-colors group-hover:text-white">Compassion</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-white/85">Treating every patient with the same warmth and dignity we would offer our own family.</p>
+</article>
+<article class="group bg-white rounded-3xl p-9 shadow-sm border border-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
+<div class="flex items-start gap-4 mb-4">
+<span class="material-symbols-outlined value-card-icon text-5xl">verified</span>
+<h4 class="text-xl font-bold text-on-surface font-headline transition-colors group-hover:text-white">Integrity</h4>
+</div>
+<p class="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-white/85">Upholding transparency and ethics in every clinical decision and patient interaction.</p>
+</article>
+<article class="group relative overflow-hidden rounded-3xl bg-primary p-9 text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+<div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 18px 18px;"></div>
+<div class="relative z-10">
+<span class="material-symbols-outlined value-card-icon text-5xl mb-5">biotech</span>
+<h4 class="text-xl font-bold mb-3 font-headline">Innovation</h4>
+<p class="text-white/90 text-sm leading-relaxed">Pioneering the latest medical technologies to deliver minimally invasive treatments.</p>
+</div>
+</article>
+<article class="group bg-white rounded-3xl p-9 border-2 border-primary shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-primary hover:shadow-xl">
+<span class="material-symbols-outlined value-card-icon text-5xl mb-5">groups</span>
+<h4 class="text-xl font-bold text-on-surface mb-3 font-headline group-hover:text-white">Collaboration</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed group-hover:text-white/85">Working as a multidisciplinary team to ensure holistic healing and accurate diagnosis.</p>
+</article>
+</div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-20 sm:pb-24">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<div class="lg:col-span-5 bg-slate-100 rounded-3xl p-10">
+<h2 class="text-4xl font-extrabold text-primary font-headline mb-6">Why Choose Us?</h2>
+<p class="text-on-surface-variant text-lg mb-8">We combine world-class medical expertise with a sanctuary-like environment to ensure your recovery is swift and seamless.</p>
+<div class="space-y-4">
+<div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><div><span class="font-bold block">Premium Infrastructure</span><p class="text-on-surface-variant">Designed for comfort and therapeutic recovery.</p></div></div>
+<div class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">check_circle</span><div><span class="font-bold block">Expert Faculty</span><p class="text-on-surface-variant">Board-certified clinicians from premier institutions.</p></div></div>
+</div>
+</div>
+<div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-primary text-white p-8 rounded-3xl flex flex-col items-center justify-center text-center space-y-4">
+<div class="w-24 h-24 bg-white/20 rounded-full flex items-center justify-center"><span class="material-symbols-outlined text-5xl" style="font-variation-settings: 'FILL' 1;">workspace_premium</span></div>
+<h4 class="text-2xl font-headline font-bold">NABH Accredited</h4>
+<p class="text-sm uppercase tracking-wider text-white/80">Gold Standard in Clinical Quality</p>
+</div>
+<div class="bg-white rounded-3xl overflow-hidden shadow-sm">
+<img class="h-48 w-full object-cover" alt="medical professional holding patient's hand" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhV-ZPMmjNVqleB_HBFiMdQ4mml3KtCuPTrCZlgKxf04mneQvbJq13rOsqTg_H8GvWrLs3gT2utJDqT6JHQ5ksrAydCymPpaFy8jB2DCTSGmy0hpXmCOFQkMusIyHeQ8GHgN7dugvNZIGgBGzb-38gjRNrGrSs5zaEVo9nmppwSVXPtc2JUF3rgV0NhWk8mN4j482bu3jw5rSu8DNoiUtAxZyKROp_OdFC6OHp5R9zopmJjsTjJcgyEfH42g6LomoRHzYd4KNBXCYp"/>
+<div class="p-6"><h4 class="font-bold mb-2">Holistic Patient Care</h4><p class="text-sm text-on-surface-variant">Patient-centric protocols ensuring comfort at every touchpoint.</p></div>
+</div>
+<div class="md:col-span-2 bg-gradient-to-br from-secondary/10 to-primary/5 p-8 rounded-3xl border border-primary/10 flex items-center gap-5">
+<div class="shrink-0 h-16 w-16 bg-white rounded-2xl flex items-center justify-center shadow-md text-primary"><span class="material-symbols-outlined text-3xl">health_and_safety</span></div>
+<div><h4 class="font-bold">Zero-Infection Protocol</h4><p class="text-sm text-on-surface-variant">Strict clinical hygiene standards that exceed international benchmarks for surgical safety.</p></div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="max-w-4xl mx-auto px-4 sm:px-8 pb-20 sm:pb-24">
+<div class="relative glass-panel rounded-3xl p-10 sm:p-14 shadow-2xl border border-white/40 overflow-hidden">
+<span class="material-symbols-outlined absolute -top-10 -right-10 text-[10rem] text-primary/5 select-none">format_quote</span>
+<div class="relative z-10 text-center space-y-7">
+<img class="w-24 h-24 rounded-full mx-auto object-cover ring-4 ring-purple-200 border-2 border-white shadow-lg" alt="portrait of senior medical director" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAxUUkaL7WMHmCZPoH6wt_pfLkS6GP4oMvXPfMCW-bX_NJYV_1NhPt_Bpsys6uCDS2bZDKupETngIS4wSgRdlTetLVA7nDqO0e7zoyZgeS09MJss7mp2J9X8wjNBiHLiHT8Hj6phUfiVdkfai_XKql1Ue3EtGzDrZx8tWvwtZqWbwtDlHejOKrY3cmFwMcptyyWsjxXsGc8nHJJjJrUMNDEDN_DEjeI0CYjfa34_R_eT722Zc9xlIAHte-rrfZACGFd8_F3qucjjJf"/>
+<div class="space-y-4">
+<h6 class="text-primary font-bold tracking-widest uppercase text-xs">Director's Note</h6>
+<p class="text-xl sm:text-2xl font-headline font-medium italic text-on-surface leading-relaxed">"Medicine is not just a science; it is an art of caring. At RR Chola, we strive to perfect that art every single day, ensuring that every patient who walks through our doors feels heard, healed, and respected."</p>
+</div>
+<div class="space-y-1">
+<div class="signature-font text-3xl text-primary">Dr. Rajan Chola</div>
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-[0.2em]">Chief Medical Director &amp; Founder</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-24">
+<div class="bg-gradient-to-r from-primary to-secondary p-12 sm:p-16 rounded-[2.5rem] text-center shadow-2xl relative overflow-hidden">
+<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 28px 28px;"></div>
+<div class="relative z-10 space-y-7 max-w-3xl mx-auto">
+<h2 class="text-4xl sm:text-5xl font-headline font-extrabold text-white leading-tight">Begin Your Journey to Better Health Today</h2>
+<p class="text-white/90 text-lg">Schedule a consultation with our world-class specialists and experience the Clinical Sanctuary firsthand.</p>
+<div class="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+<button class="w-full sm:w-auto px-10 py-4 bg-white text-primary rounded-full font-headline font-black text-lg transition-transform hover:scale-105">Book Appointment</button>
+<button class="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white/50 text-white rounded-full font-headline font-black text-lg transition-all hover:bg-white/10">Find a Doctor</button>
+</div>
 </div>
 </div>
 </section>
