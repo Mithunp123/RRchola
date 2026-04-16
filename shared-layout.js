@@ -131,12 +131,49 @@
         closeMenu();
     }
 
+    function syncNavbarOffsets() {
+        var strip = document.querySelector('.nav-gradient-bg');
+        var header = document.querySelector('header');
+        var mobileMenu = document.getElementById('mobile-menu');
+
+        if (!header) {
+            return;
+        }
+
+        var stripHeight = strip ? Math.ceil(strip.getBoundingClientRect().height) : 0;
+        header.style.top = stripHeight + 'px';
+
+        if (mobileMenu) {
+            mobileMenu.style.top = stripHeight + 'px';
+        }
+    }
+
+    function syncMainOffset() {
+        var main = document.querySelector('main');
+        var header = document.querySelector('header');
+
+        if (!main || !header) {
+            return;
+        }
+
+        // Header is fixed and already positioned below the running strip.
+        // Its bottom gives the exact offset needed to avoid any visual gap.
+        var offset = Math.ceil(header.getBoundingClientRect().bottom);
+        main.style.paddingTop = offset + 'px';
+    }
+
     Promise.all([
         loadPartial('navbar-slot', 'navbar.html'),
         loadPartial('footer-slot', 'footer.html')
     ]).then(function () {
         activateCurrentNavLink();
         initMobileMenu();
+        syncNavbarOffsets();
+        syncMainOffset();
+        window.addEventListener('resize', function () {
+            syncNavbarOffsets();
+            syncMainOffset();
+        });
         document.dispatchEvent(new CustomEvent('shared-layout:ready'));
     });
 })();
