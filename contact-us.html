@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Contact Us | RR CHOLA HOSPITAL</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="theme-overrides.css" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#f9f9fb",
+            "surface-container-low": "#f3f3f5",
+            "primary": "#4e0078",
+            "secondary": "#9a25ae",
+            "primary-fixed-dim": "#e4b5ff",
+            "on-surface": "#1A1A1A",
+            "on-surface-variant": "#4d4351"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(120deg, rgba(78, 0, 120, 0.72) 0%, rgba(154, 37, 174, 0.45) 60%, rgba(199, 112, 220, 0.28) 100%);
+    }
+
+    .contact-card {
+      background: linear-gradient(170deg, #ffffff 0%, #f7f2fb 100%);
+      border: 1px solid rgba(106, 27, 154, 0.12);
+      box-shadow: 0 12px 28px rgba(78, 0, 120, 0.08);
+    }
+
+    .contact-icon {
+      background: linear-gradient(140deg, #6a1b9a 0%, #9c27b0 100%);
+    }
+
+    .panel-glass {
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(106, 27, 154, 0.14);
+    }
+  </style>
+</head>
+<body class="bg-surface text-on-surface font-body overflow-x-hidden">
+  <div id="navbar-slot"></div>
+
+  <main>
+    <section class="relative h-[56vh] min-h-[420px] w-full overflow-hidden flex items-center">
+      <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover" alt="luxury hospital reception desk with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvmqcgU8SMUAz5tztaPfooqCSSONIpLEijYun-0SyPyoQpI7SIJQGP8SRqhcfy1hYLT6vwiKCK1W4IM3LTapZZNoukdyJ_WXf3dlV8sL5YcAc1UGrqqHhrSOaGOxNeStIYTXODQIKH-_5A6crPfSb7ZLv02sdwCZ3kwEE0N0tt50D7emGdkvMIIK0UUc9qqhCG9UpxGsDowZQBP6P01yHkB2aepj1PiGbHKP2-U-8JSdd1fbzPLsM_YA4tpaI_eQPDGeUngKhlyyrI"/>
+        <div class="absolute inset-0 hero-overlay"></div>
+      </div>
+      <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-8 w-full">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl sm:text-5xl lg:text-7xl font-headline font-black text-white tracking-tight leading-[1.08]">Contact RR Chola Hospital</h1>
+          <p class="text-white/90 text-lg sm:text-xl mt-5 leading-relaxed">From emergency support to specialist appointments, our team is available around the clock to guide you.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-14 sm:py-18">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <article class="contact-card rounded-3xl p-6">
+          <div class="contact-icon h-12 w-12 rounded-2xl text-white flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined">call</span>
+          </div>
+          <h2 class="font-headline text-xl font-extrabold text-primary">Emergency</h2>
+          <p class="text-on-surface-variant mt-2">24/7 ambulance and trauma desk support.</p>
+          <a href="tel:1066" class="inline-block mt-4 font-bold text-primary hover:text-secondary transition-colors">Call 1066</a>
+        </article>
+
+        <article class="contact-card rounded-3xl p-6">
+          <div class="contact-icon h-12 w-12 rounded-2xl text-white flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined">support_agent</span>
+          </div>
+          <h2 class="font-headline text-xl font-extrabold text-primary">Enquiry Desk</h2>
+          <p class="text-on-surface-variant mt-2">Appointments, billing, and consultation support.</p>
+          <a href="tel:+914424550000" class="inline-block mt-4 font-bold text-primary hover:text-secondary transition-colors">+91 44 2455 0000</a>
+        </article>
+
+        <article class="contact-card rounded-3xl p-6">
+          <div class="contact-icon h-12 w-12 rounded-2xl text-white flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined">mail</span>
+          </div>
+          <h2 class="font-headline text-xl font-extrabold text-primary">Email</h2>
+          <p class="text-on-surface-variant mt-2">Share reports or pre-consultation questions.</p>
+          <a href="mailto:care@rrcholahospital.com" class="inline-block mt-4 font-bold text-primary hover:text-secondary transition-colors">care@rrcholahospital.com</a>
+        </article>
+
+        <article class="contact-card rounded-3xl p-6">
+          <div class="contact-icon h-12 w-12 rounded-2xl text-white flex items-center justify-center mb-4">
+            <span class="material-symbols-outlined">location_on</span>
+          </div>
+          <h2 class="font-headline text-xl font-extrabold text-primary">Location</h2>
+          <p class="text-on-surface-variant mt-2">123 Medical Drive, Chennai, TN 600001.</p>
+          <a href="https://maps.google.com" target="_blank" rel="noreferrer" class="inline-block mt-4 font-bold text-primary hover:text-secondary transition-colors">Open in Maps</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 pb-16 sm:pb-20">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-7">
+        <div class="lg:col-span-7 panel-glass rounded-3xl p-6 sm:p-8 lg:p-10">
+          <h3 class="text-3xl sm:text-4xl font-headline font-black text-primary">Send Us a Message</h3>
+          <p class="text-on-surface-variant mt-3">Fill in your details and we will get back within one business day.</p>
+          <form class="mt-7 grid grid-cols-1 sm:grid-cols-2 gap-5" action="#" method="post">
+            <label class="block">
+              <span class="text-sm font-semibold text-on-surface-variant">Full Name</span>
+              <input class="mt-2 w-full rounded-xl border-primary/20 bg-white focus:border-primary focus:ring-primary" type="text" name="name" placeholder="Your full name"/>
+            </label>
+            <label class="block">
+              <span class="text-sm font-semibold text-on-surface-variant">Phone Number</span>
+              <input class="mt-2 w-full rounded-xl border-primary/20 bg-white focus:border-primary focus:ring-primary" type="tel" name="phone" placeholder="+91"/>
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-sm font-semibold text-on-surface-variant">Email Address</span>
+              <input class="mt-2 w-full rounded-xl border-primary/20 bg-white focus:border-primary focus:ring-primary" type="email" name="email" placeholder="you@example.com"/>
+            </label>
+            <label class="block sm:col-span-2">
+              <span class="text-sm font-semibold text-on-surface-variant">Message</span>
+              <textarea class="mt-2 w-full rounded-xl border-primary/20 bg-white focus:border-primary focus:ring-primary" rows="5" name="message" placeholder="Tell us how we can help"></textarea>
+            </label>
+            <div class="sm:col-span-2 pt-1">
+              <button type="submit" class="inline-flex items-center justify-center px-8 py-3 rounded-full bg-primary text-white font-headline font-black hover:bg-secondary transition-colors">Submit Enquiry</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="lg:col-span-5 flex flex-col gap-7">
+          <div class="panel-glass rounded-3xl p-6 sm:p-7">
+            <h3 class="text-2xl font-headline font-black text-primary">Visit Information</h3>
+            <div class="mt-4 space-y-4 text-on-surface-variant">
+              <p class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">schedule</span><span>Outpatient: 8:00 AM to 8:00 PM (Mon-Sat)</span></p>
+              <p class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">emergency</span><span>Emergency Care: Open 24/7 every day</span></p>
+              <p class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">local_parking</span><span>Valet and visitor parking available on-site</span></p>
+              <p class="flex items-start gap-3"><span class="material-symbols-outlined text-primary">language</span><span>Multilingual support: English, Tamil, Hindi</span></p>
+            </div>
+          </div>
+
+          <div class="rounded-3xl overflow-hidden border border-primary/15 shadow-lg bg-white">
+            <iframe title="RR Chola Hospital map" class="w-full h-[280px]" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps?q=Chennai+Tamil+Nadu&output=embed"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+  <script src="shared-layout.js"></script>
+  <script>
+    (function () {
+      function removeTopGap() {
+        var main = document.querySelector('main');
+        var header = document.querySelector('header');
+        var firstSection = main ? main.querySelector('section') : null;
+
+        if (!main || !header || !firstSection) {
+          return;
+        }
+
+        var gap = Math.round(firstSection.getBoundingClientRect().top - header.getBoundingClientRect().bottom);
+        if (gap > 0) {
+          var current = parseInt(main.style.paddingTop || '0', 10);
+          main.style.paddingTop = Math.max(0, current - gap) + 'px';
+        }
+      }
+
+      document.addEventListener('shared-layout:ready', removeTopGap);
+      window.addEventListener('resize', removeTopGap);
+    })();
+  </script>
+</body>
+</html>
