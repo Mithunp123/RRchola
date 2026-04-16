@@ -146,7 +146,7 @@
             background: linear-gradient(135deg, #6A1B9A 0%, #8C27B0 100%);
         }
         .speciality-grid-card {
-            transition: transform 220ms ease, box-shadow 220ms ease, background 260ms ease, border-color 260ms ease;
+            transition: transform 140ms ease, box-shadow 140ms ease, background 160ms ease, border-color 160ms ease;
         }
         .speciality-grid-card:hover {
             background: linear-gradient(135deg, #4A148C 0%, #5A1B96 28%, #6A1B9A 52%, #8C27B0 76%, #C770DC 100%);
@@ -154,19 +154,18 @@
             box-shadow: 0 18px 34px rgba(74, 20, 140, 0.28);
         }
         .speciality-grid-card .speciality-icon {
-            transition: transform 220ms ease, background 220ms ease, border-radius 220ms ease;
+            transition: transform 140ms ease, filter 140ms ease;
         }
         .speciality-grid-card:hover .speciality-icon {
-            transform: scale(1.05);
-            background: rgba(255, 255, 255, 0.92);
-            border-radius: 0.9rem;
+            transform: scale(1.06);
+            filter: brightness(0) invert(1);
         }
         .speciality-grid-card .speciality-title {
-            transition: color 220ms ease;
+            transition: none;
         }
         .speciality-grid-card:hover .speciality-title {
             color: #ffffff;
-            text-shadow: 0 1px 2px rgba(25, 8, 56, 0.28);
+            text-shadow: none;
         }
         .timeline-step {
             opacity: 0.35;
@@ -427,7 +426,7 @@
 </section>
 <!-- Specialities -->
 <section class="py-14 px-6 sm:px-8" style="background: linear-gradient(180deg, rgba(244, 217, 255, 0.64) 0%, rgba(255, 236, 255, 0.84) 46%, rgba(249, 249, 251, 1) 100%);">
-<div class="max-w-5xl mx-auto">
+<div class="max-w-6xl mx-auto">
 <div class="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
 <div class="text-center md:text-left">
 <h2 class="text-4xl font-headline font-black text-primary mb-2">Our Specialities</h2>
@@ -438,30 +437,30 @@ View All Specialities
 <span class="material-symbols-outlined">arrow_forward</span>
 </a>
 </div>
-<div class="flex flex-wrap justify-center gap-x-3 sm:gap-x-4 gap-y-4 sm:gap-y-5 max-w-[780px] mx-auto">
-<a href="cardiology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 w-[165px] h-[165px] sm:w-[200px] sm:h-[200px] md:w-[220px] md:h-[220px] p-4 sm:p-5 flex flex-col items-center justify-between text-center" aria-label="Open Cardiology department page">
-<img class="speciality-icon w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain p-1.5" alt="Cardiology icon" src="assests/icons8-heart-with-pulse-100.png">
-<h3 class="speciality-title text-sm sm:text-[15px] font-bold text-on-surface">Cardiology</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 sm:gap-6 items-stretch">
+<a href="cardiology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center" aria-label="Open Cardiology department page">
+<img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1" alt="Cardiology icon" src="assests/icons8-heart-with-pulse-100.png">
+<h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Cardiology</h3>
 </a>
-<a href="neurology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 w-[165px] h-[165px] sm:w-[200px] sm:h-[200px] md:w-[220px] md:h-[220px] p-4 sm:p-5 flex flex-col items-center justify-between text-center" aria-label="Open Neurology department page">
-<img class="speciality-icon w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain p-1.5" alt="Neurology icon" src="assests/Neurology.png">
-<h3 class="speciality-title text-sm sm:text-[15px] font-bold text-on-surface">Neurology</h3>
+<a href="neurology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center" aria-label="Open Neurology department page">
+<img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1" alt="Neurology icon" src="assests/Neurology.png">
+<h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Neurology</h3>
 </a>
-<a href="orthopedics.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 w-[165px] h-[165px] sm:w-[200px] sm:h-[200px] md:w-[220px] md:h-[220px] p-4 sm:p-5 flex flex-col items-center justify-between text-center" aria-label="Open Orthopedics department page">
-<img class="speciality-icon w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain p-1.5" alt="Orthopedics icon" src="assests/Orthopedics.png">
-<h3 class="speciality-title text-sm sm:text-[15px] font-bold text-on-surface">Orthopedics</h3>
+<a href="orthopedics.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center" aria-label="Open Orthopedics department page">
+<img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1" alt="Orthopedics icon" src="assests/Orthopedics.png">
+<h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Orthopedics</h3>
 </a>
-<a href="oncology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 w-[165px] h-[165px] sm:w-[200px] sm:h-[200px] md:w-[220px] md:h-[220px] p-4 sm:p-5 flex flex-col items-center justify-between text-center" aria-label="Open Oncology department page">
-<img class="speciality-icon w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain p-1.5" alt="Oncology icon" src="assests/oncology_10202691.png">
-<h3 class="speciality-title text-sm sm:text-[15px] font-bold text-on-surface">Oncology</h3>
+<a href="oncology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center" aria-label="Open Oncology department page">
+<img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1" alt="Oncology icon" src="assests/oncology_10202691.png">
+<h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Oncology</h3>
 </a>
-<a href="gastroenterology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 w-[165px] h-[165px] sm:w-[200px] sm:h-[200px] md:w-[220px] md:h-[220px] p-4 sm:p-5 flex flex-col items-center justify-between text-center" aria-label="Open Gastroenterology department page">
-<img class="speciality-icon w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain p-1.5" alt="Gastroenterology icon" src="assests/Gastroenterology.png">
-<h3 class="speciality-title text-sm sm:text-[15px] font-bold text-on-surface">Gastroenterology</h3>
+<a href="gastroenterology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center" aria-label="Open Gastroenterology department page">
+<img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1" alt="Gastroenterology icon" src="assests/Gastroenterology.png">
+<h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Gastroenterology</h3>
 </a>
-<a href="pediatrics.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 w-[165px] h-[165px] sm:w-[200px] sm:h-[200px] md:w-[220px] md:h-[220px] p-4 sm:p-5 flex flex-col items-center justify-between text-center" aria-label="Open Pediatrics department page">
-<img class="speciality-icon w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 object-contain p-1.5" alt="Pediatrics icon" src="assests/Pediatrics.png">
-<h3 class="speciality-title text-sm sm:text-[15px] font-bold text-on-surface">Pediatrics</h3>
+<a href="pediatrics.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center" aria-label="Open Pediatrics department page">
+<img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1" alt="Pediatrics icon" src="assests/Pediatrics.png">
+<h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Pediatrics</h3>
 </a>
 </div>
 </div>
