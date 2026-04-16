@@ -913,6 +913,7 @@ View All Specialities
     var patientTransitionMs = 600;
     var patientCurrentIndex = 1;
     var patientAnimating = false;
+    var patientPendingSteps = 0;
     var patientLoopCount = 0;
     var patientClonesPerSide = 1;
     var patientSourceCards = [];
@@ -1075,19 +1076,24 @@ View All Specialities
     }
 
     function movePatientCarousel(direction) {
-        if (!patientTrack || !patientLoopCount || patientAnimating) {
+        if (!patientTrack || !patientLoopCount) {
             return;
         }
 
-        patientAnimating = true;
-        patientCurrentIndex += direction;
-        renderPatientIndex(true);
+        patientPendingSteps += direction;
+        processPatientQueue();
+    }
 
-        window.setTimeout(function () {
-            if (patientAnimating) {
-                patientAnimating = false;
-            }
-        }, patientTransitionMs + 80);
+    function processPatientQueue() {
+        if (!patientTrack || !patientLoopCount || patientAnimating || patientPendingSteps === 0) {
+            return;
+        }
+
+        var stepDirection = patientPendingSteps > 0 ? 1 : -1;
+        patientPendingSteps -= stepDirection;
+        patientAnimating = true;
+        patientCurrentIndex += stepDirection;
+        renderPatientIndex(true);
     }
 
     function handlePatientWrap() {
@@ -1105,6 +1111,7 @@ View All Specialities
         }
 
         patientAnimating = false;
+        processPatientQueue();
     }
 
     function startPatientAutoplay() {
@@ -1161,6 +1168,8 @@ View All Specialities
 
         window.addEventListener('resize', function () {
             stopPatientAutoplay();
+            patientPendingSteps = 0;
+            patientAnimating = false;
             buildPatientLoopTrack();
             startPatientAutoplay();
         });
