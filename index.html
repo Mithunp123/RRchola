@@ -502,12 +502,10 @@ View All Specialities
 <!-- Doctors Section -->
 <section class="py-24 bg-gradient-to-b from-surface-container-low via-white to-primary-fixed/15 px-8">
 <div class="max-w-7xl mx-auto">
-<div class="flex justify-between items-end mb-16">
-<div>
-<h2 class="text-4xl font-headline font-black text-primary mb-4">Our Medical Board</h2>
-<p class="text-on-surface-variant">Consult with our leading specialists in various departments.</p>
-</div>
-<a class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all" href="find-doctors.html">View All Doctors <span class="material-symbols-outlined">arrow_forward</span></a>
+<div class="mb-14 text-center flex flex-col items-center">
+<h2 class="text-4xl font-headline font-black text-primary mb-3">Our Medical Board</h2>
+<p class="text-on-surface-variant max-w-2xl">Consult with our leading specialists in various departments.</p>
+<a class="mt-5 inline-flex items-center justify-center gap-2 text-primary font-bold text-sm sm:text-base hover:gap-3 transition-all" href="find-doctors.html">View All Doctors <span class="material-symbols-outlined">arrow_forward</span></a>
 </div>
 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center">
 <!-- Doctor Card -->
@@ -558,9 +556,10 @@ View All Specialities
 <!-- Infrastructure Grid -->
 <section class="py-24 px-8 bg-gradient-to-b from-primary-fixed/10 via-white to-primary-fixed/20">
 <div class="max-w-7xl mx-auto">
-<div class="mb-12 flex items-end justify-between gap-4">
-<h2 class="text-4xl font-headline font-black text-primary">World-Class Infrastructure</h2>
-<a class="text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all" href="infrastructure.html">View All Infrastructure <span class="material-symbols-outlined">arrow_forward</span></a>
+<div class="mb-12 text-center flex flex-col items-center">
+<h2 class="text-4xl font-headline font-black text-primary mb-3">World-Class Infrastructure</h2>
+<p class="text-on-surface-variant max-w-2xl">Explore our advanced facilities built for precision, comfort, and connected care.</p>
+<a class="mt-5 inline-flex items-center justify-center gap-2 text-primary font-bold text-sm sm:text-base hover:gap-3 transition-all" href="infrastructure.html">View All Infrastructure <span class="material-symbols-outlined">arrow_forward</span></a>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[250px]">
 <div class="col-span-2 row-span-2 relative group overflow-hidden rounded-3xl">
@@ -793,7 +792,7 @@ View All Specialities
 </div>
 </section>
 <!-- Contact Us -->
-<section id="contact-us" class="py-24 px-8 bg-gradient-to-b from-white to-primary-fixed/10 scroll-mt-40">
+<section id="contact-us" class="py-16 sm:py-24 px-4 sm:px-8 bg-gradient-to-b from-white to-primary-fixed/10 scroll-mt-40">
 <div class="max-w-7xl mx-auto">
 <div class="text-center mb-14">
 <p class="text-xs font-bold text-primary/70 uppercase tracking-[0.3em] mb-4">Reach Our Team</p>
@@ -842,18 +841,20 @@ View All Specialities
 <button class="px-6 py-3 bg-white text-primary rounded-xl font-bold hover:scale-105 transition-transform">Call Emergency Desk</button>
 </div>
 </div>
-<div class="bg-surface-container-low rounded-2xl border border-purple-100/70 p-6 sm:p-8">
+<div class="bg-surface-container-low rounded-2xl border border-purple-100/70 p-6 sm:p-8 lg:h-full lg:flex lg:flex-col">
 <h3 class="text-2xl font-headline font-black text-primary mb-2">Contact Us</h3>
 <p class="text-sm text-on-surface-variant mb-6">Fill in your details and our team will contact you shortly.</p>
-<form class="space-y-4" action="#" method="post">
+<form class="space-y-4 lg:flex-1 lg:flex lg:flex-col" action="#" method="post">
 <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
 <input class="rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary" type="text" name="fullName" placeholder="Full Name">
 <input class="rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary" type="tel" name="phone" placeholder="Phone Number">
 </div>
 <div>
-<input class="rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary" type="email" name="email" placeholder="Email Address">
+<input class="w-full rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm focus:ring-2 focus:ring-primary" type="email" name="email" placeholder="Email Address">
 </div>
-<textarea class="w-full rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm min-h-[120px] focus:ring-2 focus:ring-primary" name="message" placeholder="Describe your concern"></textarea>
+<div class="lg:flex-1 lg:flex lg:flex-col">
+<textarea class="w-full rounded-xl border border-purple-100 bg-white px-4 py-3 text-sm min-h-[190px] lg:min-h-[220px] lg:flex-1 focus:ring-2 focus:ring-primary" name="message" placeholder="Describe your concern"></textarea>
+</div>
 <button class="w-full py-3 bg-signature-gradient text-white rounded-xl font-bold hover:opacity-95 transition-opacity" type="submit">Submit Request</button>
 </form>
 </div>
