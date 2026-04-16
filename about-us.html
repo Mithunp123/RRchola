@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us | RR CHOLA HOSPITAL</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="theme-overrides.css" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+              "surface-container-low": "#f3f3f5",
+              "primary-fixed-dim": "#e4b5ff",
+              "surface": "#f9f9fb",
+              "secondary": "#9a25ae",
+              "primary": "#4e0078",
+              "on-surface": "#1A1A1A",
+              "on-surface-variant": "#4d4351"
+            },
+            "fontFamily": {
+              "headline": ["Manrope", "sans-serif"],
+              "body": ["Inter", "sans-serif"]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .hero-overlay {
+        background: linear-gradient(135deg, rgba(78, 0, 120, 0.4) 0%, rgba(154, 37, 174, 0.2) 100%);
+      }
+      .text-shadow-sm {
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+<div id="navbar-slot"></div>
+<main>
+<section class="relative h-[70vh] min-h-[520px] w-full overflow-hidden flex items-center">
+<div class="absolute inset-0 z-0">
+<img class="w-full h-full object-cover" alt="modern hospital building exterior with large glass windows at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOCavZVicfubKGWR_DZsNsOR9ophp5TGtQ2Cw63UeyVaG26qcQmNs91OZqbPZX9Hz4QRg63BQMOkKHRU4wXEiehFg2I0FvdgmHWZTN9Ol1nv1A8A2CczFndhUlWVZqQ2s0f1YMmWhVDQ4m4tFLo7cLgkhtNRfH8ZySzVf-1c3yrjy4shUCAkMamlkfo3vNx95GgKjrUvJnQyq0n0TkRhPCexxfvzhQ2Ggr_xTxj1TwOw87gl5ghdkvgcDeXDw0R7HiNxGuSXVJKAnq"/>
+<div class="absolute inset-0 hero-overlay"></div>
+</div>
+<div class="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-12 w-full">
+<div class="max-w-4xl">
+<h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white font-headline tracking-tight mb-6 sm:mb-8 leading-[1.1] text-shadow-sm">
+            About <span class="text-primary-fixed-dim">RR Chola Hospital</span>
+</h1>
+<p class="text-lg sm:text-2xl text-white/95 font-medium max-w-2xl leading-relaxed text-shadow-sm">
+            Delivering trusted healthcare with excellence, compassion, and innovation.
+</p>
+</div>
+</div>
+</section>
+</main>
+<div id="footer-slot"></div>
+<script src="shared-layout.js"></script>
+</body>
+</html>
