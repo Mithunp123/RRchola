@@ -1,4 +1,4 @@
-<div class="fixed top-0 left-0 right-0 z-[60] nav-gradient-bg text-white shadow-sm">
+<div class="hidden sm:block fixed top-0 left-0 right-0 z-[80] nav-gradient-bg text-white shadow-sm">
     <div class="running-strip max-w-[1440px] mx-auto px-4 sm:px-8 py-2 text-xs sm:text-sm font-semibold tracking-[0.2em] uppercase">
         <div class="running-strip-track">
             <span>Precision care. 24/7 emergency response. Advanced diagnostics. Specialist consultations. Patient-first service.</span>
@@ -7,7 +7,7 @@
     </div>
 </div>
 
-<header class="fixed top-[36px] w-full z-50 bg-white/85 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm shadow-purple-900/5">
+<header class="fixed top-0 sm:top-[36px] w-full z-[70] bg-white/85 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm shadow-purple-900/5">
     <style>
         .nav-gradient-bg {
             background: linear-gradient(135deg, #6A1B9A 0%, #9C27B0 56%, #C770DC 100%);
@@ -78,28 +78,29 @@
             box-shadow: 0 8px 16px rgba(106, 27, 154, 0.12);
         }
     </style>
-    <nav class="relative grid grid-cols-[auto,1fr,auto] items-center max-w-[1440px] mx-auto px-4 sm:px-8 py-4 gap-3 md:flex md:justify-between md:items-center">
-        <button class="md:hidden inline-flex h-11 w-11 shrink-0 items-center justify-center text-primary transition-transform duration-200 active:scale-95" type="button" aria-controls="mobile-menu" aria-expanded="false" data-mobile-menu-button>
+    <nav class="relative flex items-center justify-between max-w-[1440px] mx-auto px-4 sm:px-8 py-3 sm:py-4 gap-3">
+        <div class="text-xl sm:text-2xl font-black tracking-tighter text-purple-900 dark:text-purple-100 font-headline md:flex-none md:text-left">RR CHOLA HOSPITAL</div>
+
+        <button class="md:hidden inline-flex h-11 w-11 shrink-0 items-center justify-center text-primary transition-transform duration-200 active:scale-95 ml-auto" type="button" aria-controls="mobile-menu" aria-expanded="false" data-mobile-menu-button>
             <span class="material-symbols-outlined text-[30px] leading-none" data-menu-icon>menu</span>
         </button>
 
-        <div class="justify-self-center text-center text-xl sm:text-2xl font-black tracking-tighter text-purple-900 dark:text-purple-100 font-headline md:flex-none md:text-left md:justify-self-start">RR CHOLA HOSPITAL</div>
-
-        <div class="md:hidden h-11 w-11" aria-hidden="true"></div>
-
-        <div class="hidden md:flex flex-wrap items-center justify-center gap-x-5 gap-y-2 max-w-4xl text-center">
+        <div class="hidden md:flex flex-wrap items-center gap-x-5 gap-y-2 max-w-4xl text-center ml-auto">
             <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="index.html">Home</a>
             <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="#">About Us</a>
             <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="specialities.html">Specialities</a>
             <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="find-doctors.html">Doctors</a>
             <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="infrastructure.html">Infrastructure</a>
             <div class="nav-dropdown relative">
-                <button class="awards-trigger inline-flex items-center gap-1 font-headline font-semibold tracking-tight text-sm text-slate-700 hover:text-primary transition-colors" type="button" aria-label="Awards menu">
+                <span class="awards-trigger inline-flex items-center gap-1 font-headline font-semibold tracking-tight text-sm text-slate-700 hover:text-primary transition-colors" aria-label="Awards menu">
                     Awards
                     <span class="material-symbols-outlined text-base">expand_more</span>
-                </button>
+                </span>
                 <div class="nav-dropdown-menu absolute left-0 top-full mt-1 w-max min-w-0 bg-white opacity-0 translate-y-1 pointer-events-none transition-all duration-200 p-0">
                     <ul class="m-0 p-0 list-none">
+                        <li>
+                            <a class="block text-left px-4 py-2.5 text-base font-semibold text-slate-700 hover:bg-primary-fixed/30 hover:text-primary" href="#">Awards</a>
+                        </li>
                         <li>
                             <a class="block text-left px-4 py-2.5 text-base font-semibold text-slate-700 hover:bg-primary-fixed/30 hover:text-primary" href="#">Gallery</a>
                         </li>
@@ -108,13 +109,13 @@
             </div>
             <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="#">News &amp; Events</a>
             <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="#">Careers</a>
-            <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="#contact-us" data-index-only-contact>Contact Us</a>
+            <a class="nav-link font-headline font-semibold tracking-tight text-sm hover:scale-105" href="index.html#contact-us" data-index-only-contact>Contact Us</a>
         </div>
 
     </nav>
 </header>
 
-<div id="mobile-menu" class="md:hidden fixed left-0 right-0 top-[36px] bottom-0 z-[70] pointer-events-none" aria-hidden="true">
+<div id="mobile-menu" class="md:hidden fixed left-0 right-0 top-0 sm:top-[36px] bottom-0 z-[90] pointer-events-none" aria-hidden="true">
     <div data-mobile-menu-backdrop class="mobile-drawer-backdrop absolute inset-0 opacity-0"></div>
     <aside data-mobile-menu-panel class="mobile-drawer-panel absolute left-0 top-0 h-full w-[88vw] max-w-[360px] -translate-x-full shadow-2xl border-r border-primary/15 overflow-hidden">
         <div class="h-1.5 w-full nav-gradient-bg"></div>
@@ -135,13 +136,16 @@
                     <summary class="cursor-pointer list-none rounded-2xl px-4 py-3.5 text-base font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary">Awards</summary>
                     <ul class="mx-2 my-2 list-none rounded-2xl bg-primary-fixed/15 p-2">
                         <li>
+                            <a class="block rounded-xl px-3 py-3 text-base font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="#">Awards</a>
+                        </li>
+                        <li>
                             <a class="block rounded-xl px-3 py-3 text-base font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="#">Gallery</a>
                         </li>
                     </ul>
                 </details>
                 <a class="rounded-2xl px-4 py-3.5 text-base font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="#">News &amp; Events</a>
                 <a class="rounded-2xl px-4 py-3.5 text-base font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="#">Careers</a>
-                <a class="rounded-2xl px-4 py-3.5 text-base font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="#contact-us" data-index-only-contact>Contact Us</a>
+                <a class="rounded-2xl px-4 py-3.5 text-base font-semibold text-slate-700 transition-colors hover:bg-primary-fixed/25 hover:text-primary" href="index.html#contact-us" data-index-only-contact>Contact Us</a>
             </div>
         </div>
     </aside>

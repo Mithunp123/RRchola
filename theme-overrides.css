@@ -5,6 +5,11 @@
     --brand-soft: #F1E3F8;
 }
 
+html,
+body {
+    overflow-x: hidden;
+}
+
 .bg-signature-gradient,
 .signature-gradient {
     background: linear-gradient(135deg, #6A1B9A 0%, #9C27B0 58%, #C770DC 100%) !important;

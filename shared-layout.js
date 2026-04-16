@@ -131,23 +131,10 @@
         closeMenu();
     }
 
-    function handleIndexOnlyContactLinks() {
-        var page = getCurrentPage();
-        if (page === 'index.html') {
-            return;
-        }
-
-        var indexOnlyLinks = Array.prototype.slice.call(document.querySelectorAll('[data-index-only-contact]'));
-        indexOnlyLinks.forEach(function (link) {
-            link.remove();
-        });
-    }
-
     Promise.all([
         loadPartial('navbar-slot', 'navbar.html'),
         loadPartial('footer-slot', 'footer.html')
     ]).then(function () {
-        handleIndexOnlyContactLinks();
         activateCurrentNavLink();
         initMobileMenu();
         document.dispatchEvent(new CustomEvent('shared-layout:ready'));
