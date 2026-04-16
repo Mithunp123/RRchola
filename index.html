@@ -211,6 +211,7 @@
             overflow: hidden;
             max-width: 1110px;
             margin-inline: auto;
+            border-radius: 1.8rem;
         }
         .patient-carousel-track {
             display: flex;
@@ -226,7 +227,8 @@
             border-radius: 1.8rem;
             background: rgba(255, 255, 255, 0.86);
             padding: 1.6rem;
-            box-shadow: 0 12px 28px rgba(50, 32, 70, 0.08);
+            box-shadow: none;
+            border: 1px solid rgba(208, 194, 211, 0.48);
         }
         .patient-card--accent {
             background: rgba(238, 224, 248, 0.92);
@@ -234,7 +236,6 @@
         @media (max-width: 639px) {
             .patient-carousel-viewport {
                 overflow: clip;
-                border-radius: 1.8rem;
             }
             .patient-card {
                 box-shadow: none;
@@ -1314,7 +1315,7 @@ View All Specialities
         var revealTargets = Array.prototype.slice.call(document.querySelectorAll(
             'section h2, section h3, section h4, section p, section li, section article, section .speciality-card, section button, section a'
         )).filter(function (element) {
-            return !element.closest('.timeline-step') && !element.closest('[data-hero-controls]') && !element.closest('.insurance-marquee');
+            return !element.closest('.timeline-step') && !element.closest('[data-hero-controls]') && !element.closest('.insurance-marquee') && !element.closest('[data-patient-track]');
         });
 
         if (!revealTargets.length) {
