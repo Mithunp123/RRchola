@@ -214,22 +214,51 @@
         }
         .patient-carousel-track {
             display: flex;
-            gap: 1.25rem;
-            width: max-content;
+            gap: 0;
+            width: 100%;
             will-change: transform;
             transform: translate3d(0, 0, 0);
             transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
         }
         .patient-card {
-            width: min(88vw, 22rem);
-            flex: 0 0 auto;
+            width: 100%;
+            flex: 0 0 100%;
             border-radius: 1.8rem;
             background: rgba(255, 255, 255, 0.86);
-            padding: 2rem;
+            padding: 1.6rem;
             box-shadow: 0 12px 28px rgba(50, 32, 70, 0.08);
         }
         .patient-card--accent {
             background: rgba(238, 224, 248, 0.92);
+        }
+        @media (max-width: 639px) {
+            .patient-carousel-viewport {
+                overflow: clip;
+                border-radius: 1.8rem;
+            }
+            .patient-card {
+                box-shadow: none;
+            }
+        }
+        @media (min-width: 640px) {
+            .patient-carousel-track {
+                gap: 1rem;
+            }
+            .patient-card {
+                flex: 0 0 calc((100% - 1rem) / 2);
+                width: calc((100% - 1rem) / 2);
+                padding: 1.8rem;
+            }
+        }
+        @media (min-width: 1024px) {
+            .patient-carousel-track {
+                gap: 1.25rem;
+            }
+            .patient-card {
+                flex: 0 0 calc((100% - 2.5rem) / 3);
+                width: calc((100% - 2.5rem) / 3);
+                padding: 2rem;
+            }
         }
         .scroll-reveal-text {
             opacity: 0;
@@ -657,14 +686,8 @@ View All Specialities
 <!-- Testimonials -->
 <section class="py-24 px-6 sm:px-8 bg-gradient-to-b from-primary-fixed/10 via-surface to-primary-fixed/20">
 <div class="max-w-7xl mx-auto">
-<div class="mb-10 flex items-center justify-center gap-3 sm:gap-5">
-<button class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white" aria-label="Move patient cards left" data-patient-prev type="button">
-<span class="material-symbols-outlined">chevron_left</span>
-</button>
+<div class="mb-8 text-center">
 <h2 class="text-4xl font-headline font-black text-primary text-center">Patient Experiences</h2>
-<button class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white" aria-label="Move patient cards right" data-patient-next type="button">
-<span class="material-symbols-outlined">chevron_right</span>
-</button>
 </div>
 <div class="patient-carousel-viewport" data-patient-viewport>
 <div class="patient-carousel-track" data-patient-track>
@@ -739,6 +762,14 @@ View All Specialities
 <div class="flex items-center gap-4"><div class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">DK</div><div><h5 class="font-bold">Deepak Kumar</h5><p class="text-xs text-on-surface-variant">General Surgery</p></div></div>
 </article>
 </div>
+</div>
+<div class="mt-8 flex items-center justify-center gap-3 sm:gap-5" data-patient-controls>
+<button class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white" aria-label="Move patient cards left" data-patient-prev type="button">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white" aria-label="Move patient cards right" data-patient-next type="button">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
 </div>
 </div>
 </section>
@@ -879,10 +910,12 @@ View All Specialities
     var prevSlideButton = document.querySelector('[data-slide-prev]');
     var nextSlideButton = document.querySelector('[data-slide-next]');
     var patientAutoTimer = null;
-    var patientTransitionMs = 520;
+    var patientTransitionMs = 600;
     var patientCurrentIndex = 1;
     var patientAnimating = false;
     var patientLoopCount = 0;
+    var patientClonesPerSide = 1;
+    var patientSourceCards = [];
 
     var currentSlide = 0;
     var timerId = null;
@@ -955,15 +988,74 @@ View All Specialities
         }
     }
 
+    function getPatientVisibleCount() {
+        var viewportWidth = patientViewport ? patientViewport.getBoundingClientRect().width : window.innerWidth;
+
+        if (viewportWidth >= 1024) {
+            return 3;
+        }
+
+        if (viewportWidth >= 640) {
+            return 2;
+        }
+
+        return 1;
+    }
+
+    function buildPatientLoopTrack() {
+        if (!patientTrack || !patientSourceCards.length) {
+            return;
+        }
+
+        patientClonesPerSide = Math.min(getPatientVisibleCount(), patientLoopCount);
+        patientTrack.innerHTML = '';
+
+        var tailClones = patientSourceCards.slice(-patientClonesPerSide).map(function (card) {
+            var clone = card.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            return clone;
+        });
+
+        var headClones = patientSourceCards.slice(0, patientClonesPerSide).map(function (card) {
+            var clone = card.cloneNode(true);
+            clone.setAttribute('aria-hidden', 'true');
+            return clone;
+        });
+
+        tailClones.forEach(function (node) {
+            patientTrack.appendChild(node);
+        });
+
+        patientSourceCards.forEach(function (card) {
+            patientTrack.appendChild(card.cloneNode(true));
+        });
+
+        headClones.forEach(function (node) {
+            patientTrack.appendChild(node);
+        });
+
+        patientCurrentIndex = patientClonesPerSide;
+        renderPatientIndex(false);
+    }
+
     function getPatientStep() {
         if (!patientTrack || !patientTrack.children.length) {
             return 0;
         }
 
+        var visibleCount = getPatientVisibleCount();
+        if (visibleCount === 1 && patientViewport) {
+            return patientViewport.getBoundingClientRect().width;
+        }
+
         var firstCard = patientTrack.children[0];
         var cardWidth = firstCard.getBoundingClientRect().width;
         var trackStyles = window.getComputedStyle(patientTrack);
-        var gap = parseFloat(trackStyles.columnGap || trackStyles.gap || '20') || 20;
+        var rawGap = trackStyles.columnGap && trackStyles.columnGap !== 'normal'
+            ? trackStyles.columnGap
+            : trackStyles.gap;
+        var parsedGap = parseFloat(rawGap || '0');
+        var gap = Number.isNaN(parsedGap) ? 0 : parsedGap;
         return cardWidth + gap;
     }
 
@@ -977,8 +1069,9 @@ View All Specialities
             return;
         }
 
+        var offset = Math.round(patientCurrentIndex * step);
         patientTrack.style.transition = animated ? 'transform ' + patientTransitionMs + 'ms cubic-bezier(0.22, 1, 0.36, 1)' : 'none';
-        patientTrack.style.transform = 'translate3d(' + (-patientCurrentIndex * step) + 'px, 0, 0)';
+        patientTrack.style.transform = 'translate3d(' + (-offset) + 'px, 0, 0)';
     }
 
     function movePatientCarousel(direction) {
@@ -1003,11 +1096,11 @@ View All Specialities
             return;
         }
 
-        if (patientCurrentIndex === 0) {
-            patientCurrentIndex = patientLoopCount;
+        if (patientCurrentIndex < patientClonesPerSide) {
+            patientCurrentIndex += patientLoopCount;
             renderPatientIndex(false);
-        } else if (patientCurrentIndex === patientLoopCount + 1) {
-            patientCurrentIndex = 1;
+        } else if (patientCurrentIndex >= patientClonesPerSide + patientLoopCount) {
+            patientCurrentIndex -= patientLoopCount;
             renderPatientIndex(false);
         }
 
@@ -1022,7 +1115,7 @@ View All Specialities
         stopPatientAutoplay();
         patientAutoTimer = setInterval(function () {
             movePatientCarousel(1);
-        }, 2900);
+        }, 2000);
     }
 
     function initPatientCarousel() {
@@ -1030,23 +1123,14 @@ View All Specialities
             return;
         }
 
-        var sourceCards = Array.prototype.slice.call(patientTrack.children);
-        patientLoopCount = sourceCards.length;
+        patientSourceCards = Array.prototype.slice.call(patientTrack.children);
+        patientLoopCount = patientSourceCards.length;
 
         if (patientLoopCount < 2) {
             return;
         }
 
-        var firstClone = sourceCards[0].cloneNode(true);
-        var lastClone = sourceCards[patientLoopCount - 1].cloneNode(true);
-        firstClone.setAttribute('aria-hidden', 'true');
-        lastClone.setAttribute('aria-hidden', 'true');
-
-        patientTrack.insertBefore(lastClone, sourceCards[0]);
-        patientTrack.appendChild(firstClone);
-
-        patientCurrentIndex = 1;
-        renderPatientIndex(false);
+        buildPatientLoopTrack();
 
         patientTrack.addEventListener('transitionend', function (event) {
             if (event.propertyName === 'transform') {
@@ -1076,7 +1160,9 @@ View All Specialities
         }
 
         window.addEventListener('resize', function () {
-            renderPatientIndex(false);
+            stopPatientAutoplay();
+            buildPatientLoopTrack();
+            startPatientAutoplay();
         });
 
         document.addEventListener('visibilitychange', function () {
