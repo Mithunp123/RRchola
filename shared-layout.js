@@ -150,16 +150,31 @@
 
     function syncMainOffset() {
         var main = document.querySelector('main');
+        var strip = document.querySelector('.nav-gradient-bg');
         var header = document.querySelector('header');
 
         if (!main || !header) {
             return;
         }
 
-        // Header is fixed and already positioned below the running strip.
-        // Its bottom gives the exact offset needed to avoid any visual gap.
-        var offset = Math.ceil(header.getBoundingClientRect().bottom);
+        // Use explicit strip + header heights to avoid transient gaps while fonts/layout settle.
+        var stripHeight = strip ? Math.ceil(strip.getBoundingClientRect().height) : 0;
+        var headerHeight = Math.ceil(header.getBoundingClientRect().height);
+        var offset = stripHeight + headerHeight;
         main.style.paddingTop = offset + 'px';
+        main.style.marginTop = '0';
+    }
+
+    function syncLayoutOffsets() {
+        syncNavbarOffsets();
+        syncMainOffset();
+    }
+
+    function syncLayoutOffsetsAfterRender() {
+        syncLayoutOffsets();
+        window.requestAnimationFrame(function () {
+            syncLayoutOffsets();
+        });
     }
 
     Promise.all([
@@ -168,12 +183,16 @@
     ]).then(function () {
         activateCurrentNavLink();
         initMobileMenu();
-        syncNavbarOffsets();
-        syncMainOffset();
+        syncLayoutOffsetsAfterRender();
         window.addEventListener('resize', function () {
-            syncNavbarOffsets();
-            syncMainOffset();
+            syncLayoutOffsetsAfterRender();
         });
+        window.addEventListener('load', syncLayoutOffsetsAfterRender);
+
+        if (document.fonts && document.fonts.ready) {
+            document.fonts.ready.then(syncLayoutOffsetsAfterRender);
+        }
+
         document.dispatchEvent(new CustomEvent('shared-layout:ready'));
     });
 })();
