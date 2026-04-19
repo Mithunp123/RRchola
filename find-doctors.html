@@ -109,14 +109,17 @@
             }
         }
         .specialists-doctor-grid > div {
-            max-width: 248px !important;
+            max-width: 270px !important;
             width: 100%;
+            border-radius: 1.6rem !important;
+            overflow: hidden;
         }
         .specialists-doctor-grid > div > div:first-child {
-            aspect-ratio: 4 / 3.45 !important;
+            aspect-ratio: auto !important;
+            height: 230px;
         }
         .specialists-doctor-grid > div > div:last-child {
-            padding: 0.85rem 0.8rem 0.9rem;
+            padding: 0.8rem 0.75rem 0.8rem;
         }
         .specialists-doctor-grid > div > div:last-child p:first-child {
             margin-bottom: 0.55rem;
@@ -125,7 +128,48 @@
             margin-bottom: 0.15rem;
         }
         .specialists-doctor-grid > div > div:last-child p:nth-of-type(2) {
-            margin-bottom: 0.65rem;
+            margin-bottom: 0.55rem;
+        }
+        .specialists-doctor-grid a[href="doctor-profile.html"] {
+            padding-top: 0.72rem !important;
+            padding-bottom: 0.72rem !important;
+            font-size: 1.04rem;
+            line-height: 1.2;
+            border-radius: 0.95rem;
+        }
+        @media (min-width: 1024px) {
+            .specialists-doctor-grid > div {
+                max-width: 286px !important;
+            }
+            .specialists-doctor-grid > div > div:first-child {
+                height: 250px;
+            }
+        }
+        @media (max-width: 639px) {
+            .specialists-doctor-grid > div {
+                max-width: 100% !important;
+                width: 100% !important;
+            }
+            .specialists-doctor-grid > div > div:first-child {
+                height: 260px;
+            }
+            .specialists-section-intro p,
+            .specialists-explore {
+                display: none;
+            }
+            .specialists-doctor-grid a[href="doctor-profile.html"] {
+                padding-top: 0.62rem !important;
+                padding-bottom: 0.62rem !important;
+                font-size: 0.96rem;
+            }
+        }
+        @media (min-width: 640px) and (max-width: 1023px) {
+            .specialists-doctor-grid > div {
+                max-width: 260px !important;
+            }
+            .specialists-doctor-grid > div > div:first-child {
+                height: 220px;
+            }
         }
     </style>
 </head>
@@ -149,13 +193,10 @@
 <!-- Specialists Grid -->
 <section class="bg-surface-bright pt-14 pb-24 px-6 sm:px-8">
 <div class="max-w-[1240px] mx-auto">
-<div class="flex flex-col md:flex-row justify-between items-end mb-14 gap-6">
+<div class="specialists-section-intro flex flex-col md:flex-row justify-between items-end mb-14 gap-6">
 <div>
 <h3 class="text-5xl font-headline font-extrabold text-on-surface tracking-tighter mb-4">Our Specialists</h3>
 <p class="text-outline text-xl font-light">Global expertise across every major medical discipline.</p>
-</div>
-<div class="text-primary font-bold flex items-center gap-2 group cursor-pointer text-sm uppercase tracking-widest">
-                    Explore all departments <span class="material-symbols-outlined transition-transform group-hover:translate-x-2" data-icon="arrow_forward">arrow_forward</span>
 </div>
 </div>
 <!-- 2 Rows, 4 Columns Grid -->
