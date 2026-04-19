@@ -91,6 +91,28 @@
       .btn-glow:hover {
         box-shadow: 0 0 20px rgba(154, 37, 174, 0.4);
       }
+      .speciality-grid-card {
+        transition: transform 140ms ease, box-shadow 140ms ease, background 160ms ease, border-color 160ms ease;
+      }
+      .speciality-grid-card:hover {
+        background: linear-gradient(135deg, #4A148C 0%, #5A1B96 28%, #6A1B9A 52%, #8C27B0 76%, #C770DC 100%) !important;
+        border-color: transparent !important;
+        box-shadow: 0 18px 34px rgba(74, 20, 140, 0.28) !important;
+      }
+      .speciality-grid-card .speciality-icon {
+        transition: transform 140ms ease, filter 140ms ease;
+      }
+      .speciality-grid-card:hover .speciality-icon {
+        transform: scale(1.06) !important;
+        filter: brightness(0) invert(1) !important;
+      }
+      .speciality-grid-card .speciality-title {
+        transition: none;
+      }
+      .speciality-grid-card:hover .speciality-title {
+        color: #ffffff !important;
+        text-shadow: none !important;
+      }
       .running-strip {
         overflow: hidden;
         white-space: nowrap;
@@ -138,29 +160,29 @@
 <p class="text-on-surface-variant">Advanced care across six focused specialities.</p>
 </div>
 <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
-<a href="cardiology.html" class="group bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
-<img class="w-28 h-28 object-contain p-1" alt="Cardiology icon" src="assests/icons8-heart-with-pulse-100.png"/>
-<h3 class="text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Cardiology</h3>
+<a href="cardiology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
+<img class="speciality-icon w-28 h-28 object-contain p-1" alt="Cardiology icon" src="assests/icons8-heart-with-pulse-100.png"/>
+<h3 class="speciality-title text-xl font-bold text-on-surface">Cardiology</h3>
 </a>
-<a href="cardiology.html" class="group bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
-<img class="w-28 h-28 object-contain p-1" alt="Neurology icon" src="assests/Neurology.png"/>
-<h3 class="text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Neurology</h3>
+<a href="cardiology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
+<img class="speciality-icon w-28 h-28 object-contain p-1" alt="Neurology icon" src="assests/Neurology.png"/>
+<h3 class="speciality-title text-xl font-bold text-on-surface">Neurology</h3>
 </a>
-<a href="cardiology.html" class="group bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
-<img class="w-28 h-28 object-contain p-1" alt="Orthopedics icon" src="assests/Orthopedics.png"/>
-<h3 class="text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Orthopedics</h3>
+<a href="cardiology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
+<img class="speciality-icon w-28 h-28 object-contain p-1" alt="Orthopedics icon" src="assests/Orthopedics.png"/>
+<h3 class="speciality-title text-xl font-bold text-on-surface">Orthopedics</h3>
 </a>
-<a href="cardiology.html" class="group bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
-<img class="w-28 h-28 object-contain p-1" alt="Oncology icon" src="assests/oncology_10202691.png"/>
-<h3 class="text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Oncology</h3>
+<a href="cardiology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
+<img class="speciality-icon w-28 h-28 object-contain p-1" alt="Oncology icon" src="assests/oncology_10202691.png"/>
+<h3 class="speciality-title text-xl font-bold text-on-surface">Oncology</h3>
 </a>
-<a href="cardiology.html" class="group bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
-<img class="w-28 h-28 object-contain p-1" alt="Gastroenterology icon" src="assests/Gastroenterology.png"/>
-<h3 class="text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Gastroenterology</h3>
+<a href="cardiology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
+<img class="speciality-icon w-28 h-28 object-contain p-1" alt="Gastroenterology icon" src="assests/Gastroenterology.png"/>
+<h3 class="speciality-title text-xl font-bold text-on-surface">Gastroenterology</h3>
 </a>
-<a href="cardiology.html" class="group bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
-<img class="w-28 h-28 object-contain p-1" alt="Pediatrics icon" src="assests/Pediatrics.png"/>
-<h3 class="text-xl font-bold text-on-surface group-hover:text-primary transition-colors">Pediatrics</h3>
+<a href="cardiology.html" class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 transition-all p-7 min-h-[255px] flex flex-col items-center justify-between text-center">
+<img class="speciality-icon w-28 h-28 object-contain p-1" alt="Pediatrics icon" src="assests/Pediatrics.png"/>
+<h3 class="speciality-title text-xl font-bold text-on-surface">Pediatrics</h3>
 </a>
 </div>
 </div>
