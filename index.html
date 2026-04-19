@@ -6,6 +6,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <link href="theme-overrides.css" rel="stylesheet">
 <script id="tailwind-config">
       tailwind.config = {
@@ -205,6 +206,153 @@
         }
         .timeline-orb-delay {
             animation-delay: -3s;
+        }
+        .journey-section {
+            position: relative;
+            isolation: isolate;
+            overflow: hidden;
+        }
+        .journey-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at top left, rgba(106, 27, 154, 0.14), transparent 34%),
+                radial-gradient(circle at bottom right, rgba(140, 39, 176, 0.14), transparent 32%),
+                linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(244, 217, 255, 0.42));
+            z-index: -2;
+        }
+        .journey-timeline {
+            position: relative;
+        }
+        .journey-timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 1.45rem;
+            width: 2px;
+            background: linear-gradient(180deg, rgba(199, 112, 220, 0.04), rgba(199, 112, 220, 0.6), rgba(106, 27, 154, 0.9), rgba(199, 112, 220, 0.6), rgba(199, 112, 220, 0.04));
+            box-shadow: 0 0 24px rgba(199, 112, 220, 0.38);
+        }
+        .journey-progress-rail {
+            position: absolute;
+            top: 0;
+            left: 1.45rem;
+            width: 2px;
+            height: 0%;
+            background: linear-gradient(180deg, #F9A8D4 0%, #C770DC 42%, #8C27B0 100%);
+            box-shadow: 0 0 20px rgba(199, 112, 220, 0.55);
+        }
+        .journey-step {
+            position: relative;
+            display: grid;
+            grid-template-columns: 3rem 1fr;
+            gap: 1rem;
+            align-items: start;
+        }
+        .journey-step::before {
+            content: '';
+            position: absolute;
+            left: 0.96rem;
+            top: 0.95rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 9999px;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+            z-index: 0;
+        }
+        .journey-card {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(252, 249, 255, 0.96));
+            backdrop-filter: blur(22px);
+            border: 1px solid rgba(206, 177, 231, 0.24);
+            box-shadow: 0 18px 44px rgba(121, 52, 160, 0.08);
+            transition: transform 220ms ease, box-shadow 220ms ease, border-color 220ms ease, background 220ms ease;
+        }
+        .journey-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(167, 89, 194, 0.28);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 242, 255, 0.94));
+            box-shadow: 0 26px 60px rgba(121, 52, 160, 0.12), 0 0 0 1px rgba(199, 112, 220, 0.12);
+        }
+        .journey-step-mark {
+            width: 3.1rem;
+            height: 3.1rem;
+            border-radius: 1rem;
+            background: linear-gradient(135deg, #7B1FA2 0%, #C770DC 100%);
+            color: #ffffff;
+            box-shadow: 0 12px 26px rgba(139, 61, 177, 0.28);
+        }
+        .journey-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 1rem;
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.84);
+            border: 1px solid rgba(167, 89, 194, 0.14);
+            color: #7B1FA2;
+            font-size: 0.78rem;
+            font-weight: 800;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+        .journey-step-title {
+            color: #1f2937;
+        }
+        .journey-step-desc {
+            color: #5b6472;
+        }
+        @media (min-width: 1024px) {
+            .journey-timeline::before,
+            .journey-progress-rail {
+                left: 50%;
+                transform: translateX(-1px);
+            }
+            .journey-step {
+                grid-template-columns: 1fr 4.5rem 1fr;
+                gap: 0;
+                align-items: center;
+            }
+            .journey-step::before {
+                left: calc(50% - 0.5rem);
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            .journey-step--left .journey-card {
+                grid-column: 1 / 2;
+                justify-self: end;
+                max-width: 31rem;
+            }
+            .journey-step--left .journey-step-copy {
+                grid-column: 1 / 2;
+                text-align: right;
+                justify-self: end;
+            }
+            .journey-step--left .journey-step-meta {
+                grid-column: 2 / 3;
+                grid-row: 1;
+                justify-self: center;
+            }
+            .journey-step--right .journey-card {
+                grid-column: 3 / 4;
+                justify-self: start;
+                max-width: 31rem;
+            }
+            .journey-step--right .journey-step-copy {
+                grid-column: 3 / 4;
+                text-align: left;
+                justify-self: start;
+            }
+            .journey-step--right .journey-step-meta {
+                grid-column: 2 / 3;
+                grid-row: 1;
+                justify-self: center;
+            }
         }
         .patient-carousel-viewport {
             overflow: hidden;
@@ -620,67 +768,77 @@ View All Specialities
 </div>
 </div>
 </section>
-<!-- Hospital Experience Timeline -->
-<section class="py-24 px-8 overflow-hidden bg-gradient-to-b from-primary-fixed/20 via-white to-secondary-fixed/20" data-timeline-section>
+<!-- Care Journey -->
+<section class="journey-section py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#fde7f3] via-[#f7eefe] to-[#ffffff]" data-timeline-section>
 <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-<div class="timeline-orb absolute -top-8 left-[10%] h-36 w-36 rounded-full bg-primary/10 blur-3xl"></div>
-<div class="timeline-orb timeline-orb-delay absolute bottom-6 right-[8%] h-44 w-44 rounded-full bg-secondary/20 blur-3xl"></div>
+<div class="timeline-orb absolute -top-10 left-[8%] h-44 w-44 rounded-full bg-pink-300/35 blur-3xl"></div>
+<div class="timeline-orb timeline-orb-delay absolute top-[18%] right-[8%] h-56 w-56 rounded-full bg-fuchsia-300/30 blur-3xl"></div>
+<div class="timeline-orb absolute bottom-0 left-[42%] h-52 w-52 rounded-full bg-violet-300/25 blur-3xl"></div>
 </div>
-<div class="max-w-7xl mx-auto">
-<div class="text-center mb-16">
-<p class="text-xs sm:text-sm uppercase tracking-[0.3em] font-bold text-primary/70 mb-4">Care Journey</p>
-<h2 class="text-4xl font-headline font-black text-primary mb-4">Your Path to Recovery</h2>
-<p class="max-w-3xl mx-auto text-on-surface-variant">A connected healing flow built for speed, precision, and compassionate continuity from first consult to full rehabilitation.</p>
+<div class="relative z-10 text-center mb-12 sm:mb-16" data-aos="fade-up" data-aos-duration="900">
+<span class="journey-pill mb-5" data-aos="zoom-in" data-aos-delay="100">Care Journey</span>
+<h2 class="text-4xl sm:text-5xl font-headline font-black leading-tight text-on-surface mb-5" data-aos="fade-up" data-aos-delay="150">Your Path to Recovery, Reimagined</h2>
+<p class="text-on-surface-variant text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="220">A cinematic journey flow with a glowing timeline, alternating steps, and smooth scroll reveal designed for a premium healthcare experience.</p>
 </div>
-<div class="relative">
-<div class="absolute hidden lg:block left-0 right-0 top-10 h-1 rounded-full bg-purple-100/80 overflow-hidden" aria-hidden="true">
-<div class="timeline-progress-fill h-full" data-timeline-progress-line style="width: 0%; background-image: linear-gradient(90deg, #6A1B9A 0%, #8C27B0 45%, #B96AD9 100%);"></div>
+<div class="journey-timeline relative space-y-6 sm:space-y-8 lg:space-y-10 px-0 sm:px-2 lg:px-0">
+<div class="journey-progress-rail" data-timeline-progress-line-mobile aria-hidden="true"></div>
+<div class="hidden lg:block journey-progress-rail" data-timeline-progress-line aria-hidden="true"></div>
+<article class="journey-step journey-step--left" data-timeline-step data-aos="fade-right" data-aos-delay="120">
+<div class="journey-step-meta flex items-center justify-center">
+<div class="journey-step-mark flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">forum</span>
 </div>
-<div class="absolute lg:hidden w-1 rounded-full bg-purple-100/90 top-0 bottom-0" style="left: 2.1rem;" aria-hidden="true"></div>
-<div class="absolute lg:hidden w-1 rounded-full top-0" style="left: 2.1rem; height: 0%; background-image: linear-gradient(180deg, #6A1B9A 0%, #8C27B0 45%, #B96AD9 100%);" data-timeline-progress-line-mobile aria-hidden="true"></div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
-<article class="timeline-step relative z-10 pl-20 lg:pl-0" data-timeline-step>
-<div class="timeline-step-node absolute lg:relative left-0 top-0 w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-[2rem] flex items-center justify-center border border-purple-100 shadow-xl">
-<span class="material-symbols-outlined text-3xl lg:text-4xl text-primary" data-icon="forum">forum</span>
 </div>
-<div class="lg:text-center lg:mt-20">
-<p class="text-xs font-bold tracking-[0.2em] uppercase text-primary/60 mb-2">Step 01</p>
-<h4 class="text-2xl lg:text-xl font-black text-on-surface mb-2">Consultation</h4>
-<p class="text-on-surface-variant text-sm">Expert diagnosis and initial assessment with our specialists.</p>
+<div class="journey-step-copy">
+<div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
+<p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 01</p>
+<h3 class="journey-step-title text-2xl sm:text-3xl font-black mb-3">Consultation</h3>
+<p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">A focused first conversation to understand your symptoms, history, and care goals before the plan takes shape.</p>
+</div>
 </div>
 </article>
-<article class="timeline-step relative z-10 pl-20 lg:pl-0" data-timeline-step>
-<div class="timeline-step-node absolute lg:relative left-0 top-0 w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-[2rem] flex items-center justify-center border border-purple-100 shadow-xl">
-<span class="material-symbols-outlined text-3xl lg:text-4xl text-primary" data-icon="biotech">biotech</span>
+<article class="journey-step journey-step--right" data-timeline-step data-aos="fade-left" data-aos-delay="200">
+<div class="journey-step-meta flex items-center justify-center">
+<div class="journey-step-mark flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">biotech</span>
 </div>
-<div class="lg:text-center lg:mt-20">
-<p class="text-xs font-bold tracking-[0.2em] uppercase text-primary/60 mb-2">Step 02</p>
-<h4 class="text-2xl lg:text-xl font-black text-on-surface mb-2">Diagnosis</h4>
-<p class="text-on-surface-variant text-sm">Precise identification using advanced imaging and smart labs.</p>
+</div>
+<div class="journey-step-copy">
+<div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
+<p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 02</p>
+<h3 class="journey-step-title text-2xl sm:text-3xl font-black mb-3">Diagnosis</h3>
+<p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">Advanced imaging and lab work turn uncertainty into a clear diagnosis and a confident next move.</p>
+</div>
 </div>
 </article>
-<article class="timeline-step relative z-10 pl-20 lg:pl-0" data-timeline-step>
-<div class="timeline-step-node absolute lg:relative left-0 top-0 w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-[2rem] flex items-center justify-center border border-purple-100 shadow-xl">
-<span class="material-symbols-outlined text-3xl lg:text-4xl text-primary" data-icon="vaccines">vaccines</span>
+<article class="journey-step journey-step--left" data-timeline-step data-aos="fade-right" data-aos-delay="280">
+<div class="journey-step-meta flex items-center justify-center">
+<div class="journey-step-mark flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">vaccines</span>
 </div>
-<div class="lg:text-center lg:mt-20">
-<p class="text-xs font-bold tracking-[0.2em] uppercase text-primary/60 mb-2">Step 03</p>
-<h4 class="text-2xl lg:text-xl font-black text-on-surface mb-2">Treatment</h4>
-<p class="text-on-surface-variant text-sm">Personalized therapeutic or surgical care protocols.</p>
+</div>
+<div class="journey-step-copy">
+<div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
+<p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 03</p>
+<h3 class="journey-step-title text-2xl sm:text-3xl font-black mb-3">Treatment</h3>
+<p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">Personalized medical or surgical care designed around precision, comfort, and fast clinical clarity.</p>
+</div>
 </div>
 </article>
-<article class="timeline-step relative z-10 pl-20 lg:pl-0" data-timeline-step>
-<div class="timeline-step-node absolute lg:relative left-0 top-0 w-16 h-16 lg:w-20 lg:h-20 bg-white rounded-[2rem] flex items-center justify-center border border-purple-100 shadow-xl">
-<span class="material-symbols-outlined text-3xl lg:text-4xl text-primary" data-icon="healing">healing</span>
+<article class="journey-step journey-step--right" data-timeline-step data-aos="fade-left" data-aos-delay="360">
+<div class="journey-step-meta flex items-center justify-center">
+<div class="journey-step-mark flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl">healing</span>
 </div>
-<div class="lg:text-center lg:mt-20">
-<p class="text-xs font-bold tracking-[0.2em] uppercase text-primary/60 mb-2">Step 04</p>
-<h4 class="text-2xl lg:text-xl font-black text-on-surface mb-2">Recovery</h4>
-<p class="text-on-surface-variant text-sm">Post-treatment support and comprehensive rehabilitation.</p>
+</div>
+<div class="journey-step-copy">
+<div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
+<p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 04</p>
+<h3 class="journey-step-title text-2xl sm:text-3xl font-black mb-3">Recovery</h3>
+<p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">Ongoing support, rehabilitation, and follow-up that keep progress steady after treatment.</p>
+</div>
 </div>
 </article>
-</div>
-</div>
 </div>
 </section>
 <!-- Testimonials -->
@@ -894,6 +1052,7 @@ View All Specialities
 </section>
 <div id="footer-slot"></div>
 <script src="shared-layout.js"></script>
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
 (function () {
     var counterSection = document.querySelector('[data-counter-section]');
@@ -1353,6 +1512,15 @@ View All Specialities
     if (slides.length) {
         renderSlide(0);
         startRotation();
+    }
+
+    if (window.AOS) {
+        AOS.init({
+            duration: 850,
+            easing: 'ease-out-cubic',
+            once: true,
+            offset: 90
+        });
     }
 
     initCountersOnScroll();
