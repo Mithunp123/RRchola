@@ -1,4 +1,123 @@
 (function () {
+    function loadStylesheet(href) {
+        return new Promise(function (resolve, reject) {
+            var existing = document.querySelector('link[href="' + href + '"]');
+            if (existing) {
+                resolve();
+                return;
+            }
+
+            var link = document.createElement('link');
+            link.rel = 'stylesheet';
+            link.href = href;
+            link.onload = function () {
+                resolve();
+            };
+            link.onerror = function () {
+                reject(new Error('Failed to load ' + href));
+            };
+            document.head.appendChild(link);
+        });
+    }
+
+    function loadScript(src) {
+        return new Promise(function (resolve, reject) {
+            if (window.AOS) {
+                resolve();
+                return;
+            }
+
+            var existing = document.querySelector('script[src="' + src + '"]');
+            if (existing) {
+                existing.addEventListener('load', function () {
+                    resolve();
+                });
+                existing.addEventListener('error', function () {
+                    reject(new Error('Failed to load ' + src));
+                });
+                return;
+            }
+
+            var script = document.createElement('script');
+            script.src = src;
+            script.async = true;
+            script.onload = function () {
+                resolve();
+            };
+            script.onerror = function () {
+                reject(new Error('Failed to load ' + src));
+            };
+            document.head.appendChild(script);
+        });
+    }
+
+    function initAOS() {
+        loadStylesheet('https://unpkg.com/aos@2.3.4/dist/aos.css')
+            .then(function () {
+                return loadScript('https://unpkg.com/aos@2.3.4/dist/aos.js');
+            })
+            .then(function () {
+                if (window.AOS) {
+                    window.AOS.init({
+                        duration: 800,
+                        easing: 'ease-out-cubic',
+                        once: true,
+                        offset: 90
+                    });
+                }
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+    }
+
+    function applyTextAnimations() {
+        var main = document.querySelector('main');
+        if (!main) {
+            return;
+        }
+
+        var selectors = [
+            'h1',
+            'h2',
+            'h3',
+            'h4',
+            'p',
+            'li',
+            'summary',
+            'label'
+        ].join(',');
+        var items = Array.prototype.slice.call(main.querySelectorAll(selectors));
+        var animationIndex = 0;
+
+        items.forEach(function (element) {
+            if (element.closest('nav') || element.closest('footer') || element.closest('#mobile-menu')) {
+                return;
+            }
+
+            if (element.closest('[data-no-aos]')) {
+                return;
+            }
+
+            if (element.hasAttribute('data-aos')) {
+                return;
+            }
+
+            if (element.textContent && element.textContent.trim().length === 0) {
+                return;
+            }
+
+            var direction = animationIndex % 2 === 0 ? 'fade-right' : 'fade-left';
+            element.setAttribute('data-aos', direction);
+            element.setAttribute('data-aos-delay', String((animationIndex % 4) * 80));
+            animationIndex += 1;
+        });
+
+        if (window.AOS) {
+            window.AOS.refreshHard();
+        }
+    }
+
     function loadPartial(slotId, partialFile) {
         var slot = document.getElementById(slotId);
         if (!slot) {
@@ -181,9 +300,11 @@
         loadPartial('navbar-slot', 'navbar.html'),
         loadPartial('footer-slot', 'footer.html')
     ]).then(function () {
+        initAOS();
         activateCurrentNavLink();
         initMobileMenu();
         syncLayoutOffsetsAfterRender();
+        applyTextAnimations();
         window.addEventListener('resize', function () {
             syncLayoutOffsetsAfterRender();
         });
