@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>Gallery | RR CHOLA HOSPITAL</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="theme-overrides.css" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#f9f9fb",
+            "primary": "#6A1B9A",
+            "secondary": "#8C27B0",
+            "primary-fixed": "#f4d9ff",
+            "on-surface": "#1A1A1A",
+            "on-surface-variant": "#4d4351"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(106, 27, 154, 0.14);
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(100deg, rgba(39, 16, 61, 0.82) 0%, rgba(75, 28, 109, 0.66) 48%, rgba(98, 43, 136, 0.5) 100%);
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.95rem;
+      border-radius: 9999px;
+      color: #ffffff;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.32);
+    }
+
+    .gallery-grid {
+      margin-left: -14px;
+    }
+
+    .gallery-grid-sizer,
+    .gallery-item {
+      width: 33.3333%;
+    }
+
+    .gallery-item {
+      padding-left: 14px;
+      margin-bottom: 14px;
+    }
+
+    .gallery-card {
+      border-radius: 1.2rem;
+      overflow: hidden;
+      border: 1px solid rgba(106, 27, 154, 0.14);
+      box-shadow: 0 10px 22px rgba(64, 35, 88, 0.08);
+      background: #fff;
+    }
+
+    .gallery-media {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 260ms ease;
+    }
+
+    .gallery-card:hover .gallery-media {
+      transform: scale(1.02);
+    }
+
+    .ratio-tall { aspect-ratio: 4 / 5; }
+    .ratio-wide { aspect-ratio: 16 / 10; }
+    .ratio-portrait { aspect-ratio: 3 / 4; }
+    .ratio-square { aspect-ratio: 1 / 1; }
+    .ratio-cinema { aspect-ratio: 21 / 9; }
+
+    .gallery-meta {
+      padding: 0.75rem 1rem 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.8rem;
+      background: #ffffff;
+    }
+
+    .gallery-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background: #6A1B9A;
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 1024px) {
+      .gallery-grid-sizer,
+      .gallery-item {
+        width: 50%;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .gallery-grid {
+        margin-left: -10px;
+      }
+
+      .gallery-grid-sizer,
+      .gallery-item {
+        width: 100%;
+      }
+
+      .gallery-item {
+        padding-left: 10px;
+        margin-bottom: 10px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+  <div id="navbar-slot"></div>
+
+  <main>
+    <section class="hero-shell">
+      <img class="hero-image" alt="hospital photography archive" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1800&q=80"/>
+      <div class="hero-overlay"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-8 pt-16 sm:pt-20 pb-14 sm:pb-16">
+        <div class="max-w-3xl space-y-5">
+          <p class="kicker">
+            <span class="material-symbols-outlined text-base">photo_library</span>
+            Gallery
+          </p>
+          <h1 class="font-headline text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight text-white">A Visual Story of Care, Precision, and Trust</h1>
+          <p class="text-white/90 text-base sm:text-lg max-w-2xl">Explore curated moments from our clinical spaces, technology platforms, patient services, and healthcare leadership.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-10">
+      <div class="grid md:grid-cols-3 gap-4">
+        <article class="gallery-card">
+          <img class="gallery-media ratio-cinema" alt="hospital board members in strategic meeting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhV-ZPMmjNVqleB_HBFiMdQ4mml3KtCuPTrCZlgKxf04mneQvbJq13rOsqTg_H8GvWrLs3gT2utJDqT6JHQ5ksrAydCymPpaFy8jB2DCTSGmy0hpXmCOFQkMusIyHeQ8GHgN7dugvNZIGgBGzb-38gjRNrGrSs5zaEVo9nmppwSVXPtc2JUF3rgV0NhWk8mN4j482bu3jw5rSu8DNoiUtAxZyKROp_OdFC6OHp5R9zopmJjsTjJcgyEfH42g6LomoRHzYd4KNBXCYp"/>
+        </article>
+        <article class="gallery-card">
+          <img class="gallery-media ratio-cinema" alt="critical care operations room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjft_o4wDM5YxKo9HrRZhGes6IKoZJPpLOzrEOa8oo14rCIi0hQJLuzZG5FBL1U0t9CCOL_pZe5gdt_6_YFIHMpu7jo__eySP2lu7HNpfxwpumRoFUHNMQA-1cra18WVP_7W1zOrATMw2F9L4bvQALa_WqXxC1foCkWYoeFMPhPaR16YPrCXrWek07rrpbfxYd4R34l5ptP2T9b_oRWAa7I7Bsn0WaHsW909UuIxPSCg6V2VSEKLz1Xpx28tknfm5_z5VTMFpt3axv"/>
+        </article>
+        <article class="gallery-card">
+          <img class="gallery-media ratio-cinema" alt="patient-centered premium reception lounge" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvmqcgU8SMUAz5tztaPfooqCSSONIpLEijYun-0SyPyoQpI7SIJQGP8SRqhcfy1hYLT6vwiKCK1W4IM3LTapZZNoukdyJ_WXf3dlV8sL5YcAc1UGrqqHhrSOaGOxNeStIYTXODQIKH-_5A6crPfSb7ZLv02sdwCZ3kwEE0N0tt50D7emGdkvMIIK0UUc9qqhCG9UpxGsDowZQBP6P01yHkB2aepj1PiGbHKP2-U-8JSdd1fbzPLsM_YA4tpaI_eQPDGeUngKhlyyrI"/>
+        </article>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-6 sm:py-8">
+      <div class="gallery-grid" data-masonry-grid>
+        <div class="gallery-grid-sizer"></div>
+
+        <article class="gallery-item"><div class="gallery-card"><img class="gallery-media ratio-wide" alt="robotic surgery theatre" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAINOEToirK7PztWHyYiQ9fIPSTYBNTwDnScZ70l5NHJqg4zY2cz1CCMHJe35tpKz7DZyCPgUZzeYyAufNQ_95gB8P3_3NfXT3cKY5_6swA0LneTNdEGTLsM6VSlD6-ixkoIOB7Nsyq7drix5vJiBlwhZWHf_-ChTvkumo9nLqtwlhRnVNu9iFNlhFieRYIchWnH8PUo7Ph2FZAMUoY8r6KiB_hBxkQVo1spPL7ZHff_atYGgMYlygC3fQpIwhQs2qILgZMb_Cwxl9B"/><div class="gallery-meta"><span class="inline-flex items-center gap-2 text-sm text-on-surface-variant"><span class="gallery-dot"></span>Clinical Innovation</span><span class="text-xs font-semibold text-primary">2024</span></div></div></article>
+        <article class="gallery-item"><div class="gallery-card"><img class="gallery-media ratio-portrait" alt="critical care team in icu" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjft_o4wDM5YxKo9HrRZhGes6IKoZJPpLOzrEOa8oo14rCIi0hQJLuzZG5FBL1U0t9CCOL_pZe5gdt_6_YFIHMpu7jo__eySP2lu7HNpfxwpumRoFUHNMQA-1cra18WVP_7W1zOrATMw2F9L4bvQALa_WqXxC1foCkWYoeFMPhPaR16YPrCXrWek07rrpbfxYd4R34l5ptP2T9b_oRWAa7I7Bsn0WaHsW909UuIxPSCg6V2VSEKLz1Xpx28tknfm5_z5VTMFpt3axv"/><div class="gallery-meta"><span class="inline-flex items-center gap-2 text-sm text-on-surface-variant"><span class="gallery-dot"></span>Critical Care</span><span class="text-xs font-semibold text-primary">2023</span></div></div></article>
+        <article class="gallery-item"><div class="gallery-card"><img class="gallery-media ratio-square" alt="hospital reception and support desk" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvmqcgU8SMUAz5tztaPfooqCSSONIpLEijYun-0SyPyoQpI7SIJQGP8SRqhcfy1hYLT6vwiKCK1W4IM3LTapZZNoukdyJ_WXf3dlV8sL5YcAc1UGrqqHhrSOaGOxNeStIYTXODQIKH-_5A6crPfSb7ZLv02sdwCZ3kwEE0N0tt50D7emGdkvMIIK0UUc9qqhCG9UpxGsDowZQBP6P01yHkB2aepj1PiGbHKP2-U-8JSdd1fbzPLsM_YA4tpaI_eQPDGeUngKhlyyrI"/><div class="gallery-meta"><span class="inline-flex items-center gap-2 text-sm text-on-surface-variant"><span class="gallery-dot"></span>Patient Experience</span><span class="text-xs font-semibold text-primary">2024</span></div></div></article>
+        <article class="gallery-item"><div class="gallery-card"><img class="gallery-media ratio-tall" alt="state of the art lab equipment" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUYCkiZS3sD84aSOcd0hBX088flv3MYkCqBgvVIXT90aUi6e-bdEj6q5cKnScjNIUB6L3JC2ebCriHFZttTzHQFhCC1m_CYDDUcHnuqp4kLQaZ5cZ-yorhnFFJx7zYvYQhhjARMIpEIgsaYvvSipCKblAsKwc-XKk2UpwiP7I-4W4d4e8DtLjy_Lj3--D1oAH7HzHNoPQdjJlajf9dOeMiDaVoCXrADL1s7bR8VyC5qui4bNO_VkS2AUVHMbfiS23yyCzzptcFbYb0"/><div class="gallery-meta"><span class="inline-flex items-center gap-2 text-sm text-on-surface-variant"><span class="gallery-dot"></span>Diagnostics Lab</span><span class="text-xs font-semibold text-primary">2022</span></div></div></article>
+        <article class="gallery-item"><div class="gallery-card"><img class="gallery-media ratio-wide" alt="emergency response setup" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoHNCG3r5rFf9wlwrq03Nv8WyEf5PVDxW-Ut7Mfe7qJBWXca03yUD5tAGXD_nJdqCZ8nt6Ji7Lj2FV9f9KR_royB6pJ3J3HYf0Lcfi34RKmGXtg8gtIFqhB--g3RwBCcuSxqvFEDqQyDwr8c-3UR9xTKbaofrlda5ID2knXzy4PPSgXUXmtFGyoWxUKTWm6v8_opFiDXlgaxCOIAaP4zfUt65BAQpkiFaMAAfZcu15ELJyzOTotyBcBSkL0WHgG7pxIjCbbw0Qji-o"/><div class="gallery-meta"><span class="inline-flex items-center gap-2 text-sm text-on-surface-variant"><span class="gallery-dot"></span>Emergency Services</span><span class="text-xs font-semibold text-primary">2021</span></div></div></article>
+        <article class="gallery-item"><div class="gallery-card"><img class="gallery-media ratio-portrait" alt="advanced patient birth suite" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlWICp60202v5bHcUE0LEcWYnAN_TE4acBbTKCpJC9hkrUvVrfjqfejHcMnjOAxAp5o3NFbrI2POoYMdrKENRgEtCrKoc1SX6xLZ_C22X5hEE5gnudidJ6Mp8OltW3lfOk6VWjQR1_4eN214VYP5z30oEhYVL-LbA_AVhXKC-3qFL6eYrTAN7flFw-YUKe5JhH1F9wkq8Les_z9Aw8jImJ7aGgH4u86BXsC3bXiPrkuUxWbRk1zp4skrSBJnTFvvKxd9AsJYp4baY"/><div class="gallery-meta"><span class="inline-flex items-center gap-2 text-sm text-on-surface-variant"><span class="gallery-dot"></span>Maternity Care</span><span class="text-xs font-semibold text-primary">2023</span></div></div></article>
+      </div>
+
+      <div class="mt-8 flex justify-center">
+        <a class="inline-flex items-center gap-2 rounded-xl border border-primary/20 bg-primary-fixed/30 px-5 py-3 font-semibold text-primary hover:bg-primary-fixed/45 transition-colors" href="awards.html">
+          View Awards
+          <span class="material-symbols-outlined text-lg">arrow_forward</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+  <script src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+  <script src="shared-layout.js"></script>
+  <script>
+    (function () {
+      function initGalleryMasonry() {
+        var grid = document.querySelector('[data-masonry-grid]');
+        if (!grid || typeof Masonry === 'undefined') {
+          return;
+        }
+
+        new Masonry(grid, {
+          itemSelector: '.gallery-item',
+          columnWidth: '.gallery-grid-sizer',
+          percentPosition: true,
+          gutter: 0
+        });
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initGalleryMasonry);
+      } else {
+        initGalleryMasonry();
+      }
+    })();
+  </script>
+</body>
+</html>
