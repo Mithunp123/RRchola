@@ -118,6 +118,50 @@
         text-justify: inter-word;
       }
 
+      @media (min-width: 769px) {
+        .infra-row {
+          position: relative;
+          padding: 3.3rem 0;
+          border: 0;
+          border-radius: 0;
+          background: transparent;
+          box-shadow: none;
+        }
+
+        .infra-row::before {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 100vw;
+          height: 100%;
+          background: #fff7fc;
+          z-index: 0;
+        }
+
+        .infra-row:nth-child(even)::before {
+          background: #f7faff;
+        }
+
+        .infra-row:nth-child(3n)::before {
+          background: #f7fcfb;
+        }
+
+        .infra-row .infra-text,
+        .infra-row .infra-visual {
+          position: relative;
+          z-index: 1;
+          align-self: flex-start;
+        }
+
+        .infra-row .infra-media {
+          width: 560px;
+          height: 360px;
+          max-width: 100%;
+        }
+      }
+
       @media (max-width: 768px) {
         .infra-row {
           display: flex;
@@ -213,7 +257,7 @@
 </section>
 
 <section class="py-20 sm:py-24 bg-surface">
-<div class="max-w-7xl mx-auto px-6 sm:px-8 space-y-16 sm:space-y-20">
+<div class="max-w-7xl mx-auto px-6 sm:px-8 space-y-0">
 <article class="infra-row grid md:grid-cols-12 gap-8 sm:gap-10 items-start">
 <div class="infra-text md:col-span-7">
 <h2 class="infra-title">Robotics Surgery</h2>
