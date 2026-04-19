@@ -59,6 +59,12 @@
       .group:hover .value-card-icon {
         color: #ffffff !important;
       }
+      .vision-card:hover .vision-title {
+        color: #ffffff !important;
+      }
+      .innovation-card .value-card-icon {
+        color: #ffffff !important;
+      }
     </style>
 </head>
 <body class="bg-surface font-body text-on-surface overflow-x-hidden">
@@ -130,14 +136,14 @@
 <div class="absolute -right-20 -top-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
 </div>
 
-<div class="group border-2 border-primary/20 bg-white rounded-3xl p-8 sm:p-12 shadow-sm transition-all duration-500 hover:shadow-xl hover:border-primary/40">
+<div class="group vision-card border-2 border-primary/20 bg-white rounded-3xl p-8 sm:p-12 shadow-sm transition-all duration-500 hover:shadow-xl hover:border-primary hover:bg-primary">
 <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
-<div class="p-5 bg-primary/5 rounded-2xl text-primary">
+<div class="p-5 bg-primary/5 rounded-2xl text-primary transition-colors duration-500 group-hover:bg-white/15 group-hover:text-white">
 <span class="material-symbols-outlined text-6xl">visibility</span>
 </div>
 <div class="space-y-4 md:text-right flex-1">
-<h3 class="text-3xl sm:text-4xl font-headline font-extrabold text-primary">Our Vision</h3>
-<p class="text-lg sm:text-xl text-on-surface-variant max-w-3xl md:ml-auto">To be recognized globally as a leader in clinical innovation and the first choice for patients seeking a holistic, tech-forward healing sanctuary.</p>
+<h3 class="vision-title text-3xl sm:text-4xl font-headline font-extrabold text-primary transition-colors duration-500 group-hover:text-white">Our Vision</h3>
+<p class="text-lg sm:text-xl text-on-surface-variant max-w-3xl md:ml-auto transition-colors duration-500 group-hover:text-white/90">To be recognized globally as a leader in clinical innovation and the first choice for patients seeking a holistic, tech-forward healing sanctuary.</p>
 </div>
 </div>
 </div>
@@ -149,19 +155,19 @@
 <h2 class="text-4xl sm:text-5xl font-headline font-extrabold">The Core of Our Care</h2>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-<article class="group bg-white rounded-3xl p-9 text-center shadow-sm border border-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
+<article class="group bg-white rounded-3xl p-9 text-center shadow-sm border-2 border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
 <span class="material-symbols-outlined value-card-icon text-5xl mb-5">favorite</span>
 <h4 class="text-4xl text-xl font-bold text-on-surface mb-3 font-headline transition-colors group-hover:text-white">Compassion</h4>
 <p class="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-white/85">Treating every patient with the same warmth and dignity we would offer our own family.</p>
 </article>
-<article class="group bg-white rounded-3xl p-9 shadow-sm border border-slate-200/70 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
+<article class="group bg-white rounded-3xl p-9 shadow-sm border-2 border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
 <div class="flex items-start gap-4 mb-4">
 <span class="material-symbols-outlined value-card-icon text-5xl">verified</span>
 <h4 class="text-xl font-bold text-on-surface font-headline transition-colors group-hover:text-white">Integrity</h4>
 </div>
 <p class="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-white/85">Upholding transparency and ethics in every clinical decision and patient interaction.</p>
 </article>
-<article class="group relative overflow-hidden rounded-3xl bg-primary p-9 text-white shadow-lg transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+<article class="group innovation-card relative overflow-hidden rounded-3xl bg-primary p-9 text-white shadow-lg border-2 border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
 <div class="absolute inset-0 opacity-15 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 18px 18px;"></div>
 <div class="relative z-10">
 <span class="material-symbols-outlined value-card-icon text-5xl mb-5">biotech</span>
