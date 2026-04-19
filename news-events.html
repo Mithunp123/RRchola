@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>News &amp; Events | RR CHOLA HOSPITAL</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+  <link href="theme-overrides.css" rel="stylesheet"/>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface": "#f5f4f9",
+            "primary": "#6A1B9A",
+            "secondary": "#8C27B0",
+            "primary-fixed": "#f4d9ff",
+            "on-surface": "#1A1A1A",
+            "on-surface-variant": "#4d4351"
+          },
+          fontFamily: {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .hero-shell {
+      position: relative;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(106, 27, 154, 0.16);
+      background: radial-gradient(circle at 18% 12%, rgba(106, 27, 154, 0.26), rgba(106, 27, 154, 0) 42%), radial-gradient(circle at 84% 0%, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0) 36%), linear-gradient(120deg, #180a26 0%, #2c0f42 48%, #4e0078 100%);
+    }
+
+    .kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.42rem 0.9rem;
+      border-radius: 9999px;
+      color: #ffffff;
+      font-size: 0.76rem;
+      letter-spacing: 0.16em;
+      font-weight: 800;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.13);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+    }
+
+    .split-shell {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      align-items: start;
+    }
+
+    .feed-panel {
+      border-radius: 0.6rem;
+      border: 1px solid rgba(78, 0, 120, 0.16);
+      background: linear-gradient(180deg, #3d165f 0%, #6b3397 18%, #c9b5db 38%, #ece4f4 58%, #f8f6fb 100%);
+      box-shadow: 0 10px 18px rgba(27, 10, 39, 0.08);
+      overflow: hidden;
+    }
+
+    .feed-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.5rem;
+      padding: 0.9rem 1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+      background: linear-gradient(180deg, rgba(40, 15, 62, 0.7), rgba(89, 43, 127, 0.5));
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      backdrop-filter: blur(6px);
+    }
+
+    .feed-head h2 {
+      font-family: Manrope, sans-serif;
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: #ffffff;
+    }
+
+    .feed-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-size: 0.75rem;
+      line-height: 1;
+      font-weight: 700;
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.18);
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      border-radius: 999px;
+      padding: 0.35rem 0.55rem;
+      white-space: nowrap;
+    }
+
+    .feed-body {
+      padding: 0.9rem;
+      display: grid;
+      gap: 0.8rem;
+      overflow-x: hidden;
+    }
+
+    .feed-item {
+      border-radius: 0.55rem;
+      border: 0;
+      background: #ffffff;
+      padding: 0.5rem;
+      box-shadow: 0 4px 10px rgba(29, 11, 42, 0.06);
+      transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, border-color 200ms ease;
+    }
+
+    .feed-item-link {
+      display: block;
+      text-decoration: none;
+    }
+
+    .feed-item:hover {
+      transform: translateY(-2px);
+      background-color: #6A1B9A;
+      border-color: #4e0078;
+      box-shadow: 0 12px 22px rgba(78, 0, 120, 0.26);
+    }
+
+    .feed-media {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      display: block;
+      border-radius: 0.42rem;
+      background: #ece8f2;
+      border: 0;
+    }
+
+    .feed-copy {
+      padding: 0.8rem 0.35rem 0.35rem;
+    }
+
+    .feed-title {
+      font-family: Manrope, sans-serif;
+      font-size: 0.88rem;
+      font-weight: 800;
+      line-height: 1.35;
+      letter-spacing: -0.01em;
+      color: #111827;
+      text-transform: uppercase;
+      text-align: center;
+      overflow-wrap: anywhere;
+    }
+
+    .feed-item:hover .feed-title {
+      color: #ffffff;
+    }
+
+    @media (min-width: 1024px) {
+      .split-shell {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.1rem;
+      }
+
+      .feed-panel {
+        height: calc(100vh - 210px);
+      }
+
+      .feed-body {
+        height: calc(100% - 62px);
+        overflow-y: auto;
+        overflow-x: hidden;
+      }
+
+      .feed-body::-webkit-scrollbar {
+        width: 9px;
+        height: 0;
+      }
+
+      .feed-body::-webkit-scrollbar-track {
+        background: #f0ecf5;
+      }
+
+      .feed-body::-webkit-scrollbar-thumb {
+        background: #b98ed2;
+        border-radius: 999px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-surface font-body text-on-surface overflow-x-hidden">
+  <div id="navbar-slot"></div>
+
+  <main>
+    <section class="hero-shell">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-16 sm:pt-20 pb-14 sm:pb-16 relative">
+        <div class="max-w-3xl space-y-5">
+          <p class="kicker">
+            <span class="material-symbols-outlined text-base">campaign</span>
+            Updates Hub
+          </p>
+          <h1 class="font-headline text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight text-white">News &amp; Events</h1>
+          <p class="text-white/90 text-base sm:text-lg max-w-2xl">Two live streams for hospital communication: News on one side and Events on the other. On mobile, News appears first, followed by Events.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-7 sm:py-9">
+      <div class="split-shell">
+        <article class="feed-panel">
+          <header class="feed-head">
+            <h2>News</h2>
+            <span class="feed-badge">
+              <span class="material-symbols-outlined text-sm">newspaper</span>
+              Latest
+            </span>
+          </header>
+          <div class="feed-body">
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&w=1200&q=80" alt="minimally invasive surgery launch"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Minimally Invasive Liver Program Launch</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1580281657527-47a871f3d458?auto=format&fit=crop&w=1200&q=80" alt="emergency care unit expansion"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Emergency Unit Expansion Completed</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1583912267550-d48fd5f7718f?auto=format&fit=crop&w=1200&q=80" alt="diagnostic workflow integration"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Integrated Diagnostics Workflow Activated</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1582719478185-1c8e0d6e6815?auto=format&fit=crop&w=1200&q=80" alt="patient digital services"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Digital Patient Support Kiosk Introduced</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80" alt="pediatric care upgrade"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Pediatric Observation Unit Upgraded</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=1200&q=80" alt="advanced imaging services"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Advanced Imaging Services Live 24x7</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="cardiology diagnostics update"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Cardiology Diagnostics Wing Modernized</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80" alt="multi-specialty team announcement"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Multi-Specialty Team Expansion Announced</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80" alt="day-care surgery update"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Day-Care Surgery Unit Capacity Enhanced</h3>
+                </div>
+              </a>
+            </article>
+          </div>
+        </article>
+
+        <article class="feed-panel">
+          <header class="feed-head">
+            <h2>Events</h2>
+            <span class="feed-badge">
+              <span class="material-symbols-outlined text-sm">event</span>
+              Upcoming
+            </span>
+          </header>
+          <div class="feed-body">
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80" alt="community liver screening camp"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Community Liver Screening Camp 2026</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?auto=format&fit=crop&w=1200&q=80" alt="hands-on endoscopy training"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Hands-On Endoscopy Training Workshop</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80" alt="colorectal awareness campaign"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Colorectal Awareness Public Program</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&q=80" alt="nursing recognition event"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Nursing Excellence Recognition Ceremony</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80" alt="cme imaging session"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Advanced Imaging CME Session</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?auto=format&fit=crop&w=1200&q=80" alt="cancer pain intervention workshop"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Cancer Pain Intervention Skill Workshop</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&w=1200&q=80" alt="hospital milestone celebration"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Five Years Of Care Milestone Celebration</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80" alt="rural gastro camp"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Rural Gastro Camp and Liver Clinic Support</h3>
+                </div>
+              </a>
+            </article>
+            <article class="feed-item">
+              <a class="feed-item-link" href="#">
+                <img class="feed-media" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="research meet and award function"/>
+                <div class="feed-copy">
+                  <h3 class="feed-title">Annual Research Meet and Award Function</h3>
+                </div>
+              </a>
+            </article>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <div id="footer-slot"></div>
+  <script src="shared-layout.js"></script>
+</body>
+</html>
