@@ -108,16 +108,7 @@
                 transform: translateX(-50%);
             }
         }
-        .specialists-doctor-grid > div {
-            max-width: 270px !important;
-            width: 100%;
-            border-radius: 1.6rem !important;
-            overflow: hidden;
-        }
-        .specialists-doctor-grid > div > div:first-child {
-            aspect-ratio: auto !important;
-            height: 230px;
-        }
+
         .specialists-doctor-grid > div > div:last-child {
             padding: 0.8rem 0.75rem 0.8rem;
         }
@@ -141,21 +132,8 @@
             border-radius: 0.95rem;
         }
         @media (min-width: 1024px) {
-            .specialists-doctor-grid > div {
-                max-width: 286px !important;
-            }
-            .specialists-doctor-grid > div > div:first-child {
-                height: 250px;
-            }
         }
         @media (max-width: 639px) {
-            .specialists-doctor-grid > div {
-                max-width: 100% !important;
-                width: 100% !important;
-            }
-            .specialists-doctor-grid > div > div:first-child {
-                height: 260px;
-            }
             .specialists-section-intro p,
             .specialists-explore {
                 display: none;
@@ -167,12 +145,6 @@
             }
         }
         @media (min-width: 640px) and (max-width: 1023px) {
-            .specialists-doctor-grid > div {
-                max-width: 260px !important;
-            }
-            .specialists-doctor-grid > div > div:first-child {
-                height: 220px;
-            }
         }
     </style>
 </head>
@@ -195,7 +167,7 @@
 </header>
 <!-- Specialists Grid -->
 <section class="bg-surface-bright pt-14 pb-24 px-6 sm:px-8">
-<div class="max-w-[1240px] mx-auto">
+<div class="max-w-[1340px] mx-auto">
 <div class="specialists-section-intro flex flex-col md:flex-row justify-between items-end mb-14 gap-6">
 <div>
 <h3 class="text-5xl font-headline font-extrabold text-on-surface tracking-tighter mb-4">Our Specialists</h3>
@@ -205,8 +177,8 @@
 <!-- 2 Rows, 4 Columns Grid -->
 <div class="specialists-doctor-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-4 sm:gap-x-5 lg:gap-x-6 gap-y-8 place-items-center">
 <!-- Doctor Card 1 -->
-<div class="bg-white rounded-[1.6rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[220px] sm:max-w-[228px] w-full mx-auto">
-<div class="relative aspect-[4/4.3] overflow-hidden">
+<div class="bg-white rounded-[1.6rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[280px] sm:max-w-[310px] lg:max-w-[340px] w-full mx-auto">
+<div class="relative aspect-[4/5] overflow-hidden">
 <img alt="Dr. Sarah Chen" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6wH5362lyTkAooTKRPqOLwan2Lk7YxOw2ZMzXtdQP3n_h8FM-oxyB05icjb-FZcu0jLNGk7r3NilnWOZJwAGIo0CiIM3Rpv0fYe_Z6O2UhR-AU1GHzG0dGQeauuNC0eqsG_YwIT9RrILsPycrEMU3oGTlXXmx58LigR_XqQUJUh5AnL-ImR-fBJPE7U-zGayYObQSipw49dJp6pv4BRTO_TGjUtfch7CNb-oohB6dceBAOSjM0OMC19WlYSmxp6jTwdsN8ULo2K8d"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 </div>
@@ -218,8 +190,8 @@
 </div>
 </div>
 <!-- Doctor Card 2 -->
-<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[220px] sm:max-w-[228px] w-full mx-auto">
-<div class="relative aspect-[4/4.3] overflow-hidden">
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[280px] sm:max-w-[310px] lg:max-w-[340px] w-full mx-auto">
+<div class="relative aspect-[4/5] overflow-hidden">
 <img alt="Dr. James Miller" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAfgVF5f7MDsl0h_7r6vjhAjWVP5DwMtwc-4RrvVuSUmVHKbnaJ4e4aL44Z5N-eHiNxabfEKaIrq2Lng-iFlzDky8XBWsFrfEQMtAZthQqnlmpocifULp1ALPkdqU5qFhdqc2b6qxXYrjDJqQTpR7nP4gY83UtJvkXuQ1QsoeD9c5dWENmE1Mn1t2X1ElJcDQsyaAW8gCOkU-3SxdIDlaQWx656jGHoyAve9VMEqzRNkGnzNaNxFgQVfBg1MrP6JMQbIBwU1OU2H2LK"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 </div>
@@ -231,8 +203,8 @@
 </div>
 </div>
 <!-- Doctor Card 3 -->
-<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[220px] sm:max-w-[228px] w-full mx-auto">
-<div class="relative aspect-[4/4.3] overflow-hidden">
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[280px] sm:max-w-[310px] lg:max-w-[340px] w-full mx-auto">
+<div class="relative aspect-[4/5] overflow-hidden">
 <img alt="Dr. Elena Rodriguez" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvsefgTURB-MLc8E18UPj4e76vG2bEOZxlZY4aPjIPYoyIgd5b6A7AOWd4MP3owX-PirIJFQT5Q68WrJzSnEoaOI4CzEsIU6Fefl09_9gwTIEe5S8yDrfHMbSbayGBQvwQwXT3d1Ng-7vrlZB-M_hob1LdwxSpUDwane0cgm2y5wDkPyKxMWgN9s1khyrsBv3giwAxEgreCzIsO8JAh0IguPhyaFNqTP5F5VOoJH-emj8iOqwI_2dWjFruoRAiBtbjvqcuy6Vkw6Oa"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 </div>
@@ -244,8 +216,8 @@
 </div>
 </div>
 <!-- Doctor Card 4 -->
-<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[220px] sm:max-w-[228px] w-full mx-auto">
-<div class="relative aspect-[4/4.3] overflow-hidden">
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[280px] sm:max-w-[310px] lg:max-w-[340px] w-full mx-auto">
+<div class="relative aspect-[4/5] overflow-hidden">
 <img alt="Dr. Marcus Thorne" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPDt1dJ-N9WsMbm6egHSYgSIS8MmZFsUYciZ-jUt_iMubNdwIEaxflySCBH9uwIvNWzd5W2PJxBAxXE4BwSLQCGawUolO6Vy-6alMwt11cAFDtUvr3C_RypZJ50JyyLJVNXwusmL5UzFCIEgJqKT3aAG65qoZukHaTJ7IPEhSPSvbfroXvfVZY8KN-fGdIRaWb5wfjZrJ8hw5ICNVOrRuAXPDVnkqz99S6f3txnP5xJV5jAJL-XLV1UkkQSChIijsP0GfVNpcUH-ex"/>
 <div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 </div>
@@ -257,8 +229,8 @@
 </div>
 </div>
 <!-- Row 2 Card 1 -->
-<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[220px] sm:max-w-[228px] w-full mx-auto">
-<div class="relative aspect-[4/4.3] overflow-hidden">
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[280px] sm:max-w-[310px] lg:max-w-[340px] w-full mx-auto">
+<div class="relative aspect-[4/5] overflow-hidden">
 <img alt="Specialist" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCdsEKF5pDBfwFgoQMgdicFtbqOIZJ6saGkrglvjWtda7zNbfoTP44T5UQkf6ZOo-DvhGcQPUh6wY3A2DqhjiN58gV5iVgB4ENTlAwTZ9zA6cjzVyUDt0Xp2ojZH0PG46jm-6DEz8hKBaY1iOpVWAr0bHDN3D2xoqpZhkMH41XmFhfPiTpYms4guzdHQvs75vztrVZUorggSlvpO0Ks6WtFU32ZjxowFN8i2-Pu0sl0AYpNWhIlP1lS_1AjsCSbWIp0jrJxuQ8a47_m"/>
 </div>
 <div class="p-4 text-center">
@@ -269,8 +241,8 @@
 </div>
 </div>
 <!-- Row 2 Card 2 -->
-<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[220px] sm:max-w-[228px] w-full mx-auto">
-<div class="relative aspect-[4/4.3] overflow-hidden flex items-center justify-center bg-slate-100">
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[280px] sm:max-w-[310px] lg:max-w-[340px] w-full mx-auto">
+<div class="relative aspect-[4/5] overflow-hidden flex items-center justify-center bg-slate-100">
 <span class="material-symbols-outlined text-slate-300 text-6xl" data-icon="person_search">person_search</span>
 </div>
 <div class="p-4 text-center">
@@ -281,8 +253,8 @@
 </div>
 </div>
 <!-- Row 2 Card 3 -->
-<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[220px] sm:max-w-[228px] w-full mx-auto">
-<div class="relative aspect-[4/4.3] overflow-hidden flex items-center justify-center bg-slate-100">
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[280px] sm:max-w-[310px] lg:max-w-[340px] w-full mx-auto">
+<div class="relative aspect-[4/5] overflow-hidden flex items-center justify-center bg-slate-100">
 <span class="material-symbols-outlined text-slate-300 text-6xl" data-icon="person_search">person_search</span>
 </div>
 <div class="p-4 text-center">
@@ -293,8 +265,8 @@
 </div>
 </div>
 <!-- Row 2 Card 4 -->
-<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[220px] sm:max-w-[228px] w-full mx-auto">
-<div class="relative aspect-[4/4.3] overflow-hidden flex items-center justify-center bg-slate-100">
+<div class="bg-white rounded-[2rem] overflow-hidden shadow-sm transition-all duration-500 hover:-translate-y-2 group doctor-card-glow border border-transparent hover:border-purple-100 max-w-[280px] sm:max-w-[310px] lg:max-w-[340px] w-full mx-auto">
+<div class="relative aspect-[4/5] overflow-hidden flex items-center justify-center bg-slate-100">
 <span class="material-symbols-outlined text-slate-300 text-6xl" data-icon="person_search">person_search</span>
 </div>
 <div class="p-4 text-center">
@@ -315,28 +287,28 @@
 <div class="h-1 w-20 bg-primary mx-auto rounded-full"></div>
 </div>
 <div class="clinical-difference-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<div class="p-10 bg-surface-bright rounded-3xl border border-purple-50 flex flex-col items-center text-center group hover:bg-white hover:shadow-2xl hover:shadow-purple-100 transition-all duration-500">
+<div class="p-10 bg-surface-bright rounded-3xl border-2 border-primary flex flex-col items-center text-center group hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300">
 <div class="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 transition-transform group-hover:scale-110 group-hover:bg-primary group-hover:text-white text-primary">
 <span class="material-symbols-outlined text-3xl" data-icon="verified">verified</span>
 </div>
 <h5 class="text-xl font-headline font-bold mb-4 text-on-surface">Board Certified</h5>
 <p class="text-outline text-sm leading-relaxed font-light">International training and fellowships from the world's leading medical institutions.</p>
 </div>
-<div class="p-10 bg-surface-bright rounded-3xl border border-purple-50 flex flex-col items-center text-center group hover:bg-white hover:shadow-2xl hover:shadow-purple-100 transition-all duration-500">
+<div class="p-10 bg-surface-bright rounded-3xl border-2 border-primary flex flex-col items-center text-center group hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300">
 <div class="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 transition-transform group-hover:scale-110 group-hover:bg-primary group-hover:text-white text-primary">
 <span class="material-symbols-outlined text-3xl" data-icon="monitoring">monitoring</span>
 </div>
 <h5 class="text-xl font-headline font-bold mb-4 text-on-surface">Precision Care</h5>
 <p class="text-outline text-sm leading-relaxed font-light">Customized treatment roadmaps designed around your unique biological markers.</p>
 </div>
-<div class="p-10 bg-surface-bright rounded-3xl border border-purple-50 flex flex-col items-center text-center group hover:bg-white hover:shadow-2xl hover:shadow-purple-100 transition-all duration-500">
+<div class="p-10 bg-surface-bright rounded-3xl border-2 border-primary flex flex-col items-center text-center group hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300">
 <div class="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 transition-transform group-hover:scale-110 group-hover:bg-primary group-hover:text-white text-primary">
 <span class="material-symbols-outlined text-3xl" data-icon="precision_manufacturing">precision_manufacturing</span>
 </div>
 <h5 class="text-xl font-headline font-bold mb-4 text-on-surface">Hybrid Tech</h5>
 <p class="text-outline text-sm leading-relaxed font-light">Seamless integration of robotic surgery and minimally invasive techniques.</p>
 </div>
-<div class="p-10 bg-surface-bright rounded-3xl border border-purple-50 flex flex-col items-center text-center group hover:bg-white hover:shadow-2xl hover:shadow-purple-100 transition-all duration-500">
+<div class="p-10 bg-surface-bright rounded-3xl border-2 border-primary flex flex-col items-center text-center group hover:bg-white hover:-translate-y-1 hover:shadow-xl hover:shadow-purple-900/20 transition-all duration-300">
 <div class="w-16 h-16 rounded-2xl bg-primary/5 flex items-center justify-center mb-8 transition-transform group-hover:scale-110 group-hover:bg-primary group-hover:text-white text-primary">
 <span class="material-symbols-outlined text-3xl" data-icon="support_agent">support_agent</span>
 </div>
