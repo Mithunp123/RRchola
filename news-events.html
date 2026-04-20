@@ -64,11 +64,11 @@
     }
 
     .feed-panel {
-      border-radius: 0.6rem;
-      border: 1px solid rgba(78, 0, 120, 0.16);
-      background: linear-gradient(180deg, #3d165f 0%, #6b3397 18%, #c9b5db 38%, #ece4f4 58%, #f8f6fb 100%);
-      box-shadow: 0 10px 18px rgba(27, 10, 39, 0.08);
-      overflow: hidden;
+      border: 0;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      overflow: visible;
     }
 
     .feed-head {
@@ -76,21 +76,21 @@
       align-items: center;
       justify-content: space-between;
       gap: 0.5rem;
-      padding: 0.9rem 1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.25);
-      background: linear-gradient(180deg, rgba(40, 15, 62, 0.7), rgba(89, 43, 127, 0.5));
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      backdrop-filter: blur(6px);
+      padding: 0.2rem 0.1rem 0.7rem;
+      border-bottom: 0;
+      background: transparent;
+      position: static;
+      top: auto;
+      z-index: auto;
+      backdrop-filter: none;
     }
 
     .feed-head h2 {
       font-family: Manrope, sans-serif;
-      font-size: 1.1rem;
+      font-size: 1.35rem;
       font-weight: 800;
       letter-spacing: -0.02em;
-      color: #ffffff;
+      color: #2d1342;
     }
 
     .feed-badge {
@@ -100,16 +100,16 @@
       font-size: 0.75rem;
       line-height: 1;
       font-weight: 700;
-      color: #ffffff;
-      background: rgba(255, 255, 255, 0.18);
-      border: 1px solid rgba(255, 255, 255, 0.34);
+      color: #4e0078;
+      background: #efe5f8;
+      border: 1px solid #d7b8ea;
       border-radius: 999px;
       padding: 0.35rem 0.55rem;
       white-space: nowrap;
     }
 
     .feed-body {
-      padding: 0.9rem;
+      padding: 0;
       display: grid;
       gap: 0.8rem;
       overflow-x: hidden;
@@ -117,11 +117,11 @@
 
     .feed-item {
       border-radius: 0.55rem;
-      border: 0;
+      border: 1px solid #cda8e4;
       background: #ffffff;
       padding: 0.5rem;
-      box-shadow: 0 4px 10px rgba(29, 11, 42, 0.06);
-      transition: transform 200ms ease, box-shadow 200ms ease, background-color 200ms ease, border-color 200ms ease;
+      box-shadow: 0 6px 14px rgba(37, 12, 55, 0.1);
+      transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease, background 200ms ease, border-color 200ms ease;
     }
 
     .feed-item-link {
@@ -131,9 +131,10 @@
 
     .feed-item:hover {
       transform: translateY(-2px);
-      background-color: #6A1B9A;
-      border-color: #4e0078;
-      box-shadow: 0 12px 22px rgba(78, 0, 120, 0.26);
+      border-color: #8d4db4;
+      background: linear-gradient(180deg, #3f1662 0%, #6f349c 42%, #a669cb 70%, #d6b7ea 100%);
+      box-shadow: 0 12px 22px rgba(78, 0, 120, 0.24);
+      filter: saturate(1.07);
     }
 
     .feed-media {
@@ -148,6 +149,18 @@
 
     .feed-copy {
       padding: 0.8rem 0.35rem 0.35rem;
+      display: grid;
+      gap: 0.4rem;
+    }
+
+    .feed-meta {
+      font-family: Inter, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #6b7280;
+      text-align: center;
     }
 
     .feed-title {
@@ -156,7 +169,7 @@
       font-weight: 800;
       line-height: 1.35;
       letter-spacing: -0.01em;
-      color: #111827;
+      color: #1f2937;
       text-transform: uppercase;
       text-align: center;
       overflow-wrap: anywhere;
@@ -166,6 +179,19 @@
       color: #ffffff;
     }
 
+    .feed-desc {
+      font-size: 0.82rem;
+      line-height: 1.45;
+      color: #4b5563;
+      text-align: center;
+      margin: 0;
+    }
+
+    .feed-item:hover .feed-meta,
+    .feed-item:hover .feed-desc {
+      color: rgba(255, 255, 255, 0.92);
+    }
+
     @media (min-width: 1024px) {
       .split-shell {
         grid-template-columns: 1fr 1fr;
@@ -173,27 +199,13 @@
       }
 
       .feed-panel {
-        height: calc(100vh - 210px);
+        height: auto;
       }
 
       .feed-body {
-        height: calc(100% - 62px);
-        overflow-y: auto;
+        height: auto;
+        overflow-y: visible;
         overflow-x: hidden;
-      }
-
-      .feed-body::-webkit-scrollbar {
-        width: 9px;
-        height: 0;
-      }
-
-      .feed-body::-webkit-scrollbar-track {
-        background: #f0ecf5;
-      }
-
-      .feed-body::-webkit-scrollbar-thumb {
-        background: #b98ed2;
-        border-radius: 999px;
       }
     }
   </style>
@@ -228,73 +240,91 @@
           <div class="feed-body">
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&w=1200&q=80" alt="minimally invasive surgery launch"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&w=1200&q=80" alt="minimally invasive surgery launch"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">18 Apr 2026 | Clinical Update</p>
                   <h3 class="feed-title">Minimally Invasive Liver Program Launch</h3>
+                  <p class="feed-desc">RR CHOLA introduces laparoscopic liver procedures with shorter hospital stays and faster patient recovery pathways.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1580281657527-47a871f3d458?auto=format&fit=crop&w=1200&q=80" alt="emergency care unit expansion"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80" alt="emergency care unit expansion"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">14 Apr 2026 | Infrastructure</p>
                   <h3 class="feed-title">Emergency Unit Expansion Completed</h3>
+                  <p class="feed-desc">The upgraded emergency block now supports higher triage throughput with dedicated rapid assessment bays.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1583912267550-d48fd5f7718f?auto=format&fit=crop&w=1200&q=80" alt="diagnostic workflow integration"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80" alt="diagnostic workflow integration"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">10 Apr 2026 | Technology</p>
                   <h3 class="feed-title">Integrated Diagnostics Workflow Activated</h3>
+                  <p class="feed-desc">Lab, imaging, and specialist reporting are now connected through a unified digital diagnostics workflow.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1582719478185-1c8e0d6e6815?auto=format&fit=crop&w=1200&q=80" alt="patient digital services"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?auto=format&fit=crop&w=1200&q=80" alt="patient digital services"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">06 Apr 2026 | Patient Experience</p>
                   <h3 class="feed-title">Digital Patient Support Kiosk Introduced</h3>
+                  <p class="feed-desc">Self-service kiosks now assist with registration, billing guidance, and appointment navigation inside the campus.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80" alt="pediatric care upgrade"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80" alt="pediatric care upgrade"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">02 Apr 2026 | Pediatrics</p>
                   <h3 class="feed-title">Pediatric Observation Unit Upgraded</h3>
+                  <p class="feed-desc">Enhanced monitoring stations and family-friendly spaces improve pediatric overnight observation comfort.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=1200&q=80" alt="advanced imaging services"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=1200&q=80" alt="advanced imaging services"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">29 Mar 2026 | Diagnostics</p>
                   <h3 class="feed-title">Advanced Imaging Services Live 24x7</h3>
+                  <p class="feed-desc">Round-the-clock CT and MRI support is now available for emergency and inpatient clinical teams.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="cardiology diagnostics update"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="cardiology diagnostics update"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">24 Mar 2026 | Cardiology</p>
                   <h3 class="feed-title">Cardiology Diagnostics Wing Modernized</h3>
+                  <p class="feed-desc">New stress testing and echo workflow upgrades improve speed, accuracy, and appointment turnaround time.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80" alt="multi-specialty team announcement"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80" alt="multi-specialty team announcement"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">19 Mar 2026 | Medical Team</p>
                   <h3 class="feed-title">Multi-Specialty Team Expansion Announced</h3>
+                  <p class="feed-desc">Additional consultants across gastro, surgical oncology, and critical care strengthen coordinated treatment plans.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80" alt="day-care surgery update"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80" alt="day-care surgery update"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">14 Mar 2026 | Surgical Care</p>
                   <h3 class="feed-title">Day-Care Surgery Unit Capacity Enhanced</h3>
+                  <p class="feed-desc">Expanded operating schedules and discharge pathways support safer same-day procedures for eligible patients.</p>
                 </div>
               </a>
             </article>
@@ -312,73 +342,91 @@
           <div class="feed-body">
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80" alt="community liver screening camp"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80" alt="community liver screening camp"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">02 May 2026 | Outreach</p>
                   <h3 class="feed-title">Community Liver Screening Camp 2026</h3>
+                  <p class="feed-desc">Free risk screening and specialist counselling for early liver disease detection across local communities.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?auto=format&fit=crop&w=1200&q=80" alt="hands-on endoscopy training"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?auto=format&fit=crop&w=1200&q=80" alt="hands-on endoscopy training"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">08 May 2026 | Education</p>
                   <h3 class="feed-title">Hands-On Endoscopy Training Workshop</h3>
+                  <p class="feed-desc">A simulation-first workshop focused on safe scope handling, reporting standards, and procedural quality.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80" alt="colorectal awareness campaign"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80" alt="colorectal awareness campaign"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">12 May 2026 | Public Health</p>
                   <h3 class="feed-title">Colorectal Awareness Public Program</h3>
+                  <p class="feed-desc">Public education sessions on warning signs, prevention habits, and the importance of early specialist evaluation.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&q=80" alt="nursing recognition event"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&q=80" alt="nursing recognition event"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">16 May 2026 | Hospital Culture</p>
                   <h3 class="feed-title">Nursing Excellence Recognition Ceremony</h3>
+                  <p class="feed-desc">Celebrating nurses for clinical quality, compassionate care, and outstanding patient safety initiatives.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80" alt="cme imaging session"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80" alt="cme imaging session"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">21 May 2026 | CME</p>
                   <h3 class="feed-title">Advanced Imaging CME Session</h3>
+                  <p class="feed-desc">Consultants discuss updated interpretation pathways for liver, pancreatic, and biliary imaging in practice.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?auto=format&fit=crop&w=1200&q=80" alt="cancer pain intervention workshop"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?auto=format&fit=crop&w=1200&q=80" alt="cancer pain intervention workshop"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">25 May 2026 | Oncology Care</p>
                   <h3 class="feed-title">Cancer Pain Intervention Skill Workshop</h3>
+                  <p class="feed-desc">Case-led training on multimodal pain strategies to improve comfort and quality of life for oncology patients.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&w=1200&q=80" alt="hospital milestone celebration"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&w=1200&q=80" alt="hospital milestone celebration"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">31 May 2026 | Milestone</p>
                   <h3 class="feed-title">Five Years Of Care Milestone Celebration</h3>
+                  <p class="feed-desc">A commemorative event honoring patient trust, team dedication, and community health partnerships.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80" alt="rural gastro camp"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80" alt="rural gastro camp"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">04 Jun 2026 | Rural Outreach</p>
                   <h3 class="feed-title">Rural Gastro Camp and Liver Clinic Support</h3>
+                  <p class="feed-desc">Mobile outreach units bring specialist consultation and follow-up pathways to underserved areas.</p>
                 </div>
               </a>
             </article>
             <article class="feed-item">
               <a class="feed-item-link" href="#">
-                <img class="feed-media" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="research meet and award function"/>
+                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="research meet and award function"/>
                 <div class="feed-copy">
+                  <p class="feed-meta">12 Jun 2026 | Academic Forum</p>
                   <h3 class="feed-title">Annual Research Meet and Award Function</h3>
+                  <p class="feed-desc">Clinical research teams present outcomes, quality initiatives, and innovation projects across specialties.</p>
                 </div>
               </a>
             </article>
@@ -390,5 +438,12 @@
 
   <div id="footer-slot"></div>
   <script src="shared-layout.js"></script>
+  <script>
+    document.querySelectorAll('.feed-media').forEach((img) => {
+      img.addEventListener('error', () => {
+        img.src = 'assests/news-placeholder.svg';
+      }, { once: true });
+    });
+  </script>
 </body>
 </html>
