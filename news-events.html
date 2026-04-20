@@ -1,449 +1,391 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="scroll-smooth" lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>News &amp; Events | RR CHOLA HOSPITAL</title>
-  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-  <link href="theme-overrides.css" rel="stylesheet"/>
-  <script id="tailwind-config">
-    tailwind.config = {
-      darkMode: "class",
-      theme: {
-        extend: {
-          colors: {
-            "surface": "#f5f4f9",
-            "primary": "#6A1B9A",
-            "secondary": "#8C27B0",
-            "primary-fixed": "#f4d9ff",
-            "on-surface": "#1A1A1A",
-            "on-surface-variant": "#4d4351"
-          },
-          fontFamily: {
-            "headline": ["Manrope", "sans-serif"],
-            "body": ["Inter", "sans-serif"]
-          }
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>News &amp; Events | RR CHOLA HOSPITAL</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="theme-overrides.css" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#6A1B9A",
+                        "secondary": "#8C27B0",
+                        "surface": "#f9f9fb",
+                        "on-surface": "#111116",
+                        "primary-fixed": "#f4d9ff",
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"]
+                    }
+                }
+            }
         }
-      }
-    }
-  </script>
-  <style>
-    .material-symbols-outlined {
-      font-variation-settings: 'FILL' 0, 'wght' 450, 'GRAD' 0, 'opsz' 24;
-    }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
 
-    .hero-shell {
-      position: relative;
-      overflow: hidden;
-      border-bottom: 1px solid rgba(106, 27, 154, 0.16);
-      background: radial-gradient(circle at 18% 12%, rgba(106, 27, 154, 0.26), rgba(106, 27, 154, 0) 42%), radial-gradient(circle at 84% 0%, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0) 36%), linear-gradient(120deg, #180a26 0%, #2c0f42 48%, #4e0078 100%);
-    }
+        /* Tab switch transitions */
+        .tab-content {
+            display: none;
+            opacity: 0;
+            animation: fadeIn 0.5s ease forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-    .kicker {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.45rem;
-      padding: 0.42rem 0.9rem;
-      border-radius: 9999px;
-      color: #ffffff;
-      font-size: 0.76rem;
-      letter-spacing: 0.16em;
-      font-weight: 800;
-      text-transform: uppercase;
-      background: rgba(255, 255, 255, 0.13);
-      border: 1px solid rgba(255, 255, 255, 0.34);
-    }
-
-    .split-shell {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      align-items: start;
-    }
-
-    .feed-panel {
-      border: 0;
-      border-radius: 0;
-      background: transparent;
-      box-shadow: none;
-      overflow: visible;
-    }
-
-    .feed-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.5rem;
-      padding: 0.2rem 0.1rem 0.7rem;
-      border-bottom: 0;
-      background: transparent;
-      position: static;
-      top: auto;
-      z-index: auto;
-      backdrop-filter: none;
-    }
-
-    .feed-head h2 {
-      font-family: Manrope, sans-serif;
-      font-size: 1.35rem;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      color: #2d1342;
-    }
-
-    .feed-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.25rem;
-      font-size: 0.75rem;
-      line-height: 1;
-      font-weight: 700;
-      color: #4e0078;
-      background: #efe5f8;
-      border: 1px solid #d7b8ea;
-      border-radius: 999px;
-      padding: 0.35rem 0.55rem;
-      white-space: nowrap;
-    }
-
-    .feed-body {
-      padding: 0;
-      display: grid;
-      gap: 0.8rem;
-      overflow-x: hidden;
-    }
-
-    .feed-item {
-      border-radius: 0.55rem;
-      border: 1px solid #cda8e4;
-      background: #ffffff;
-      padding: 0.5rem;
-      box-shadow: 0 6px 14px rgba(37, 12, 55, 0.1);
-      transition: transform 200ms ease, box-shadow 200ms ease, filter 200ms ease, background 200ms ease, border-color 200ms ease;
-    }
-
-    .feed-item-link {
-      display: block;
-      text-decoration: none;
-    }
-
-    .feed-item:hover {
-      transform: translateY(-2px);
-      border-color: #8d4db4;
-      background: linear-gradient(180deg, #3f1662 0%, #6f349c 42%, #a669cb 70%, #d6b7ea 100%);
-      box-shadow: 0 12px 22px rgba(78, 0, 120, 0.24);
-      filter: saturate(1.07);
-    }
-
-    .feed-media {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      display: block;
-      border-radius: 0.42rem;
-      background: #ece8f2;
-      border: 0;
-    }
-
-    .feed-copy {
-      padding: 0.8rem 0.35rem 0.35rem;
-      display: grid;
-      gap: 0.4rem;
-    }
-
-    .feed-meta {
-      font-family: Inter, sans-serif;
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      color: #6b7280;
-      text-align: center;
-    }
-
-    .feed-title {
-      font-family: Manrope, sans-serif;
-      font-size: 0.88rem;
-      font-weight: 800;
-      line-height: 1.35;
-      letter-spacing: -0.01em;
-      color: #1f2937;
-      text-transform: uppercase;
-      text-align: center;
-      overflow-wrap: anywhere;
-    }
-
-    .feed-item:hover .feed-title {
-      color: #ffffff;
-    }
-
-    .feed-desc {
-      font-size: 0.82rem;
-      line-height: 1.45;
-      color: #4b5563;
-      text-align: center;
-      margin: 0;
-    }
-
-    .feed-item:hover .feed-meta,
-    .feed-item:hover .feed-desc {
-      color: rgba(255, 255, 255, 0.92);
-    }
-
-    @media (min-width: 1024px) {
-      .split-shell {
-        grid-template-columns: 1fr 1fr;
-        gap: 1.1rem;
-      }
-
-      .feed-panel {
-        height: auto;
-      }
-
-      .feed-body {
-        height: auto;
-        overflow-y: visible;
-        overflow-x: hidden;
-      }
-    }
-  </style>
+        /* Nav Pills */
+        .nav-pill-btn {
+            position: relative;
+            z-index: 10;
+            transition: color 0.3s ease;
+        }
+        .nav-pill-bg {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-color: #6A1B9A;
+            border-radius: 9999px;
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            z-index: 0;
+        }
+    </style>
 </head>
 <body class="bg-surface font-body text-on-surface overflow-x-hidden">
-  <div id="navbar-slot"></div>
+    <div id="navbar-slot"></div>
+    
+    <main class="pt-20">
+        <!-- Hero Section with Background Image -->
+        <section class="relative min-h-[55vh] flex flex-col justify-center overflow-hidden border-b border-primary/20 bg-slate-950 pt-16 pb-16">
+            <div class="absolute inset-0 z-0">
+                <!-- Using a high-quality hospital/event image for hero -->
+                <img alt="Hospital Campus" class="w-full h-full object-cover opacity-30 mix-blend-overlay" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1920&q=80"/>
+                <div class="absolute inset-0 bg-gradient-to-t from-surface via-slate-950/60 to-slate-950/20"></div>
+            </div>
+            
+            <div class="relative z-10 text-center px-4 max-w-4xl mx-auto" data-aos="zoom-in" data-aos-duration="1200">
+                <div class="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-white/20 bg-white/10 backdrop-blur-md text-white mb-6">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    <span class="text-xs font-bold tracking-[0.2em] uppercase">Updates &amp; Highlights</span>
+                </div>
+                <h1 class="text-white text-5xl md:text-7xl font-headline font-black tracking-tighter mb-6 leading-tight drop-shadow-xl">
+                    News &amp; <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-fixed to-purple-400">Events</span>
+                </h1>
+                <p class="text-white/80 text-lg md:text-xl font-light max-w-2xl mx-auto">
+                    Explore monumental shifts in clinical care, infrastructure milestones, and calendar events linking our hospital with the community.
+                </p>
+            </div>
+        </section>
 
-  <main>
-    <section class="hero-shell">
-      <div class="max-w-7xl mx-auto px-4 sm:px-8 pt-16 sm:pt-20 pb-14 sm:pb-16 relative">
-        <div class="max-w-3xl space-y-5">
-          <p class="kicker">
-            <span class="material-symbols-outlined text-base">campaign</span>
-            Updates Hub
-          </p>
-          <h1 class="font-headline text-4xl sm:text-5xl lg:text-6xl font-black leading-[1.05] tracking-tight text-white">News &amp; Events</h1>
-          <p class="text-white/90 text-base sm:text-lg max-w-2xl">Two live streams for hospital communication: News on one side and Events on the other. On mobile, News appears first, followed by Events.</p>
+        <!-- Dynamic Toggle Tabs -->
+        <section class="sticky top-[80px] sm:top-20 z-50 py-4 bg-surface/90 backdrop-blur-xl border-b border-gray-200/60 shadow-sm">
+            <div class="max-w-md mx-auto px-4">
+                <div class="relative flex items-center p-1.5 bg-gray-200/60 rounded-full w-full">
+                    <div id="tab-bg" class="nav-pill-bg w-1/2"></div>
+                    <button id="btn-news" onclick="switchTab('news')" class="nav-pill-btn active flex-1 py-3 text-center text-sm font-bold tracking-wider text-white">
+                        LATEST NEWS
+                    </button>
+                    <button id="btn-events" onclick="switchTab('events')" class="nav-pill-btn flex-1 py-3 text-center text-sm font-bold tracking-wider text-gray-500 hover:text-gray-800">
+                        UPCOMING EVENTS
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <div class="relative w-full mb-28 mt-12 px-4 sm:px-8 max-w-[1440px] mx-auto z-10">
+            <!--================ NEWS TAB (Uniform Square Grid) ================-->
+            <section id="tab-news" class="tab-content" style="display: block;">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- News Card 1 -->
+                    <a href="#" class="group relative rounded-[2rem] overflow-hidden bg-black aspect-square flex flex-col justify-end shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&w=800&q=80" alt="surgery" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                        <div class="absolute top-6 left-6 z-20">
+                            <span class="bg-primary text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">Clinical Update</span>
+                        </div>
+                        <div class="relative z-10 p-8">
+                            <p class="text-white/70 text-sm font-bold mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[16px]">schedule</span> 18 Apr 2026
+                            </p>
+                            <h3 class="text-white text-2xl font-headline font-extrabold leading-snug group-hover:text-primary-fixed transition-colors">Minimally Invasive Liver Program Launch</h3>
+                        </div>
+                    </a>
+
+                    <!-- News Card 2 -->
+                    <a href="#" class="group relative rounded-[2rem] overflow-hidden bg-black aspect-square flex flex-col justify-end shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=800&q=80" alt="emergency" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                        <div class="absolute top-6 left-6 z-20">
+                            <span class="bg-secondary text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">Infrastructure</span>
+                        </div>
+                        <div class="relative z-10 p-8">
+                            <p class="text-white/70 text-sm font-bold mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[16px]">schedule</span> 14 Apr 2026
+                            </p>
+                            <h3 class="text-white text-2xl font-headline font-extrabold leading-snug group-hover:text-primary-fixed transition-colors">Emergency Unit Expansion Completed</h3>
+                        </div>
+                    </a>
+
+                    <!-- News Card 3 -->
+                    <a href="#" class="group relative rounded-[2rem] overflow-hidden bg-black aspect-square flex flex-col justify-end shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=800&q=80" alt="workflow" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                        <div class="absolute top-6 left-6 z-20">
+                            <span class="bg-blue-600 text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">Technology</span>
+                        </div>
+                        <div class="relative z-10 p-8">
+                            <p class="text-white/70 text-sm font-bold mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[16px]">schedule</span> 10 Apr 2026
+                            </p>
+                            <h3 class="text-white text-2xl font-headline font-extrabold leading-snug group-hover:text-primary-fixed transition-colors">Integrated Diagnostics Workflow Activated</h3>
+                        </div>
+                    </a>
+
+                    <!-- News Card 4 -->
+                    <a href="#" class="group relative rounded-[2rem] overflow-hidden bg-black aspect-square flex flex-col justify-end shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up">
+                        <img src="https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?auto=format&fit=crop&w=800&q=80" alt="kiosk" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                        <div class="absolute top-6 left-6 z-20">
+                            <span class="bg-purple-500 text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">Patient Experience</span>
+                        </div>
+                        <div class="relative z-10 p-8">
+                            <p class="text-white/70 text-sm font-bold mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[16px]">schedule</span> 06 Apr 2026
+                            </p>
+                            <h3 class="text-white text-2xl font-headline font-extrabold leading-snug group-hover:text-primary-fixed transition-colors">Digital Patient Support Kiosk Introduced</h3>
+                        </div>
+                    </a>
+
+                    <!-- News Card 5 -->
+                    <a href="#" class="group relative rounded-[2rem] overflow-hidden bg-black aspect-square flex flex-col justify-end shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                        <img src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=800&q=80" alt="imaging" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                        <div class="absolute top-6 left-6 z-20">
+                            <span class="bg-primary text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">Diagnostics</span>
+                        </div>
+                        <div class="relative z-10 p-8">
+                            <p class="text-white/70 text-sm font-bold mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[16px]">schedule</span> 29 Mar 2026
+                            </p>
+                            <h3 class="text-white text-2xl font-headline font-extrabold leading-snug group-hover:text-primary-fixed transition-colors">Advanced Imaging Services Live 24x7</h3>
+                        </div>
+                    </a>
+
+                    <!-- News Card 6 -->
+                    <a href="#" class="group relative rounded-[2rem] overflow-hidden bg-black aspect-square flex flex-col justify-end shadow-md hover:shadow-2xl transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=800&q=80" alt="team" class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-110 group-hover:opacity-80 transition-all duration-700">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent"></div>
+                        <div class="absolute top-6 left-6 z-20">
+                            <span class="bg-gray-800 text-white text-xs font-black uppercase tracking-widest px-4 py-2 rounded-full shadow-lg">Medical Team</span>
+                        </div>
+                        <div class="relative z-10 p-8">
+                            <p class="text-white/70 text-sm font-bold mb-2 flex items-center gap-2">
+                                <span class="material-symbols-outlined text-[16px]">schedule</span> 19 Mar 2026
+                            </p>
+                            <h3 class="text-white text-2xl font-headline font-extrabold leading-snug group-hover:text-primary-fixed transition-colors">Multi-Specialty Team Expansion</h3>
+                        </div>
+                    </a>
+
+                </div>
+            </section>
+
+            <!--================ EVENTS TAB (Ticket Design) ================-->
+            <section id="tab-events" class="tab-content w-full max-w-5xl mx-auto pt-6">
+                <div class="flex flex-col gap-8">
+                    
+                    <!-- Event Ticket 1 -->
+                    <div class="flex flex-col sm:flex-row bg-white rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up">
+                        <!-- Date Block (Black based + White Layout) -->
+                        <div class="sm:w-1/4 p-8 flex flex-col justify-center items-center text-center border-b sm:border-b-0 sm:border-r border-gray-100 shrink-0">
+                           <span class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-1">MAY</span>
+                           <span class="text-6xl font-black text-slate-900 font-headline leading-none">02</span>
+                           <span class="mt-2 text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2026</span>
+                        </div>
+                        <!-- Content Block (Purple Gradient) -->
+                        <div class="sm:w-3/4 p-8 sm:p-10 bg-gradient-to-br from-[#4e0078] to-[#9a25ae] text-white flex flex-col justify-center relative overflow-hidden">
+                            <!-- Background Abstract Element -->
+                            <div class="absolute -right-10 -bottom-10 opacity-10 transform -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+                                <span class="material-symbols-outlined" style="font-size: 180px;">groups</span>
+                            </div>
+                            
+                            <div class="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+                                <div class="w-full sm:max-w-md">
+                                    <div class="inline-flex py-1 px-3 bg-white/20 backdrop-blur border border-white/10 text-white text-xs font-bold rounded-lg mb-3">Outreach</div>
+                                    <h3 class="text-2xl font-headline font-extrabold mb-3 group-hover:text-primary-fixed transition-colors">Community Liver Screening Camp</h3>
+                                    <p class="text-white/80 font-light text-sm line-clamp-2">Free risk screening and specialist counselling for early liver disease detection across local communities.</p>
+                                </div>
+                                <button class="shrink-0 bg-white text-primary font-bold px-6 py-3 rounded-full shadow border-2 border-transparent hover:bg-transparent hover:text-white hover:border-white transition-all flex items-center gap-2">
+                                    Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Ticket 2 -->
+                    <div class="flex flex-col sm:flex-row bg-white rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Date Block -->
+                        <div class="sm:w-1/4 p-8 flex flex-col justify-center items-center text-center border-b sm:border-b-0 sm:border-r border-gray-100 shrink-0">
+                           <span class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-1">MAY</span>
+                           <span class="text-6xl font-black text-slate-900 font-headline leading-none">08</span>
+                           <span class="mt-2 text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2026</span>
+                        </div>
+                        <!-- Content Block -->
+                        <div class="sm:w-3/4 p-8 sm:p-10 bg-gradient-to-br from-[#41056a] to-[#861a9c] text-white flex flex-col justify-center relative overflow-hidden">
+                            <div class="absolute -right-10 -bottom-10 opacity-10 transform -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+                                <span class="material-symbols-outlined" style="font-size: 180px;">school</span>
+                            </div>
+                            
+                            <div class="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+                                <div class="w-full sm:max-w-md">
+                                    <div class="inline-flex py-1 px-3 bg-white/20 backdrop-blur border border-white/10 text-white text-xs font-bold rounded-lg mb-3">Education</div>
+                                    <h3 class="text-2xl font-headline font-extrabold mb-3 group-hover:text-primary-fixed transition-colors">Hands-On Endoscopy Training</h3>
+                                    <div class="flex items-center gap-2 text-primary-fixed/90 font-semibold text-xs mb-3">
+                                        <span class="material-symbols-outlined text-sm">schedule</span> 9:00 AM - 4:00 PM
+                                    </div>
+                                    <p class="text-white/80 font-light text-sm line-clamp-2">A simulation-first workshop focused on safe scope handling, reporting standards, and procedural quality.</p>
+                                </div>
+                                <button class="shrink-0 bg-white text-primary font-bold px-6 py-3 rounded-full shadow border-2 border-transparent hover:bg-transparent hover:text-white hover:border-white transition-all flex items-center gap-2">
+                                    Register <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Ticket 3 -->
+                    <div class="flex flex-col sm:flex-row bg-white rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up">
+                        <!-- Date Block -->
+                        <div class="sm:w-1/4 p-8 flex flex-col justify-center items-center text-center border-b sm:border-b-0 sm:border-r border-gray-100 shrink-0">
+                           <span class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-1">MAY</span>
+                           <span class="text-6xl font-black text-slate-900 font-headline leading-none">12</span>
+                           <span class="mt-2 text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2026</span>
+                        </div>
+                        <!-- Content Block -->
+                        <div class="sm:w-3/4 p-8 sm:p-10 bg-gradient-to-br from-[#3b005c] to-[#9222a7] text-white flex flex-col justify-center relative overflow-hidden">
+                            <div class="absolute -right-10 -bottom-10 opacity-10 transform -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+                                <span class="material-symbols-outlined" style="font-size: 180px;">health_and_safety</span>
+                            </div>
+                            
+                            <div class="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+                                <div class="w-full sm:max-w-md">
+                                    <div class="inline-flex py-1 px-3 bg-white/20 backdrop-blur border border-white/10 text-white text-xs font-bold rounded-lg mb-3">Public Health</div>
+                                    <h3 class="text-2xl font-headline font-extrabold mb-3 group-hover:text-primary-fixed transition-colors">Colorectal Awareness Program</h3>
+                                    <div class="flex items-center gap-2 text-primary-fixed/90 font-semibold text-xs mb-3">
+                                        <span class="material-symbols-outlined text-sm">location_on</span> Auditorium A
+                                    </div>
+                                    <p class="text-white/80 font-light text-sm line-clamp-2">Public education sessions on warning signs, prevention habits, and the importance of early specialist evaluation.</p>
+                                </div>
+                                <button class="shrink-0 bg-white text-primary font-bold px-6 py-3 rounded-full shadow border-2 border-transparent hover:bg-transparent hover:text-white hover:border-white transition-all flex items-center gap-2">
+                                    Details <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Event Ticket 4 -->
+                    <div class="flex flex-col sm:flex-row bg-white rounded-[2rem] overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 group" data-aos="fade-up" data-aos-delay="100">
+                        <!-- Date Block -->
+                        <div class="sm:w-1/4 p-8 flex flex-col justify-center items-center text-center border-b sm:border-b-0 sm:border-r border-gray-100 shrink-0">
+                           <span class="text-sm font-bold text-gray-500 uppercase tracking-widest mb-1">MAY</span>
+                           <span class="text-6xl font-black text-slate-900 font-headline leading-none">16</span>
+                           <span class="mt-2 text-xs font-bold text-gray-500 bg-gray-100 px-3 py-1 rounded-full">2026</span>
+                        </div>
+                        <!-- Content Block -->
+                        <div class="sm:w-3/4 p-8 sm:p-10 bg-gradient-to-br from-[#41065e] to-[#a22bb8] text-white flex flex-col justify-center relative overflow-hidden">
+                            <div class="absolute -right-10 -bottom-10 opacity-10 transform -rotate-12 group-hover:rotate-0 transition-transform duration-700">
+                                <span class="material-symbols-outlined" style="font-size: 180px;">celebration</span>
+                            </div>
+                            
+                            <div class="relative z-10 flex flex-col sm:flex-row justify-between items-start sm:items-center gap-6">
+                                <div class="w-full sm:max-w-md">
+                                    <div class="inline-flex py-1 px-3 bg-white/20 backdrop-blur border border-white/10 text-white text-xs font-bold rounded-lg mb-3">Hospital Culture</div>
+                                    <h3 class="text-2xl font-headline font-extrabold mb-3 group-hover:text-primary-fixed transition-colors">Nursing Excellence Recognition Ceremony</h3>
+                                    <div class="flex items-center gap-2 text-primary-fixed/90 font-semibold text-xs mb-3">
+                                        <span class="material-symbols-outlined text-sm">location_on</span> Grand Hall
+                                    </div>
+                                    <p class="text-white/80 font-light text-sm line-clamp-2">Celebrating nurses for clinical quality, compassionate care, and outstanding patient safety initiatives.</p>
+                                </div>
+                                <button class="shrink-0 bg-white text-primary font-bold px-6 py-3 rounded-full shadow border-2 border-transparent hover:bg-transparent hover:text-white hover:border-white transition-all flex items-center gap-2">
+                                    RSVP <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <div class="text-center mt-12" data-aos="fade-in">
+                    <button class="inline-flex items-center gap-2 bg-gradient-to-r from-primary to-secondary text-white font-bold px-8 py-4 rounded-full shadow-lg hover:shadow-2xl hover:scale-105 transition-all">
+                        <span class="material-symbols-outlined text-white">expand_more</span> Load More Events
+                    </button>
+                </div>
+            </section>
         </div>
-      </div>
-    </section>
 
-    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-7 sm:py-9">
-      <div class="split-shell">
-        <article class="feed-panel">
-          <header class="feed-head">
-            <h2>News</h2>
-            <span class="feed-badge">
-              <span class="material-symbols-outlined text-sm">newspaper</span>
-              Latest
-            </span>
-          </header>
-          <div class="feed-body">
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1581595219315-a187dd40c322?auto=format&fit=crop&w=1200&q=80" alt="minimally invasive surgery launch"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">18 Apr 2026 | Clinical Update</p>
-                  <h3 class="feed-title">Minimally Invasive Liver Program Launch</h3>
-                  <p class="feed-desc">RR CHOLA introduces laparoscopic liver procedures with shorter hospital stays and faster patient recovery pathways.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80" alt="emergency care unit expansion"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">14 Apr 2026 | Infrastructure</p>
-                  <h3 class="feed-title">Emergency Unit Expansion Completed</h3>
-                  <p class="feed-desc">The upgraded emergency block now supports higher triage throughput with dedicated rapid assessment bays.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80" alt="diagnostic workflow integration"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">10 Apr 2026 | Technology</p>
-                  <h3 class="feed-title">Integrated Diagnostics Workflow Activated</h3>
-                  <p class="feed-desc">Lab, imaging, and specialist reporting are now connected through a unified digital diagnostics workflow.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?auto=format&fit=crop&w=1200&q=80" alt="patient digital services"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">06 Apr 2026 | Patient Experience</p>
-                  <h3 class="feed-title">Digital Patient Support Kiosk Introduced</h3>
-                  <p class="feed-desc">Self-service kiosks now assist with registration, billing guidance, and appointment navigation inside the campus.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1200&q=80" alt="pediatric care upgrade"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">02 Apr 2026 | Pediatrics</p>
-                  <h3 class="feed-title">Pediatric Observation Unit Upgraded</h3>
-                  <p class="feed-desc">Enhanced monitoring stations and family-friendly spaces improve pediatric overnight observation comfort.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1530497610245-94d3c16cda28?auto=format&fit=crop&w=1200&q=80" alt="advanced imaging services"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">29 Mar 2026 | Diagnostics</p>
-                  <h3 class="feed-title">Advanced Imaging Services Live 24x7</h3>
-                  <p class="feed-desc">Round-the-clock CT and MRI support is now available for emergency and inpatient clinical teams.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80" alt="cardiology diagnostics update"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">24 Mar 2026 | Cardiology</p>
-                  <h3 class="feed-title">Cardiology Diagnostics Wing Modernized</h3>
-                  <p class="feed-desc">New stress testing and echo workflow upgrades improve speed, accuracy, and appointment turnaround time.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80" alt="multi-specialty team announcement"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">19 Mar 2026 | Medical Team</p>
-                  <h3 class="feed-title">Multi-Specialty Team Expansion Announced</h3>
-                  <p class="feed-desc">Additional consultants across gastro, surgical oncology, and critical care strengthen coordinated treatment plans.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&w=1200&q=80" alt="day-care surgery update"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">14 Mar 2026 | Surgical Care</p>
-                  <h3 class="feed-title">Day-Care Surgery Unit Capacity Enhanced</h3>
-                  <p class="feed-desc">Expanded operating schedules and discharge pathways support safer same-day procedures for eligible patients.</p>
-                </div>
-              </a>
-            </article>
-          </div>
-        </article>
+    </main>
 
-        <article class="feed-panel">
-          <header class="feed-head">
-            <h2>Events</h2>
-            <span class="feed-badge">
-              <span class="material-symbols-outlined text-sm">event</span>
-              Upcoming
-            </span>
-          </header>
-          <div class="feed-body">
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80" alt="community liver screening camp"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">02 May 2026 | Outreach</p>
-                  <h3 class="feed-title">Community Liver Screening Camp 2026</h3>
-                  <p class="feed-desc">Free risk screening and specialist counselling for early liver disease detection across local communities.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?auto=format&fit=crop&w=1200&q=80" alt="hands-on endoscopy training"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">08 May 2026 | Education</p>
-                  <h3 class="feed-title">Hands-On Endoscopy Training Workshop</h3>
-                  <p class="feed-desc">A simulation-first workshop focused on safe scope handling, reporting standards, and procedural quality.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1200&q=80" alt="colorectal awareness campaign"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">12 May 2026 | Public Health</p>
-                  <h3 class="feed-title">Colorectal Awareness Public Program</h3>
-                  <p class="feed-desc">Public education sessions on warning signs, prevention habits, and the importance of early specialist evaluation.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1518186285589-2f7649de83e0?auto=format&fit=crop&w=1200&q=80" alt="nursing recognition event"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">16 May 2026 | Hospital Culture</p>
-                  <h3 class="feed-title">Nursing Excellence Recognition Ceremony</h3>
-                  <p class="feed-desc">Celebrating nurses for clinical quality, compassionate care, and outstanding patient safety initiatives.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80" alt="cme imaging session"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">21 May 2026 | CME</p>
-                  <h3 class="feed-title">Advanced Imaging CME Session</h3>
-                  <p class="feed-desc">Consultants discuss updated interpretation pathways for liver, pancreatic, and biliary imaging in practice.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1519494080410-f9aa76cb4283?auto=format&fit=crop&w=1200&q=80" alt="cancer pain intervention workshop"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">25 May 2026 | Oncology Care</p>
-                  <h3 class="feed-title">Cancer Pain Intervention Skill Workshop</h3>
-                  <p class="feed-desc">Case-led training on multimodal pain strategies to improve comfort and quality of life for oncology patients.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?auto=format&fit=crop&w=1200&q=80" alt="hospital milestone celebration"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">31 May 2026 | Milestone</p>
-                  <h3 class="feed-title">Five Years Of Care Milestone Celebration</h3>
-                  <p class="feed-desc">A commemorative event honoring patient trust, team dedication, and community health partnerships.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?auto=format&fit=crop&w=1200&q=80" alt="rural gastro camp"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">04 Jun 2026 | Rural Outreach</p>
-                  <h3 class="feed-title">Rural Gastro Camp and Liver Clinic Support</h3>
-                  <p class="feed-desc">Mobile outreach units bring specialist consultation and follow-up pathways to underserved areas.</p>
-                </div>
-              </a>
-            </article>
-            <article class="feed-item">
-              <a class="feed-item-link" href="#">
-                <img class="feed-media" loading="lazy" src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1200&q=80" alt="research meet and award function"/>
-                <div class="feed-copy">
-                  <p class="feed-meta">12 Jun 2026 | Academic Forum</p>
-                  <h3 class="feed-title">Annual Research Meet and Award Function</h3>
-                  <p class="feed-desc">Clinical research teams present outcomes, quality initiatives, and innovation projects across specialties.</p>
-                </div>
-              </a>
-            </article>
-          </div>
-        </article>
-      </div>
-    </section>
-  </main>
+    <div id="footer-slot"></div>
+    <script src="shared-layout.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50
+        });
 
-  <div id="footer-slot"></div>
-  <script src="shared-layout.js"></script>
-  <script>
-    document.querySelectorAll('.feed-media').forEach((img) => {
-      img.addEventListener('error', () => {
-        img.src = 'assests/news-placeholder.svg';
-      }, { once: true });
-    });
-  </script>
+        // Tab Switching Logic simplified to use static block/none
+        function switchTab(tabId) {
+            // Move pill background
+            const bg = document.getElementById('tab-bg');
+            if(tabId === 'events') {
+                bg.style.transform = 'translateX(100%)';
+                document.getElementById('btn-events').classList.add('text-white');
+                document.getElementById('btn-events').classList.remove('text-gray-500', 'hover:text-gray-800');
+                document.getElementById('btn-news').classList.remove('text-white');
+                document.getElementById('btn-news').classList.add('text-gray-500', 'hover:text-gray-800');
+                
+                document.getElementById('tab-news').style.display = 'none';
+                document.getElementById('tab-events').style.display = 'block';
+            } else {
+                bg.style.transform = 'translateX(0)';
+                document.getElementById('btn-news').classList.add('text-white');
+                document.getElementById('btn-news').classList.remove('text-gray-500', 'hover:text-gray-800');
+                document.getElementById('btn-events').classList.remove('text-white');
+                document.getElementById('btn-events').classList.add('text-gray-500', 'hover:text-gray-800');
+                
+                document.getElementById('tab-events').style.display = 'none';
+                document.getElementById('tab-news').style.display = 'block';
+            }
+
+            // Refresh AOS for elements newly set to display block
+            setTimeout(() => {
+                AOS.refresh();
+            }, 50);
+        }
+
+        // Fallback for missing images
+        document.querySelectorAll('img').forEach((img) => {
+            img.addEventListener('error', () => {
+                if(!img.classList.contains('mix-blend-overlay')){
+                   img.src = 'assests/news-placeholder.svg';
+                }
+            }, { once: true });
+        });
+    </script>
 </body>
 </html>
