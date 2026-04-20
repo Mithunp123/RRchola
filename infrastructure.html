@@ -7,6 +7,8 @@
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- AOS Animation CSS -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <link href="theme-overrides.css" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
@@ -14,64 +16,15 @@
         theme: {
           extend: {
             "colors": {
-                    "background": "#f9f9fb",
-                    "surface-container-highest": "#e2e2e4",
                     "primary": "#6A1B9A",
-                    "surface-bright": "#f9f9fb",
-                    "on-surface-variant": "#4d4351",
-                    "on-secondary": "#ffffff",
-                    "surface-tint": "#843ab4",
-                    "on-tertiary-fixed": "#280056",
-                    "surface-container": "#eeeef0",
-                    "tertiary": "#420485",
-                    "secondary-fixed": "#ffd6fe",
-                    "on-background": "#1a1c1d",
-                    "inverse-surface": "#2f3132",
-                    "surface-dim": "#d9dadc",
-                    "outline-variant": "#d0c2d3",
-                    "surface-container-lowest": "#ffffff",
-                    "on-primary-container": "#da9cff",
-                    "inverse-primary": "#e4b5ff",
-                    "on-primary-fixed": "#2f004b",
-                    "secondary-container": "#ed76fd",
-                    "secondary-fixed-dim": "#f9abff",
-                    "on-secondary-fixed": "#35003f",
-                    "on-tertiary": "#ffffff",
-                    "tertiary-fixed": "#eddcff",
-                    "on-error": "#ffffff",
-                    "primary-fixed": "#f4d9ff",
-                    "primary-container": "#6a1b9a",
-                    "on-tertiary-container": "#c8a3ff",
-                    "tertiary-container": "#5a299c",
-                    "surface": "#f9f9fb",
-                    "tertiary-fixed-dim": "#d7baff",
-                    "primary-fixed-dim": "#e4b5ff",
-                    "on-tertiary-fixed-variant": "#5a2a9c",
-                    "surface-container-high": "#e8e8ea",
                     "secondary": "#8C27B0",
-                    "error": "#ba1a1a",
-                    "on-primary": "#ffffff",
-                    "surface-container-low": "#f3f3f5",
-                    "on-secondary-fixed-variant": "#7b008f",
-                    "inverse-on-surface": "#f0f0f2",
+                    "surface": "#f9f9fb",
                     "on-surface": "#1a1c1d",
-                    "on-error-container": "#93000a",
-                    "surface-variant": "#e2e2e4",
-                    "on-primary-fixed-variant": "#6a1b9a",
-                    "outline": "#7f7383",
-                    "error-container": "#ffdad6",
-                    "on-secondary-container": "#69007a"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.25rem",
-                    "lg": "0.5rem",
-                    "xl": "0.75rem",
-                    "full": "9999px"
+                    "primary-fixed-dim": "#e4b5ff"
             },
             "fontFamily": {
                     "headline": ["Manrope"],
-                    "body": ["Inter"],
-                    "label": ["Inter"]
+                    "body": ["Inter"]
             }
           },
         },
@@ -84,299 +37,306 @@
       .signature-gradient {
         background: linear-gradient(135deg, #4e0078 0%, #9a25ae 100%);
       }
-      .ambient-shadow {
-        box-shadow: 0 12px 32px rgba(106, 27, 154, 0.06);
-      }
-
-      .infra-media {
-        width: 440px;
-        height: 285px;
-        max-width: 100%;
-        object-fit: cover;
-        border-radius: 1rem;
-        border: 0;
-        outline: none;
-        box-shadow: none;
-      }
-
-      .infra-title {
-        font-family: Manrope, sans-serif;
-        font-size: 2rem;
-        line-height: 1.2;
-        font-weight: 800;
-        color: #6A1B9A;
-        margin-bottom: 0.9rem;
-        letter-spacing: 0.01em;
-      }
-
-      .infra-copy {
-        color: #1f2937;
-        font-size: 1rem;
-        line-height: 1.95;
-        max-width: 62ch;
-        text-align: justify;
-        text-justify: inter-word;
-      }
-
-      @media (min-width: 769px) {
-        .infra-row {
-          position: relative;
-          padding: 3.3rem 0;
-          border: 0;
-          border-radius: 0;
-          background: transparent;
-          box-shadow: none;
-        }
-
-        .infra-row::before {
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 50%;
-          transform: translateX(-50%);
-          width: 100vw;
-          height: 100%;
-          background: #fff7fc;
-          z-index: 0;
-        }
-
-        .infra-row:nth-child(even)::before {
-          background: #f7faff;
-        }
-
-        .infra-row:nth-child(3n)::before {
-          background: #f7fcfb;
-        }
-
-        .infra-row .infra-text,
-        .infra-row .infra-visual {
-          position: relative;
-          z-index: 1;
-          align-self: flex-start;
-        }
-
-        .infra-row .infra-media {
-          width: 560px;
-          height: 360px;
-          max-width: 100%;
-        }
-      }
-
-      @media (max-width: 768px) {
-        .infra-row {
-          display: flex;
-          flex-direction: column;
-          gap: 1rem;
-        }
-
-        .infra-row .infra-text {
-          display: contents;
-        }
-
-        .infra-row .infra-title {
-          order: 1;
-          font-size: 1.45rem;
-          line-height: 1.3;
-          text-align: left;
-          white-space: nowrap;
-          margin-bottom: 0;
-        }
-
-        .infra-row .infra-visual {
-          order: 2;
-          justify-content: center !important;
-        }
-
-        .infra-row .infra-copy {
-          order: 3;
-          margin-top: 0.2rem;
-          margin-left: auto;
-          margin-right: auto;
-          max-width: 62ch;
-          text-align: justify;
-          text-justify: inter-word;
-        }
-
-        .infra-media {
-          width: 340px;
-          height: 220px;
-        }
-
-        .infra-title {
-          font-size: 1.45rem;
-          line-height: 1.3;
-          text-align: left;
-          white-space: nowrap;
-        }
-
-        .infra-cta-title {
-          font-size: 2.1rem;
-          line-height: 1.15;
-          max-width: 12ch;
-          margin-left: auto;
-          margin-right: auto;
-          margin-bottom: 1.5rem;
-        }
-
-        .infra-cta-actions {
+      
+      /* Bento Grid Settings */
+      .bento-grid {
           display: grid;
-          grid-template-columns: repeat(2, minmax(0, 1fr));
-          gap: 0.85rem;
-          width: 100%;
-        }
-
-        .infra-cta-action {
-          width: 100%;
-          min-height: 3.7rem;
-          padding: 0.85rem 0.6rem;
-          font-size: 1.45rem;
-          line-height: 1;
-          border-radius: 0.95rem;
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          white-space: nowrap;
-        }
+          gap: 1.5rem;
+      }
+      
+      @media (min-width: 768px) {
+          .bento-grid {
+              grid-auto-rows: 320px;
+          }
+      }
+      
+      @media (max-width: 767px) {
+          .bento-card {
+              height: 380px;
+          }
+      }
+      
+      .glass-badge {
+          background: rgba(255, 255, 255, 0.1);
+          backdrop-filter: blur(12px);
+          -webkit-backdrop-filter: blur(12px);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+      }
+      
+      /* Smooth reveal on hover */
+      .desc-reveal {
+          max-height: 0;
+          opacity: 0;
+          transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+          overflow: hidden;
+      }
+      .group:hover .desc-reveal {
+          max-height: 200px;
+          opacity: 1;
+          margin-top: 1rem;
+      }
+      @media (max-width: 767px) {
+          .desc-reveal {
+              max-height: 200px;
+              opacity: 1;
+              margin-top: 1rem;
+          }
       }
     </style>
 </head>
 <body class="bg-surface font-body text-on-surface" data-mode="connect">
 <div id="navbar-slot"></div>
-<main class="pt-32 md:pt-36">
-<section class="relative h-[614px] min-h-[500px] flex items-center overflow-hidden">
-<div class="absolute inset-0 z-0">
-<img alt="Hospital Interior" class="w-full h-full object-cover" data-alt="Modern wide-angle luxury hospital lobby with marble floors, soft warm recessed lighting, and curved glass architecture with minimalist aesthetic" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7T0gupjN0QLK7wUbg881FrSMp4TBa5FXQkJoTOeT7Hx18_jgWujUUH_-8tjCdeUE1dXy4C1o0CUdL-JRcmQogpmUQdW_oPslw3UbQ6ejmpVxp30-s2x8_TAQJcU4tcLMMXtBR7TKGjva6in8VSXiNBSntDUKHOYHct7UQU2Yq_P7ahmy5HTM9T3Dvhf1ljxshEjKu0yzdoE5YrbtWNn8a9lquJhREHGnMPqapsH5luSJgCLQ-b4e7sstHtfFln0smRGBZJyuhqCea"/>
-<div class="absolute inset-0 bg-black/40"></div>
-</div>
-<div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
-<div class="max-w-2xl">
-<h1 class="text-white font-headline text-5xl md:text-6xl font-extrabold tracking-tight mb-6">World-Class Infrastructure</h1>
-<p class="text-white/90 text-xl font-body leading-relaxed">Advanced facilities designed to deliver exceptional patient care in a sanctuary of healing and precision.</p>
-</div>
-</div>
+<main class="pt-20">
+
+<!-- Modern Hero Section -->
+<section class="relative min-h-[70vh] flex items-center overflow-hidden bg-slate-950 pt-16">
+    <div class="absolute inset-0 z-0">
+        <img alt="Hospital Interior" class="w-full h-full object-cover opacity-30 mix-blend-overlay" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7T0gupjN0QLK7wUbg881FrSMp4TBa5FXQkJoTOeT7Hx18_jgWujUUH_-8tjCdeUE1dXy4C1o0CUdL-JRcmQogpmUQdW_oPslw3UbQ6ejmpVxp30-s2x8_TAQJcU4tcLMMXtBR7TKGjva6in8VSXiNBSntDUKHOYHct7UQU2Yq_P7ahmy5HTM9T3Dvhf1ljxshEjKu0yzdoE5YrbtWNn8a9lquJhREHGnMPqapsH5luSJgCLQ-b4e7sstHtfFln0smRGBZJyuhqCea"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-surface via-slate-950/60 to-transparent"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-7xl mx-auto px-8 w-full">
+        <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+            <div class="max-w-2xl" data-aos="fade-right" data-aos-duration="1000">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-badge mb-8">
+                    <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+                    <span class="text-white text-xs font-bold tracking-wider uppercase">State-of-the-Art Sanctuary</span>
+                </div>
+                <h1 class="text-white font-headline text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+                    World-Class <br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary-fixed-dim to-purple-400">Infrastructure</span>
+                </h1>
+                <p class="text-white/80 text-xl font-light leading-relaxed max-w-xl">Advanced facilities designed to deliver exceptional patient care, combining cutting-edge technology with a profound commitment to compassionate healing.</p>
+            </div>
+            
+            <!-- Quick Stats -->
+            <div class="w-full lg:w-auto grid grid-cols-2 gap-4 lg:gap-6" data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                <div class="glass-badge rounded-[2rem] p-6 lg:p-8 text-center hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-4xl lg:text-5xl font-headline font-black text-white mb-2">500+</h3>
+                    <p class="text-white/70 text-sm font-medium">Beds Capacity</p>
+                </div>
+                <div class="glass-badge rounded-[2rem] p-6 lg:p-8 text-center hover:-translate-y-2 transition-transform duration-300 relative top-0 lg:-top-8">
+                    <h3 class="text-4xl lg:text-5xl font-headline font-black text-white mb-2">24<span class="text-2xl">/7</span></h3>
+                    <p class="text-white/70 text-sm font-medium">Emergency Care</p>
+                </div>
+                <div class="glass-badge rounded-[2rem] p-6 lg:p-8 text-center hover:-translate-y-2 transition-transform duration-300">
+                    <h3 class="text-4xl lg:text-5xl font-headline font-black text-white mb-2">50+</h3>
+                    <p class="text-white/70 text-sm font-medium">Critical Care Units</p>
+                </div>
+                <div class="glass-badge rounded-[2rem] p-6 lg:p-8 text-center hover:-translate-y-2 transition-transform duration-300 relative top-0 lg:-top-8">
+                    <h3 class="text-4xl lg:text-5xl font-headline font-black text-white mb-2">12</h3>
+                    <p class="text-white/70 text-sm font-medium">Operation Theaters</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="py-20 sm:py-24 bg-surface">
-<div class="max-w-7xl mx-auto px-6 sm:px-8 space-y-0">
-<article class="infra-row grid md:grid-cols-12 gap-8 sm:gap-10 items-start">
-<div class="infra-text md:col-span-7">
-<h2 class="infra-title">Robotics Surgery</h2>
-<p class="infra-copy">RR Chola Hospital offers advanced robotic-assisted surgery for complex procedures that require exceptional precision. Our operating teams use modern navigation systems and minimally invasive techniques that reduce blood loss, support faster healing, and improve clinical outcomes for patients.</p>
-</div>
-<div class="infra-visual md:col-span-5 flex justify-center md:justify-end">
-<img class="infra-media" alt="robotic surgery operation theater" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAINOEToirK7PztWHyYiQ9fIPSTYBNTwDnScZ70l5NHJqg4zY2cz1CCMHJe35tpKz7DZyCPgUZzeYyAufNQ_95gB8P3_3NfXT3cKY5_6swA0LneTNdEGTLsM6VSlD6-ixkoIOB7Nsyq7drix5vJiBlwhZWHf_-ChTvkumo9nLqtwlhRnVNu9iFNlhFieRYIchWnH8PUo7Ph2FZAMUoY8r6KiB_hBxkQVo1spPL7ZHff_atYGgMYlygC3fQpIwhQs2qILgZMb_Cwxl9B"/>
-</div>
-</article>
+<!-- Advanced Bento Grid Section -->
+<section class="py-24 bg-surface max-w-[1440px] mx-auto px-6 sm:px-8">
+    <div class="text-center mb-16" data-aos="fade-up">
+        <h2 class="text-4xl md:text-5xl font-headline font-extrabold text-on-surface tracking-tight mb-4">Our Facilities</h2>
+        <div class="h-1.5 w-24 bg-signature-gradient mx-auto rounded-full"></div>
+    </div>
 
-<article class="infra-row grid md:grid-cols-12 gap-8 sm:gap-10 items-start">
-<div class="infra-visual md:col-span-5 flex justify-center md:justify-start order-1">
-<img class="infra-media" alt="intensive care unit with monitored beds" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjft_o4wDM5YxKo9HrRZhGes6IKoZJPpLOzrEOa8oo14rCIi0hQJLuzZG5FBL1U0t9CCOL_pZe5gdt_6_YFIHMpu7jo__eySP2lu7HNpfxwpumRoFUHNMQA-1cra18WVP_7W1zOrATMw2F9L4bvQALa_WqXxC1foCkWYoeFMPhPaR16YPrCXrWek07rrpbfxYd4R34l5ptP2T9b_oRWAa7I7Bsn0WaHsW909UuIxPSCg6V2VSEKLz1Xpx28tknfm5_z5VTMFpt3axv"/>
-</div>
-<div class="infra-text md:col-span-7 order-2">
-<h2 class="infra-title">ICU</h2>
-<p class="infra-copy">Our intensive care units are designed for high-acuity treatment with round-the-clock observation, expert intensivists, and advanced life-support systems. Every ICU bay is planned to provide safety, efficiency, and a calm environment for both patients and families.</p>
-</div>
-</article>
+    <!-- 4-Column Bento Grid -->
+    <div class="bento-grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+        
+        <!-- 1. Robotics Surgery (Large - 2x2) -->
+        <div class="bento-card md:col-span-2 lg:col-span-2 md:row-span-2 group relative rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-aos="zoom-in-up">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAINOEToirK7PztWHyYiQ9fIPSTYBNTwDnScZ70l5NHJqg4zY2cz1CCMHJe35tpKz7DZyCPgUZzeYyAufNQ_95gB8P3_3NfXT3cKY5_6swA0LneTNdEGTLsM6VSlD6-ixkoIOB7Nsyq7drix5vJiBlwhZWHf_-ChTvkumo9nLqtwlhRnVNu9iFNlhFieRYIchWnH8PUo7Ph2FZAMUoY8r6KiB_hBxkQVo1spPL7ZHff_atYGgMYlygC3fQpIwhQs2qILgZMb_Cwxl9B" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+                <div class="w-14 h-14 rounded-2xl glass-badge text-white flex items-center justify-center mb-5 group-hover:-translate-y-2 group-hover:bg-primary transition-all duration-300">
+                    <span class="material-symbols-outlined text-2xl">precision_manufacturing</span>
+                </div>
+                <h3 class="text-white text-3xl font-headline font-extrabold mb-1">Robotics Surgery</h3>
+                <div class="desc-reveal line-clamp-4">
+                    <p class="text-white/80 font-light leading-relaxed">We offer advanced robotic-assisted surgery for complex procedures. Our operating teams use modern navigation systems and minimally invasive techniques that reduce blood loss, support faster healing, and improve clinical outcomes.</p>
+                </div>
+            </div>
+        </div>
 
-<article class="infra-row grid md:grid-cols-12 gap-8 sm:gap-10 items-start">
-<div class="infra-text md:col-span-7">
-<h2 class="infra-title">Birth Suites</h2>
-<p class="infra-copy">RR Chola Hospital's birth suites combine medical readiness with a warm and private setting. From labor support to neonatal monitoring, each suite is equipped to provide a safe and comfortable childbirth experience under the care of skilled obstetric and pediatric teams.</p>
-</div>
-<div class="infra-visual md:col-span-5 flex justify-center md:justify-end">
-<img class="infra-media" alt="modern patient birth suite" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlWICp60202v5bHcUE0LEcWYnAN_TE4acBbTKCpJC9hkrUvVrfjqfejHcMnjOAxAp5o3NFbrI2POoYMdrKENRgEtCrKoc1SX6xLZ_C22X5hEE5gnudidJ6Mp8OltW3lfOk6VWjQR1_4eN214VYP5z30oEhYVL-LbA_AVhXKC-3qFL6eYrTAN7flFw-YUKe5JhH1F9wkq8Les_z9Aw8jImJ7aGgH4u86BXsC3bXiPrkuUxWbRk1zp4skrSBJnTFvvKxd9AsJYp4baY"/>
-</div>
-</article>
+        <!-- 2. ICU (Standard - 1x1) -->
+        <div class="bento-card col-span-1 md:col-span-1 lg:col-span-1 row-span-1 group relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-aos="zoom-in-up" data-aos-delay="100">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjft_o4wDM5YxKo9HrRZhGes6IKoZJPpLOzrEOa8oo14rCIi0hQJLuzZG5FBL1U0t9CCOL_pZe5gdt_6_YFIHMpu7jo__eySP2lu7HNpfxwpumRoFUHNMQA-1cra18WVP_7W1zOrATMw2F9L4bvQALa_WqXxC1foCkWYoeFMPhPaR16YPrCXrWek07rrpbfxYd4R34l5ptP2T9b_oRWAa7I7Bsn0WaHsW909UuIxPSCg6V2VSEKLz1Xpx28tknfm5_z5VTMFpt3axv" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 w-full z-10">
+                <div class="w-12 h-12 rounded-2xl glass-badge text-white flex items-center justify-center mb-3 group-hover:bg-primary transition-all">
+                    <span class="material-symbols-outlined">monitoring</span>
+                </div>
+                <h3 class="text-white text-xl font-headline font-bold">Intensive Care Unit</h3>
+                <div class="desc-reveal line-clamp-3 md:line-clamp-none">
+                    <p class="text-white/80 text-sm font-light mt-2">Designed for high-acuity treatment with round-the-clock observation and expert intensivists.</p>
+                </div>
+            </div>
+        </div>
 
-<article class="infra-row grid md:grid-cols-12 gap-8 sm:gap-10 items-start">
-<div class="infra-visual md:col-span-5 flex justify-center md:justify-start order-1">
-<img class="infra-media" alt="dialysis support setup in hospital" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUYCkiZS3sD84aSOcd0hBX088flv3MYkCqBgvVIXT90aUi6e-bdEj6q5cKnScjNIUB6L3JC2ebCriHFZttTzHQFhCC1m_CYDDUcHnuqp4kLQaZ5cZ-yorhnFFJx7zYvYQhhjARMIpEIgsaYvvSipCKblAsKwc-XKk2UpwiP7I-4W4d4e8DtLjy_Lj3--D1oAH7HzHNoPQdjJlajf9dOeMiDaVoCXrADL1s7bR8VyC5qui4bNO_VkS2AUVHMbfiS23yyCzzptcFbYb0"/>
-</div>
-<div class="infra-text md:col-span-7 order-2">
-<h2 class="infra-title">Dialysis</h2>
-<p class="infra-copy">Our dialysis unit maintains strict infection-control standards and dependable treatment quality for renal care patients. The unit is staffed by trained nephrology professionals and supported with advanced monitoring systems to ensure comfort and clinical stability during each session.</p>
-</div>
-</article>
+        <!-- 3. Birth Suites (Standard - 1x1) -->
+        <div class="bento-card col-span-1 md:col-span-1 lg:col-span-1 row-span-1 group relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-aos="zoom-in-up" data-aos-delay="200">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmlWICp60202v5bHcUE0LEcWYnAN_TE4acBbTKCpJC9hkrUvVrfjqfejHcMnjOAxAp5o3NFbrI2POoYMdrKENRgEtCrKoc1SX6xLZ_C22X5hEE5gnudidJ6Mp8OltW3lfOk6VWjQR1_4eN214VYP5z30oEhYVL-LbA_AVhXKC-3qFL6eYrTAN7flFw-YUKe5JhH1F9wkq8Les_z9Aw8jImJ7aGgH4u86BXsC3bXiPrkuUxWbRk1zp4skrSBJnTFvvKxd9AsJYp4baY" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 w-full z-10">
+                <div class="w-12 h-12 rounded-2xl glass-badge text-white flex items-center justify-center mb-3 group-hover:bg-primary transition-all">
+                    <span class="material-symbols-outlined">pregnant_woman</span>
+                </div>
+                <h3 class="text-white text-xl font-headline font-bold">Birth Suites</h3>
+                <div class="desc-reveal line-clamp-3 md:line-clamp-none">
+                    <p class="text-white/80 text-sm font-light mt-2">Combining medical readiness with a warm, private setting for a comfortable childbirth experience.</p>
+                </div>
+            </div>
+        </div>
 
-<article class="infra-row grid md:grid-cols-12 gap-8 sm:gap-10 items-start">
-<div class="infra-text md:col-span-7">
-<h2 class="infra-title">World-class Laboratory</h2>
-<p class="infra-copy">The hospital's laboratory services are powered by automated analyzers and quality-controlled workflows for fast and accurate diagnostics. From routine pathology to specialized tests, our lab supports every department with timely reports that enable better treatment decisions.</p>
-</div>
-<div class="infra-visual md:col-span-5 flex justify-center md:justify-end">
-<img class="infra-media" alt="clinical laboratory with advanced medical analyzers" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUYCkiZS3sD84aSOcd0hBX088flv3MYkCqBgvVIXT90aUi6e-bdEj6q5cKnScjNIUB6L3JC2ebCriHFZttTzHQFhCC1m_CYDDUcHnuqp4kLQaZ5cZ-yorhnFFJx7zYvYQhhjARMIpEIgsaYvvSipCKblAsKwc-XKk2UpwiP7I-4W4d4e8DtLjy_Lj3--D1oAH7HzHNoPQdjJlajf9dOeMiDaVoCXrADL1s7bR8VyC5qui4bNO_VkS2AUVHMbfiS23yyCzzptcFbYb0"/>
-</div>
-</article>
+        <!-- 4. Dialysis (Wide - 2x1) -->
+        <div class="bento-card lg:col-span-2 row-span-1 group relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUYCkiZS3sD84aSOcd0hBX088flv3MYkCqBgvVIXT90aUi6e-bdEj6q5cKnScjNIUB6L3JC2ebCriHFZttTzHQFhCC1m_CYDDUcHnuqp4kLQaZ5cZ-yorhnFFJx7zYvYQhhjARMIpEIgsaYvvSipCKblAsKwc-XKk2UpwiP7I-4W4d4e8DtLjy_Lj3--D1oAH7HzHNoPQdjJlajf9dOeMiDaVoCXrADL1s7bR8VyC5qui4bNO_VkS2AUVHMbfiS23yyCzzptcFbYb0" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/10 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full z-10 md:w-3/4">
+                <div class="flex items-center gap-4 mb-3">
+                    <div class="w-12 h-12 rounded-2xl glass-badge text-white flex items-center justify-center group-hover:bg-primary transition-all">
+                        <span class="material-symbols-outlined">water_drop</span>
+                    </div>
+                    <h3 class="text-white text-2xl font-headline font-bold">Dialysis</h3>
+                </div>
+                <div class="desc-reveal">
+                    <p class="text-white/80 text-sm font-light">Unit staffed by trained nephrology professionals, strictly enforcing infection-control standards and dependable treatment quality for renal care patients.</p>
+                </div>
+            </div>
+        </div>
 
-<article class="infra-row grid md:grid-cols-12 gap-8 sm:gap-10 items-start">
-<div class="infra-visual md:col-span-5 flex justify-center md:justify-start order-1">
-<img class="infra-media" alt="newborn intensive care equipment and crib" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7T0gupjN0QLK7wUbg881FrSMp4TBa5FXQkJoTOeT7Hx18_jgWujUUH_-8tjCdeUE1dXy4C1o0CUdL-JRcmQogpmUQdW_oPslw3UbQ6ejmpVxp30-s2x8_TAQJcU4tcLMMXtBR7TKGjva6in8VSXiNBSntDUKHOYHct7UQU2Yq_P7ahmy5HTM9T3Dvhf1ljxshEjKu0yzdoE5YrbtWNn8a9lquJhREHGnMPqapsH5luSJgCLQ-b4e7sstHtfFln0smRGBZJyuhqCea"/>
-</div>
-<div class="infra-text md:col-span-7 order-2">
-<h2 class="infra-title">Newborn ICU</h2>
-<p class="infra-copy">Our neonatal intensive care unit is built for high-risk newborn care with incubators, respiratory support, and continuous monitoring. A specialized neonatology team provides immediate intervention and compassionate support for families during the most sensitive stages of treatment.</p>
-</div>
-</article>
+        <!-- 5. Laboratory (Large - 2x2) -->
+        <div class="bento-card md:col-span-2 lg:col-span-2 md:row-span-2 group relative rounded-[2.5rem] overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500" data-aos="fade-up">
+            <!-- Using same image as Dialysis originally, but let's give it a dynamic overlay -->
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUYCkiZS3sD84aSOcd0hBX088flv3MYkCqBgvVIXT90aUi6e-bdEj6q5cKnScjNIUB6L3JC2ebCriHFZttTzHQFhCC1m_CYDDUcHnuqp4kLQaZ5cZ-yorhnFFJx7zYvYQhhjARMIpEIgsaYvvSipCKblAsKwc-XKk2UpwiP7I-4W4d4e8DtLjy_Lj3--D1oAH7HzHNoPQdjJlajf9dOeMiDaVoCXrADL1s7bR8VyC5qui4bNO_VkS2AUVHMbfiS23yyCzzptcFbYb0" class="absolute inset-0 w-full h-full object-cover grayscale opacity-80 mix-blend-multiply transition-transform duration-1000 group-hover:scale-110 group-hover:grayscale-0"/>
+            <div class="absolute inset-0 bg-signature-gradient opacity-40 mix-blend-color"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/95 via-slate-900/30 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-8 w-full z-10">
+                <div class="w-14 h-14 rounded-2xl glass-badge text-white flex items-center justify-center mb-5 group-hover:-translate-y-2 group-hover:bg-primary transition-all duration-300">
+                    <span class="material-symbols-outlined text-2xl">science</span>
+                </div>
+                <h3 class="text-white text-3xl font-headline font-extrabold mb-1">World-class Laboratory</h3>
+                <div class="desc-reveal line-clamp-4 text-justify">
+                    <p class="text-white/80 font-light leading-relaxed mt-2">Powered by automated analyzers and quality-controlled workflows for fast and accurate diagnostics. From routine pathology to specialized tests, our lab supports every department with timely reports.</p>
+                </div>
+            </div>
+        </div>
 
-<article class="infra-row grid md:grid-cols-12 gap-8 sm:gap-10 items-start">
-<div class="infra-text md:col-span-7">
-<h2 class="infra-title">Emergency Response</h2>
-<p class="infra-copy">The emergency department operates 24/7 with rapid triage, critical care access, and coordinated trauma protocols. Our teams are trained to respond quickly and efficiently to stabilize patients during medical emergencies, accidents, and urgent interventions.</p>
-</div>
-<div class="infra-visual md:col-span-5 flex justify-center md:justify-end">
-<img class="infra-media" alt="emergency care room with patient stretcher" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoHNCG3r5rFf9wlwrq03Nv8WyEf5PVDxW-Ut7Mfe7qJBWXca03yUD5tAGXD_nJdqCZ8nt6Ji7Lj2FV9f9KR_royB6pJ3J3HYf0Lcfi34RKmGXtg8gtIFqhB--g3RwBCcuSxqvFEDqQyDwr8c-3UR9xTKbaofrlda5ID2knXzy4PPSgXUXmtFGyoWxUKTWm6v8_opFiDXlgaxCOIAaP4zfUt65BAQpkiFaMAAfZcu15ELJyzOTotyBcBSkL0WHgG7pxIjCbbw0Qji-o"/>
-</div>
-</article>
+        <!-- 6. Newborn ICU (Tall - 1x2) -->
+        <div class="bento-card col-span-1 lg:col-span-1 md:row-span-2 group relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7T0gupjN0QLK7wUbg881FrSMp4TBa5FXQkJoTOeT7Hx18_jgWujUUH_-8tjCdeUE1dXy4C1o0CUdL-JRcmQogpmUQdW_oPslw3UbQ6ejmpVxp30-s2x8_TAQJcU4tcLMMXtBR7TKGjva6in8VSXiNBSntDUKHOYHct7UQU2Yq_P7ahmy5HTM9T3Dvhf1ljxshEjKu0yzdoE5YrbtWNn8a9lquJhREHGnMPqapsH5luSJgCLQ-b4e7sstHtfFln0smRGBZJyuhqCea" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/40 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 w-full z-10">
+                <div class="w-12 h-12 rounded-2xl glass-badge text-white flex items-center justify-center mb-3 group-hover:bg-primary transition-all">
+                    <span class="material-symbols-outlined">child_care</span>
+                </div>
+                <h3 class="text-white text-xl font-headline font-bold">Newborn ICU</h3>
+                <div class="desc-reveal">
+                    <p class="text-white/80 text-sm font-light mt-2">Built for high-risk newborn care with incubators, respiratory support, and continuous monitoring.</p>
+                </div>
+            </div>
+        </div>
 
-<article class="infra-row grid md:grid-cols-12 gap-8 sm:gap-10 items-start">
-<div class="infra-visual md:col-span-5 flex justify-center md:justify-start order-1">
-<img class="infra-media" alt="ambulance with hospital branding" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoHNCG3r5rFf9wlwrq03Nv8WyEf5PVDxW-Ut7Mfe7qJBWXca03yUD5tAGXD_nJdqCZ8nt6Ji7Lj2FV9f9KR_royB6pJ3J3HYf0Lcfi34RKmGXtg8gtIFqhB--g3RwBCcuSxqvFEDqQyDwr8c-3UR9xTKbaofrlda5ID2knXzy4PPSgXUXmtFGyoWxUKTWm6v8_opFiDXlgaxCOIAaP4zfUt65BAQpkiFaMAAfZcu15ELJyzOTotyBcBSkL0WHgG7pxIjCbbw0Qji-o"/>
-</div>
-<div class="infra-text md:col-span-7 order-2">
-<h2 class="infra-title">Ambulance Services</h2>
-<p class="infra-copy">Our ambulance fleet is equipped with cardiac monitors, ventilators, emergency medications, and trained paramedic staff. These mobile critical-care units ensure safe patient transfer and rapid pre-hospital care across a wide range of emergency situations.</p>
-</div>
-</article>
+        <!-- 7. Emergency (Standard - 1x1) -->
+        <div class="bento-card col-span-1 lg:col-span-1 row-span-1 group relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="200">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaOxq17ajcIU7GTLCop9uLik0flHN1WSHkjIYwo5Gxe9U-e30oV9NiD1TtTXs5SojfWyT5CudymQVGyxWUYK9eZkDSTS7VBxhZxsL-_vij0eqDhg1wi1rSoK2Rpv-Mb2Q83jl8zuMobUE6i3llnD6BN12wjxcglkVG8f_-V1MVRGLWxDFWeNMVpkAFJsi9ARQZyA-kAS6y7KqcGpWC8Gurv3rwjm3nwgXv7IoYm4V1F1Dw2lHPZ3cF8WK2GCgPY0T3EWjvREYQbWZM" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-red-900/90 via-slate-900/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 w-full z-10">
+                <div class="w-12 h-12 rounded-2xl glass-badge text-white flex items-center justify-center mb-3 bg-red-500/40 border-red-400 group-hover:bg-red-500 transition-all">
+                    <span class="material-symbols-outlined">emergency</span>
+                </div>
+                <h3 class="text-white text-xl font-headline font-bold">Emergency Rescue</h3>
+                <div class="desc-reveal line-clamp-3 md:line-clamp-none">
+                    <p class="text-white/80 text-sm font-light mt-2">Operating 24/7 with rapid triage, critical care access, and coordinated trauma protocols.</p>
+                </div>
+            </div>
+        </div>
 
-<article class="infra-row grid md:grid-cols-12 gap-8 sm:gap-10 items-start">
-<div class="infra-text md:col-span-7">
-<h2 class="infra-title">Endoscopic Suite</h2>
-<p class="infra-copy">RR Chola Hospital's endoscopy suites support advanced upper and lower GI procedures with precision imaging and specialized intervention tools. Our gastroenterology team performs both diagnostic and therapeutic procedures in a safe and controlled environment.</p>
-</div>
-<div class="infra-visual md:col-span-5 flex justify-center md:justify-end">
-<img class="infra-media" alt="advanced endoscopy procedure room" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqbxNvgm4RiqiwMF9v8SqzW11ES_F5k6f7nYMaiKLO9JUC_UARVdCehTz36zWcN36NgAYaPN6O3jwGVjZJ0ZnLpqxbVfRyJgiXorB8d1ILjGeGWehbm4piqb8l5UNGkE-SR5M-OlW3HNb_Dnv3ICIUNOZXUQbBV6fBqITyywM0l8pKbHtOl2TAZO47shl3m6GNJbTwEFozZmMc8RheiToAwgjZVwh3cEW4d3yPXJhgXeKENDbHpzf-sMx5lJFg4Shiq3SWewimyYKP"/>
-</div>
-</article>
+        <!-- 8. Ambulance (Standard - 1x1) -->
+        <div class="bento-card col-span-1 lg:col-span-1 row-span-1 group relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="300">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCoHNCG3r5rFf9wlwrq03Nv8WyEf5PVDxW-Ut7Mfe7qJBWXca03yUD5tAGXD_nJdqCZ8nt6Ji7Lj2FV9f9KR_royB6pJ3J3HYf0Lcfi34RKmGXtg8gtIFqhB--g3RwBCcuSxqvFEDqQyDwr8c-3UR9xTKbaofrlda5ID2knXzy4PPSgXUXmtFGyoWxUKTWm6v8_opFiDXlgaxCOIAaP4zfUt65BAQpkiFaMAAfZcu15ELJyzOTotyBcBSkL0WHgG7pxIjCbbw0Qji-o" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/20 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 w-full z-10">
+                <div class="w-12 h-12 rounded-2xl glass-badge text-white flex items-center justify-center mb-3 group-hover:bg-primary transition-all">
+                    <span class="material-symbols-outlined">airport_shuttle</span>
+                </div>
+                <h3 class="text-white text-xl font-headline font-bold">Ambulance Fleet</h3>
+                <div class="desc-reveal line-clamp-3 md:line-clamp-none">
+                    <p class="text-white/80 text-sm font-light mt-2">Equipped with cardiac monitors, ventilators, and emergency medications for safe patient transfer.</p>
+                </div>
+            </div>
+        </div>
 
-<article class="infra-row grid md:grid-cols-12 gap-8 sm:gap-10 items-start">
-<div class="infra-visual md:col-span-5 flex justify-center md:justify-start order-1">
-<img class="infra-media" alt="hospital cafeteria seating area" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvmqcgU8SMUAz5tztaPfooqCSSONIpLEijYun-0SyPyoQpI7SIJQGP8SRqhcfy1hYLT6vwiKCK1W4IM3LTapZZNoukdyJ_WXf3dlV8sL5YcAc1UGrqqHhrSOaGOxNeStIYTXODQIKH-_5A6crPfSb7ZLv02sdwCZ3kwEE0N0tt50D7emGdkvMIIK0UUc9qqhCG9UpxGsDowZQBP6P01yHkB2aepj1PiGbHKP2-U-8JSdd1fbzPLsM_YA4tpaI_eQPDGeUngKhlyyrI"/>
-</div>
-<div class="infra-text md:col-span-7 order-2">
-<h2 class="infra-title">Restaurant &amp; Cafeteria</h2>
-<p class="infra-copy">The hospital campus includes a clean and welcoming restaurant-cafeteria for patients, attendants, and visitors. The menu is planned to offer nutritious choices and comfortable dining spaces that support rest, recovery, and daily convenience.</p>
-</div>
-</article>
-</div>
+        <!-- 9. Endoscopic Suite (Wide 2 Col) -->
+        <div class="bento-card md:col-span-2 lg:col-span-2 row-span-1 group relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqbxNvgm4RiqiwMF9v8SqzW11ES_F5k6f7nYMaiKLO9JUC_UARVdCehTz36zWcN36NgAYaPN6O3jwGVjZJ0ZnLpqxbVfRyJgiXorB8d1ILjGeGWehbm4piqb8l5UNGkE-SR5M-OlW3HNb_Dnv3ICIUNOZXUQbBV6fBqITyywM0l8pKbHtOl2TAZO47shl3m6GNJbTwEFozZmMc8RheiToAwgjZVwh3cEW4d3yPXJhgXeKENDbHpzf-sMx5lJFg4Shiq3SWewimyYKP" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/10 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full z-10 md:w-3/4">
+                <div class="flex items-center gap-4 mb-3">
+                    <div class="w-12 h-12 rounded-2xl glass-badge text-white flex items-center justify-center group-hover:bg-primary transition-all">
+                        <span class="material-symbols-outlined">medical_information</span>
+                    </div>
+                    <h3 class="text-white text-2xl font-headline font-bold">Endoscopic Suite</h3>
+                </div>
+                <div class="desc-reveal">
+                    <p class="text-white/80 text-sm font-light">Supporting advanced upper and lower GI procedures with precision imaging and specialized intervention tools, providing a safe therapeutic environment.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. Cafeteria (Wide 2 Col) -->
+        <div class="bento-card md:col-span-2 lg:col-span-2 row-span-1 group relative rounded-[2rem] overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500" data-aos="fade-up" data-aos-delay="100">
+            <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCvmqcgU8SMUAz5tztaPfooqCSSONIpLEijYun-0SyPyoQpI7SIJQGP8SRqhcfy1hYLT6vwiKCK1W4IM3LTapZZNoukdyJ_WXf3dlV8sL5YcAc1UGrqqHhrSOaGOxNeStIYTXODQIKH-_5A6crPfSb7ZLv02sdwCZ3kwEE0N0tt50D7emGdkvMIIK0UUc9qqhCG9UpxGsDowZQBP6P01yHkB2aepj1PiGbHKP2-U-8JSdd1fbzPLsM_YA4tpaI_eQPDGeUngKhlyyrI" class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"/>
+            <div class="absolute inset-0 bg-gradient-to-t from-slate-900/90 via-slate-900/10 to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-6 md:p-8 w-full z-10 md:w-3/4">
+                <div class="flex items-center gap-4 mb-3">
+                    <div class="w-12 h-12 rounded-2xl glass-badge text-white flex items-center justify-center group-hover:bg-primary transition-all">
+                        <span class="material-symbols-outlined">restaurant</span>
+                    </div>
+                    <h3 class="text-white text-2xl font-headline font-bold">Restaurant &amp; Cafeteria</h3>
+                </div>
+                <div class="desc-reveal">
+                    <p class="text-white/80 text-sm font-light">Features a clean and welcoming restaurant for patients and visitors, offering comfortable dining spaces that support rest and daily convenience.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-<section class="py-16 sm:py-20">
-<div class="max-w-7xl mx-auto px-4 sm:px-8">
-<div class="infra-cta signature-gradient rounded-[2.2rem] sm:rounded-[2.5rem] p-8 sm:p-12 md:p-20 text-center text-white relative overflow-hidden">
-<div class="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white via-transparent to-transparent"></div>
-<div class="relative z-10">
-<h2 class="infra-cta-title font-headline text-4xl md:text-5xl font-extrabold mb-8">Experience Advanced Healthcare Facilities</h2>
-<div class="infra-cta-actions flex flex-col md:flex-row gap-6 justify-center items-center">
-<button class="infra-cta-action bg-white text-primary px-10 py-4 rounded-xl font-headline font-extrabold text-lg transition-all hover:scale-105 active:scale-95 ambient-shadow">Contact Us</button>
-<button class="infra-cta-action border-2 border-white/40 text-white px-10 py-4 rounded-xl font-headline font-extrabold text-lg transition-all hover:bg-white/10">Call Now</button>
-</div>
-</div>
-</div>
-</div>
+<!-- Action CTA Banner -->
+<section class="py-16 sm:py-24">
+    <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div class="signature-gradient rounded-[2.5rem] p-10 sm:p-16 text-center text-white relative overflow-hidden shadow-2xl shadow-purple-900/30" data-aos="zoom-in">
+            <div class="absolute inset-0 opacity-20 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 32px 32px;"></div>
+            <div class="absolute -top-32 -right-32 w-96 h-96 bg-white/20 blur-[100px] rounded-full mix-blend-overlay"></div>
+            <div class="relative z-10 max-w-3xl mx-auto">
+                <h2 class="font-headline text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 tracking-tight leading-tight">Experience Advanced Healthcare Facilities</h2>
+                <p class="text-white/80 text-lg mb-10 font-light hidden md:block">Take a tour of our clinical sanctuary and see the difference of integrated medical technology.</p>
+                <div class="flex flex-col sm:flex-row gap-5 justify-center mt-6">
+                    <button class="bg-white text-primary px-10 py-5 rounded-full font-headline font-black text-lg transition-transform hover:scale-105 flex items-center justify-center gap-3 w-full sm:w-auto">
+                        <span class="material-symbols-outlined text-xl">contact_page</span> Contact Us
+                    </button>
+                    <button class="bg-transparent border-2 border-white/40 text-white px-10 py-5 rounded-full font-headline font-black text-lg transition-all hover:bg-white/10 flex items-center justify-center gap-3 w-full sm:w-auto">
+                        <span class="material-symbols-outlined text-xl">call</span> Call Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
 </main>
 <div id="footer-slot"></div>
 <script src="shared-layout.js"></script>
+<!-- AOS Scripts -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true,
+    offset: 100
+  });
+</script>
 </body>
 </html>
 
