@@ -72,27 +72,46 @@
     }
 
     function applyTextAnimations() {
-        var main = document.querySelector('main');
-        if (!main) {
-            return;
-        }
+        var container = document.querySelector('main') || document.body;
 
         var selectors = [
-            'h1',
-            'h2',
-            'h3',
-            'h4',
-            'p',
-            'li',
-            'summary',
-            'label'
+            'section',
+            'article',
+            '.card',
+            '[class*="-card"]',
+            '.journey-step',
+            '.speciality-grid-card',
+            'img'
         ].join(',');
-        var items = Array.prototype.slice.call(main.querySelectorAll(selectors));
+        var items = Array.prototype.slice.call(container.querySelectorAll(selectors));
         var animationIndex = 0;
 
+        var currentPage = window.location.pathname.split('/').pop() || 'index.html';
+        var allAnimationSets = [
+            ['fade-up', 'fade-down', 'zoom-in', 'fade-up-right', 'zoom-out-up', 'flip-left'],
+            ['fade-down', 'zoom-in-up', 'flip-up', 'fade-left', 'slide-up', 'zoom-in-down'],
+            ['fade-left', 'fade-right', 'zoom-out', 'flip-right', 'fade-up', 'slide-down'],
+            ['zoom-in-down', 'fade-up-left', 'fade-up-right', 'zoom-in', 'flip-down', 'fade-down'],
+            ['flip-left', 'zoom-out-up', 'fade-up', 'fade-down-right', 'fade-right', 'slide-up'],
+            ['slide-up', 'zoom-in', 'fade-left', 'fade-down', 'flip-up', 'zoom-in-right'],
+            ['fade-up', 'fade-up-left', 'zoom-in-up', 'fade-right', 'slide-down', 'flip-right']
+        ];
+        
+        var pageHash = 0;
+        for (var i = 0; i < currentPage.length; i++) {
+            pageHash += currentPage.charCodeAt(i);
+        }
+        var pageAnimations = allAnimationSets[pageHash % allAnimationSets.length];
+
         items.forEach(function (element) {
-            if (element.closest('nav') || element.closest('footer') || element.closest('#mobile-menu')) {
+            if (element.closest('nav') || element.closest('header') || element.closest('footer') || element.closest('#mobile-menu')) {
                 return;
+            }
+
+            if (element.tagName.toLowerCase() === 'img') {
+                if (element.classList.contains('hero-slide') || element.classList.contains('insurance-logo') || element.closest('.insurance-track')) {
+                    return;
+                }
             }
 
             if (element.closest('[data-no-aos]')) {
@@ -103,13 +122,9 @@
                 return;
             }
 
-            if (element.textContent && element.textContent.trim().length === 0) {
-                return;
-            }
-
-            var direction = animationIndex % 2 === 0 ? 'fade-right' : 'fade-left';
+            var direction = pageAnimations[animationIndex % pageAnimations.length];
             element.setAttribute('data-aos', direction);
-            element.setAttribute('data-aos-delay', String((animationIndex % 4) * 80));
+            element.setAttribute('data-aos-delay', String((animationIndex % 4) * 100));
             animationIndex += 1;
         });
 
