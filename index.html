@@ -497,19 +497,19 @@
 <section class="relative overflow-hidden pt-24 sm:pt-28 md:pt-36 min-h-[72svh] lg:min-h-[640px]">
 <div class="absolute inset-0 z-0 bg-slate-950">
 <div class="absolute inset-0">
-<img class="hero-slide absolute inset-0 h-full w-full object-cover object-center opacity-100 transition-opacity duration-700" data-hero-slide alt="modern hospital lobby with bright natural light and premium interiors" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80">
-<img class="hero-slide absolute inset-0 h-full w-full object-cover object-center opacity-0 transition-opacity duration-700" data-hero-slide alt="medical staff collaborating in a modern hospital environment" src="https://images.unsplash.com/photo-1576765607924-3f7b8410a787?auto=format&fit=crop&w=1600&q=80">
-<img class="hero-slide absolute inset-0 h-full w-full object-cover object-center opacity-0 transition-opacity duration-700" data-hero-slide alt="advanced patient care room inside a modern hospital" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1600&q=80">
+<img class="hero-slide absolute inset-0 h-full w-full object-cover object-center opacity-100 transition-opacity duration-700" data-hero-slide data-hero-kicker="World-Class Healthcare" data-hero-title="Advanced Care for a" data-hero-highlight="Healthier Tomorrow" data-hero-description="Experience medical excellence with state-of-the-art technology and compassionate care from global experts." alt="modern hospital lobby with bright natural light and premium interiors" src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1600&q=80">
+<img class="hero-slide absolute inset-0 h-full w-full object-cover object-center opacity-0 transition-opacity duration-700" data-hero-slide data-hero-kicker="Clinical Excellence" data-hero-title="Trusted Specialists for" data-hero-highlight="Every Critical Moment" data-hero-description="From emergency response to advanced procedures, our expert teams deliver precise care when it matters most." alt="medical staff collaborating in a modern hospital environment" src="https://images.unsplash.com/photo-1576765607924-3f7b8410a787?auto=format&fit=crop&w=1600&q=80">
+<img class="hero-slide absolute inset-0 h-full w-full object-cover object-center opacity-0 transition-opacity duration-700" data-hero-slide data-hero-kicker="Healing Spaces" data-hero-title="Comfort-First Recovery in" data-hero-highlight="Modern Infrastructure" data-hero-description="Smart rooms, connected monitoring, and patient-friendly design create a smoother, safer journey to recovery." alt="advanced patient care room inside a modern hospital" src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1600&q=80">
 </div>
 <div class="absolute inset-0 bg-black/45"></div>
 <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/30"></div>
 </div>
 <div class="relative z-10 min-h-[72svh] lg:min-h-[640px] flex flex-col justify-center items-center text-center px-4 sm:px-6 py-14">
-<span class="text-primary-fixed-dim font-bold tracking-[0.2em] mb-4 uppercase text-xs sm:text-sm">World-Class Healthcare</span>
+<span class="text-primary-fixed-dim font-bold tracking-[0.2em] mb-4 uppercase text-xs sm:text-sm" data-hero-kicker-text>World-Class Healthcare</span>
 <h1 class="text-white text-4xl sm:text-5xl md:text-7xl font-headline font-black mb-6 max-w-4xl tracking-tight leading-tight">
-                Advanced Care for a <br><span class="text-secondary-fixed">Healthier Tomorrow</span>
+                <span data-hero-title-text>Advanced Care for a</span> <br><span class="text-secondary-fixed" data-hero-highlight-text>Healthier Tomorrow</span>
 </h1>
-<p class="text-white/90 text-base sm:text-lg md:text-xl max-w-2xl mb-8 md:mb-10 font-light px-2">
+<p class="text-white/90 text-base sm:text-lg md:text-xl max-w-2xl mb-8 md:mb-10 font-light px-2" data-hero-description-text>
                 Experience medical excellence with state-of-the-art technology and compassionate care from global experts.
             </p>
 <div class="flex flex-wrap justify-center gap-4 sm:gap-6">
@@ -1062,6 +1062,10 @@ View All Specialities
     var timelineProgressLine = document.querySelector('[data-timeline-progress-line]');
     var timelineProgressLineMobile = document.querySelector('[data-timeline-progress-line-mobile]');
     var slides = Array.prototype.slice.call(document.querySelectorAll('[data-hero-slide]'));
+    var heroKickerText = document.querySelector('[data-hero-kicker-text]');
+    var heroTitleText = document.querySelector('[data-hero-title-text]');
+    var heroHighlightText = document.querySelector('[data-hero-highlight-text]');
+    var heroDescriptionText = document.querySelector('[data-hero-description-text]');
     var patientViewport = document.querySelector('[data-patient-viewport]');
     var patientTrack = document.querySelector('[data-patient-track]');
     var patientPrevButton = document.querySelector('[data-patient-prev]');
@@ -1095,6 +1099,27 @@ View All Specialities
             slide.classList.toggle('opacity-100', index === currentSlide);
             slide.classList.toggle('opacity-0', index !== currentSlide);
         });
+
+        var activeSlide = slides[currentSlide];
+        if (!activeSlide) {
+            return;
+        }
+
+        if (heroKickerText) {
+            heroKickerText.textContent = activeSlide.getAttribute('data-hero-kicker') || 'World-Class Healthcare';
+        }
+
+        if (heroTitleText) {
+            heroTitleText.textContent = activeSlide.getAttribute('data-hero-title') || 'Advanced Care for a';
+        }
+
+        if (heroHighlightText) {
+            heroHighlightText.textContent = activeSlide.getAttribute('data-hero-highlight') || 'Healthier Tomorrow';
+        }
+
+        if (heroDescriptionText) {
+            heroDescriptionText.textContent = activeSlide.getAttribute('data-hero-description') || 'Experience medical excellence with state-of-the-art technology and compassionate care from global experts.';
+        }
     }
 
     function goToNextSlide() {
