@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en" class="overflow-x-hidden"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>About Us | RR CHOLA HOSPITAL</title>
@@ -65,6 +65,16 @@
       .innovation-card .value-card-icon {
         color: #ffffff !important;
       }
+      /* Hide scrollbar on initial load / refresh flicker fix */
+      html, body {
+        scrollbar-width: none;        /* Firefox */
+        -ms-overflow-style: none;     /* IE / Edge legacy */
+        overflow-y: auto;
+      }
+      html::-webkit-scrollbar,
+      body::-webkit-scrollbar {
+        display: none;                /* Chrome, Safari, Edge */
+      }
     </style>
 </head>
 <body class="bg-surface font-body text-on-surface overflow-x-hidden">
@@ -93,7 +103,7 @@
 <div class="overflow-hidden rounded-3xl shadow-2xl">
 <img class="w-full h-[460px] sm:h-[560px] object-cover transition-transform duration-700 group-hover:scale-105" alt="Modern architectural view of a luxury hospital exterior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqbxNvgm4RiqiwMF9v8SqzW11ES_F5k6f7nYMaiKLO9JUC_UARVdCehTz36zWcN36NgAYaPN6O3jwGVjZJ0ZnLpqxbVfRyJgiXorB8d1ILjGeGWehbm4piqb8l5UNGkE-SR5M-OlW3HNb_Dnv3ICIUNOZXUQbBV6fBqITyywM0l8pKbHtOl2TAZO47shl3m6GNJbTwEFozZmMc8RheiToAwgjZVwh3cEW4d3yPXJhgXeKENDbHpzf-sMx5lJFg4Shiq3SWewimyYKP"/>
 </div>
-<div class="absolute -bottom-5 -right-5 bg-primary text-white p-6 sm:p-7 rounded-3xl shadow-xl flex flex-col items-center justify-center border-4 border-surface">
+<div class="absolute -bottom-5 right-4 sm:-right-5 bg-primary text-white p-6 sm:p-7 rounded-3xl shadow-xl flex flex-col items-center justify-center border-4 border-surface">
 <span class="text-4xl sm:text-5xl font-black font-headline tracking-tighter">10+</span>
 <span class="text-[11px] uppercase tracking-widest font-bold opacity-85 text-center">Years of Excellence</span>
 </div>
@@ -104,13 +114,13 @@
 <h2 class="text-4xl sm:text-5xl font-headline font-extrabold leading-tight text-on-surface">Redefining the Healing Experience.</h2>
 <p class="text-on-surface-variant text-lg leading-relaxed">Established with a vision to transcend traditional healthcare, RR Chola Hospital combines clinical precision with a sanctuary of wellness. We don't just treat; we care.</p>
 </div>
-<div class="grid grid-cols-2 gap-6">
+<div class="grid grid-cols-2 gap-6" data-counter-section>
 <div class="space-y-1 border-l-4 border-secondary pl-4">
-<span class="text-3xl font-black text-primary font-headline">10k+</span>
+<span class="text-3xl font-black text-primary font-headline" data-counter data-target="10" data-suffix="k+">0</span>
 <p class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Patients Served</p>
 </div>
 <div class="space-y-1 border-l-4 border-primary pl-4">
-<span class="text-3xl font-black text-primary font-headline">50+</span>
+<span class="text-3xl font-black text-primary font-headline" data-counter data-target="50" data-suffix="+">0</span>
 <p class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Expert Specialists</p>
 </div>
 </div>
@@ -193,13 +203,13 @@
 <p class="text-white/85 leading-relaxed text-lg">The pillars that define our commitment to your health, comfort, and long-term clinical outcomes.</p>
 </div>
 
-<div class="mt-8 grid grid-cols-2 gap-3">
+<div class="mt-8 grid grid-cols-2 gap-3" data-counter-section>
 <div class="rounded-2xl border border-white/20 bg-white/10 px-4 py-3">
-<p class="text-2xl font-black leading-none">10k+</p>
+<p class="text-2xl font-black leading-none" data-counter data-target="10" data-suffix="k+">0</p>
 <p class="mt-1 text-xs text-white/80 uppercase tracking-wider font-semibold">Patients Served</p>
 </div>
 <div class="rounded-2xl border border-white/20 bg-white/10 px-4 py-3">
-<p class="text-2xl font-black leading-none">50+</p>
+<p class="text-2xl font-black leading-none" data-counter data-target="50" data-suffix="+">0</p>
 <p class="mt-1 text-xs text-white/80 uppercase tracking-wider font-semibold">Specialists</p>
 </div>
 </div>
@@ -319,5 +329,37 @@ Trusted by Patients Across Specialities
 </main>
 <div id="footer-slot"></div>
 <script src="shared-layout.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var counters = entry.target.querySelectorAll('[data-counter]');
+                    counters.forEach(function(counter) {
+                        var target = parseInt(counter.getAttribute('data-target'), 10);
+                        var suffix = counter.getAttribute('data-suffix') || '';
+                        var duration = 1500;
+                        var stepTime = Math.max(10, Math.floor(duration / target));
+                        var current = 0;
+                        var timer = setInterval(function() {
+                            current += 1;
+                            counter.textContent = current + suffix;
+                            if (current >= target) {
+                                clearInterval(timer);
+                                counter.textContent = target + suffix;
+                            }
+                        }, stepTime);
+                    });
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.2 });
+        
+        var sections = document.querySelectorAll('[data-counter-section]');
+        sections.forEach(function(section) {
+            observer.observe(section);
+        });
+    });
+</script>
 </body>
 </html>
