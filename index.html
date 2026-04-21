@@ -2265,8 +2265,8 @@
 <body class="bg-surface font-body text-on-surface" data-mode="connect">
     <div id="navbar-slot"></div>
     <!-- Hero Section -->
-    <section class="relative md:overflow-hidden pt-[115px] sm:pt-[130px] md:pt-36 pb-6 px-4 md:px-0 md:min-h-[72svh] lg:min-h-[640px] bg-slate-50 md:bg-transparent">
-        <div class="relative w-full h-[160px] sm:h-[190px] md:h-auto md:min-h-[72svh] lg:min-h-[640px] bg-white md:bg-transparent rounded-[1.25rem] md:rounded-none shadow-xl md:shadow-none overflow-hidden flex flex-row md:block border md:border-none border-purple-100">
+    <section class="relative md:overflow-hidden pt-[115px] sm:pt-[130px] md:pt-36 pb-6 pl-4 pr-0 md:px-0 md:min-h-[72svh] lg:min-h-[640px] bg-slate-50 md:bg-transparent">
+        <div class="relative w-full h-[160px] sm:h-[190px] md:h-auto md:min-h-[72svh] lg:min-h-[640px] bg-white md:bg-transparent rounded-l-[1.25rem] rounded-r-none md:rounded-none shadow-xl md:shadow-none overflow-hidden flex flex-row md:block border md:border-none border-r-0 border-purple-100">
             <div class="relative md:absolute md:inset-0 w-[42%] md:w-full h-full z-0 bg-slate-950 flex-shrink-0">
                 <div class="absolute inset-0">
                     <img class="hero-slide absolute inset-0 h-full w-full object-cover object-center opacity-100 transition-opacity duration-700"
@@ -2405,48 +2405,60 @@
                     <span class="material-symbols-outlined">arrow_forward</span>
                 </a>
             </div>
-            <div class="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 items-stretch">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4 items-stretch">
                 <a href="cardiology.html"
-                    class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center"
+                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
                     aria-label="Open Cardiology department page">
-                    <img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1"
-                        alt="Cardiology icon" src="assests/icons8-heart-with-pulse-100.png">
-                    <h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Cardiology</h3>
+                    <span class="inline-flex items-center justify-center h-14 w-full">
+                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                            alt="Cardiology icon" src="assests/icons8-heart-with-pulse-100.png">
+                    </span>
+                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">Cardiology</h4>
                 </a>
                 <a href="cardiology.html"
-                    class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center"
-                    aria-label="Open Cardiology department page">
-                    <img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1"
-                        alt="Neurology icon" src="assests/Neurology.png">
-                    <h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Neurology</h3>
+                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
+                    aria-label="Open Neurology department page">
+                    <span class="inline-flex items-center justify-center h-14 w-full">
+                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                            alt="Neurology icon" src="assests/Neurology.png">
+                    </span>
+                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">Neurology</h4>
                 </a>
                 <a href="cardiology.html"
-                    class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center"
-                    aria-label="Open Cardiology department page">
-                    <img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1"
-                        alt="Orthopedics icon" src="assests/Orthopedics.png">
-                    <h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Orthopedics</h3>
+                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
+                    aria-label="Open Orthopedics department page">
+                    <span class="inline-flex items-center justify-center h-14 w-full">
+                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                            alt="Orthopedics icon" src="assests/Orthopedics.png">
+                    </span>
+                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">Orthopedics</h4>
                 </a>
                 <a href="cardiology.html"
-                    class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center"
-                    aria-label="Open Cardiology department page">
-                    <img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1"
-                        alt="Oncology icon" src="assests/oncology_10202691.png">
-                    <h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Oncology</h3>
+                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
+                    aria-label="Open Oncology department page">
+                    <span class="inline-flex items-center justify-center h-14 w-full">
+                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                            alt="Oncology icon" src="assests/oncology_10202691.png">
+                    </span>
+                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">Oncology</h4>
                 </a>
                 <a href="cardiology.html"
-                    class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center"
-                    aria-label="Open Cardiology department page">
-                    <img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1"
-                        alt="Gastroenterology icon" src="assests/Gastroenterology.png">
-                    <h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Gastroenterology</h3>
+                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
+                    aria-label="Open Gastroenterology department page">
+                    <span class="inline-flex items-center justify-center h-14 w-full">
+                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                            alt="Gastroenterology icon" src="assests/Gastroenterology.png">
+                    </span>
+                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">Gastroenterology</h4>
                 </a>
                 <a href="cardiology.html"
-                    class="group speciality-grid-card bg-surface-container-lowest rounded-3xl border border-purple-100/70 shadow-sm hover:-translate-y-1 p-6 sm:p-7 min-h-[210px] sm:min-h-[240px] md:min-h-[260px] flex flex-col items-center justify-between text-center"
-                    aria-label="Open Cardiology department page">
-                    <img class="speciality-icon w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 object-contain p-1"
-                        alt="Pediatrics icon" src="assests/Pediatrics.png">
-                    <h3 class="speciality-title text-lg sm:text-xl font-bold text-on-surface">Pediatrics</h3>
+                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
+                    aria-label="Open Pediatrics department page">
+                    <span class="inline-flex items-center justify-center h-14 w-full">
+                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                            alt="Pediatrics icon" src="assests/Pediatrics.png">
+                    </span>
+                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-primary group-hover:text-white">Pediatrics</h4>
                 </a>
             </div>
         </div>
