@@ -6,8 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>RR CHOLA HOSPITAL | Precision in Care</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&amp;display=swap"
         rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
@@ -2265,956 +2264,1001 @@
 <body class="bg-surface font-body text-on-surface" data-mode="connect">
     <div id="navbar-slot"></div>
     <main>
-    <!-- Hero Section -->
-    <section class="relative w-full px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 mx-auto max-w-[1920px] bg-transparent">
-        <div class="relative w-full rounded-[14px] shadow-lg overflow-hidden flex items-center justify-center bg-transparent group mb-2 md:mb-0">
-            <img class="hero-slide relative w-full h-auto object-cover transition-opacity duration-700 opacity-100"
-                data-hero-slide alt="Hero Banner 1" src="assests/hero-1.png">
-            <img class="hero-slide absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
-                data-hero-slide alt="Hero Banner 2" src="assests/hero-2.png">
-            
-            <!-- Controls Desktop (hidden on mobile to prevent text overlap) -->
-            <button
-                class="hidden md:inline-flex absolute left-4 top-1/2 -translate-y-1/2 h-12 w-12 items-center justify-center rounded-full bg-white/70 text-primary shadow-lg backdrop-blur-sm transition-all hover:scale-105 hover:bg-white z-10 opacity-0 group-hover:opacity-100"
-                aria-label="Previous hero image" data-slide-prev type="button">
-                <span class="material-symbols-outlined text-3xl">chevron_left</span>
-            </button>
-            <button
-                class="hidden md:inline-flex absolute right-4 top-1/2 -translate-y-1/2 h-12 w-12 items-center justify-center rounded-full bg-white/70 text-primary shadow-lg backdrop-blur-sm transition-all hover:scale-105 hover:bg-white z-10 opacity-0 group-hover:opacity-100"
-                aria-label="Next hero image" data-slide-next type="button">
-                <span class="material-symbols-outlined text-3xl">chevron_right</span>
-            </button>
-        </div>
-    </section>
+        <!-- Hero Section -->
+        <section class="relative w-full px-4 sm:px-6 lg:px-8 pt-4 sm:pt-6 mx-auto max-w-[1920px] bg-transparent">
+            <div
+                class="relative w-full rounded-[14px] shadow-lg overflow-hidden flex items-center justify-center bg-transparent group mb-2 md:mb-0">
+                <img class="hero-slide relative w-full h-auto md:h-[450px] lg:h-[500px] xl:h-[550px] 2xl:h-[600px] object-cover transition-opacity duration-700 opacity-100"
+                    data-hero-slide alt="Hero Banner 1" src="assests/hero-1.png">
+                <img class="hero-slide absolute top-0 left-0 w-full h-full object-cover transition-opacity duration-700 opacity-0"
+                    data-hero-slide alt="Hero Banner 2" src="assests/hero-2.png">
 
-    <!-- Quick Highlights Bar - Now visible on mobile! -->
-    <section class="relative z-20 mt-4 md:mt-6 max-w-6xl mx-auto px-4 pb-2 md:pb-6">
-        <div
-            class="bg-purple-50/50 p-1 md:bg-white rounded-2xl grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-0 md:divide-x md:divide-purple-100/30 overflow-hidden md:shadow-sm md:border md:border-slate-100">
-            <div
-                class="bg-white md:bg-transparent rounded-xl md:rounded-none p-5 sm:p-8 flex flex-col items-center text-center group cursor-pointer hover:bg-purple-50/20 transition-all shadow-sm md:shadow-none">
-                <span class="material-symbols-outlined text-3xl md:text-4xl text-primary mb-2 md:mb-3"
-                    data-icon="emergency">emergency</span>
-                <h4 class="font-bold text-primary text-[15px] md:text-lg">Emergency</h4>
-                <p class="text-xs md:text-sm text-on-surface-variant font-medium">24/7 Response</p>
-            </div>
-            <div
-                class="bg-white md:bg-transparent rounded-xl md:rounded-none p-5 sm:p-8 flex flex-col items-center text-center group cursor-pointer hover:bg-purple-50/20 transition-all shadow-sm md:shadow-none">
-                <span class="material-symbols-outlined text-3xl md:text-4xl text-primary mb-2 md:mb-3"
-                    data-icon="support_agent">support_agent</span>
-                <h4 class="font-bold text-primary text-[15px] md:text-lg">24/7 Support</h4>
-                <p class="text-xs md:text-sm text-on-surface-variant font-medium">Always here</p>
-            </div>
-            <div
-                class="bg-white md:bg-transparent rounded-xl md:rounded-none p-5 sm:p-8 flex flex-col items-center text-center group cursor-pointer hover:bg-purple-50/20 transition-all shadow-sm md:shadow-none">
-                <span class="material-symbols-outlined text-3xl md:text-4xl text-primary mb-2 md:mb-3"
-                    data-icon="ambulance">ambulance</span>
-                <h4 class="font-bold text-primary text-[15px] md:text-lg">Ambulance</h4>
-                <p class="text-xs md:text-sm text-on-surface-variant font-medium">Rapid Transport</p>
-            </div>
-            <div
-                class="bg-white md:bg-transparent rounded-xl md:rounded-none p-5 sm:p-8 flex flex-col items-center text-center group cursor-pointer hover:bg-purple-50/20 transition-all shadow-sm md:shadow-none">
-                <span class="material-symbols-outlined text-3xl md:text-4xl text-primary mb-2 md:mb-3"
-                    data-icon="medication">medication</span>
-                <h4 class="font-bold text-primary text-[15px] md:text-lg">Pharmacy</h4>
-                <p class="text-xs md:text-sm text-on-surface-variant font-medium">In-house Drugs</p>
-            </div>
-        </div>
-    </section>
-    <!-- Key Statistics -->
-    <section class="py-16 sm:py-24 px-4 sm:px-8 bg-gradient-to-b from-primary-fixed/25 via-surface to-surface"
-        data-counter-section>
-        <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
-            <div
-                class="bg-surface-container-lowest p-6 sm:p-10 min-h-[170px] rounded-2xl shadow-sm text-center border-b-4 border-primary transition-transform hover:-translate-y-2 flex flex-col items-center justify-center">
-                <h3 class="text-4xl sm:text-5xl font-bold text-primary font-headline leading-none mb-3" data-counter
-                    data-target="50" data-suffix="+">0</h3>
-                <p class="text-on-surface-variant font-semibold">Specialized Doctors</p>
-            </div>
-            <div
-                class="bg-surface-container-lowest p-6 sm:p-10 min-h-[170px] rounded-2xl shadow-sm text-center border-b-4 border-secondary transition-transform hover:-translate-y-2 flex flex-col items-center justify-center">
-                <h3 class="text-4xl sm:text-5xl font-bold text-secondary font-headline leading-none mb-3" data-counter
-                    data-target="100" data-suffix="+">0</h3>
-                <p class="text-on-surface-variant font-semibold">Smart Beds</p>
-            </div>
-            <div
-                class="bg-surface-container-lowest p-6 sm:p-10 min-h-[170px] rounded-2xl shadow-sm text-center border-b-4 border-primary transition-transform hover:-translate-y-2 flex flex-col items-center justify-center">
-                <h3 class="text-4xl sm:text-5xl font-bold text-primary font-headline leading-none mb-3" data-counter
-                    data-target="10" data-suffix="k+">0</h3>
-                <p class="text-on-surface-variant font-semibold">Happy Patients</p>
-            </div>
-            <div
-                class="bg-surface-container-lowest p-6 sm:p-10 min-h-[170px] rounded-2xl shadow-sm text-center border-b-4 border-secondary transition-transform hover:-translate-y-2 flex flex-col items-center justify-center">
-                <h3 class="text-4xl sm:text-5xl font-bold text-secondary font-headline leading-none mb-3" data-counter
-                    data-target="15" data-suffix="+">0</h3>
-                <p class="text-on-surface-variant font-semibold">Specialities</p>
-            </div>
-        </div>
-    </section>
-    <!-- Specialities -->
-    <section class="py-14 px-6 sm:px-8"
-        style="background: linear-gradient(180deg, rgba(244, 217, 255, 0.64) 0%, rgba(255, 236, 255, 0.84) 46%, rgba(249, 249, 251, 1) 100%);">
-        <div class="max-w-6xl mx-auto">
-            <div class="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-                <div class="text-center md:text-left">
-                    <h2 class="text-4xl font-headline font-bold text-primary mb-2">Our Specialities</h2>
-                    <p class="text-on-surface-variant">Advanced care across six focused departments.</p>
-                </div>
-                <a class="inline-flex items-center justify-center md:justify-end gap-2 text-primary font-bold text-sm sm:text-base hover:gap-3 transition-all"
-                    href="specialities.html">
-                    View All Specialities
-                    <span class="material-symbols-outlined">arrow_forward</span>
-                </a>
-            </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4 items-stretch">
-                <a href="cardiology.html"
-                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
-                    aria-label="Open Cardiology department page">
-                    <span class="inline-flex items-center justify-center h-14 w-full">
-                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
-                            alt="Cardiology icon" src="assests/icons8-heart-with-pulse-100.png">
-                    </span>
-                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">Cardiology</h4>
-                </a>
-                <a href="cardiology.html"
-                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
-                    aria-label="Open Neurology department page">
-                    <span class="inline-flex items-center justify-center h-14 w-full">
-                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
-                            alt="Neurology icon" src="assests/Neurology.png">
-                    </span>
-                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">Neurology</h4>
-                </a>
-                <a href="cardiology.html"
-                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
-                    aria-label="Open Orthopedics department page">
-                    <span class="inline-flex items-center justify-center h-14 w-full">
-                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
-                            alt="Orthopedics icon" src="assests/Orthopedics.png">
-                    </span>
-                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">Orthopedics</h4>
-                </a>
-                <a href="cardiology.html"
-                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
-                    aria-label="Open Oncology department page">
-                    <span class="inline-flex items-center justify-center h-14 w-full">
-                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
-                            alt="Oncology icon" src="assests/oncology_10202691.png">
-                    </span>
-                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">Oncology</h4>
-                </a>
-                <a href="cardiology.html"
-                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
-                    aria-label="Open Gastroenterology department page">
-                    <span class="inline-flex items-center justify-center h-14 w-full">
-                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
-                            alt="Gastroenterology icon" src="assests/Gastroenterology.png">
-                    </span>
-                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">Gastroenterology</h4>
-                </a>
-                <a href="cardiology.html"
-                    class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
-                    aria-label="Open Pediatrics department page">
-                    <span class="inline-flex items-center justify-center h-14 w-full">
-                        <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
-                            alt="Pediatrics icon" src="assests/Pediatrics.png">
-                    </span>
-                    <h4 class="text-[13px] sm:text-[14px] font-semibold text-primary group-hover:text-white">Pediatrics</h4>
-                </a>
-            </div>
-        </div>
-    </section>
-    <!-- Why Choose Us -->
-    <section class="py-24 px-8"
-        style="background: linear-gradient(180deg, rgba(255, 224, 254, 0.62) 0%, rgba(244, 217, 255, 0.45) 56%, rgba(249, 249, 251, 0.96) 100%);">
-        <div class="max-w-7xl mx-auto">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <div class="relative">
-                    <img class="rounded-[2.5rem] shadow-2xl z-10 relative"
-                        data-alt="diverse group of professional medical staff standing confidently in a bright hospital corridor"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuAyOwRt3shmDXyRuBdlXH5J4hzKC1AmrRSBQOYCafsO_28JcBVESVH2zjdJOTGcXiggMeSyxT3rB2cgOEExp9Ht5W7OMO2FGCu0sGhuUERj8bC-XC_yZSy7nWTiBv7cL-yP3mMGJf6HvXZTaqV1_Gktl2vExrSqg9p57LluKjWOwXfuIHqA_sJI7CritT_y-4Uoit74mIeC-CpqcNrmXxwxFjBeHo_96BTL6ybZrQtAwpe3NYCMYRL3bySEFUH1MHZcjaJhqAowp6">
-                    <div
-                        class="absolute -bottom-10 -right-10 bg-signature-gradient p-10 rounded-3xl text-white shadow-xl z-20 hidden lg:block">
-                        <h4 class="text-3xl font-bold mb-1">10,000+</h4>
-                        <p class="text-sm opacity-90">Trusted by Patients</p>
-                        <div class="flex mt-3">
-                            <span class="material-symbols-outlined text-sm"
-                                style="font-variation-settings: 'FILL' 1;">star</span>
-                            <span class="material-symbols-outlined text-sm"
-                                style="font-variation-settings: 'FILL' 1;">star</span>
-                            <span class="material-symbols-outlined text-sm"
-                                style="font-variation-settings: 'FILL' 1;">star</span>
-                            <span class="material-symbols-outlined text-sm"
-                                style="font-variation-settings: 'FILL' 1;">star</span>
-                            <span class="material-symbols-outlined text-sm"
-                                style="font-variation-settings: 'FILL' 1;">star</span>
-                        </div>
-                    </div>
-                    <div class="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
-                </div>
-                <div>
-                    <h2 class="text-4xl font-headline font-bold text-primary mb-8 leading-tight">Setting New Standards
-                        in Medical Excellence</h2>
-                    <ul class="space-y-6">
-                        <li class="flex gap-4">
-                            <div
-                                class="flex-shrink-0 w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center">
-                                <span class="material-symbols-outlined text-lg" data-icon="check">check</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-on-surface">Precision Diagnostics</h4>
-                                <p class="text-on-surface-variant text-sm">Utilizing the latest AI-integrated scanning
-                                    and imaging technology for accurate results.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-4">
-                            <div
-                                class="flex-shrink-0 w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center">
-                                <span class="material-symbols-outlined text-lg" data-icon="check">check</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-on-surface">Patient-Centric Approach</h4>
-                                <p class="text-on-surface-variant text-sm">Every treatment plan is personalized to the
-                                    unique needs of the individual.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-4">
-                            <div
-                                class="flex-shrink-0 w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center">
-                                <span class="material-symbols-outlined text-lg" data-icon="check">check</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-on-surface">Global Experts</h4>
-                                <p class="text-on-surface-variant text-sm">Our medical team consists of world-renowned
-                                    specialists with decades of experience.</p>
-                            </div>
-                        </li>
-                        <li class="flex gap-4">
-                            <div
-                                class="flex-shrink-0 w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center">
-                                <span class="material-symbols-outlined text-lg" data-icon="check">check</span>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-on-surface">Compassionate Care</h4>
-                                <p class="text-on-surface-variant text-sm">A healing environment designed to provide
-                                    comfort and peace of mind.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Doctors Section -->
-    <section class="py-24 bg-gradient-to-b from-surface-container-low via-white to-primary-fixed/15 px-8">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-14 text-center flex flex-col items-center">
-                <h2 class="text-4xl font-headline font-bold text-primary mb-3">Our Medical Board</h2>
-                <p class="text-on-surface-variant max-w-2xl">Consult with our leading specialists in various
-                    departments.</p>
-                <a class="mt-5 inline-flex items-center justify-center gap-2 text-primary font-bold text-sm sm:text-base hover:gap-3 transition-all"
-                    href="find-doctors.html">View All Doctors <span
-                        class="material-symbols-outlined">arrow_forward</span></a>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center">
-                <!-- Doctor Card -->
-                <div
-                    class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
-                    <div class="relative overflow-hidden aspect-[4/5]">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            data-alt="portrait of a confident professional male doctor in a white lab coat with a stethoscope"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBPQE6N5vdu24R9p2gtxpbH6s1X8jb6C1i3Loi3C4ooRguRI54ZPZgVqL-wRSIKzoQIQIQN-Fg-HhYanKDQAHYYQKdY3cq5NKDXHFnn5Wil6bmShKPS_fDIZj963K3-pSKW-Bo_uDoW4vT9TJmO7F9IGR73t59oe9u-LVAT-bleM6LYufM4jpXgsrdoiDGhoyClRVhU3hrO-ezeiQftvGExRoqkMfh5Ml4ICLk1Xm_nw1J76PBudoxkOCAqwN73bDPiNqdWbNwi0Dg">
-                    </div>
-                    <div class="p-5 text-center">
-                        <h4 class="text-xl font-bold text-on-surface">Dr. Alexander Ray</h4>
-                        <p class="text-primary text-sm font-semibold mb-4">Senior Cardiologist</p>
-                        <a class="block w-full py-2.5 text-center bg-primary-fixed-dim rounded-xl font-bold text-sm text-primary tracking-tight transition-all hover:brightness-95"
-                            href="doctor-profile.html">View Profile</a>
-                    </div>
-                </div>
-                <!-- Repeat Doctor Card -->
-                <div
-                    class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
-                    <div class="relative overflow-hidden aspect-[4/5]">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            data-alt="portrait of a professional female medical specialist in a clinic setting, friendly and authoritative"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPVRcVtxBJfVMKlOeWWG78B0ode1Wi3ouVFcDNOVUt6A9xM-hPEtzs8tMx6DcL-SWOux3tfqOh4MxR6qKvmb4iG0IxH08C9lSKFUSHq5wTGKPQFlkU2TI59u1jNQRPq8hzcjTH2ZQHSIi7QkuZUnAqTLbH8G7vF0oAbdRp5f9uQVX2AiuHq4ClN89VTtocsKv2pPHXGNyxcKEzas-3c-Ww5w80SnuZ2rcOpDfNeLBpHoJfNDI14lLzv2oqbf1uBsrtpuYIa4WZiTXC">
-                    </div>
-                    <div class="p-5 text-center">
-                        <h4 class="text-xl font-bold text-on-surface">Dr. Sarah Miller</h4>
-                        <p class="text-primary text-sm font-semibold mb-4">Neurosurgeon</p>
-                        <a class="block w-full py-2.5 text-center bg-primary-fixed-dim rounded-xl font-bold text-sm text-primary tracking-tight transition-all hover:brightness-95"
-                            href="doctor-profile.html">View Profile</a>
-                    </div>
-                </div>
-                <div
-                    class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
-                    <div class="relative overflow-hidden aspect-[4/5]">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            data-alt="male surgeon in scrubs looking professional and experienced, medical office background"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF7i_jQH_OxlApIzo5253Cp87t8sE3Fcc5_BzPvWNYNX50_ALRX1iibCk-uUfoAuJGd45zPzesEUdoln_wE7met9Q4fbGqaYkPHYqiBBqnYnDpfPhuMJeN3qPEN1jLm8opNIZQQtkyXrQUfQXQsal5dER0oDasT2Z3P3pq9dSRXOGVPmnGPWyTrofdb1o66SX-WiAdVpva9hRMtxigKRQYoXAdBoL08fHiofVS843fyuowQzK3kEmm-bLJUbuUf-qvTL5OopnKh_Yl">
-                    </div>
-                    <div class="p-5 text-center">
-                        <h4 class="text-xl font-bold text-on-surface">Dr. James Wilson</h4>
-                        <p class="text-primary text-sm font-semibold mb-4">Orthopedic Head</p>
-                        <a class="block w-full py-2.5 text-center bg-primary-fixed-dim rounded-xl font-bold text-sm text-primary tracking-tight transition-all hover:brightness-95"
-                            href="doctor-profile.html">View Profile</a>
-                    </div>
-                </div>
-                <div
-                    class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
-                    <div class="relative overflow-hidden aspect-[4/5]">
-                        <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            data-alt="senior female physician in a modern medical setting, looking empathetic and knowledgeable"
-                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4FaUDkKwPaAc5TAVMYKGYYc45vl7QOgigqVp1WXgkGAxglzRJ7laeYn4LDIg4iPuUwM2pz3CZQDyvxVgfb8Pfs1wSk8C_XHNmOEz3JSr44D98fipVRmY4vbJnNvydQjUIiLmI0icGQYdN48z1qjVoEBCbFYKVZTO6FxyqVvT9Vc8WgNsY1uGlyhsLLIdp6AUmWLMxnKVxIqSNYmLx1GLMF6GburhYyVMZe5RWz0tpJarTtrFgdQR4sOzvL59L7KXrYbMe04IDqVe4">
-                    </div>
-                    <div class="p-5 text-center">
-                        <h4 class="text-xl font-bold text-on-surface">Dr. Elena Kostic</h4>
-                        <p class="text-primary text-sm font-semibold mb-4">Oncology Lead</p>
-                        <a class="block w-full py-2.5 text-center bg-primary-fixed-dim rounded-xl font-bold text-sm text-primary tracking-tight transition-all hover:brightness-95"
-                            href="doctor-profile.html">View Profile</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Infrastructure Grid -->
-    <section class="py-24 px-8 bg-gradient-to-b from-primary-fixed/10 via-white to-primary-fixed/20">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-12 text-center flex flex-col items-center">
-                <h2 class="text-4xl font-headline font-bold text-primary mb-3">World-Class Infrastructure</h2>
-                <p class="text-on-surface-variant max-w-2xl">Explore our advanced facilities built for precision,
-                    comfort, and connected care.</p>
-                <a class="mt-5 inline-flex items-center justify-center gap-2 text-primary font-bold text-sm sm:text-base hover:gap-3 transition-all"
-                    href="infrastructure.html">View All Infrastructure <span
-                        class="material-symbols-outlined">arrow_forward</span></a>
-            </div>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[250px]">
-                <div class="col-span-2 row-span-2 relative group overflow-hidden rounded-3xl">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        data-alt="advanced surgical operating room with high-tech monitors and robotic surgical equipment"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlhfbxwg3u0oh6MH_HDLiGLZRY6sbCT85ilnE2eCihlVIVKN8R9Ht_RdbMwCSpCESf86XtvcRaDCcLQl5CWFF-ZHD64jdYHvp4KIPHkyo-gUTEtLaWoZN6EjsHsOawNqgpa_hF05C_OyeRndFu_1VrH4XVYQkEZ_bIGZSodroAIMX5PpQ6fJtLpdaen38MtJLZkJwkli09qvF-D4Y4L4FkNnlEK6FWC3wKHMV3i68gbtBmLosVmrBMttckkhz0G3oz4d1znEzkoroG">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
-                        <h4 class="text-white text-2xl font-bold">Advanced OT Complex</h4>
-                        <p class="text-white/70 text-sm">Precision surgical suites with robotic capabilities.</p>
-                    </div>
-                </div>
-                <div class="relative group overflow-hidden rounded-3xl">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        data-alt="luxury private hospital suite with comfortable furniture and medical support equipment"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-pMSQbpPS174pUXDZK-eo4LRqEUOjks-4y1QHW57lAMTimTINBse7m-ARcHRrYnxGLo1oSmUzjtRziPSE_g8MBkZlJsMww50e1h-jpJgIap6qzbxWAYpwVl7gFwzsvJwzWV1nIzgiVS1Tce6xkWaeUODGbvz-tZJBAlVYhQuEHd2K0fKyznPxYr-yXEQSCXuCx_wn3JZGLPBYgHwYdHC-ZJiWEqAZHBvtHG5lsWbk3-xUTti7YmiTFe5BgOLBcENWX3lxJlN6_P-P">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
-                        <h4 class="text-white text-lg font-bold">Premium Suites</h4>
-                    </div>
-                </div>
-                <div class="relative group overflow-hidden rounded-3xl">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        data-alt="modern medical diagnostic laboratory with microscopes and scientific equipment"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVqK-rScgqJSvzTcS2TZxpXMxNEQ7sOwJKkO9PXv2UtsfF9HshWBQRdG1cnhOUQiqSubgCiXS0U7HNS9qLG99WWo0Qw8WVBFL35eRNfY5kUOjJD2ya4vNdVCFULsqw4aXruxI3n1DjjDFnxy3_4QPfCdjmnB55fOGuUv7VjmwVzJnHOMhtKqSpig_8hf21rN9dZArbDDzdlcsB6O8URWf2ZiblNfJt4RLtVKVGa66VY3Kul6ah1pDCo4mleafLIhcGsBRpmhH5x3UT">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
-                        <h4 class="text-white text-lg font-bold">Smart Lab</h4>
-                    </div>
-                </div>
-                <div class="col-span-2 relative group overflow-hidden rounded-3xl">
-                    <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        data-alt="futuristic healthcare control room with multiple data screens and digital monitoring systems"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaOxq17ajcIU7GTLCop9uLik0flHN1WSHkjIYwo5Gxe9U-e30oV9NiD1TtTXs5SojfWyT5CudymQVGyxWUYK9eZkDSTS7VBxhZxsL-_vij0eqDhg1wi1rSoK2Rpv-Mb2Q83jl8zuMobUE6i3llnD6BN12wjxcglkVG8f_-V1MVRGLWxDFWeNMVpkAFJsi9ARQZyA-kAS6y7KqcGpWC8Gurv3rwjm3nwgXv7IoYm4V1F1Dw2lHPZ3cF8WK2GCgPY0T3EWjvREYQbWZM">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
-                        <h4 class="text-white text-xl font-bold">Command Center</h4>
-                        <p class="text-white/70 text-sm">Real-time patient monitoring and data analysis.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Care Journey -->
-    <section
-        class="journey-section py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#fde7f3] via-[#f7eefe] to-[#ffffff]"
-        data-timeline-section>
-        <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
-            <div class="timeline-orb absolute -top-10 left-[8%] h-44 w-44 rounded-full bg-pink-300/35 blur-3xl"></div>
-            <div
-                class="timeline-orb timeline-orb-delay absolute top-[18%] right-[8%] h-56 w-56 rounded-full bg-fuchsia-300/30 blur-3xl">
-            </div>
-            <div class="timeline-orb absolute bottom-0 left-[42%] h-52 w-52 rounded-full bg-violet-300/25 blur-3xl">
-            </div>
-        </div>
-        <div class="relative z-10 text-center mb-12 sm:mb-16" data-aos="fade-up" data-aos-duration="900">
-            <span class="journey-pill mb-5" data-aos="zoom-in" data-aos-delay="100">Care Journey</span>
-            <h2 class="text-4xl sm:text-5xl font-headline font-bold leading-tight text-on-surface mb-5"
-                data-aos="fade-up" data-aos-delay="150">Your Path to Recovery, Reimagined</h2>
-            <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed max-w-2xl mx-auto" data-aos="fade-up"
-                data-aos-delay="220">A cinematic journey flow with a glowing timeline, alternating steps, and smooth
-                scroll reveal designed for a premium healthcare experience.</p>
-        </div>
-        <div class="journey-timeline relative space-y-6 sm:space-y-8 lg:space-y-10 px-0 sm:px-2 lg:px-0">
-            <div class="journey-progress-rail" data-timeline-progress-line-mobile aria-hidden="true"></div>
-            <div class="hidden lg:block journey-progress-rail" data-timeline-progress-line aria-hidden="true"></div>
-            <article class="journey-step journey-step--left" data-timeline-step data-aos="fade-right"
-                data-aos-delay="120">
-                <div class="journey-step-meta flex items-center justify-center">
-                    <div class="journey-step-mark flex items-center justify-center">
-                        <span class="material-symbols-outlined text-2xl">forum</span>
-                    </div>
-                </div>
-                <div class="journey-step-copy">
-                    <div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
-                        <p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 01</p>
-                        <h3 class="journey-step-title text-2xl sm:text-3xl font-bold mb-3">Consultation</h3>
-                        <p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">A focused first
-                            conversation to understand your symptoms, history, and care goals before the plan takes
-                            shape.</p>
-                    </div>
-                </div>
-            </article>
-            <article class="journey-step journey-step--right" data-timeline-step data-aos="fade-left"
-                data-aos-delay="200">
-                <div class="journey-step-meta flex items-center justify-center">
-                    <div class="journey-step-mark flex items-center justify-center">
-                        <span class="material-symbols-outlined text-2xl">biotech</span>
-                    </div>
-                </div>
-                <div class="journey-step-copy">
-                    <div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
-                        <p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 02</p>
-                        <h3 class="journey-step-title text-2xl sm:text-3xl font-bold mb-3">Diagnosis</h3>
-                        <p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">Advanced imaging and
-                            lab work turn uncertainty into a clear diagnosis and a confident next move.</p>
-                    </div>
-                </div>
-            </article>
-            <article class="journey-step journey-step--left" data-timeline-step data-aos="fade-right"
-                data-aos-delay="280">
-                <div class="journey-step-meta flex items-center justify-center">
-                    <div class="journey-step-mark flex items-center justify-center">
-                        <span class="material-symbols-outlined text-2xl">vaccines</span>
-                    </div>
-                </div>
-                <div class="journey-step-copy">
-                    <div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
-                        <p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 03</p>
-                        <h3 class="journey-step-title text-2xl sm:text-3xl font-bold mb-3">Treatment</h3>
-                        <p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">Personalized medical
-                            or surgical care designed around precision, comfort, and fast clinical clarity.</p>
-                    </div>
-                </div>
-            </article>
-            <article class="journey-step journey-step--right" data-timeline-step data-aos="fade-left"
-                data-aos-delay="360">
-                <div class="journey-step-meta flex items-center justify-center">
-                    <div class="journey-step-mark flex items-center justify-center">
-                        <span class="material-symbols-outlined text-2xl">healing</span>
-                    </div>
-                </div>
-                <div class="journey-step-copy">
-                    <div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
-                        <p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 04</p>
-                        <h3 class="journey-step-title text-2xl sm:text-3xl font-bold mb-3">Recovery</h3>
-                        <p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">Ongoing support,
-                            rehabilitation, and follow-up that keep progress steady after treatment.</p>
-                    </div>
-                </div>
-            </article>
-        </div>
-    </section>
-    <!-- Testimonials -->
-    <section class="py-24 px-6 sm:px-8 bg-gradient-to-b from-primary-fixed/10 via-surface to-primary-fixed/20">
-        <div class="max-w-7xl mx-auto">
-            <div class="mb-8 text-center">
-                <h2 class="text-4xl font-headline font-bold text-primary text-center">Patient Experiences</h2>
-            </div>
-            <div class="patient-carousel-viewport" data-patient-viewport>
-                <div class="patient-carousel-track" data-patient-track>
-                    <article class="patient-card">
-                        <div class="flex text-amber-400 mb-5">
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        </div>
-                        <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The level of care I received at
-                            RR CHOLA was unlike any other. The technology is futuristic, but the staff treats you with
-                            genuine human warmth."</p>
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
-                                JD</div>
-                            <div>
-                                <h5 class="font-bold">Jonathan Doe</h5>
-                                <p class="text-xs text-on-surface-variant">Cardiac Patient</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="patient-card patient-card--accent">
-                        <div class="flex text-amber-400 mb-5">
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        </div>
-                        <p class="text-on-surface-variant italic mb-8 leading-relaxed">"They literally saved my life.
-                            The emergency response was incredibly fast and the neurosurgeons are clearly the best in the
-                            country."</p>
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
-                                MS</div>
-                            <div>
-                                <h5 class="font-bold">Mary Smith</h5>
-                                <p class="text-xs text-on-surface-variant">Neuro Surgery</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="patient-card">
-                        <div class="flex text-amber-400 mb-5">
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        </div>
-                        <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The facility is more like a
-                            5-star hotel than a hospital. My recovery was so much faster because of the peaceful
-                            environment."</p>
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
-                                RK</div>
-                            <div>
-                                <h5 class="font-bold">Robert King</h5>
-                                <p class="text-xs text-on-surface-variant">Joint Replacement</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="patient-card patient-card--accent">
-                        <div class="flex text-amber-400 mb-5">
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        </div>
-                        <p class="text-on-surface-variant italic mb-8 leading-relaxed">"From admission to discharge,
-                            everything was seamless. Nurses kept me informed and calm at every stage."</p>
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
-                                AK</div>
-                            <div>
-                                <h5 class="font-bold">Anita Krishnan</h5>
-                                <p class="text-xs text-on-surface-variant">Maternity Care</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="patient-card">
-                        <div class="flex text-amber-400 mb-5">
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        </div>
-                        <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The rehab team pushed me with
-                            care and patience. I returned to normal activity much faster than expected."</p>
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
-                                VP</div>
-                            <div>
-                                <h5 class="font-bold">Vikram Patel</h5>
-                                <p class="text-xs text-on-surface-variant">Sports Injury</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="patient-card patient-card--accent">
-                        <div class="flex text-amber-400 mb-5">
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        </div>
-                        <p class="text-on-surface-variant italic mb-8 leading-relaxed">"Consultants explained every
-                            option clearly. I felt respected, heard, and genuinely supported throughout treatment."</p>
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
-                                SN</div>
-                            <div>
-                                <h5 class="font-bold">Sofia Nair</h5>
-                                <p class="text-xs text-on-surface-variant">Oncology Care</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="patient-card">
-                        <div class="flex text-amber-400 mb-5">
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        </div>
-                        <p class="text-on-surface-variant italic mb-8 leading-relaxed">"My discharge planning was clear
-                            and organized. Follow-up calls made recovery at home very easy."</p>
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
-                                RG</div>
-                            <div>
-                                <h5 class="font-bold">Rhea George</h5>
-                                <p class="text-xs text-on-surface-variant">Post-Operative Care</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="patient-card patient-card--accent">
-                        <div class="flex text-amber-400 mb-5">
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        </div>
-                        <p class="text-on-surface-variant italic mb-8 leading-relaxed">"From diagnostics to
-                            physiotherapy, every team coordinated perfectly. I never felt lost during treatment."</p>
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
-                                AM</div>
-                            <div>
-                                <h5 class="font-bold">Arun Menon</h5>
-                                <p class="text-xs text-on-surface-variant">Spine Care</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="patient-card">
-                        <div class="flex text-amber-400 mb-5">
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        </div>
-                        <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The pediatric team handled our
-                            child with immense patience. We felt safe, informed, and reassured every day."</p>
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
-                                LP</div>
-                            <div>
-                                <h5 class="font-bold">Lina Prasad</h5>
-                                <p class="text-xs text-on-surface-variant">Pediatric Parent</p>
-                            </div>
-                        </div>
-                    </article>
-                    <article class="patient-card patient-card--accent">
-                        <div class="flex text-amber-400 mb-5">
-                            <span class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined"
-                                style="font-variation-settings: 'FILL' 1;">star</span><span
-                                class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-                        </div>
-                        <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The nurses were always one step
-                            ahead, and pain management was exceptional. I could focus only on healing."</p>
-                        <div class="flex items-center gap-4">
-                            <div
-                                class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
-                                DK</div>
-                            <div>
-                                <h5 class="font-bold">Deepak Kumar</h5>
-                                <p class="text-xs text-on-surface-variant">General Surgery</p>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-            <div class="mt-8 flex items-center justify-center gap-3 sm:gap-5" data-patient-controls>
+                <!-- Controls Desktop (hidden on mobile to prevent text overlap) -->
                 <button
-                    class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white"
-                    aria-label="Move patient cards left" data-patient-prev type="button">
-                    <span class="material-symbols-outlined">chevron_left</span>
+                    class="hidden md:inline-flex absolute left-4 top-1/2 -translate-y-1/2 h-12 w-12 items-center justify-center rounded-full bg-white/70 text-primary shadow-lg backdrop-blur-sm transition-all hover:scale-105 hover:bg-white z-10 opacity-0 group-hover:opacity-100"
+                    aria-label="Previous hero image" data-slide-prev type="button">
+                    <span class="material-symbols-outlined text-3xl">chevron_left</span>
                 </button>
                 <button
-                    class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white"
-                    aria-label="Move patient cards right" data-patient-next type="button">
-                    <span class="material-symbols-outlined">chevron_right</span>
+                    class="hidden md:inline-flex absolute right-4 top-1/2 -translate-y-1/2 h-12 w-12 items-center justify-center rounded-full bg-white/70 text-primary shadow-lg backdrop-blur-sm transition-all hover:scale-105 hover:bg-white z-10 opacity-0 group-hover:opacity-100"
+                    aria-label="Next hero image" data-slide-next type="button">
+                    <span class="material-symbols-outlined text-3xl">chevron_right</span>
                 </button>
             </div>
-        </div>
-    </section>
-    <!-- Emergency CTA Banner -->
-    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-20">
-        <div
-            class="bg-gradient-to-r from-primary to-secondary p-12 sm:p-16 rounded-[2.5rem] text-center shadow-2xl relative overflow-hidden">
-            <div class="absolute inset-0 opacity-10 pointer-events-none"
-                style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 28px 28px;">
-            </div>
-            <div class="relative z-10 space-y-7 max-w-3xl mx-auto">
-                <h2 class="text-4xl sm:text-5xl font-headline font-extrabold text-white leading-tight">Immediate
-                    Emergency Care?</h2>
-                <p class="text-white/90 text-lg">Our emergency response team is available 24/7. Don't wait—get the care
-                    you need instantly.</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-                    <button
-                        class="w-full sm:w-auto px-10 py-4 bg-white text-primary rounded-full font-headline font-bold text-lg transition-transform hover:scale-105 flex items-center justify-center gap-3">
-                        <span class="material-symbols-outlined text-xl">call</span> Call Us
-                    </button>
-                    <button
-                        class="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white/50 text-white rounded-full font-headline font-bold text-lg transition-all hover:bg-white/10">
-                        Find Location
-                    </button>
+        </section>
+
+        <!-- Quick Highlights Bar - Now visible on mobile! -->
+        <section class="relative z-20 mt-4 md:mt-6 max-w-6xl mx-auto px-4 pb-2 md:pb-6">
+            <div
+                class="bg-purple-50/50 p-1 md:bg-white rounded-2xl grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-0 md:divide-x md:divide-purple-100/30 overflow-hidden md:shadow-sm md:border md:border-slate-100">
+                <div
+                    class="bg-white md:bg-transparent rounded-xl md:rounded-none p-5 sm:p-8 flex flex-col items-center text-center group cursor-pointer hover:bg-purple-50/20 transition-all shadow-sm md:shadow-none">
+                    <span class="material-symbols-outlined text-3xl md:text-4xl text-primary mb-2 md:mb-3"
+                        data-icon="emergency">emergency</span>
+                    <h4 class="font-bold text-primary text-[15px] md:text-lg">Emergency</h4>
+                    <p class="text-xs md:text-sm text-on-surface-variant font-medium">24/7 Response</p>
+                </div>
+                <div
+                    class="bg-white md:bg-transparent rounded-xl md:rounded-none p-5 sm:p-8 flex flex-col items-center text-center group cursor-pointer hover:bg-purple-50/20 transition-all shadow-sm md:shadow-none">
+                    <span class="material-symbols-outlined text-3xl md:text-4xl text-primary mb-2 md:mb-3"
+                        data-icon="support_agent">support_agent</span>
+                    <h4 class="font-bold text-primary text-[15px] md:text-lg">24/7 Support</h4>
+                    <p class="text-xs md:text-sm text-on-surface-variant font-medium">Always here</p>
+                </div>
+                <div
+                    class="bg-white md:bg-transparent rounded-xl md:rounded-none p-5 sm:p-8 flex flex-col items-center text-center group cursor-pointer hover:bg-purple-50/20 transition-all shadow-sm md:shadow-none">
+                    <span class="material-symbols-outlined text-3xl md:text-4xl text-primary mb-2 md:mb-3"
+                        data-icon="ambulance">ambulance</span>
+                    <h4 class="font-bold text-primary text-[15px] md:text-lg">Ambulance</h4>
+                    <p class="text-xs md:text-sm text-on-surface-variant font-medium">Rapid Transport</p>
+                </div>
+                <div
+                    class="bg-white md:bg-transparent rounded-xl md:rounded-none p-5 sm:p-8 flex flex-col items-center text-center group cursor-pointer hover:bg-purple-50/20 transition-all shadow-sm md:shadow-none">
+                    <span class="material-symbols-outlined text-3xl md:text-4xl text-primary mb-2 md:mb-3"
+                        data-icon="medication">medication</span>
+                    <h4 class="font-bold text-primary text-[15px] md:text-lg">Pharmacy</h4>
+                    <p class="text-xs md:text-sm text-on-surface-variant font-medium">In-house Drugs</p>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Insurance & Partners -->
-    <section class="py-20 px-8 bg-gradient-to-b from-primary-fixed/20 via-surface-container-low to-primary-fixed/10">
-        <div class="max-w-7xl mx-auto text-center">
-            <h3 class="text-sm font-bold text-on-surface-variant/60 uppercase tracking-[0.3em] mb-12">Our Trusted
-                Insurance Partners</h3>
-            <div class="insurance-marquee">
-                <div class="insurance-track">
-                    <div class="insurance-group">
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Star Health logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://starhealth.in&sz=128"><span
-                                class="insurance-name">Star Health</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Niva Bupa logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.nivabupa.com&sz=128"><span
-                                class="insurance-name">Niva Bupa</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="HDFC ERGO logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.hdfcergo.com&sz=128"><span
-                                class="insurance-name">HDFC ERGO</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="ICICI Lombard logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.icicilombard.com&sz=128"><span
-                                class="insurance-name">ICICI Lombard</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Care Health logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.careinsurance.com&sz=128"><span
-                                class="insurance-name">Care Health</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Aditya Birla Health logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.adityabirlacapital.com&sz=128"><span
-                                class="insurance-name">Aditya Birla Health</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Bajaj Allianz logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.bajajallianz.com&sz=128"><span
-                                class="insurance-name">Bajaj Allianz</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Tata AIG logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.tataaig.com&sz=128"><span
-                                class="insurance-name">Tata AIG</span></span>
-                    </div>
-                    <div class="insurance-group" aria-hidden="true">
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Star Health logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://starhealth.in&sz=128"><span
-                                class="insurance-name">Star Health</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Niva Bupa logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.nivabupa.com&sz=128"><span
-                                class="insurance-name">Niva Bupa</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="HDFC ERGO logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.hdfcergo.com&sz=128"><span
-                                class="insurance-name">HDFC ERGO</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="ICICI Lombard logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.icicilombard.com&sz=128"><span
-                                class="insurance-name">ICICI Lombard</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Care Health logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.careinsurance.com&sz=128"><span
-                                class="insurance-name">Care Health</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Aditya Birla Health logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.adityabirlacapital.com&sz=128"><span
-                                class="insurance-name">Aditya Birla Health</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Bajaj Allianz logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.bajajallianz.com&sz=128"><span
-                                class="insurance-name">Bajaj Allianz</span></span>
-                        <span class="insurance-brand"><img class="insurance-logo" alt="Tata AIG logo"
-                                src="https://www.google.com/s2/favicons?domain_url=https://www.tataaig.com&sz=128"><span
-                                class="insurance-name">Tata AIG</span></span>
-                    </div>
+        </section>
+        <!-- Key Statistics -->
+        <section class="py-16 sm:py-24 px-4 sm:px-8 bg-gradient-to-b from-primary-fixed/25 via-surface to-surface"
+            data-counter-section>
+            <div class="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-8">
+                <div
+                    class="bg-surface-container-lowest p-6 sm:p-10 min-h-[170px] rounded-2xl shadow-sm text-center border-b-4 border-primary transition-transform hover:-translate-y-2 flex flex-col items-center justify-center">
+                    <h3 class="text-4xl sm:text-5xl font-bold text-primary font-headline leading-none mb-3" data-counter
+                        data-target="50" data-suffix="+">0</h3>
+                    <p class="text-on-surface-variant font-semibold">Specialized Doctors</p>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-6 sm:p-10 min-h-[170px] rounded-2xl shadow-sm text-center border-b-4 border-secondary transition-transform hover:-translate-y-2 flex flex-col items-center justify-center">
+                    <h3 class="text-4xl sm:text-5xl font-bold text-secondary font-headline leading-none mb-3"
+                        data-counter data-target="100" data-suffix="+">0</h3>
+                    <p class="text-on-surface-variant font-semibold">Smart Beds</p>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-6 sm:p-10 min-h-[170px] rounded-2xl shadow-sm text-center border-b-4 border-primary transition-transform hover:-translate-y-2 flex flex-col items-center justify-center">
+                    <h3 class="text-4xl sm:text-5xl font-bold text-primary font-headline leading-none mb-3" data-counter
+                        data-target="10" data-suffix="k+">0</h3>
+                    <p class="text-on-surface-variant font-semibold">Happy Patients</p>
+                </div>
+                <div
+                    class="bg-surface-container-lowest p-6 sm:p-10 min-h-[170px] rounded-2xl shadow-sm text-center border-b-4 border-secondary transition-transform hover:-translate-y-2 flex flex-col items-center justify-center">
+                    <h3 class="text-4xl sm:text-5xl font-bold text-secondary font-headline leading-none mb-3"
+                        data-counter data-target="15" data-suffix="+">0</h3>
+                    <p class="text-on-surface-variant font-semibold">Specialities</p>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- Contact Us -->
-    <section id="contact-us"
-        class="py-16 sm:py-24 px-4 sm:px-8 bg-gradient-to-b from-white to-primary-fixed/10 scroll-mt-40">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-14">
-                <p class="text-xs font-bold text-primary/70 uppercase tracking-[0.3em] mb-4">Reach Our Team</p>
-                <h2 class="text-4xl font-headline font-bold text-primary mb-4">Contact Us</h2>
-                <p class="text-on-surface-variant max-w-3xl mx-auto">Talk to our care coordinators for appointments,
-                    emergency guidance, insurance support, and specialist consultations.</p>
-            </div>
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
-                <div class="lg:col-span-7 flex flex-col gap-8">
-                    <!-- Contact Grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                        <div
-                            class="bg-white rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-purple-50 hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                                <span class="material-symbols-outlined text-2xl">call</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-on-surface mb-2">Call Us</h4>
-                            <p class="text-on-surface-variant font-medium">+1 800 234 5678</p>
-                            <p class="text-on-surface-variant font-medium">+1 800 500 2244</p>
-                        </div>
-                        <div
-                            class="bg-white rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-purple-50 hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="w-14 h-14 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center mb-5 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
-                                <span class="material-symbols-outlined text-2xl">mail</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-on-surface mb-2">Email</h4>
-                            <p class="text-on-surface-variant font-medium">care@rrchola.com</p>
-                            <p class="text-on-surface-variant font-medium">appointments@rrchola.com</p>
-                        </div>
-                        <div
-                            class="bg-white rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-purple-50 hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-5 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
-                                <span class="material-symbols-outlined text-2xl">location_on</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-on-surface mb-2">Location</h4>
-                            <p class="text-on-surface-variant font-medium">102, Healthcare Plaza</p>
-                            <p class="text-on-surface-variant font-medium">Med City, CH-50001</p>
-                        </div>
-                        <div
-                            class="bg-white rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-purple-50 hover:-translate-y-1 transition-all duration-300 group">
-                            <div
-                                class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-5 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
-                                <span class="material-symbols-outlined text-2xl">schedule</span>
-                            </div>
-                            <h4 class="text-xl font-bold text-on-surface mb-2">Hours</h4>
-                            <p class="text-on-surface-variant font-medium">Mon-Sat: 7AM - 10PM</p>
-                            <p class="text-on-surface-variant font-medium">Emergency: 24/7</p>
-                        </div>
+        </section>
+        <!-- Specialities -->
+        <section class="py-14 px-6 sm:px-8"
+            style="background: linear-gradient(180deg, rgba(244, 217, 255, 0.64) 0%, rgba(255, 236, 255, 0.84) 46%, rgba(249, 249, 251, 1) 100%);">
+            <div class="max-w-6xl mx-auto">
+                <div class="mb-10 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+                    <div class="text-center md:text-left">
+                        <h2 class="text-4xl font-headline font-bold text-primary mb-2">Our Specialities</h2>
+                        <p class="text-on-surface-variant">Advanced care across six focused departments.</p>
                     </div>
-                    <!-- Google Map with Radius Border -->
-                    <div
-                        class="relative w-full h-[320px] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white group">
-                    <iframe
-                        class="w-full h-full transition-all duration-700 pointer-events-auto"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.295386053245!2d80.23116350844865!3d13.03450389940687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52676fffbfc093%3A0xeed589d681d16fe4!2sR%20%26%20R%20Hospitals!5e0!3m2!1sen!2sin!4v1776704546309!5m2!1sen!2sin"
-                            style="border:0;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+                    <a class="inline-flex items-center justify-center md:justify-end gap-2 text-primary font-bold text-sm sm:text-base hover:gap-3 transition-all"
+                        href="specialities.html">
+                        View All Specialities
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </a>
                 </div>
-
-                <div class="lg:col-span-5 flex flex-col gap-8">
-                    <!-- Elevated Form -->
-                    <div
-                        class="bg-white rounded-[2.5rem] shadow-xl p-8 sm:p-10 border border-purple-50 relative overflow-hidden h-full flex flex-col">
-                        <!-- Decorative Blobs -->
-                        <div class="absolute -top-32 -right-32 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
-                        <div class="absolute -bottom-32 -left-32 w-64 h-64 bg-secondary/10 rounded-full blur-3xl"></div>
-
-                        <div class="relative z-10 flex flex-col h-full">
-                            <h3 class="text-3xl font-headline font-bold text-primary mb-2">Send a Message</h3>
-                            <p class="text-on-surface-variant mb-8 text-sm">We'd love to hear from you! Please fill out
-                                the form below and we'll get in touch.</p>
-
-                            <form class="space-y-5 flex-1 flex flex-col" action="#" method="post">
+                <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 sm:gap-4 items-stretch">
+                    <a href="cardiology.html"
+                        class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
+                        aria-label="Open Cardiology department page">
+                        <span class="inline-flex items-center justify-center h-14 w-full">
+                            <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                                alt="Cardiology icon" src="assests/icons8-heart-with-pulse-100.png">
+                        </span>
+                        <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">
+                            Cardiology</h4>
+                    </a>
+                    <a href="cardiology.html"
+                        class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
+                        aria-label="Open Neurology department page">
+                        <span class="inline-flex items-center justify-center h-14 w-full">
+                            <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                                alt="Neurology icon" src="assests/Neurology.png">
+                        </span>
+                        <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">
+                            Neurology</h4>
+                    </a>
+                    <a href="cardiology.html"
+                        class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
+                        aria-label="Open Orthopedics department page">
+                        <span class="inline-flex items-center justify-center h-14 w-full">
+                            <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                                alt="Orthopedics icon" src="assests/Orthopedics.png">
+                        </span>
+                        <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">
+                            Orthopedics</h4>
+                    </a>
+                    <a href="cardiology.html"
+                        class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
+                        aria-label="Open Oncology department page">
+                        <span class="inline-flex items-center justify-center h-14 w-full">
+                            <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                                alt="Oncology icon" src="assests/oncology_10202691.png">
+                        </span>
+                        <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">
+                            Oncology</h4>
+                    </a>
+                    <a href="cardiology.html"
+                        class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
+                        aria-label="Open Gastroenterology department page">
+                        <span class="inline-flex items-center justify-center h-14 w-full">
+                            <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                                alt="Gastroenterology icon" src="assests/Gastroenterology.png">
+                        </span>
+                        <h4 class="text-[13px] sm:text-[14px] font-semibold text-[#6A1B9A] group-hover:text-white">
+                            Gastroenterology</h4>
+                    </a>
+                    <a href="cardiology.html"
+                        class="group bg-white hover:bg-[linear-gradient(135deg,#6A1B9A_0%,#C770DC_100%)] rounded-lg border border-slate-100 hover:border-transparent hover:shadow-lg transition-all duration-300 p-3 flex flex-col items-center justify-start text-center gap-2"
+                        aria-label="Open Pediatrics department page">
+                        <span class="inline-flex items-center justify-center h-14 w-full">
+                            <img class="w-12 h-12 sm:w-14 sm:h-14 object-contain group-hover:scale-105 group-hover:brightness-0 group-hover:invert transition-transform"
+                                alt="Pediatrics icon" src="assests/Pediatrics.png">
+                        </span>
+                        <h4 class="text-[13px] sm:text-[14px] font-semibold text-primary group-hover:text-white">
+                            Pediatrics</h4>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- Why Choose Us -->
+        <section class="py-24 px-8"
+            style="background: linear-gradient(180deg, rgba(255, 224, 254, 0.62) 0%, rgba(244, 217, 255, 0.45) 56%, rgba(249, 249, 251, 0.96) 100%);">
+            <div class="max-w-7xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+                    <div class="relative">
+                        <img class="rounded-[2.5rem] shadow-2xl z-10 relative"
+                            data-alt="diverse group of professional medical staff standing confidently in a bright hospital corridor"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuAyOwRt3shmDXyRuBdlXH5J4hzKC1AmrRSBQOYCafsO_28JcBVESVH2zjdJOTGcXiggMeSyxT3rB2cgOEExp9Ht5W7OMO2FGCu0sGhuUERj8bC-XC_yZSy7nWTiBv7cL-yP3mMGJf6HvXZTaqV1_Gktl2vExrSqg9p57LluKjWOwXfuIHqA_sJI7CritT_y-4Uoit74mIeC-CpqcNrmXxwxFjBeHo_96BTL6ybZrQtAwpe3NYCMYRL3bySEFUH1MHZcjaJhqAowp6">
+                        <div
+                            class="absolute -bottom-10 -right-10 bg-signature-gradient p-10 rounded-3xl text-white shadow-xl z-20 hidden lg:block">
+                            <h4 class="text-3xl font-bold mb-1">10,000+</h4>
+                            <p class="text-sm opacity-90">Trusted by Patients</p>
+                            <div class="flex mt-3">
+                                <span class="material-symbols-outlined text-sm"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                                <span class="material-symbols-outlined text-sm"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                        </div>
+                        <div class="absolute -top-6 -left-6 w-32 h-32 bg-primary/10 rounded-full blur-3xl"></div>
+                    </div>
+                    <div>
+                        <h2 class="text-4xl font-headline font-bold text-primary mb-8 leading-tight">Setting New
+                            Standards
+                            in Medical Excellence</h2>
+                        <ul class="space-y-6">
+                            <li class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+                                </div>
                                 <div>
-                                    <label class="block text-sm font-bold text-on-surface mb-2 ml-1">Full Name</label>
-                                    <input
-                                        class="w-full rounded-2xl border-2 border-purple-50 bg-surface-container-lowest px-5 py-4 text-sm font-medium focus:border-primary focus:ring-0 transition-colors"
-                                        type="text" name="fullName" placeholder="John Doe" required>
+                                    <h4 class="font-bold text-on-surface">Precision Diagnostics</h4>
+                                    <p class="text-on-surface-variant text-sm">Utilizing the latest AI-integrated
+                                        scanning
+                                        and imaging technology for accurate results.</p>
                                 </div>
-
-                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
-                                    <div>
-                                        <label class="block text-sm font-bold text-on-surface mb-2 ml-1">Phone</label>
-                                        <input
-                                            class="w-full rounded-2xl border-2 border-purple-50 bg-surface-container-lowest px-5 py-4 text-sm font-medium focus:border-primary focus:ring-0 transition-colors"
-                                            type="tel" name="phone" placeholder="+1 234 567 890" required>
-                                    </div>
-                                    <div>
-                                        <label class="block text-sm font-bold text-on-surface mb-2 ml-1">Email</label>
-                                        <input
-                                            class="w-full rounded-2xl border-2 border-purple-50 bg-surface-container-lowest px-5 py-4 text-sm font-medium focus:border-primary focus:ring-0 transition-colors"
-                                            type="email" name="email" placeholder="john@example.com" required>
-                                    </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-lg" data-icon="check">check</span>
                                 </div>
-
-                                <div class="flex-1 flex flex-col">
-                                    <label class="block text-sm font-bold text-on-surface mb-2 ml-1">Message</label>
-                                    <textarea
-                                        class="w-full rounded-2xl border-2 border-purple-50 bg-surface-container-lowest px-5 py-4 text-sm font-medium min-h-[140px] flex-1 focus:border-primary focus:ring-0 transition-colors resize-none"
-                                        name="message" placeholder="How can we help you today?" required></textarea>
+                                <div>
+                                    <h4 class="font-bold text-on-surface">Patient-Centric Approach</h4>
+                                    <p class="text-on-surface-variant text-sm">Every treatment plan is personalized to
+                                        the
+                                        unique needs of the individual.</p>
                                 </div>
-
-                                <button
-                                    class="w-full py-4 mt-2 bg-signature-gradient text-white rounded-2xl font-bold text-lg hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 transition-all"
-                                    type="submit">
-                                    Send Message
-                                </button>
-                            </form>
+                            </li>
+                            <li class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-on-surface">Global Experts</h4>
+                                    <p class="text-on-surface-variant text-sm">Our medical team consists of
+                                        world-renowned
+                                        specialists with decades of experience.</p>
+                                </div>
+                            </li>
+                            <li class="flex gap-4">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 bg-primary/10 text-primary rounded-full flex items-center justify-center">
+                                    <span class="material-symbols-outlined text-lg" data-icon="check">check</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-on-surface">Compassionate Care</h4>
+                                    <p class="text-on-surface-variant text-sm">A healing environment designed to provide
+                                        comfort and peace of mind.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Doctors Section -->
+        <section class="py-24 bg-gradient-to-b from-surface-container-low via-white to-primary-fixed/15 px-8">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-14 text-center flex flex-col items-center">
+                    <h2 class="text-4xl font-headline font-bold text-primary mb-3">Our Medical Board</h2>
+                    <p class="text-on-surface-variant max-w-2xl">Consult with our leading specialists in various
+                        departments.</p>
+                    <a class="mt-5 inline-flex items-center justify-center gap-2 text-primary font-bold text-sm sm:text-base hover:gap-3 transition-all"
+                        href="find-doctors.html">View All Doctors <span
+                            class="material-symbols-outlined">arrow_forward</span></a>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 place-items-center">
+                    <!-- Doctor Card -->
+                    <div
+                        class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
+                        <div class="relative overflow-hidden aspect-[4/5]">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="portrait of a confident professional male doctor in a white lab coat with a stethoscope"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDBPQE6N5vdu24R9p2gtxpbH6s1X8jb6C1i3Loi3C4ooRguRI54ZPZgVqL-wRSIKzoQIQIQN-Fg-HhYanKDQAHYYQKdY3cq5NKDXHFnn5Wil6bmShKPS_fDIZj963K3-pSKW-Bo_uDoW4vT9TJmO7F9IGR73t59oe9u-LVAT-bleM6LYufM4jpXgsrdoiDGhoyClRVhU3hrO-ezeiQftvGExRoqkMfh5Ml4ICLk1Xm_nw1J76PBudoxkOCAqwN73bDPiNqdWbNwi0Dg">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h4 class="text-xl font-bold text-on-surface">Dr. Alexander Ray</h4>
+                            <p class="text-primary text-sm font-semibold mb-4">Senior Cardiologist</p>
+                            <a class="block w-full py-2.5 text-center bg-primary-fixed-dim rounded-xl font-bold text-sm text-primary tracking-tight transition-all hover:brightness-95"
+                                href="doctor-profile.html">View Profile</a>
+                        </div>
+                    </div>
+                    <!-- Repeat Doctor Card -->
+                    <div
+                        class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
+                        <div class="relative overflow-hidden aspect-[4/5]">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="portrait of a professional female medical specialist in a clinic setting, friendly and authoritative"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPVRcVtxBJfVMKlOeWWG78B0ode1Wi3ouVFcDNOVUt6A9xM-hPEtzs8tMx6DcL-SWOux3tfqOh4MxR6qKvmb4iG0IxH08C9lSKFUSHq5wTGKPQFlkU2TI59u1jNQRPq8hzcjTH2ZQHSIi7QkuZUnAqTLbH8G7vF0oAbdRp5f9uQVX2AiuHq4ClN89VTtocsKv2pPHXGNyxcKEzas-3c-Ww5w80SnuZ2rcOpDfNeLBpHoJfNDI14lLzv2oqbf1uBsrtpuYIa4WZiTXC">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h4 class="text-xl font-bold text-on-surface">Dr. Sarah Miller</h4>
+                            <p class="text-primary text-sm font-semibold mb-4">Neurosurgeon</p>
+                            <a class="block w-full py-2.5 text-center bg-primary-fixed-dim rounded-xl font-bold text-sm text-primary tracking-tight transition-all hover:brightness-95"
+                                href="doctor-profile.html">View Profile</a>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
+                        <div class="relative overflow-hidden aspect-[4/5]">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="male surgeon in scrubs looking professional and experienced, medical office background"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBF7i_jQH_OxlApIzo5253Cp87t8sE3Fcc5_BzPvWNYNX50_ALRX1iibCk-uUfoAuJGd45zPzesEUdoln_wE7met9Q4fbGqaYkPHYqiBBqnYnDpfPhuMJeN3qPEN1jLm8opNIZQQtkyXrQUfQXQsal5dER0oDasT2Z3P3pq9dSRXOGVPmnGPWyTrofdb1o66SX-WiAdVpva9hRMtxigKRQYoXAdBoL08fHiofVS843fyuowQzK3kEmm-bLJUbuUf-qvTL5OopnKh_Yl">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h4 class="text-xl font-bold text-on-surface">Dr. James Wilson</h4>
+                            <p class="text-primary text-sm font-semibold mb-4">Orthopedic Head</p>
+                            <a class="block w-full py-2.5 text-center bg-primary-fixed-dim rounded-xl font-bold text-sm text-primary tracking-tight transition-all hover:brightness-95"
+                                href="doctor-profile.html">View Profile</a>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white rounded-3xl overflow-hidden shadow-sm group w-full max-w-[270px] sm:max-w-[300px] lg:max-w-[320px]">
+                        <div class="relative overflow-hidden aspect-[4/5]">
+                            <img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                data-alt="senior female physician in a modern medical setting, looking empathetic and knowledgeable"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4FaUDkKwPaAc5TAVMYKGYYc45vl7QOgigqVp1WXgkGAxglzRJ7laeYn4LDIg4iPuUwM2pz3CZQDyvxVgfb8Pfs1wSk8C_XHNmOEz3JSr44D98fipVRmY4vbJnNvydQjUIiLmI0icGQYdN48z1qjVoEBCbFYKVZTO6FxyqVvT9Vc8WgNsY1uGlyhsLLIdp6AUmWLMxnKVxIqSNYmLx1GLMF6GburhYyVMZe5RWz0tpJarTtrFgdQR4sOzvL59L7KXrYbMe04IDqVe4">
+                        </div>
+                        <div class="p-5 text-center">
+                            <h4 class="text-xl font-bold text-on-surface">Dr. Elena Kostic</h4>
+                            <p class="text-primary text-sm font-semibold mb-4">Oncology Lead</p>
+                            <a class="block w-full py-2.5 text-center bg-primary-fixed-dim rounded-xl font-bold text-sm text-primary tracking-tight transition-all hover:brightness-95"
+                                href="doctor-profile.html">View Profile</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Infrastructure Grid -->
+        <section class="py-24 px-8 bg-gradient-to-b from-primary-fixed/10 via-white to-primary-fixed/20">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-12 text-center flex flex-col items-center">
+                    <h2 class="text-4xl font-headline font-bold text-primary mb-3">World-Class Infrastructure</h2>
+                    <p class="text-on-surface-variant max-w-2xl">Explore our advanced facilities built for precision,
+                        comfort, and connected care.</p>
+                    <a class="mt-5 inline-flex items-center justify-center gap-2 text-primary font-bold text-sm sm:text-base hover:gap-3 transition-all"
+                        href="infrastructure.html">View All Infrastructure <span
+                            class="material-symbols-outlined">arrow_forward</span></a>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[250px]">
+                    <div class="col-span-2 row-span-2 relative group overflow-hidden rounded-3xl">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="advanced surgical operating room with high-tech monitors and robotic surgical equipment"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBlhfbxwg3u0oh6MH_HDLiGLZRY6sbCT85ilnE2eCihlVIVKN8R9Ht_RdbMwCSpCESf86XtvcRaDCcLQl5CWFF-ZHD64jdYHvp4KIPHkyo-gUTEtLaWoZN6EjsHsOawNqgpa_hF05C_OyeRndFu_1VrH4XVYQkEZ_bIGZSodroAIMX5PpQ6fJtLpdaen38MtJLZkJwkli09qvF-D4Y4L4FkNnlEK6FWC3wKHMV3i68gbtBmLosVmrBMttckkhz0G3oz4d1znEzkoroG">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                            <h4 class="text-white text-2xl font-bold">Advanced OT Complex</h4>
+                            <p class="text-white/70 text-sm">Precision surgical suites with robotic capabilities.</p>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-3xl">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="luxury private hospital suite with comfortable furniture and medical support equipment"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-pMSQbpPS174pUXDZK-eo4LRqEUOjks-4y1QHW57lAMTimTINBse7m-ARcHRrYnxGLo1oSmUzjtRziPSE_g8MBkZlJsMww50e1h-jpJgIap6qzbxWAYpwVl7gFwzsvJwzWV1nIzgiVS1Tce6xkWaeUODGbvz-tZJBAlVYhQuEHd2K0fKyznPxYr-yXEQSCXuCx_wn3JZGLPBYgHwYdHC-ZJiWEqAZHBvtHG5lsWbk3-xUTti7YmiTFe5BgOLBcENWX3lxJlN6_P-P">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                            <h4 class="text-white text-lg font-bold">Premium Suites</h4>
+                        </div>
+                    </div>
+                    <div class="relative group overflow-hidden rounded-3xl">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="modern medical diagnostic laboratory with microscopes and scientific equipment"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVqK-rScgqJSvzTcS2TZxpXMxNEQ7sOwJKkO9PXv2UtsfF9HshWBQRdG1cnhOUQiqSubgCiXS0U7HNS9qLG99WWo0Qw8WVBFL35eRNfY5kUOjJD2ya4vNdVCFULsqw4aXruxI3n1DjjDFnxy3_4QPfCdjmnB55fOGuUv7VjmwVzJnHOMhtKqSpig_8hf21rN9dZArbDDzdlcsB6O8URWf2ZiblNfJt4RLtVKVGa66VY3Kul6ah1pDCo4mleafLIhcGsBRpmhH5x3UT">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-6">
+                            <h4 class="text-white text-lg font-bold">Smart Lab</h4>
+                        </div>
+                    </div>
+                    <div class="col-span-2 relative group overflow-hidden rounded-3xl">
+                        <img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                            data-alt="futuristic healthcare control room with multiple data screens and digital monitoring systems"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAaOxq17ajcIU7GTLCop9uLik0flHN1WSHkjIYwo5Gxe9U-e30oV9NiD1TtTXs5SojfWyT5CudymQVGyxWUYK9eZkDSTS7VBxhZxsL-_vij0eqDhg1wi1rSoK2Rpv-Mb2Q83jl8zuMobUE6i3llnD6BN12wjxcglkVG8f_-V1MVRGLWxDFWeNMVpkAFJsi9ARQZyA-kAS6y7KqcGpWC8Gurv3rwjm3nwgXv7IoYm4V1F1Dw2lHPZ3cF8WK2GCgPY0T3EWjvREYQbWZM">
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent flex flex-col justify-end p-8">
+                            <h4 class="text-white text-xl font-bold">Command Center</h4>
+                            <p class="text-white/70 text-sm">Real-time patient monitoring and data analysis.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Care Journey -->
+        <section
+            class="journey-section py-28 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#fde7f3] via-[#f7eefe] to-[#ffffff]"
+            data-timeline-section>
+            <div class="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+                <div class="timeline-orb absolute -top-10 left-[8%] h-44 w-44 rounded-full bg-pink-300/35 blur-3xl">
+                </div>
+                <div
+                    class="timeline-orb timeline-orb-delay absolute top-[18%] right-[8%] h-56 w-56 rounded-full bg-fuchsia-300/30 blur-3xl">
+                </div>
+                <div class="timeline-orb absolute bottom-0 left-[42%] h-52 w-52 rounded-full bg-violet-300/25 blur-3xl">
+                </div>
+            </div>
+            <div class="relative z-10 text-center mb-12 sm:mb-16" data-aos="fade-up" data-aos-duration="900">
+                <span class="journey-pill mb-5" data-aos="zoom-in" data-aos-delay="100">Care Journey</span>
+                <h2 class="text-4xl sm:text-5xl font-headline font-bold leading-tight text-on-surface mb-5"
+                    data-aos="fade-up" data-aos-delay="150">Your Path to Recovery, Reimagined</h2>
+                <p class="text-on-surface-variant text-base sm:text-lg leading-relaxed max-w-2xl mx-auto"
+                    data-aos="fade-up" data-aos-delay="220">A cinematic journey flow with a glowing timeline,
+                    alternating steps, and smooth
+                    scroll reveal designed for a premium healthcare experience.</p>
+            </div>
+            <div class="journey-timeline relative space-y-6 sm:space-y-8 lg:space-y-10 px-0 sm:px-2 lg:px-0">
+                <div class="journey-progress-rail" data-timeline-progress-line-mobile aria-hidden="true"></div>
+                <div class="hidden lg:block journey-progress-rail" data-timeline-progress-line aria-hidden="true"></div>
+                <article class="journey-step journey-step--left" data-timeline-step data-aos="fade-right"
+                    data-aos-delay="120">
+                    <div class="journey-step-meta flex items-center justify-center">
+                        <div class="journey-step-mark flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">forum</span>
+                        </div>
+                    </div>
+                    <div class="journey-step-copy">
+                        <div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
+                            <p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 01
+                            </p>
+                            <h3 class="journey-step-title text-2xl sm:text-3xl font-bold mb-3">Consultation</h3>
+                            <p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">A focused first
+                                conversation to understand your symptoms, history, and care goals before the plan takes
+                                shape.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="journey-step journey-step--right" data-timeline-step data-aos="fade-left"
+                    data-aos-delay="200">
+                    <div class="journey-step-meta flex items-center justify-center">
+                        <div class="journey-step-mark flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">biotech</span>
+                        </div>
+                    </div>
+                    <div class="journey-step-copy">
+                        <div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
+                            <p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 02
+                            </p>
+                            <h3 class="journey-step-title text-2xl sm:text-3xl font-bold mb-3">Diagnosis</h3>
+                            <p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">Advanced imaging
+                                and
+                                lab work turn uncertainty into a clear diagnosis and a confident next move.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="journey-step journey-step--left" data-timeline-step data-aos="fade-right"
+                    data-aos-delay="280">
+                    <div class="journey-step-meta flex items-center justify-center">
+                        <div class="journey-step-mark flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">vaccines</span>
+                        </div>
+                    </div>
+                    <div class="journey-step-copy">
+                        <div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
+                            <p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 03
+                            </p>
+                            <h3 class="journey-step-title text-2xl sm:text-3xl font-bold mb-3">Treatment</h3>
+                            <p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">Personalized
+                                medical
+                                or surgical care designed around precision, comfort, and fast clinical clarity.</p>
+                        </div>
+                    </div>
+                </article>
+                <article class="journey-step journey-step--right" data-timeline-step data-aos="fade-left"
+                    data-aos-delay="360">
+                    <div class="journey-step-meta flex items-center justify-center">
+                        <div class="journey-step-mark flex items-center justify-center">
+                            <span class="material-symbols-outlined text-2xl">healing</span>
+                        </div>
+                    </div>
+                    <div class="journey-step-copy">
+                        <div class="journey-card rounded-[1.9rem] p-6 sm:p-7">
+                            <p class="text-[0.7rem] font-bold uppercase tracking-[0.28em] text-slate-500 mb-3">Step 04
+                            </p>
+                            <h3 class="journey-step-title text-2xl sm:text-3xl font-bold mb-3">Recovery</h3>
+                            <p class="journey-step-desc text-base sm:text-lg leading-relaxed max-w-xl">Ongoing support,
+                                rehabilitation, and follow-up that keep progress steady after treatment.</p>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <!-- Testimonials -->
+        <section class="py-24 px-6 sm:px-8 bg-gradient-to-b from-primary-fixed/10 via-surface to-primary-fixed/20">
+            <div class="max-w-7xl mx-auto">
+                <div class="mb-8 text-center">
+                    <h2 class="text-4xl font-headline font-bold text-primary text-center">Patient Experiences</h2>
+                </div>
+                <div class="patient-carousel-viewport" data-patient-viewport>
+                    <div class="patient-carousel-track" data-patient-track>
+                        <article class="patient-card">
+                            <div class="flex text-amber-400 mb-5">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The level of care I received
+                                at
+                                RR CHOLA was unlike any other. The technology is futuristic, but the staff treats you
+                                with
+                                genuine human warmth."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                                    JD</div>
+                                <div>
+                                    <h5 class="font-bold">Jonathan Doe</h5>
+                                    <p class="text-xs text-on-surface-variant">Cardiac Patient</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="patient-card patient-card--accent">
+                            <div class="flex text-amber-400 mb-5">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-on-surface-variant italic mb-8 leading-relaxed">"They literally saved my
+                                life.
+                                The emergency response was incredibly fast and the neurosurgeons are clearly the best in
+                                the
+                                country."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                                    MS</div>
+                                <div>
+                                    <h5 class="font-bold">Mary Smith</h5>
+                                    <p class="text-xs text-on-surface-variant">Neuro Surgery</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="patient-card">
+                            <div class="flex text-amber-400 mb-5">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The facility is more like a
+                                5-star hotel than a hospital. My recovery was so much faster because of the peaceful
+                                environment."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                                    RK</div>
+                                <div>
+                                    <h5 class="font-bold">Robert King</h5>
+                                    <p class="text-xs text-on-surface-variant">Joint Replacement</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="patient-card patient-card--accent">
+                            <div class="flex text-amber-400 mb-5">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-on-surface-variant italic mb-8 leading-relaxed">"From admission to discharge,
+                                everything was seamless. Nurses kept me informed and calm at every stage."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                                    AK</div>
+                                <div>
+                                    <h5 class="font-bold">Anita Krishnan</h5>
+                                    <p class="text-xs text-on-surface-variant">Maternity Care</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="patient-card">
+                            <div class="flex text-amber-400 mb-5">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The rehab team pushed me
+                                with
+                                care and patience. I returned to normal activity much faster than expected."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                                    VP</div>
+                                <div>
+                                    <h5 class="font-bold">Vikram Patel</h5>
+                                    <p class="text-xs text-on-surface-variant">Sports Injury</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="patient-card patient-card--accent">
+                            <div class="flex text-amber-400 mb-5">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-on-surface-variant italic mb-8 leading-relaxed">"Consultants explained every
+                                option clearly. I felt respected, heard, and genuinely supported throughout treatment."
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                                    SN</div>
+                                <div>
+                                    <h5 class="font-bold">Sofia Nair</h5>
+                                    <p class="text-xs text-on-surface-variant">Oncology Care</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="patient-card">
+                            <div class="flex text-amber-400 mb-5">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-on-surface-variant italic mb-8 leading-relaxed">"My discharge planning was
+                                clear
+                                and organized. Follow-up calls made recovery at home very easy."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                                    RG</div>
+                                <div>
+                                    <h5 class="font-bold">Rhea George</h5>
+                                    <p class="text-xs text-on-surface-variant">Post-Operative Care</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="patient-card patient-card--accent">
+                            <div class="flex text-amber-400 mb-5">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-on-surface-variant italic mb-8 leading-relaxed">"From diagnostics to
+                                physiotherapy, every team coordinated perfectly. I never felt lost during treatment."
+                            </p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                                    AM</div>
+                                <div>
+                                    <h5 class="font-bold">Arun Menon</h5>
+                                    <p class="text-xs text-on-surface-variant">Spine Care</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="patient-card">
+                            <div class="flex text-amber-400 mb-5">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The pediatric team handled
+                                our
+                                child with immense patience. We felt safe, informed, and reassured every day."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                                    LP</div>
+                                <div>
+                                    <h5 class="font-bold">Lina Prasad</h5>
+                                    <p class="text-xs text-on-surface-variant">Pediatric Parent</p>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="patient-card patient-card--accent">
+                            <div class="flex text-amber-400 mb-5">
+                                <span class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span><span
+                                    class="material-symbols-outlined"
+                                    style="font-variation-settings: 'FILL' 1;">star</span>
+                            </div>
+                            <p class="text-on-surface-variant italic mb-8 leading-relaxed">"The nurses were always one
+                                step
+                                ahead, and pain management was exceptional. I could focus only on healing."</p>
+                            <div class="flex items-center gap-4">
+                                <div
+                                    class="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                                    DK</div>
+                                <div>
+                                    <h5 class="font-bold">Deepak Kumar</h5>
+                                    <p class="text-xs text-on-surface-variant">General Surgery</p>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+                <div class="mt-8 flex items-center justify-center gap-3 sm:gap-5" data-patient-controls>
+                    <button
+                        class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white"
+                        aria-label="Move patient cards left" data-patient-prev type="button">
+                        <span class="material-symbols-outlined">chevron_left</span>
+                    </button>
+                    <button
+                        class="inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-full border border-primary/25 bg-white text-primary shadow-sm transition-all hover:scale-105 hover:bg-primary hover:text-white"
+                        aria-label="Move patient cards right" data-patient-next type="button">
+                        <span class="material-symbols-outlined">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+        <!-- Emergency CTA Banner -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-8 py-20">
+            <div
+                class="bg-gradient-to-r from-primary to-secondary p-12 sm:p-16 rounded-[2.5rem] text-center shadow-2xl relative overflow-hidden">
+                <div class="absolute inset-0 opacity-10 pointer-events-none"
+                    style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 28px 28px;">
+                </div>
+                <div class="relative z-10 space-y-7 max-w-3xl mx-auto">
+                    <h2 class="text-4xl sm:text-5xl font-headline font-extrabold text-white leading-tight">Immediate
+                        Emergency Care?</h2>
+                    <p class="text-white/90 text-lg">Our emergency response team is available 24/7. Don't wait—get the
+                        care
+                        you need instantly.</p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+                        <button
+                            class="w-full sm:w-auto px-10 py-4 bg-white text-primary rounded-full font-headline font-bold text-lg transition-transform hover:scale-105 flex items-center justify-center gap-3">
+                            <span class="material-symbols-outlined text-xl">call</span> Call Us
+                        </button>
+                        <button
+                            class="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white/50 text-white rounded-full font-headline font-bold text-lg transition-all hover:bg-white/10">
+                            Find Location
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Insurance & Partners -->
+        <section
+            class="py-20 px-8 bg-gradient-to-b from-primary-fixed/20 via-surface-container-low to-primary-fixed/10">
+            <div class="max-w-7xl mx-auto text-center">
+                <h3 class="text-sm font-bold text-on-surface-variant/60 uppercase tracking-[0.3em] mb-12">Our Trusted
+                    Insurance Partners</h3>
+                <div class="insurance-marquee">
+                    <div class="insurance-track">
+                        <div class="insurance-group">
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Star Health logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://starhealth.in&sz=128"><span
+                                    class="insurance-name">Star Health</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Niva Bupa logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.nivabupa.com&sz=128"><span
+                                    class="insurance-name">Niva Bupa</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="HDFC ERGO logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.hdfcergo.com&sz=128"><span
+                                    class="insurance-name">HDFC ERGO</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="ICICI Lombard logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.icicilombard.com&sz=128"><span
+                                    class="insurance-name">ICICI Lombard</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Care Health logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.careinsurance.com&sz=128"><span
+                                    class="insurance-name">Care Health</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Aditya Birla Health logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.adityabirlacapital.com&sz=128"><span
+                                    class="insurance-name">Aditya Birla Health</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Bajaj Allianz logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.bajajallianz.com&sz=128"><span
+                                    class="insurance-name">Bajaj Allianz</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Tata AIG logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.tataaig.com&sz=128"><span
+                                    class="insurance-name">Tata AIG</span></span>
+                        </div>
+                        <div class="insurance-group" aria-hidden="true">
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Star Health logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://starhealth.in&sz=128"><span
+                                    class="insurance-name">Star Health</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Niva Bupa logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.nivabupa.com&sz=128"><span
+                                    class="insurance-name">Niva Bupa</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="HDFC ERGO logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.hdfcergo.com&sz=128"><span
+                                    class="insurance-name">HDFC ERGO</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="ICICI Lombard logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.icicilombard.com&sz=128"><span
+                                    class="insurance-name">ICICI Lombard</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Care Health logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.careinsurance.com&sz=128"><span
+                                    class="insurance-name">Care Health</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Aditya Birla Health logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.adityabirlacapital.com&sz=128"><span
+                                    class="insurance-name">Aditya Birla Health</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Bajaj Allianz logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.bajajallianz.com&sz=128"><span
+                                    class="insurance-name">Bajaj Allianz</span></span>
+                            <span class="insurance-brand"><img class="insurance-logo" alt="Tata AIG logo"
+                                    src="https://www.google.com/s2/favicons?domain_url=https://www.tataaig.com&sz=128"><span
+                                    class="insurance-name">Tata AIG</span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Contact Us -->
+        <section id="contact-us"
+            class="py-16 sm:py-24 px-4 sm:px-8 bg-gradient-to-b from-white to-primary-fixed/10 scroll-mt-40">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-14">
+                    <p class="text-xs font-bold text-primary/70 uppercase tracking-[0.3em] mb-4">Reach Our Team</p>
+                    <h2 class="text-4xl font-headline font-bold text-primary mb-4">Contact Us</h2>
+                    <p class="text-on-surface-variant max-w-3xl mx-auto">Talk to our care coordinators for appointments,
+                        emergency guidance, insurance support, and specialist consultations.</p>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
+                    <div class="lg:col-span-7 flex flex-col gap-8">
+                        <!-- Contact Grid -->
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                            <div
+                                class="bg-white rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-purple-50 hover:-translate-y-1 transition-all duration-300 group">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-5 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                                    <span class="material-symbols-outlined text-2xl">call</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-on-surface mb-2">Call Us</h4>
+                                <p class="text-on-surface-variant font-medium">+1 800 234 5678</p>
+                                <p class="text-on-surface-variant font-medium">+1 800 500 2244</p>
+                            </div>
+                            <div
+                                class="bg-white rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-purple-50 hover:-translate-y-1 transition-all duration-300 group">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-secondary/10 text-secondary flex items-center justify-center mb-5 group-hover:bg-secondary group-hover:text-white transition-colors duration-300">
+                                    <span class="material-symbols-outlined text-2xl">mail</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-on-surface mb-2">Email</h4>
+                                <p class="text-on-surface-variant font-medium">care@rrchola.com</p>
+                                <p class="text-on-surface-variant font-medium">appointments@rrchola.com</p>
+                            </div>
+                            <div
+                                class="bg-white rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-purple-50 hover:-translate-y-1 transition-all duration-300 group">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-amber-500/10 text-amber-500 flex items-center justify-center mb-5 group-hover:bg-amber-500 group-hover:text-white transition-colors duration-300">
+                                    <span class="material-symbols-outlined text-2xl">location_on</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-on-surface mb-2">Location</h4>
+                                <p class="text-on-surface-variant font-medium">102, Healthcare Plaza</p>
+                                <p class="text-on-surface-variant font-medium">Med City, CH-50001</p>
+                            </div>
+                            <div
+                                class="bg-white rounded-[2rem] p-6 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-purple-50 hover:-translate-y-1 transition-all duration-300 group">
+                                <div
+                                    class="w-14 h-14 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-5 group-hover:bg-emerald-500 group-hover:text-white transition-colors duration-300">
+                                    <span class="material-symbols-outlined text-2xl">schedule</span>
+                                </div>
+                                <h4 class="text-xl font-bold text-on-surface mb-2">Hours</h4>
+                                <p class="text-on-surface-variant font-medium">Mon-Sat: 7AM - 10PM</p>
+                                <p class="text-on-surface-variant font-medium">Emergency: 24/7</p>
+                            </div>
+                        </div>
+                        <!-- Google Map with Radius Border -->
+                        <div
+                            class="relative w-full h-[320px] rounded-[2.5rem] overflow-hidden shadow-2xl border-8 border-white group">
+                            <iframe class="w-full h-full transition-all duration-700 pointer-events-auto"
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3026.295386053245!2d80.23116350844865!3d13.03450389940687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52676fffbfc093%3A0xeed589d681d16fe4!2sR%20%26%20R%20Hospitals!5e0!3m2!1sen!2sin!4v1776704546309!5m2!1sen!2sin"
+                                style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                         </div>
                     </div>
 
-                    <!-- Emergency Card -->
-                    <div
-                        class="rounded-[2rem] p-8 bg-signature-gradient text-white shadow-xl relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 cursor-pointer">
+                    <div class="lg:col-span-5 flex flex-col gap-8">
+                        <!-- Elevated Form -->
                         <div
-                            class="absolute right-0 top-0 w-32 h-32 bg-white/10 rounded-bl-full transition-transform group-hover:scale-110">
-                        </div>
-                        <div class="relative z-10 flex items-center justify-between">
-                            <div>
-                                <h4 class="text-xl font-headline font-bold mb-1">Need Urgent Help?</h4>
-                                <p class="text-white/80 text-sm font-medium">Emergency response 24/7</p>
+                            class="bg-white rounded-[2.5rem] shadow-xl p-8 sm:p-10 border border-purple-50 relative overflow-hidden h-full flex flex-col">
+                            <!-- Decorative Blobs -->
+                            <div class="absolute -top-32 -right-32 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
+                            <div class="absolute -bottom-32 -left-32 w-64 h-64 bg-secondary/10 rounded-full blur-3xl">
                             </div>
+
+                            <div class="relative z-10 flex flex-col h-full">
+                                <h3 class="text-3xl font-headline font-bold text-primary mb-2">Send a Message</h3>
+                                <p class="text-on-surface-variant mb-8 text-sm">We'd love to hear from you! Please fill
+                                    out
+                                    the form below and we'll get in touch.</p>
+
+                                <form class="space-y-5 flex-1 flex flex-col" action="#" method="post">
+                                    <div>
+                                        <label class="block text-sm font-bold text-on-surface mb-2 ml-1">Full
+                                            Name</label>
+                                        <input
+                                            class="w-full rounded-2xl border-2 border-purple-50 bg-surface-container-lowest px-5 py-4 text-sm font-medium focus:border-primary focus:ring-0 transition-colors"
+                                            type="text" name="fullName" placeholder="John Doe" required>
+                                    </div>
+
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                                        <div>
+                                            <label
+                                                class="block text-sm font-bold text-on-surface mb-2 ml-1">Phone</label>
+                                            <input
+                                                class="w-full rounded-2xl border-2 border-purple-50 bg-surface-container-lowest px-5 py-4 text-sm font-medium focus:border-primary focus:ring-0 transition-colors"
+                                                type="tel" name="phone" placeholder="+1 234 567 890" required>
+                                        </div>
+                                        <div>
+                                            <label
+                                                class="block text-sm font-bold text-on-surface mb-2 ml-1">Email</label>
+                                            <input
+                                                class="w-full rounded-2xl border-2 border-purple-50 bg-surface-container-lowest px-5 py-4 text-sm font-medium focus:border-primary focus:ring-0 transition-colors"
+                                                type="email" name="email" placeholder="john@example.com" required>
+                                        </div>
+                                    </div>
+
+                                    <div class="flex-1 flex flex-col">
+                                        <label class="block text-sm font-bold text-on-surface mb-2 ml-1">Message</label>
+                                        <textarea
+                                            class="w-full rounded-2xl border-2 border-purple-50 bg-surface-container-lowest px-5 py-4 text-sm font-medium min-h-[140px] flex-1 focus:border-primary focus:ring-0 transition-colors resize-none"
+                                            name="message" placeholder="How can we help you today?" required></textarea>
+                                    </div>
+
+                                    <button
+                                        class="w-full py-4 mt-2 bg-signature-gradient text-white rounded-2xl font-bold text-lg hover:shadow-lg hover:shadow-primary/30 hover:-translate-y-0.5 transition-all"
+                                        type="submit">
+                                        Send Message
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+
+                        <!-- Emergency Card -->
+                        <div
+                            class="rounded-[2rem] p-8 bg-signature-gradient text-white shadow-xl relative overflow-hidden group hover:scale-[1.02] transition-transform duration-300 cursor-pointer">
                             <div
-                                class="w-14 h-14 rounded-full bg-white text-primary flex items-center justify-center shadow-md">
-                                <span class="material-symbols-outlined text-3xl animate-pulse">emergency</span>
+                                class="absolute right-0 top-0 w-32 h-32 bg-white/10 rounded-bl-full transition-transform group-hover:scale-110">
+                            </div>
+                            <div class="relative z-10 flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-headline font-bold mb-1">Need Urgent Help?</h4>
+                                    <p class="text-white/80 text-sm font-medium">Emergency response 24/7</p>
+                                </div>
+                                <div
+                                    class="w-14 h-14 rounded-full bg-white text-primary flex items-center justify-center shadow-md">
+                                    <span class="material-symbols-outlined text-3xl animate-pulse">emergency</span>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
     </main>
     <div id="footer-slot"></div>
     <script src="shared-layout.js"></script>
