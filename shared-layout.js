@@ -96,7 +96,7 @@
             ['slide-up', 'zoom-in', 'fade-left', 'fade-down', 'flip-up', 'zoom-in-right'],
             ['fade-up', 'fade-up-left', 'zoom-in-up', 'fade-right', 'slide-down', 'flip-right']
         ];
-        
+
         var pageHash = 0;
         for (var i = 0; i < currentPage.length; i++) {
             pageHash += currentPage.charCodeAt(i);

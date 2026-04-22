@@ -1,365 +1,450 @@
 <!DOCTYPE html>
-<html lang="en" class="overflow-x-hidden"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>About Us | RR CHOLA HOSPITAL</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-<link href="theme-overrides.css" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-              "surface-container-low": "#f3f3f5",
-              "primary-fixed-dim": "#e4b5ff",
-              "surface": "#f9f9fb",
-              "secondary": "#9a25ae",
-              "primary": "#4e0078",
-              "on-surface": "#1A1A1A",
-              "on-surface-variant": "#4d4351"
-            },
-            "fontFamily": {
-              "headline": ["Manrope", "sans-serif"],
-              "body": ["Inter", "sans-serif"]
-            }
+<html lang="en" class="overflow-x-hidden scroll-smooth">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>About Us | RR CHOLA HOSPITAL</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <link href="theme-overrides.css" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "surface-container-low": "#f3f3f5",
+            "primary-fixed-dim": "#e4b5ff",
+            "surface": "#f9f9fb",
+            "secondary": "#9a25ae",
+            "primary": "#4e0078",
+            "on-surface": "#1A1A1A",
+            "on-surface-variant": "#4d4351"
+          },
+          "fontFamily": {
+            "headline": ["Manrope", "sans-serif"],
+            "body": ["Inter", "sans-serif"]
           }
         }
       }
-    </script>
-<style>
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
-      .glass-panel {
-        background: rgba(255, 255, 255, 0.72);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
-      }
-      .text-gradient {
-        background: linear-gradient(135deg, #4e0078 0%, #9a25ae 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-      .signature-font {
-        font-family: "Brush Script MT", cursive;
-      }
-      .hero-overlay {
-        background: linear-gradient(135deg, rgba(78, 0, 120, 0.4) 0%, rgba(154, 37, 174, 0.2) 100%);
-      }
-      .text-shadow-sm {
-        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-      }
-      .value-card-icon {
-        color: #6a1b9a;
-        transition: color 220ms ease;
-      }
-      .group:hover .value-card-icon {
-        color: #ffffff !important;
-      }
-      .vision-card:hover .vision-title {
-        color: #ffffff !important;
-      }
-      .innovation-card .value-card-icon {
-        color: #ffffff !important;
-      }
-      /* Hide scrollbar on initial load / refresh flicker fix */
-      html, body {
-        scrollbar-width: none;        /* Firefox */
-        -ms-overflow-style: none;     /* IE / Edge legacy */
-        overflow-y: auto;
-      }
-      html::-webkit-scrollbar,
-      body::-webkit-scrollbar {
-        display: none;                /* Chrome, Safari, Edge */
-      }
-    </style>
+    }
+  </script>
+  <style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+
+    .glass-panel {
+      background: rgba(255, 255, 255, 0.72);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, #4e0078 0%, #9a25ae 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .signature-font {
+      font-family: "Brush Script MT", cursive;
+    }
+
+    .hero-overlay {
+      background: linear-gradient(135deg, rgba(78, 0, 120, 0.4) 0%, rgba(154, 37, 174, 0.2) 100%);
+    }
+
+    .text-shadow-sm {
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    .value-card-icon {
+      color: #6a1b9a;
+      transition: color 220ms ease;
+    }
+
+    .group:hover .value-card-icon {
+      color: #ffffff !important;
+    }
+
+    .vision-card:hover .vision-title {
+      color: #ffffff !important;
+    }
+
+    .innovation-card .value-card-icon {
+      color: #ffffff !important;
+    }
+
+    /* Hide scrollbar on initial load / refresh flicker fix */
+    html,
+    body {
+      scrollbar-width: none;
+      /* Firefox */
+      -ms-overflow-style: none;
+      /* IE / Edge legacy */
+      scroll-behavior: smooth;
+    }
+
+    html::-webkit-scrollbar,
+    body::-webkit-scrollbar {
+      display: none;
+      /* Chrome, Safari, Edge */
+    }
+  </style>
 </head>
+
 <body class="bg-surface font-body text-on-surface overflow-x-hidden">
-<div id="navbar-slot"></div>
-<main>
-<section class="relative h-[70vh] min-h-[520px] w-full overflow-hidden flex items-center">
-<div class="absolute inset-0 z-0">
-<img class="w-full h-full object-cover" alt="modern hospital building exterior with large glass windows at sunrise" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOCavZVicfubKGWR_DZsNsOR9ophp5TGtQ2Cw63UeyVaG26qcQmNs91OZqbPZX9Hz4QRg63BQMOkKHRU4wXEiehFg2I0FvdgmHWZTN9Ol1nv1A8A2CczFndhUlWVZqQ2s0f1YMmWhVDQ4m4tFLo7cLgkhtNRfH8ZySzVf-1c3yrjy4shUCAkMamlkfo3vNx95GgKjrUvJnQyq0n0TkRhPCexxfvzhQ2Ggr_xTxj1TwOw87gl5ghdkvgcDeXDw0R7HiNxGuSXVJKAnq"/>
-<div class="absolute inset-0 hero-overlay"></div>
-</div>
-<div class="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-12 w-full">
-<div class="max-w-4xl">
-<h1 class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white font-headline tracking-tight mb-6 sm:mb-8 leading-[1.1] text-shadow-sm">
-            About <span class="text-primary-fixed-dim">RR Chola Hospital</span>
-</h1>
-<p class="text-lg sm:text-2xl text-white/95 font-medium max-w-2xl leading-relaxed text-shadow-sm">
-            Delivering trusted healthcare with excellence, compassion, and innovation.
-</p>
-</div>
-</div>
-</section>
-
-<section class="max-w-7xl mx-auto px-4 sm:px-8 py-20 sm:py-24">
-<div class="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
-<div class="w-full lg:w-[60%] relative group">
-<div class="overflow-hidden rounded-3xl shadow-2xl">
-<img class="w-full h-[460px] sm:h-[560px] object-cover transition-transform duration-700 group-hover:scale-105" alt="Modern architectural view of a luxury hospital exterior" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqbxNvgm4RiqiwMF9v8SqzW11ES_F5k6f7nYMaiKLO9JUC_UARVdCehTz36zWcN36NgAYaPN6O3jwGVjZJ0ZnLpqxbVfRyJgiXorB8d1ILjGeGWehbm4piqb8l5UNGkE-SR5M-OlW3HNb_Dnv3ICIUNOZXUQbBV6fBqITyywM0l8pKbHtOl2TAZO47shl3m6GNJbTwEFozZmMc8RheiToAwgjZVwh3cEW4d3yPXJhgXeKENDbHpzf-sMx5lJFg4Shiq3SWewimyYKP"/>
-</div>
-<div class="absolute -bottom-5 right-4 sm:-right-5 bg-primary text-white p-6 sm:p-7 rounded-3xl shadow-xl flex flex-col items-center justify-center border-4 border-surface">
-<span class="text-4xl sm:text-5xl font-black font-headline tracking-tighter">10+</span>
-<span class="text-[11px] uppercase tracking-widest font-bold opacity-85 text-center">Years of Excellence</span>
-</div>
-</div>
-<div class="w-full lg:w-[40%] space-y-8">
-<div class="space-y-4">
-<h6 class="text-primary font-bold tracking-widest uppercase text-sm">Our Legacy</h6>
-<h2 class="text-4xl sm:text-5xl font-headline font-extrabold leading-tight text-on-surface">Redefining the Healing Experience.</h2>
-<p class="text-on-surface-variant text-lg leading-relaxed">Established with a vision to transcend traditional healthcare, RR Chola Hospital combines clinical precision with a sanctuary of wellness. We don't just treat; we care.</p>
-</div>
-<div class="grid grid-cols-2 gap-6" data-counter-section>
-<div class="space-y-1 border-l-4 border-secondary pl-4">
-<span class="text-3xl font-black text-primary font-headline" data-counter data-target="10" data-suffix="k+">0</span>
-<p class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Patients Served</p>
-</div>
-<div class="space-y-1 border-l-4 border-primary pl-4">
-<span class="text-3xl font-black text-primary font-headline" data-counter data-target="50" data-suffix="+">0</span>
-<p class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Expert Specialists</p>
-</div>
-</div>
-<div class="pt-6 border-t border-slate-200 italic text-on-surface-variant relative">
-        "Our foundation is built on the belief that every patient deserves a clinical sanctuary where technology meets empathy."
+  <div id="navbar-slot"></div>
+  <main>
+    <section class="relative h-[70vh] min-h-[520px] w-full overflow-hidden flex items-center">
+      <div class="absolute inset-0 z-0">
+        <img class="w-full h-full object-cover"
+          alt="modern hospital building exterior with large glass windows at sunrise"
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCOCavZVicfubKGWR_DZsNsOR9ophp5TGtQ2Cw63UeyVaG26qcQmNs91OZqbPZX9Hz4QRg63BQMOkKHRU4wXEiehFg2I0FvdgmHWZTN9Ol1nv1A8A2CczFndhUlWVZqQ2s0f1YMmWhVDQ4m4tFLo7cLgkhtNRfH8ZySzVf-1c3yrjy4shUCAkMamlkfo3vNx95GgKjrUvJnQyq0n0TkRhPCexxfvzhQ2Ggr_xTxj1TwOw87gl5ghdkvgcDeXDw0R7HiNxGuSXVJKAnq" />
+        <div class="absolute inset-0 hero-overlay"></div>
       </div>
-</div>
-</div>
-</section>
+      <div class="relative z-10 max-w-[1440px] mx-auto px-6 sm:px-10 lg:px-12 w-full">
+        <div class="max-w-4xl">
+          <h1
+            class="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white font-headline tracking-tight mb-6 sm:mb-8 leading-[1.1] text-shadow-sm">
+            About <span class="text-primary-fixed-dim">RR Chola Hospital</span>
+          </h1>
+          <p class="text-lg sm:text-2xl text-white/95 font-medium max-w-2xl leading-relaxed text-shadow-sm">
+            Delivering trusted healthcare with excellence, compassion, and innovation.
+          </p>
+        </div>
+      </div>
+    </section>
 
-<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-20 sm:pb-24 space-y-10">
-<div class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-secondary p-8 sm:p-12 text-white shadow-2xl transition-all duration-500 hover:scale-[1.01]">
-<div class="flex flex-col md:flex-row gap-8 items-center relative z-10">
-<div class="p-5 bg-white/10 rounded-2xl backdrop-blur-md">
-<span class="material-symbols-outlined text-6xl">rocket_launch</span>
-</div>
-<div class="space-y-4">
-<h3 class="text-3xl sm:text-4xl font-headline font-extrabold">Our Mission</h3>
-<p class="text-lg sm:text-xl text-white/90 max-w-3xl">To provide accessible, world-class medical services through innovative technology and compassionate care, ensuring the highest standards of safety and clinical outcomes for our community.</p>
-</div>
-</div>
-<div class="absolute -right-20 -top-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
-</div>
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 py-20 sm:py-24">
+      <div class="flex flex-col lg:flex-row gap-10 lg:gap-12 items-center">
+        <div class="w-full lg:w-[60%] relative group">
+          <div class="overflow-hidden rounded-3xl shadow-2xl">
+            <img
+              class="w-full h-[460px] sm:h-[560px] object-cover transition-transform duration-700 group-hover:scale-105"
+              alt="Modern architectural view of a luxury hospital exterior"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBqbxNvgm4RiqiwMF9v8SqzW11ES_F5k6f7nYMaiKLO9JUC_UARVdCehTz36zWcN36NgAYaPN6O3jwGVjZJ0ZnLpqxbVfRyJgiXorB8d1ILjGeGWehbm4piqb8l5UNGkE-SR5M-OlW3HNb_Dnv3ICIUNOZXUQbBV6fBqITyywM0l8pKbHtOl2TAZO47shl3m6GNJbTwEFozZmMc8RheiToAwgjZVwh3cEW4d3yPXJhgXeKENDbHpzf-sMx5lJFg4Shiq3SWewimyYKP" />
+          </div>
+          <div
+            class="absolute -bottom-5 right-4 sm:-right-5 bg-primary text-white p-6 sm:p-7 rounded-3xl shadow-xl flex flex-col items-center justify-center border-4 border-surface">
+            <span class="text-4xl sm:text-5xl font-black font-headline tracking-tighter">10+</span>
+            <span class="text-[11px] uppercase tracking-widest font-bold opacity-85 text-center">Years of
+              Excellence</span>
+          </div>
+        </div>
+        <div class="w-full lg:w-[40%] space-y-8">
+          <div class="space-y-4">
+            <h6 class="text-primary font-bold tracking-widest uppercase text-sm">Our Legacy</h6>
+            <h2 class="text-4xl sm:text-5xl font-headline font-extrabold leading-tight text-on-surface">Redefining the
+              Healing Experience.</h2>
+            <p class="text-on-surface-variant text-lg leading-relaxed">Established with a vision to transcend
+              traditional healthcare, RR Chola Hospital combines clinical precision with a sanctuary of wellness. We
+              don't just treat; we care.</p>
+          </div>
+          <div class="grid grid-cols-2 gap-6" data-counter-section>
+            <div class="space-y-1 border-l-4 border-secondary pl-4">
+              <span class="text-3xl font-black text-primary font-headline" data-counter data-target="10"
+                data-suffix="k+">0</span>
+              <p class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Patients Served</p>
+            </div>
+            <div class="space-y-1 border-l-4 border-primary pl-4">
+              <span class="text-3xl font-black text-primary font-headline" data-counter data-target="50"
+                data-suffix="+">0</span>
+              <p class="text-xs font-bold uppercase text-on-surface-variant tracking-wider">Expert Specialists</p>
+            </div>
+          </div>
+          <div class="pt-6 border-t border-slate-200 italic text-on-surface-variant relative">
+            "Our foundation is built on the belief that every patient deserves a clinical sanctuary where technology
+            meets empathy."
+          </div>
+        </div>
+      </div>
+    </section>
 
-<div class="group vision-card border-2 border-primary/20 bg-white rounded-3xl p-8 sm:p-12 shadow-sm transition-all duration-500 hover:shadow-xl hover:border-primary hover:bg-primary">
-<div class="flex flex-col md:flex-row-reverse gap-8 items-center">
-<div class="p-5 bg-primary/5 rounded-2xl text-primary transition-colors duration-500 group-hover:bg-white/15 group-hover:text-white">
-<span class="material-symbols-outlined text-6xl">visibility</span>
-</div>
-<div class="space-y-4 md:text-right flex-1">
-<h3 class="vision-title text-3xl sm:text-4xl font-headline font-extrabold text-primary transition-colors duration-500 group-hover:text-white">Our Vision</h3>
-<p class="text-lg sm:text-xl text-on-surface-variant max-w-3xl md:ml-auto transition-colors duration-500 group-hover:text-white/90">To be recognized globally as a leader in clinical innovation and the first choice for patients seeking a holistic, tech-forward healing sanctuary.</p>
-</div>
-</div>
-</div>
-</section>
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 pb-20 sm:pb-24 space-y-10">
+      <div
+        class="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-secondary p-8 sm:p-12 text-white shadow-2xl transition-all duration-500 hover:scale-[1.01]">
+        <div class="flex flex-col md:flex-row gap-8 items-center relative z-10">
+          <div class="p-5 bg-white/10 rounded-2xl backdrop-blur-md">
+            <span class="material-symbols-outlined text-6xl">rocket_launch</span>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-3xl sm:text-4xl font-headline font-extrabold">Our Mission</h3>
+            <p class="text-lg sm:text-xl text-white/90 max-w-3xl">To provide accessible, world-class medical services
+              through innovative technology and compassionate care, ensuring the highest standards of safety and
+              clinical outcomes for our community.</p>
+          </div>
+        </div>
+        <div class="absolute -right-20 -top-20 w-80 h-80 bg-white/5 rounded-full blur-3xl"></div>
+      </div>
 
-<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-20 sm:pb-24">
-<div class="text-center mb-14">
-<h6 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Values that Drive Us</h6>
-<h2 class="text-4xl sm:text-5xl font-headline font-extrabold">The Core of Our Care</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
-<article class="group bg-white rounded-3xl p-9 text-center shadow-sm border-2 border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
-<span class="material-symbols-outlined value-card-icon text-5xl mb-5">favorite</span>
-<h4 class="text-4xl text-xl font-bold text-on-surface mb-3 font-headline transition-colors group-hover:text-white">Compassion</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-white/85">Treating every patient with the same warmth and dignity we would offer our own family.</p>
-</article>
-<article class="group bg-white rounded-3xl p-9 shadow-sm border-2 border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
-<div class="flex items-start gap-4 mb-4">
-<span class="material-symbols-outlined value-card-icon text-5xl">verified</span>
-<h4 class="text-xl font-bold text-on-surface font-headline transition-colors group-hover:text-white">Integrity</h4>
-</div>
-<p class="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-white/85">Upholding transparency and ethics in every clinical decision and patient interaction.</p>
-</article>
-<article class="group bg-white rounded-3xl p-9 text-center shadow-sm border-2 border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
-<span class="material-symbols-outlined value-card-icon text-5xl mb-5">biotech</span>
-<h4 class="text-xl font-bold text-on-surface mb-3 font-headline transition-colors group-hover:text-white">Innovation</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-white/85">Pioneering the latest medical technologies to deliver minimally invasive treatments.</p>
-</article>
-<article class="group bg-white rounded-3xl p-9 border-2 border-primary shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-primary hover:shadow-xl">
-<span class="material-symbols-outlined value-card-icon text-5xl mb-5">groups</span>
-<h4 class="text-xl font-bold text-on-surface mb-3 font-headline group-hover:text-white">Collaboration</h4>
-<p class="text-on-surface-variant text-sm leading-relaxed group-hover:text-white/85">Working as a multidisciplinary team to ensure holistic healing and accurate diagnosis.</p>
-</article>
-</div>
-</section>
+      <div
+        class="group vision-card border-2 border-primary/20 bg-white rounded-3xl p-8 sm:p-12 shadow-sm transition-all duration-500 hover:shadow-xl hover:border-primary hover:bg-primary">
+        <div class="flex flex-col md:flex-row-reverse gap-8 items-center">
+          <div
+            class="p-5 bg-primary/5 rounded-2xl text-primary transition-colors duration-500 group-hover:bg-white/15 group-hover:text-white">
+            <span class="material-symbols-outlined text-6xl">visibility</span>
+          </div>
+          <div class="space-y-4 md:text-right flex-1">
+            <h3
+              class="vision-title text-3xl sm:text-4xl font-headline font-extrabold text-primary transition-colors duration-500 group-hover:text-white">
+              Our Vision</h3>
+            <p
+              class="text-lg sm:text-xl text-on-surface-variant max-w-3xl md:ml-auto transition-colors duration-500 group-hover:text-white/90">
+              To be recognized globally as a leader in clinical innovation and the first choice for patients seeking a
+              holistic, tech-forward healing sanctuary.</p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="py-24 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-4 sm:px-8">
-<div class="rounded-[2.4rem] overflow-hidden border border-primary/20 shadow-[0_24px_60px_rgba(44,18,68,0.12)] bg-white">
-<div class="grid grid-cols-1 lg:grid-cols-12">
-<div class="lg:col-span-5 bg-gradient-to-br from-[#3A0D5A] via-primary to-secondary p-9 sm:p-12 text-white relative overflow-hidden">
-<div class="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
-<div class="absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-black/20 blur-3xl"></div>
-<div class="relative z-10 h-full flex flex-col">
-<div class="space-y-6">
-<p class="text-xs font-extrabold uppercase tracking-[0.24em] text-white/75">Why Choose Us</p>
-<h2 class="font-headline text-4xl font-extrabold leading-tight">Why Choose RR Chola Hospital?</h2>
-<p class="text-white/85 leading-relaxed text-lg">The pillars that define our commitment to your health, comfort, and long-term clinical outcomes.</p>
-</div>
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 pb-20 sm:pb-24">
+      <div class="text-center mb-14">
+        <h6 class="text-primary font-bold tracking-widest uppercase text-sm mb-4">Values that Drive Us</h6>
+        <h2 class="text-4xl sm:text-5xl font-headline font-extrabold">The Core of Our Care</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <article
+          class="group bg-white rounded-3xl p-9 text-center shadow-sm border-2 border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
+          <span class="material-symbols-outlined value-card-icon text-5xl mb-5">favorite</span>
+          <h4
+            class="text-4xl text-xl font-bold text-on-surface mb-3 font-headline transition-colors group-hover:text-white">
+            Compassion</h4>
+          <p class="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-white/85">
+            Treating every patient with the same warmth and dignity we would offer our own family.</p>
+        </article>
+        <article
+          class="group bg-white rounded-3xl p-9 shadow-sm border-2 border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
+          <div class="flex items-start gap-4 mb-4">
+            <span class="material-symbols-outlined value-card-icon text-5xl">verified</span>
+            <h4 class="text-xl font-bold text-on-surface font-headline transition-colors group-hover:text-white">
+              Integrity</h4>
+          </div>
+          <p class="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-white/85">
+            Upholding transparency and ethics in every clinical decision and patient interaction.</p>
+        </article>
+        <article
+          class="group bg-white rounded-3xl p-9 text-center shadow-sm border-2 border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:bg-primary">
+          <span class="material-symbols-outlined value-card-icon text-5xl mb-5">biotech</span>
+          <h4 class="text-xl font-bold text-on-surface mb-3 font-headline transition-colors group-hover:text-white">
+            Innovation</h4>
+          <p class="text-on-surface-variant text-sm leading-relaxed transition-colors group-hover:text-white/85">
+            Pioneering the latest medical technologies to deliver minimally invasive treatments.</p>
+        </article>
+        <article
+          class="group bg-white rounded-3xl p-9 border-2 border-primary shadow-sm transition-all duration-300 hover:-translate-y-1 hover:bg-primary hover:shadow-xl">
+          <span class="material-symbols-outlined value-card-icon text-5xl mb-5">groups</span>
+          <h4 class="text-xl font-bold text-on-surface mb-3 font-headline group-hover:text-white">Collaboration</h4>
+          <p class="text-on-surface-variant text-sm leading-relaxed group-hover:text-white/85">Working as a
+            multidisciplinary team to ensure holistic healing and accurate diagnosis.</p>
+        </article>
+      </div>
+    </section>
 
-<div class="mt-8 grid grid-cols-2 gap-3" data-counter-section>
-<div class="rounded-2xl border border-white/20 bg-white/10 px-4 py-3">
-<p class="text-2xl font-black leading-none" data-counter data-target="10" data-suffix="k+">0</p>
-<p class="mt-1 text-xs text-white/80 uppercase tracking-wider font-semibold">Patients Served</p>
-</div>
-<div class="rounded-2xl border border-white/20 bg-white/10 px-4 py-3">
-<p class="text-2xl font-black leading-none" data-counter data-target="50" data-suffix="+">0</p>
-<p class="mt-1 text-xs text-white/80 uppercase tracking-wider font-semibold">Specialists</p>
-</div>
-</div>
+    <section class="py-24 bg-surface-container-low">
+      <div class="max-w-7xl mx-auto px-4 sm:px-8">
+        <div
+          class="rounded-[2.4rem] overflow-hidden border border-primary/20 shadow-[0_24px_60px_rgba(44,18,68,0.12)] bg-white">
+          <div class="grid grid-cols-1 lg:grid-cols-12">
+            <div
+              class="lg:col-span-5 bg-gradient-to-br from-[#3A0D5A] via-primary to-secondary p-9 sm:p-12 text-white relative overflow-hidden">
+              <div class="absolute -top-16 -right-16 h-56 w-56 rounded-full bg-white/10 blur-2xl"></div>
+              <div class="absolute -bottom-20 -left-10 h-64 w-64 rounded-full bg-black/20 blur-3xl"></div>
+              <div class="relative z-10 h-full flex flex-col">
+                <div class="space-y-6">
+                  <p class="text-xs font-extrabold uppercase tracking-[0.24em] text-white/75">Why Choose Us</p>
+                  <h2 class="font-headline text-4xl font-extrabold leading-tight">Why Choose RR Chola Hospital?</h2>
+                  <p class="text-white/85 leading-relaxed text-lg">The pillars that define our commitment to your
+                    health, comfort, and long-term clinical outcomes.</p>
+                </div>
 
-<ul class="mt-7 space-y-3 text-sm text-white/90 font-medium">
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-base text-white/90">check_circle</span>
-NABH-aligned quality and safety protocols
-</li>
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-base text-white/90">check_circle</span>
-Integrated diagnostics with rapid clinical reporting
-</li>
-<li class="flex items-center gap-2">
-<span class="material-symbols-outlined text-base text-white/90">check_circle</span>
-Coordinated multidisciplinary treatment planning
-</li>
-</ul>
+                <div class="mt-8 grid grid-cols-2 gap-3" data-counter-section>
+                  <div class="rounded-2xl border border-white/20 bg-white/10 px-4 py-3">
+                    <p class="text-2xl font-black leading-none" data-counter data-target="10" data-suffix="k+">0</p>
+                    <p class="mt-1 text-xs text-white/80 uppercase tracking-wider font-semibold">Patients Served</p>
+                  </div>
+                  <div class="rounded-2xl border border-white/20 bg-white/10 px-4 py-3">
+                    <p class="text-2xl font-black leading-none" data-counter data-target="50" data-suffix="+">0</p>
+                    <p class="mt-1 text-xs text-white/80 uppercase tracking-wider font-semibold">Specialists</p>
+                  </div>
+                </div>
 
-<div class="mt-auto pt-8 space-y-4">
-<div class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold">
-<span class="material-symbols-outlined text-base">verified</span>
-Trusted by Patients Across Specialities
-</div>
-</div>
-</div>
-</div>
+                <ul class="mt-7 space-y-3 text-sm text-white/90 font-medium">
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base text-white/90">check_circle</span>
+                    NABH-aligned quality and safety protocols
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base text-white/90">check_circle</span>
+                    Integrated diagnostics with rapid clinical reporting
+                  </li>
+                  <li class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-base text-white/90">check_circle</span>
+                    Coordinated multidisciplinary treatment planning
+                  </li>
+                </ul>
 
-<div class="lg:col-span-7 p-6 sm:p-10 lg:p-12 bg-[#FCFAFF]">
-<div class="divide-y divide-primary/10">
-<article class="py-6 first:pt-0">
-<div class="flex items-start gap-5">
-<p class="font-headline text-3xl font-black text-primary/35 leading-none">01</p>
-<div>
-<h4 class="font-headline text-2xl font-bold text-on-surface mb-3">Premium Infrastructure</h4>
-<p class="text-on-surface-variant leading-relaxed">Spacious patient suites, advanced operation theatres, and restorative spaces designed for comfort-led healing.</p>
-</div>
-</div>
-</article>
+                <div class="mt-auto pt-8 space-y-4">
+                  <div
+                    class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-4 py-2 text-sm font-semibold">
+                    <span class="material-symbols-outlined text-base">verified</span>
+                    Trusted by Patients Across Specialities
+                  </div>
+                </div>
+              </div>
+            </div>
 
-<article class="py-6">
-<div class="flex items-start gap-5">
-<p class="font-headline text-3xl font-black text-primary/35 leading-none">02</p>
-<div>
-<h4 class="font-headline text-2xl font-bold text-on-surface mb-3">Expert Faculty</h4>
-<p class="text-on-surface-variant leading-relaxed">Board-certified consultants and super-specialists from premier institutions with decades of collective experience.</p>
-</div>
-</div>
-</article>
+            <div class="lg:col-span-7 p-6 sm:p-10 lg:p-12 bg-[#FCFAFF]">
+              <div class="divide-y divide-primary/10">
+                <article class="py-6 first:pt-0">
+                  <div class="flex items-start gap-5">
+                    <p class="font-headline text-3xl font-black text-primary/35 leading-none">01</p>
+                    <div>
+                      <h4 class="font-headline text-2xl font-bold text-on-surface mb-3">Premium Infrastructure</h4>
+                      <p class="text-on-surface-variant leading-relaxed">Spacious patient suites, advanced operation
+                        theatres, and restorative spaces designed for comfort-led healing.</p>
+                    </div>
+                  </div>
+                </article>
 
-<article class="py-6">
-<div class="flex items-start gap-5">
-<p class="font-headline text-3xl font-black text-primary/35 leading-none">03</p>
-<div>
-<h4 class="font-headline text-2xl font-bold text-on-surface mb-3">Evidence-Driven Care Pathways</h4>
-<p class="text-on-surface-variant leading-relaxed">Treatment decisions are guided by robust diagnostics, multidisciplinary reviews, and globally benchmarked protocols.</p>
-</div>
-</div>
-</article>
+                <article class="py-6">
+                  <div class="flex items-start gap-5">
+                    <p class="font-headline text-3xl font-black text-primary/35 leading-none">02</p>
+                    <div>
+                      <h4 class="font-headline text-2xl font-bold text-on-surface mb-3">Expert Faculty</h4>
+                      <p class="text-on-surface-variant leading-relaxed">Board-certified consultants and
+                        super-specialists from premier institutions with decades of collective experience.</p>
+                    </div>
+                  </div>
+                </article>
 
-<article class="py-6">
-<div class="flex items-start gap-5">
-<p class="font-headline text-3xl font-black text-primary/35 leading-none">04</p>
-<div>
-<h4 class="font-headline text-2xl font-bold text-on-surface mb-3">Holistic Recovery Support</h4>
-<p class="text-on-surface-variant leading-relaxed">From nutrition and physiotherapy to counselling and post-discharge monitoring, we support the full healing journey.</p>
-</div>
-</div>
-</article>
+                <article class="py-6">
+                  <div class="flex items-start gap-5">
+                    <p class="font-headline text-3xl font-black text-primary/35 leading-none">03</p>
+                    <div>
+                      <h4 class="font-headline text-2xl font-bold text-on-surface mb-3">Evidence-Driven Care Pathways
+                      </h4>
+                      <p class="text-on-surface-variant leading-relaxed">Treatment decisions are guided by robust
+                        diagnostics, multidisciplinary reviews, and globally benchmarked protocols.</p>
+                    </div>
+                  </div>
+                </article>
 
-<article class="py-6 last:pb-0">
-<div class="flex items-start gap-5">
-<p class="font-headline text-3xl font-black text-primary/35 leading-none">05</p>
-<div>
-<h4 class="font-headline text-2xl font-bold text-on-surface mb-3">Patient-First Experience</h4>
-<p class="text-on-surface-variant leading-relaxed">Transparent communication, responsive care teams, and thoughtfully managed touchpoints ensure confidence for patients and families alike.</p>
-</div>
-</div>
-</article>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+                <article class="py-6">
+                  <div class="flex items-start gap-5">
+                    <p class="font-headline text-3xl font-black text-primary/35 leading-none">04</p>
+                    <div>
+                      <h4 class="font-headline text-2xl font-bold text-on-surface mb-3">Holistic Recovery Support</h4>
+                      <p class="text-on-surface-variant leading-relaxed">From nutrition and physiotherapy to counselling
+                        and post-discharge monitoring, we support the full healing journey.</p>
+                    </div>
+                  </div>
+                </article>
 
-<section class="max-w-5xl mx-auto px-4 sm:px-8 pb-20 sm:pb-24">
-<div class="bg-white rounded-3xl overflow-hidden shadow-2xl border border-primary/10 flex flex-col md:flex-row items-stretch">
-<div class="md:w-4/12 min-h-[300px] md:min-h-[420px] relative">
-<img class="absolute inset-0 w-full h-full object-cover" alt="portrait of a senior medical director in professional clinical attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8s3f8c0vlpCOQCQ6qVXH3F3EMGAZUqpUUR1mCvs-BSbeaJWx0SPZg7ZmtKxughRBjeBTUJ4NSAfQWIwbjDCoqpc0EXt43VeWwSbrfWF-M_AGhNqjknhc87tOj_TZuG3Ec1H4rqpT95zOz2sIq_Pe07QeANe_ywvPhl8n8Ok4D6SUdeY5PvRoCE8MEL37hUf1ir31dJ63abZD2uUH-J4Kk-rkbojrUTejhS_IFWbaOAZTQ97wdb00wM5g0WjeLUW9D96UYZ-7VOcLY"/>
-</div>
-<div class="md:w-8/12 p-8 sm:p-10 md:p-12 flex flex-col justify-start relative bg-surface-container-lowest">
-<h3 class="text-3xl sm:text-4xl font-headline font-extrabold text-primary leading-tight mb-6">A Message from our Clinical Leadership</h3>
-<p class="text-base sm:text-lg text-on-surface font-medium italic leading-relaxed opacity-90 mb-8">At RR Chola, we don't just treat symptoms; we heal people. Our philosophy is rooted in the belief that medical technology, no matter how advanced, is only as effective as the compassion behind it. We are dedicated to creating a sanctuary where patients find not only cure but also comfort.</p>
-<div class="pt-5 border-t border-primary/10 space-y-1">
-<p class="text-2xl font-headline font-extrabold text-on-surface">Dr. Rajesh Chola</p>
-<p class="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider">Managing Director &amp; Chief Surgeon</p>
-<div class="signature-font text-4xl text-primary/45 select-none pt-2">Rajesh Chola</div>
-</div>
-</div>
-</div>
-</section>
+                <article class="py-6 last:pb-0">
+                  <div class="flex items-start gap-5">
+                    <p class="font-headline text-3xl font-black text-primary/35 leading-none">05</p>
+                    <div>
+                      <h4 class="font-headline text-2xl font-bold text-on-surface mb-3">Patient-First Experience</h4>
+                      <p class="text-on-surface-variant leading-relaxed">Transparent communication, responsive care
+                        teams, and thoughtfully managed touchpoints ensure confidence for patients and families alike.
+                      </p>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<section class="max-w-7xl mx-auto px-4 sm:px-8 pb-24">
-<div class="bg-gradient-to-r from-primary to-secondary p-12 sm:p-16 rounded-[2.5rem] text-center shadow-2xl relative overflow-hidden">
-<div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 28px 28px;"></div>
-<div class="relative z-10 space-y-7 max-w-3xl mx-auto">
-<h2 class="text-4xl sm:text-5xl font-headline font-extrabold text-white leading-tight">Begin Your Journey to Better Health Today</h2>
-<p class="text-white/90 text-lg">Schedule a consultation with our world-class specialists and experience the Clinical Sanctuary firsthand.</p>
-<div class="flex flex-col sm:flex-row gap-4 justify-center pt-2">
-<button class="w-full sm:w-auto px-10 py-4 bg-white text-primary rounded-full font-headline font-black text-lg transition-transform hover:scale-105">Call Now</button>
-<button class="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white/50 text-white rounded-full font-headline font-black text-lg transition-all hover:bg-white/10">Find a Doctor</button>
-</div>
-</div>
-</div>
-</section>
-</main>
-<div id="footer-slot"></div>
-<script src="shared-layout.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    var counters = entry.target.querySelectorAll('[data-counter]');
-                    counters.forEach(function(counter) {
-                        var target = parseInt(counter.getAttribute('data-target'), 10);
-                        var suffix = counter.getAttribute('data-suffix') || '';
-                        var duration = 1500;
-                        var stepTime = Math.max(10, Math.floor(duration / target));
-                        var current = 0;
-                        var timer = setInterval(function() {
-                            current += 1;
-                            counter.textContent = current + suffix;
-                            if (current >= target) {
-                                clearInterval(timer);
-                                counter.textContent = target + suffix;
-                            }
-                        }, stepTime);
-                    });
-                    observer.unobserve(entry.target);
+    <section class="max-w-5xl mx-auto px-4 sm:px-8 pb-20 sm:pb-24">
+      <div
+        class="bg-white rounded-3xl overflow-hidden shadow-2xl border border-primary/10 flex flex-col md:flex-row items-stretch">
+        <div class="md:w-4/12 min-h-[300px] md:min-h-[420px] relative">
+          <img class="absolute inset-0 w-full h-full object-cover"
+            alt="portrait of a senior medical director in professional clinical attire"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8s3f8c0vlpCOQCQ6qVXH3F3EMGAZUqpUUR1mCvs-BSbeaJWx0SPZg7ZmtKxughRBjeBTUJ4NSAfQWIwbjDCoqpc0EXt43VeWwSbrfWF-M_AGhNqjknhc87tOj_TZuG3Ec1H4rqpT95zOz2sIq_Pe07QeANe_ywvPhl8n8Ok4D6SUdeY5PvRoCE8MEL37hUf1ir31dJ63abZD2uUH-J4Kk-rkbojrUTejhS_IFWbaOAZTQ97wdb00wM5g0WjeLUW9D96UYZ-7VOcLY" />
+        </div>
+        <div class="md:w-8/12 p-8 sm:p-10 md:p-12 flex flex-col justify-start relative bg-surface-container-lowest">
+          <h3 class="text-3xl sm:text-4xl font-headline font-extrabold text-primary leading-tight mb-6">A Message from
+            our Clinical Leadership</h3>
+          <p class="text-base sm:text-lg text-on-surface font-medium italic leading-relaxed opacity-90 mb-8">At RR
+            Chola, we don't just treat symptoms; we heal people. Our philosophy is rooted in the belief that medical
+            technology, no matter how advanced, is only as effective as the compassion behind it. We are dedicated to
+            creating a sanctuary where patients find not only cure but also comfort.</p>
+          <div class="pt-5 border-t border-primary/10 space-y-1">
+            <p class="text-2xl font-headline font-extrabold text-on-surface">Dr. Rajesh Chola</p>
+            <p class="text-primary text-xs sm:text-sm font-bold uppercase tracking-wider">Managing Director &amp; Chief
+              Surgeon</p>
+            <div class="signature-font text-4xl text-primary/45 select-none pt-2">Rajesh Chola</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 sm:px-8 pb-24">
+      <div
+        class="bg-gradient-to-r from-primary to-secondary p-12 sm:p-16 rounded-[2.5rem] text-center shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none"
+          style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 28px 28px;">
+        </div>
+        <div class="relative z-10 space-y-7 max-w-3xl mx-auto">
+          <h2 class="text-4xl sm:text-5xl font-headline font-extrabold text-white leading-tight">Begin Your Journey to
+            Better Health Today</h2>
+          <p class="text-white/90 text-lg">Schedule a consultation with our world-class specialists and experience the
+            Clinical Sanctuary firsthand.</p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center pt-2">
+            <button
+              class="w-full sm:w-auto px-10 py-4 bg-white text-primary rounded-full font-headline font-black text-lg transition-transform hover:scale-105">Call
+              Now</button>
+            <button
+              class="w-full sm:w-auto px-10 py-4 bg-transparent border-2 border-white/50 text-white rounded-full font-headline font-black text-lg transition-all hover:bg-white/10">Find
+              a Doctor</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <div id="footer-slot"></div>
+  <script src="shared-layout.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            var counters = entry.target.querySelectorAll('[data-counter]');
+            counters.forEach(function (counter) {
+              var target = parseInt(counter.getAttribute('data-target'), 10);
+              var suffix = counter.getAttribute('data-suffix') || '';
+              var duration = 1500;
+              var stepTime = Math.max(10, Math.floor(duration / target));
+              var current = 0;
+              var timer = setInterval(function () {
+                current += 1;
+                counter.textContent = current + suffix;
+                if (current >= target) {
+                  clearInterval(timer);
+                  counter.textContent = target + suffix;
                 }
+              }, stepTime);
             });
-        }, { threshold: 0.2 });
-        
-        var sections = document.querySelectorAll('[data-counter-section]');
-        sections.forEach(function(section) {
-            observer.observe(section);
+            observer.unobserve(entry.target);
+          }
         });
+      }, { threshold: 0.2 });
+
+      var sections = document.querySelectorAll('[data-counter-section]');
+      sections.forEach(function (section) {
+        observer.observe(section);
+      });
     });
-</script>
+  </script>
 </body>
+
 </html>
